@@ -11,6 +11,7 @@ public class exit {
 	public Vector2 size = Vector2.one;
 	public Vector2	pos;
 	public side side = 0;
+	public Room parent = null;
 
 	public static bool operator==(exit e1, exit e2){
 		if (e1.center == e2.center && e1.size == e2.size && e1.pos == e2.pos && e1.side == e2.side)

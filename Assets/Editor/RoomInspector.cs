@@ -50,5 +50,11 @@ public class RoomInspector : Editor {
 			exit.center = boxBoundsHandle[i].center - room.transform.position;
 			i++;
 		}
+		boxBoundsHandle2.size = room.bounds.size;
+		boxBoundsHandle2.center = room.bounds.center + room.transform.position;
+		boxBoundsHandle2.SetColor(Color.blue);
+		boxBoundsHandle2.DrawHandle();
+		room.bounds.size = boxBoundsHandle2.size;
+		room.bounds.center = boxBoundsHandle2.center - room.transform.position;
 	}
 }
