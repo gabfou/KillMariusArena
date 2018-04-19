@@ -211,7 +211,7 @@ MonoBehaviour:
   - {fileID: 114357466037112202, guid: 3690f8e4d2a594ab7bf7151f8da529e6, type: 2}
   listporte: []
   listroomplaced: []
---- !u!1001 &2104831438
+--- !u!1001 &1709271195
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -220,11 +220,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4431138470746044, guid: f7d3959bc37e44d6c87f9a3d755f278d, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -4.541841
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4431138470746044, guid: f7d3959bc37e44d6c87f9a3d755f278d, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 3.1937246
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4431138470746044, guid: f7d3959bc37e44d6c87f9a3d755f278d, type: 2}
       propertyPath: m_LocalPosition.z
@@ -252,33 +252,18 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114194752145994676, guid: f7d3959bc37e44d6c87f9a3d755f278d,
         type: 2}
-      propertyPath: exit.Array.data[5].center.x
-      value: -1.52
+      propertyPath: exit.Array.data[0].center.y
+      value: -7.75
       objectReference: {fileID: 0}
     - target: {fileID: 114194752145994676, guid: f7d3959bc37e44d6c87f9a3d755f278d,
         type: 2}
-      propertyPath: exit.Array.data[4].center.x
-      value: -2.1600003
+      propertyPath: exit.Array.data[0].size.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114194752145994676, guid: f7d3959bc37e44d6c87f9a3d755f278d,
         type: 2}
-      propertyPath: exit.Array.data[1].center.x
-      value: -2.7800002
-      objectReference: {fileID: 0}
-    - target: {fileID: 114194752145994676, guid: f7d3959bc37e44d6c87f9a3d755f278d,
-        type: 2}
-      propertyPath: exit.Array.data[3].center.x
-      value: -2.1399999
-      objectReference: {fileID: 0}
-    - target: {fileID: 114194752145994676, guid: f7d3959bc37e44d6c87f9a3d755f278d,
-        type: 2}
-      propertyPath: exit.Array.data[3].size.x
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 114194752145994676, guid: f7d3959bc37e44d6c87f9a3d755f278d,
-        type: 2}
-      propertyPath: exit.Array.data[3].size.y
-      value: 0.19999999
+      propertyPath: exit.Array.data[0].size.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f7d3959bc37e44d6c87f9a3d755f278d, type: 2}

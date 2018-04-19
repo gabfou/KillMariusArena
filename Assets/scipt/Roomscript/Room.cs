@@ -47,8 +47,8 @@ public class Room : MonoBehaviour {
 		}
 	}
 
-	private void OnDrawGizmos()
-	{
-		Gizmos.DrawCube(bounds.center, bounds.size);
-	}
+	// private void OnDrawGizmos()
+	// {
+	// 	Gizmos.DrawCube(bounds.center, bounds.size);
+	// }
 }
