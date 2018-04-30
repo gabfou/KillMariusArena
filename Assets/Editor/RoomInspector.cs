@@ -38,7 +38,7 @@ public class RoomInspector : Editor {
 	public void OnSceneGUI()
 	{
 		int i = 0;
-		foreach(var exit in room.exit) // pour l instant c est stupide (meme boxBound pour toute la liste)
+		foreach(var exit in room.exitlist) // pour l instant c est stupide (meme boxBound pour toute la liste)
 		{
 			if (i >= boxBoundsHandle.Count)
 				boxBoundsHandle.Add(new BoxBoundsHandle());
