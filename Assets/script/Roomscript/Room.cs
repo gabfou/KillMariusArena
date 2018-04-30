@@ -22,12 +22,10 @@ public class Room : MonoBehaviour {
 		if (initdone == true)
 			return ;
 		gu = Camera.main.GetComponent<GeneratorUtil>();
-		Debug.Log("test2 " + exitlist.Count);
 		foreach(exit e in exitlist)
 		{
 			e.pos = e.center + (Vector2)transform.position;
 			e.parent = this;
-			Debug.Log("test");
 		}
 		bounds.center += transform.position;
 		gu.listporte.AddRange(exitlist);

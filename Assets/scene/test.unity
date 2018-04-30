@@ -124,9 +124,9 @@ GameObject:
   - component: {fileID: 22765363}
   - component: {fileID: 22765362}
   - component: {fileID: 22765366}
-  - component: {fileID: 22765367}
   - component: {fileID: 22765364}
   - component: {fileID: 22765368}
+  - component: {fileID: 22765367}
   m_Layer: 0
   m_Name: Character controller
   m_TagString: Untagged
@@ -256,8 +256,8 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!61 &22765367
-BoxCollider2D:
+--- !u!70 &22765367
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
@@ -268,19 +268,9 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.7400002, y: 10.240001}
-    newSize: {x: 4.7400002, y: 10.240001}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 4.82, y: 10.72}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: -0.61889035}
+  m_Size: {x: 4.7400002, y: 8.720901}
+  m_Direction: 0
 --- !u!114 &22765368
 MonoBehaviour:
   m_ObjectHideFlags: 0
