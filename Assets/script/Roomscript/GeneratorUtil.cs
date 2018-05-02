@@ -8,7 +8,8 @@ public class GeneratorUtil : MonoBehaviour {
 	public List<Room> listroom;
 	/*[HideInInspector]*/ public List<exit> listporte;
 	[HideInInspector] public List<Room> listroomplaced;
-	// Use this for initialization
+	public TpZone TpZonePrefab;
+	// Use this for initializationgu
 	void Start () {
 		
 	}
@@ -105,10 +106,16 @@ public class GeneratorUtil : MonoBehaviour {
 			debut = 1;
 			if (IsExitSideAndSizeMatch(room.exitlist[i], p) && CheckIfRoomFit(room.bounds, p.pos - room.exitlist[i].center))
 			{
-				Room newr;
-				newr = GameObject.Instantiate(room, p.pos - room.exitlist[i].center, Quaternion.identity); // apparament le start de la nouvelle room n est pas apeller avant la fin de la fonction faudrait savoir si c est pas juste du hasard
+				Room newr = GameObject.Instantiate(room, p.pos - room.exitlist[i].center, Quaternion.identity); // apparament le start de la nouvelle room n est pas apeller avant la fin de la fonction faudrait savoir si c est pas juste du hasard
+				// adding and attach the tpzone
+				TpZone t1 = newr.addTpFromExit(room.exitlist[i]);
+				TpZone t2 = p.parent.addTpFromExit(p);
+				t1.exit = (Vector2)t1.transform.position + getVecInDirOfSide(room.exitlist[i].side, 1.2f);
+				t2.exit = (Vector2)t2.transform.position + getVecInDirOfSide(p.side, 1.2f);
+				// nettoyage
 				newr.SupExit(room.exitlist[i]);
 				newr.init();
+				p.parent.SupExit(p);
 				listporte.Remove(p);
 				// RemoveExitInLp(room.exitlist[i]);// supprime le exit d ici : pas necessaire pour l instant vu que je suprime celui de la room
 				return true;
@@ -118,7 +125,7 @@ public class GeneratorUtil : MonoBehaviour {
 		return false;
 	}
 
-	public Vector3 addInDirOfSide(side side, Vector3 o, float value)
+	public Vector2 getVecInDirOfSide(side side, float value)
 	{
 		Vector3 tmp = Vector3.zero;
 
@@ -138,7 +145,12 @@ public class GeneratorUtil : MonoBehaviour {
 				break;
 
 		}
-		return (o + tmp);
+		return (tmp);
+	}
+
+	public Vector2 addInDirOfSide(side side, Vector2 o, float value)
+	{
+		return (o + getVecInDirOfSide(side, value));
 	}
 
 	void ExitCleaner() // don t work if exit are not carre

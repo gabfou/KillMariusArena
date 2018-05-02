@@ -9,6 +9,7 @@ public class Room : MonoBehaviour {
 	[HideInInspector] public bool initdone = false;
 	GeneratorUtil gu;
 	public Bounds bounds;
+	public List<TpZone> listTpZone;
 
 	void Start () {
 		init();
@@ -27,6 +28,12 @@ public class Room : MonoBehaviour {
 			e.pos = e.center + (Vector2)transform.position;
 			e.parent = this;
 		}
+		foreach(TpZone t in listTpZone)
+		{
+			Debug.Log("fdsf");
+			t.transform.position += transform.position;
+		}
+
 		bounds.center += transform.position;
 		gu.listporte.AddRange(exitlist);
 		gu.listroomplaced.Add(this);
@@ -48,6 +55,21 @@ public class Room : MonoBehaviour {
 			if (exitlist[i] == e)
 				exitlist.RemoveAt(i);
 		}
+	}
+
+	public TpZone addTpFromExit(exit e)
+	{
+		TpZone r = GameObject.Instantiate<TpZone>(gu.TpZonePrefab, e.pos, Quaternion.identity, transform);
+		if (e.parent == false || e.parent.initdone == false)
+		r.transform.position += (Vector3)e.center + transform.position;
+		if (listTpZone == null)
+			listTpZone = new List<TpZone>();
+
+		r.transform.localScale = new Vector3(0.9f,0.9f,0.9f);
+		r.transform.position -= (Vector3)gu.getVecInDirOfSide(e.side, 0.1f);
+		listTpZone.Add(r);
+		// r.transform.localScale = e.size;
+		return r;
 	}
 
 	// private void OnDrawGizmos()
