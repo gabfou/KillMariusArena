@@ -45,10 +45,11 @@ public class PlayerController : Stopmoving
     Animator anim;
     AudioSource audiosource;
 
-    float tmp;
+    protected float move = 0;
 
     // Use this for initialization
-    void Start()
+
+    protected void init()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidbody2D = GetComponent<Rigidbody2D>();
@@ -61,29 +62,32 @@ public class PlayerController : Stopmoving
         anim.SetBool("grounded", grounded);
     }
 
-    void FixedUpdate()
+    void Start()
+    {
+        init();
+    }
+
+    protected void allCheck()
+    {
+         GroundCheck();
+         SlideCheck();
+    }
+    protected virtual void FixedUpdate()
     {
         if (life < 0)
             return;
 
-        float move;
 
-        move = Input.GetAxisRaw("Horizontal");
+        Move(move);
 
         if (base.cannotmove == true)
             return;
 
-        Tapping(move);
 
-        GroundCheck();
+        allCheck();
 
-        Move(move);
+        Tapping(move); // a virer
 
-        SlideCheck();
-
-        anim.SetFloat("vely", rigidbody2D.velocity.y);
-
-        rigidbody2D.velocity = new Vector2(move * maxSpeed, Mathf.Clamp(rigidbody2D.velocity.y, minYVelocity, maxYVelocity));
     }
 
     void Tapping(float move)
@@ -114,7 +118,7 @@ public class PlayerController : Stopmoving
         }
     }
 
-    void Move(float move)
+    protected void Move(float move)
     {
         /*if (grounded && audiosource.isPlaying == false && move != 0)
         {
@@ -131,6 +135,8 @@ public class PlayerController : Stopmoving
             Flip();
         anim.SetFloat("velx", move);
         anim.SetBool("ismoving", move != 0);
+        rigidbody2D.velocity = new Vector2(move * maxSpeed, Mathf.Clamp(rigidbody2D.velocity.y, minYVelocity, maxYVelocity));
+        anim.SetFloat("vely", rigidbody2D.velocity.y);
     }
 
     void GroundCheck()
@@ -192,18 +198,26 @@ public class PlayerController : Stopmoving
         canJump = true;
     }
 
+    protected void tryjump()
+    {
+        if (grounded && canJump)
+        {
+            rigidbody2D.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
+            StartCoroutine(JumpDelay());
+            rigidbody2D.velocity = new Vector2(move * maxSpeed, Mathf.Clamp(rigidbody2D.velocity.y, minYVelocity, maxYVelocity));
+        }
+    }
+
     void Update()
     {
         if (life < 0)
             return;
         if (base.cannotmove == true)
             return;
-        if (grounded && Input.GetKeyDown(KeyCode.Space) && canJump)
-        {
-            // audiosource.PlayOneShot(jumpClip, .2f);
-            rigidbody2D.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
-            StartCoroutine(JumpDelay());
-        }
+        move = Input.GetAxisRaw("Horizontal");
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            tryjump();
     }
 
     void OnCollisionEnter2D(Collision2D other)
