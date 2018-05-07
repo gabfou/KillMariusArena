@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AgroJump : PlayerController {
+public class Agro : PlayerController {
 
 	// Use this for initialization
 	Transform Cible = null;
-	// Rigidbody2D rbody;
 
 	void Start () {
 		init();
@@ -14,16 +13,21 @@ public class AgroJump : PlayerController {
 		// rbody = GetComponent<Rigidbody2D>();
 	}
 
+	private void OnEnable()
+	{
+		base.ouchtag = "bam";
+	}
+
 	// Update is called once per frame
 	protected override void FixedUpdate () {
-		if (Cible == null)
-			return ;
-		move = Mathf.Sign((Cible.position - transform.position).x);
+		if (Cible)
+			move = Mathf.Sign((Cible.position - transform.position).x);
+		else
+			move = 0;
 		base.FixedUpdate();
 		if (Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), 2, LayerMask.GetMask("Ground")))
 			tryjump();
-		if (Physics2D.Raycast(transform.position, Cible.position - transform.position, 2, LayerMask.GetMask("Player")))
-			tryjump();
+
 	}
 
 	void Update()
@@ -34,7 +38,7 @@ public class AgroJump : PlayerController {
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Player")
-		Cible = other.transform;
+			Cible = other.transform;
 	}
 
 	private void OnDisable()

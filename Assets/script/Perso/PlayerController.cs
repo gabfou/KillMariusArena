@@ -14,7 +14,7 @@ public class PlayerController : Stopmoving
     public float jumpIdle = .3f;
     public float maxYVelocity = 8f;
     public float minYVelocity = -6f;
-    bool canJump = true;
+    [HideInInspector] public bool canJump = true;
 
     [Space]
     public float minSlideVelocity = 3f;
@@ -33,9 +33,8 @@ public class PlayerController : Stopmoving
 
     bool istapping = false;
     public Collider2D zonebam;
-    float timesincetapping;
 
-    bool grounded;
+    [HideInInspector] public bool grounded;
     public Vector3 groundPosition;
     public Vector2 groundSize;
     public AudioClip run;
@@ -44,8 +43,9 @@ public class PlayerController : Stopmoving
     SpriteRenderer spriteRenderer;
     Animator anim;
     AudioSource audiosource;
+    protected string ouchtag = "ouch";
 
-    protected float move = 0;
+    [HideInInspector] public float move = 0;
 
     // Use this for initialization
 
@@ -60,6 +60,7 @@ public class PlayerController : Stopmoving
         // Flip();
         // anim.SetBool("facingright", facingRight);
         anim.SetBool("grounded", grounded);
+
     }
 
     void Start()
@@ -76,50 +77,40 @@ public class PlayerController : Stopmoving
     {
         if (life < 0)
             return;
+        allCheck();
 
-
-        Move(move);
+        Tapping(move);
 
         if (base.cannotmove == true)
             return;
+        // Debug.Log(name);
 
+        Move(move);
 
-        allCheck();
-
-        Tapping(move); // a virer
 
     }
 
-    void Tapping(float move)
+    IEnumerator Tapping(float move)
     {
-        if (istapping)
-        {
-            move = transform.position.x - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane)).x;
-            if (!istapping && move > 0 && !facingRight)
-                Flip();
-            else if (!istapping && move < 0 && facingRight)
-                Flip();
+        istapping = true;
+        anim.SetTrigger("istapping");
+        // move = transform.position.x - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane)).x; // tape ducoter de la sourie (en gros la ca sert a rien)
+        // if (!istapping && move > 0 && !facingRight)
+        //     Flip();
+        // else if (!istapping && move < 0 && facingRight)
+        //     Flip();
 
-            timesincetapping += Time.deltaTime;
-            if (timesincetapping > 0.3f)
-            {
-                istapping = false;
-            }
-            else if (timesincetapping > 0.2f)
-                zonebam.gameObject.SetActive(false);
-            else if (timesincetapping > 0.1f)
-                zonebam.gameObject.SetActive(true);
-        }
-        if (!istapping && Input.GetKey(KeyCode.Mouse1))
-        {
-            istapping = true;
-            timesincetapping = 0;
-            anim.SetTrigger("istapping");
-        }
+        yield return new WaitForSeconds(0.1f); // TODO: faire une coroutine
+        zonebam.gameObject.SetActive(true);
+        yield return new WaitForSeconds(0.1f);
+        zonebam.gameObject.SetActive(false);
+        yield return new WaitForSeconds(0.1f);
+        istapping = false;
     }
 
-    protected void Move(float move)
+    public void Move(float move)
     {
+        Debug.Log(name);
         /*if (grounded && audiosource.isPlaying == false && move != 0)
         {
             audiosource.loop = true;
@@ -163,7 +154,7 @@ public class PlayerController : Stopmoving
     void Flip()
     {
         facingRight = !facingRight;
-        spriteRenderer.flipX = facingRight;
+        transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
     }
 
     void Die()
@@ -198,14 +189,19 @@ public class PlayerController : Stopmoving
         canJump = true;
     }
 
-    protected void tryjump()
+    public void tryjump(float jumppower)
     {
         if (grounded && canJump)
         {
-            rigidbody2D.AddForce(new Vector2(0, jumpPower), ForceMode2D.Impulse);
+            rigidbody2D.AddForce(new Vector2(0, jumppower), ForceMode2D.Impulse);
             StartCoroutine(JumpDelay());
             rigidbody2D.velocity = new Vector2(move * maxSpeed, Mathf.Clamp(rigidbody2D.velocity.y, minYVelocity, maxYVelocity));
         }
+    }
+
+    public void tryjump()
+    {
+        tryjump(jumpPower);
     }
 
     void Update()
@@ -229,6 +225,7 @@ public class PlayerController : Stopmoving
         }
     }
 
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "OS")
@@ -238,7 +235,7 @@ public class PlayerController : Stopmoving
             return;
         }
 
-        if (canOuch && other.tag == "ouch")
+        if (canOuch && other.tag == ouchtag)
             ouch();
     }
 

@@ -152,6 +152,7 @@ MonoBehaviour:
   jumpIdle: 0.3
   maxYVelocity: 20
   minYVelocity: -15
+  canJump: 1
   minSlideVelocity: 3
   slimeVelocityIgnore: 0.5
   ouchClip: {fileID: 0}
@@ -159,9 +160,11 @@ MonoBehaviour:
   life: 5
   invulnTime: 1
   zonebam: {fileID: 0}
+  grounded: 0
   groundPosition: {x: 0, y: -0.9, z: 0}
   groundSize: {x: 0.4, y: 0.4}
   run: {fileID: 0}
+  move: 0
 --- !u!50 &22765363
 Rigidbody2D:
   serializedVersion: 4
@@ -322,8 +325,8 @@ TextMesh:
 
     sassurer que le cleaning de GeneratorUtil continue de marcher
 
-    mechant (patrouille + agrojump (moitier fait, charge a mieurer) pour le premier
-    (puis recuperer turet tant que j y suis))
+    mechant (patrouille + agrojump (manque anim) pour le premier (puis recuperer turet
+    tant que j y suis))
 
     finir attack
 
@@ -435,6 +438,76 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c50f88981da5243a180252d7ae602429, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1313471095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1313471096}
+  - component: {fileID: 1313471098}
+  - component: {fileID: 1313471097}
+  m_Layer: 0
+  m_Name: Charge attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1313471096
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1313471095}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1603400257}
+  m_Father: {fileID: 1781125600}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1313471097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1313471095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4da2d8eec5d3a4968ad9f7e2d08e905f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chargejumppower: 10
+  coefspeed: 2
+  cd: 2
+--- !u!61 &1313471098
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1313471095}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 5.72, y: 0.14216137}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 9.34013, y: 4.1907396}
+  m_EdgeRadius: 0
 --- !u!1 &1409305319
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,6 +608,60 @@ MonoBehaviour:
   listroomplaced: []
   TpZonePrefab: {fileID: 114190384143296156, guid: 845a915fb9d1d4e1eb42dadf9484dd05,
     type: 2}
+--- !u!1 &1603400256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1603400257}
+  - component: {fileID: 1603400258}
+  m_Layer: 0
+  m_Name: OuchZone
+  m_TagString: ouch
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1603400257
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1603400256}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1313471096}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1603400258
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1603400256}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.3748413, y: 1.0271817}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.6637113, y: 1.474087}
+  m_EdgeRadius: 0
 --- !u!1001 &1709271195
 Prefab:
   m_ObjectHideFlags: 0
@@ -606,7 +733,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1781125594}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb272a9d1a4c44330ac29a5f7589841b, type: 3}
+  m_Script: {fileID: 11500000, guid: 71501c2af1c5d47eb967b7ddfe0e81ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cannotmove: 0
@@ -616,6 +743,7 @@ MonoBehaviour:
   jumpIdle: 0.3
   maxYVelocity: 20
   minYVelocity: -15
+  canJump: 1
   minSlideVelocity: 3
   slimeVelocityIgnore: 0.5
   ouchClip: {fileID: 0}
@@ -623,9 +751,11 @@ MonoBehaviour:
   life: 5
   invulnTime: 1
   zonebam: {fileID: 0}
+  grounded: 0
   groundPosition: {x: -0.06, y: -0.91, z: 0}
   groundSize: {x: 0.6, y: 0.2}
   run: {fileID: 0}
+  move: 0
 --- !u!50 &1781125596
 Rigidbody2D:
   serializedVersion: 4
@@ -669,7 +799,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1781125594}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 75426b610f27c437aaab134481f57c6d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -729,7 +859,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -27.5, y: 2.88, z: 0}
   m_LocalScale: {x: 0.43311322, y: 0.43311304, z: 0.43311304}
-  m_Children: []
+  m_Children:
+  - {fileID: 1313471096}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
