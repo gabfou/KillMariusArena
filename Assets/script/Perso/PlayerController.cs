@@ -43,7 +43,7 @@ public class PlayerController : Stopmoving
     SpriteRenderer spriteRenderer;
     Animator anim;
     AudioSource audiosource;
-    protected string ouchtag = "ouch";
+    public string ouchtag = "ouch";
 
     [HideInInspector] public float move = 0;
 
@@ -79,8 +79,6 @@ public class PlayerController : Stopmoving
             return;
         allCheck();
 
-        Tapping(move);
-
         if (base.cannotmove == true)
             return;
         // Debug.Log(name);
@@ -90,39 +88,42 @@ public class PlayerController : Stopmoving
 
     }
 
-    IEnumerator Tapping(float move)
+    IEnumerator Tapping()
     {
         istapping = true;
-        anim.SetTrigger("istapping");
+        anim.SetBool("istapping", true);
         // move = transform.position.x - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane)).x; // tape ducoter de la sourie (en gros la ca sert a rien)
         // if (!istapping && move > 0 && !facingRight)
         //     Flip();
         // else if (!istapping && move < 0 && facingRight)
         //     Flip();
 
-        yield return new WaitForSeconds(0.1f); // TODO: faire une coroutine
+        yield return new WaitForSeconds(0.1f);
         zonebam.gameObject.SetActive(true);
         yield return new WaitForSeconds(0.1f);
         zonebam.gameObject.SetActive(false);
         yield return new WaitForSeconds(0.1f);
+        anim.SetBool("istapping", false);
         istapping = false;
     }
 
     public void Move(float move)
     {
-        Debug.Log(name);
-        /*if (grounded && audiosource.isPlaying == false && move != 0)
+        if (audiosource && run)
         {
-            audiosource.loop = true;
-            audiosource.clip = run;
-            audiosource.Play();
+            if (grounded && audiosource.isPlaying == false && move != 0)
+            {
+                audiosource.loop = true;
+                audiosource.clip = run;
+                audiosource.Play();
+            }
+            else if (move == 0 && audiosource.clip == run)
+                audiosource.Stop();
         }
-        else if (move == 0 && audiosource.clip == run)
-            audiosource.Stop();*/
 
-        if (!istapping && move > 0 && facingRight)
+        if (move > 0 && facingRight)
             Flip();
-        else if (!istapping && move < 0 && !facingRight)
+        else if (move < 0 && !facingRight)
             Flip();
         anim.SetFloat("velx", move);
         anim.SetBool("ismoving", move != 0);
@@ -160,6 +161,7 @@ public class PlayerController : Stopmoving
     void Die()
     {
         anim.SetTrigger("death");
+        GameObject.Destroy(gameObject);
     }
 
     void ouch()
@@ -214,6 +216,9 @@ public class PlayerController : Stopmoving
 
         if (Input.GetKeyDown(KeyCode.Space))
             tryjump();
+
+        if (Input.GetKeyDown(KeyCode.LeftControl))
+            StartCoroutine(Tapping());
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -226,7 +231,7 @@ public class PlayerController : Stopmoving
     }
 
 
-    void OnTriggerEnter2D(Collider2D other)
+    protected void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "OS")
         {
@@ -235,6 +240,8 @@ public class PlayerController : Stopmoving
             return;
         }
 
+        if (other.tag == "bam")
+            Debug.Log(name);
         if (canOuch && other.tag == ouchtag)
             ouch();
     }
