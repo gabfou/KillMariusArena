@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : Stopmoving
@@ -32,7 +33,6 @@ public class PlayerController : Stopmoving
     bool sliding = false;
 
     bool istapping = false;
-    public Collider2D zonebam;
 
     [HideInInspector] public bool grounded;
     public Vector3 groundPosition;
@@ -47,16 +47,26 @@ public class PlayerController : Stopmoving
 
     [HideInInspector] public float move = 0;
 
+    Vector2 impacto = Vector2.zero;
+    CinemachineVirtualCamera vcam;
+    CinemachineBasicMultiChannelPerlin vcamperlin;
+    Material spriteMaterial;
+
     // Use this for initialization
 
     protected void init()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        spriteMaterial = spriteRenderer.material;
         rigidbody2D = GetComponent<Rigidbody2D>();
 
         rigidbody2D.interpolation = RigidbodyInterpolation2D.Interpolate;
         anim = GetComponent<Animator>();
         audiosource = Camera.main.GetComponent<AudioSource>();
+        vcam = Camera.main.GetComponent<CinemachineBrain>().ActiveVirtualCamera as CinemachineVirtualCamera;
+        vcamperlin = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         // Flip();
         // anim.SetBool("facingright", facingRight);
         anim.SetBool("grounded", grounded);
@@ -73,20 +83,6 @@ public class PlayerController : Stopmoving
          GroundCheck();
          SlideCheck();
     }
-    protected virtual void FixedUpdate()
-    {
-        if (life < 0)
-            return;
-        allCheck();
-
-        if (base.cannotmove == true)
-            return;
-        // Debug.Log(name);
-
-        Move(move);
-
-
-    }
 
     IEnumerator Tapping()
     {
@@ -98,11 +94,7 @@ public class PlayerController : Stopmoving
         // else if (!istapping && move < 0 && facingRight)
         //     Flip();
 
-        yield return new WaitForSeconds(0.1f);
-        zonebam.gameObject.SetActive(true);
-        yield return new WaitForSeconds(0.1f);
-        zonebam.gameObject.SetActive(false);
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.3f);
         anim.SetBool("istapping", false);
         istapping = false;
     }
@@ -127,7 +119,8 @@ public class PlayerController : Stopmoving
             Flip();
         anim.SetFloat("velx", move);
         anim.SetBool("ismoving", move != 0);
-        rigidbody2D.velocity = new Vector2(move * maxSpeed, Mathf.Clamp(rigidbody2D.velocity.y, minYVelocity, maxYVelocity));
+        rigidbody2D.velocity = new Vector2( Mathf.Clamp(move * maxSpeed + impacto.x, -maxSpeed, maxSpeed),
+                                            Mathf.Clamp(rigidbody2D.velocity.y + impacto.y, minYVelocity, maxYVelocity));
         anim.SetFloat("vely", rigidbody2D.velocity.y);
     }
 
@@ -158,24 +151,53 @@ public class PlayerController : Stopmoving
         transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
     }
 
+
+    /*****************************************************************************************************************
+                                                        OUCH & DIE
+    *****************************************************************************************************************/
+
     void Die()
     {
         anim.SetTrigger("death");
         GameObject.Destroy(gameObject);
     }
 
-    void ouch()
+    void ouch(Vector2 impact2)
     {
         canOuch = false;
-        StartCoroutine(ResetCanOuch());
         life--;
         if (life < 1)
             Die();
         else
         {
-            audiosource.PlayOneShot(ouchClip, .6f);
+            if (audiosource && ouchClip)
+                audiosource.PlayOneShot(ouchClip, .6f);
             anim.SetTrigger("ouch");
         }
+        StartCoroutine(ResetCanOuch());
+        StartCoroutine(stunouch(impact2));
+        StartCoroutine(impactoEffect());
+    }
+
+    IEnumerator impactoEffect()
+    {
+        vcamperlin = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        vcamperlin.m_AmplitudeGain = 0.5f;
+        vcamperlin.m_FrequencyGain = 30;
+        yield return new WaitForSeconds(0.3f);
+        vcamperlin.m_AmplitudeGain = 0;
+        cannotmove = false;
+    }
+
+    public float timestunouch = 0.2f;
+    IEnumerator stunouch(Vector2 impact)
+    {
+        cannotmove = true;
+        rigidbody2D.velocity = impact;
+        spriteMaterial.SetFloat("_isflashing", 1);
+        yield return new WaitForSeconds(timestunouch);
+        spriteMaterial.SetFloat("_isflashing", 0);
+        cannotmove = false;
     }
 
     IEnumerator ResetCanOuch()
@@ -183,6 +205,10 @@ public class PlayerController : Stopmoving
         yield return new WaitForSeconds(invulnTime);
         canOuch = true;
     }
+
+    /*****************************************************************************************************************
+                                                        JUMP
+    *******************************************************************************************************************/
 
     IEnumerator JumpDelay()
     {
@@ -206,6 +232,10 @@ public class PlayerController : Stopmoving
         tryjump(jumpPower);
     }
 
+    /*****************************************************************************************************************
+                                                        UPDATE
+    *****************************************************************************************************************/
+
     void Update()
     {
         if (life < 0)
@@ -220,6 +250,24 @@ public class PlayerController : Stopmoving
         if (Input.GetKeyDown(KeyCode.LeftControl))
             StartCoroutine(Tapping());
     }
+
+    protected virtual void FixedUpdate()
+    {
+        if (life < 0)
+            return;
+        allCheck();
+
+        if (base.cannotmove == true)
+            return;
+        // Debug.Log(name);
+
+        Move(move);
+        Debug.DrawRay(transform.position, impacto, Color.red);
+    }
+
+    /*****************************************************************************************************************
+                                                        COLLISION
+    *****************************************************************************************************************/
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -243,7 +291,7 @@ public class PlayerController : Stopmoving
         if (other.tag == "bam")
             Debug.Log(name);
         if (canOuch && other.tag == ouchtag)
-            ouch();
+            ouch((transform.position - other.transform.position).normalized * 6 + Vector3.up * 12);
     }
 
     void OnDrawGizmos()

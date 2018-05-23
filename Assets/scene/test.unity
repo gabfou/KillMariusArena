@@ -159,12 +159,13 @@ MonoBehaviour:
   jumpClip: {fileID: 0}
   life: 5
   invulnTime: 1
-  zonebam: {fileID: 0}
   grounded: 0
   groundPosition: {x: 0, y: -0.9, z: 0}
   groundSize: {x: 0.4, y: 0.4}
   run: {fileID: 0}
+  ouchtag: ouch
   move: 0
+  timestunouch: 0.2
 --- !u!50 &22765363
 Rigidbody2D:
   serializedVersion: 4
@@ -285,7 +286,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fe76315c378346308d609dfd45df937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dist: 10
 --- !u!1 &948459268
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,7 +571,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
@@ -750,12 +750,14 @@ MonoBehaviour:
   jumpClip: {fileID: 0}
   life: 5
   invulnTime: 1
-  zonebam: {fileID: 0}
   grounded: 0
   groundPosition: {x: -0.06, y: -0.91, z: 0}
   groundSize: {x: 0.6, y: 0.2}
   run: {fileID: 0}
+  ouchtag: ouch
   move: 0
+  timestunouch: 0.2
+  StayOnGround: 1
 --- !u!50 &1781125596
 Rigidbody2D:
   serializedVersion: 4
