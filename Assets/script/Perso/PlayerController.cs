@@ -32,7 +32,7 @@ public class PlayerController : Stopmoving
     bool canOuch = true;
     bool sliding = false;
 
-    bool istapping = false;
+    [HideInInspector] public bool istapping = false;
 
     [HideInInspector] public bool grounded;
     public Vector3 groundPosition;
@@ -156,10 +156,20 @@ public class PlayerController : Stopmoving
                                                         OUCH & DIE
     *****************************************************************************************************************/
 
+    int coroutineisplayingcount = 0;
+
+    IEnumerator    waitbefordying()
+    {
+        while (coroutineisplayingcount > 0)
+            yield return new WaitForEndOfFrame();
+        GameObject.Destroy(gameObject);
+    }
+
     void Die()
     {
         anim.SetTrigger("death");
-        GameObject.Destroy(gameObject);
+        gameObject.SetActive(false);
+        StartCoroutine(waitbefordying());
     }
 
     void ouch(Vector2 impact2)
@@ -174,6 +184,7 @@ public class PlayerController : Stopmoving
                 audiosource.PlayOneShot(ouchClip, .6f);
             anim.SetTrigger("ouch");
         }
+		coroutineisplayingcount += 3;
         StartCoroutine(ResetCanOuch());
         StartCoroutine(stunouch(impact2));
         StartCoroutine(impactoEffect());
@@ -187,6 +198,7 @@ public class PlayerController : Stopmoving
         yield return new WaitForSeconds(0.3f);
         vcamperlin.m_AmplitudeGain = 0;
         cannotmove = false;
+        coroutineisplayingcount--;
     }
 
     public float timestunouch = 0.2f;
@@ -198,12 +210,14 @@ public class PlayerController : Stopmoving
         yield return new WaitForSeconds(timestunouch);
         spriteMaterial.SetFloat("_isflashing", 0);
         cannotmove = false;
+        coroutineisplayingcount--;
     }
 
     IEnumerator ResetCanOuch()
     {
         yield return new WaitForSeconds(invulnTime);
         canOuch = true;
+        coroutineisplayingcount--;
     }
 
     /*****************************************************************************************************************
@@ -259,10 +273,8 @@ public class PlayerController : Stopmoving
 
         if (base.cannotmove == true)
             return;
-        // Debug.Log(name);
 
         Move(move);
-        Debug.DrawRay(transform.position, impacto, Color.red);
     }
 
     /*****************************************************************************************************************
@@ -279,7 +291,7 @@ public class PlayerController : Stopmoving
     }
 
 
-    protected void OnTriggerEnter2D(Collider2D other)
+    virtual protected void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "OS")
         {

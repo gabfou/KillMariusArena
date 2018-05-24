@@ -38,6 +38,7 @@ public class JumpingCharge : MonoBehaviour {
 	{
 		isInJumpingCharging = true;
 		ps.cannotmove = true;
+		ps.istapping = true;
 		ps.tryjump(chargejumppower);
 		OuchZone.enabled = true;
 		while (true)
@@ -56,13 +57,14 @@ public class JumpingCharge : MonoBehaviour {
 		ps.cannotmove = false;
 		actualcd = cd;
 		isInJumpingCharging = false;
+		ps.istapping = false;
 	}
 
 	private void OnTriggerStay2D(Collider2D other)
 	{
 		if (actualcd > 0 || isInJumpingCharging)
 			return ;
-		if (other.tag == "Player" && ps.grounded && ps.canJump)
+		if (other.tag == "Player" && ps.grounded && ps.canJump && ps.istapping)
 			StartCoroutine(JumpingCharging());
 	}
 }

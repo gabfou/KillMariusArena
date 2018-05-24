@@ -43,7 +43,7 @@ public class Agro : PlayerController {
 		
 	}
 
-	private void OnTriggerEnter2D(Collider2D other)
+	override protected void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Player")
 			Cible = other.transform;
