@@ -8,7 +8,7 @@ public class PlayerController : Stopmoving
 {
 
     public float maxSpeed = 1f;
-    [HideInInspector] public bool facingRight = false;
+    public bool facingRight = false;
 
     [Space]
     public float jumpPower = 10f;
@@ -291,7 +291,7 @@ public class PlayerController : Stopmoving
     }
 
 
-    virtual protected void OnTriggerEnter2D(Collider2D other)
+    virtual protected void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "OS")
         {
