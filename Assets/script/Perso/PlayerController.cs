@@ -51,6 +51,7 @@ public class PlayerController : Stopmoving
     CinemachineVirtualCamera vcam;
     CinemachineBasicMultiChannelPerlin vcamperlin;
     Material spriteMaterial;
+    bool isPlayer = false;
 
     // Use this for initialization
 
@@ -70,6 +71,8 @@ public class PlayerController : Stopmoving
         // Flip();
         // anim.SetBool("facingright", facingRight);
         anim.SetBool("grounded", grounded);
+        if (tag == "Player")
+            isPlayer = true;
 
     }
 
@@ -300,8 +303,6 @@ public class PlayerController : Stopmoving
             return;
         }
 
-        if (other.tag == "bam")
-            Debug.Log(name);
         if (canOuch && other.tag == ouchtag)
             ouch((transform.position - other.transform.position).normalized * 6 + Vector3.up * 12);
     }

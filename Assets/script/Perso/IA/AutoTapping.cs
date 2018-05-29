@@ -32,10 +32,8 @@ public class AutoTapping : MonoBehaviour {
 	// Update is called once per frame
 	private void OnTriggerStay2D(Collider2D other)
 	{
-        Debug.Log("?");
 		if (other.tag == "Player" && pc.istapping == false)
         {
-            Debug.Log("yay");
 			StartCoroutine(Tapping());
         }
 	}

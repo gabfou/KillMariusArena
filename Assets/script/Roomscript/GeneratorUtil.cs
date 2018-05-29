@@ -107,11 +107,15 @@ public class GeneratorUtil : MonoBehaviour {
 			if (IsExitSideAndSizeMatch(room.exitlist[i], p) && CheckIfRoomFit(room.bounds, p.pos - room.exitlist[i].center))
 			{
 				Room newr = GameObject.Instantiate(room, p.pos - room.exitlist[i].center, Quaternion.identity); // apparament le start de la nouvelle room n est pas apeller avant la fin de la fonction faudrait savoir si c est pas juste du hasard
+
 				// adding and attach the tpzone
 				TpZone t1 = newr.addTpFromExit(room.exitlist[i]);
 				TpZone t2 = p.parent.addTpFromExit(p);
 				t1.exit = (Vector2)t1.transform.position + getVecInDirOfSide(room.exitlist[i].side, 1.2f);
+				t1.exitroom = p.parent;
 				t2.exit = (Vector2)t2.transform.position + getVecInDirOfSide(p.side, 1.2f);
+				t2.exitroom = room.exitlist[i].parent;
+
 				// nettoyage
 				newr.SupExit(room.exitlist[i]);
 				newr.init();

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(PolygonCollider2D))]
 public class Room : MonoBehaviour {
 
 	// Use this for initialization
@@ -10,6 +12,7 @@ public class Room : MonoBehaviour {
 	GeneratorUtil gu;
 	public Bounds bounds;
 	public List<TpZone> listTpZone;
+	[HideInInspector] public PolygonCollider2D Colliderbounds;
 
 	void Start () {
 		init();
@@ -29,15 +32,13 @@ public class Room : MonoBehaviour {
 			e.parent = this;
 		}
 		foreach(TpZone t in listTpZone)
-		{
-			Debug.Log("fdsf");
 			t.transform.position += transform.position;
-		}
 
 		bounds.center += transform.position;
 		gu.listporte.AddRange(exitlist);
 		gu.listroomplaced.Add(this);
 		initdone = true;
+		Colliderbounds = GetComponent<PolygonCollider2D>();
 		// Debug.Log("dafuq2 " + Time.timeSinceLevelLoad);
 	}
 	

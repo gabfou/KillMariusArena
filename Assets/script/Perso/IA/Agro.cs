@@ -48,11 +48,11 @@ public class Agro : PlayerController {
 		if (other.tag == "Player")
 			Cible = other.transform;
 	}
-	// override protected void OnTriggerStay2D(Collider2D other)
-	// {
-	// 	if (realcol.bounds.Intersects(other.bounds))
-	// 		base.OnTriggerStay2D(other);
-	// }
+	override protected void OnTriggerStay2D(Collider2D other)
+	{
+		if (realcol.bounds.Intersects(other.bounds))
+			base.OnTriggerStay2D(other);
+	}
 
 	// private void OnTriggerEnter2D(Collider2D other)
 	// {
