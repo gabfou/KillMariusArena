@@ -7,43 +7,36 @@ using Cinemachine;
 public class PlayerController : Stopmoving
 {
 
-    public float maxSpeed = 1f;
+    [Header("Basic setting")]
     public bool facingRight = false;
+    public int life = 5;
+    public float invulnTime = 1f;
+    public string ouchtag = "ouch";
+    public float timestunouch = 0.2f;
 
-    [Space]
+    [Header("Mobility and groundaison (and dash)")]
+    public float maxSpeed = 1f;
+    public float minSlideVelocity = 3f;
+    public float slimeVelocityIgnore = .5f;
     public float jumpPower = 10f;
     public float jumpIdle = .3f;
+    public Vector3 groundPosition;
+    public Vector2 groundSize;
     public float maxYVelocity = 8f;
-    public float minYVelocity = -6f;
-    [HideInInspector] public bool canJump = true;
+    public float minYVelocity = -6f;	
+	public float timedashinsc = 0.1f;
+	public float distanceofdash = 10f;
+	public bool isinvuindash = true;
+	public float dashcd = 0.5f;
 
-    [Space]
-    public float minSlideVelocity = 3f;
-
-    [Space]
-    public float slimeVelocityIgnore = .5f;
-
-    [Space]
+    [Header("Sound")]
     public AudioClip ouchClip;
     public AudioClip jumpClip;
 
-    public int life = 5;
-    public float invulnTime = 1f;
-    bool canOuch = true;
-    bool sliding = false;
-
+    [HideInInspector] public bool canJump = true;
     [HideInInspector] public bool istapping = false;
-
     [HideInInspector] public bool grounded;
-    public Vector3 groundPosition;
-    public Vector2 groundSize;
     public AudioClip run;
-
-    new Rigidbody2D rigidbody2D;
-    SpriteRenderer spriteRenderer;
-    Animator anim;
-    AudioSource audiosource;
-    public string ouchtag = "ouch";
 
     [HideInInspector] public float move = 0;
 
@@ -52,6 +45,13 @@ public class PlayerController : Stopmoving
     CinemachineBasicMultiChannelPerlin vcamperlin;
     Material spriteMaterial;
     bool isPlayer = false;
+    bool canOuch = true;
+    bool sliding = false;
+    new Rigidbody2D rigidbody2D;
+    SpriteRenderer spriteRenderer;
+    Animator anim;
+    AudioSource audiosource;
+
 
     // Use this for initialization
 
@@ -68,11 +68,13 @@ public class PlayerController : Stopmoving
         audiosource = Camera.main.GetComponent<AudioSource>();
         vcam = Camera.main.GetComponent<CinemachineBrain>().ActiveVirtualCamera as CinemachineVirtualCamera;
         vcamperlin = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+		isdashing = false;
         // Flip();
         // anim.SetBool("facingright", facingRight);
         anim.SetBool("grounded", grounded);
         if (tag == "Player")
             isPlayer = true;
+		candash = true;
 
     }
 
@@ -102,8 +104,12 @@ public class PlayerController : Stopmoving
         istapping = false;
     }
 
+	bool isdashing = false;
+
     public void Move(float move)
     {
+		if (isdashing)
+			return ;
         if (audiosource && run)
         {
             if (grounded && audiosource.isPlaying == false && move != 0)
@@ -165,17 +171,18 @@ public class PlayerController : Stopmoving
     {
         while (coroutineisplayingcount > 0)
             yield return new WaitForEndOfFrame();
-        GameObject.Destroy(gameObject);
+	gameObject.SetActive(false);
+        // GameObject.Destroy(gameObject);
     }
 
     void Die()
     {
+        spriteRenderer.enabled = false;
         anim.SetTrigger("death");
-        gameObject.SetActive(false);
         StartCoroutine(waitbefordying());
     }
 
-    void ouch(Vector2 impact2)
+    public void ouch(Vector2 impact2)
     {
         canOuch = false;
         life--;
@@ -187,7 +194,6 @@ public class PlayerController : Stopmoving
                 audiosource.PlayOneShot(ouchClip, .6f);
             anim.SetTrigger("ouch");
         }
-		coroutineisplayingcount += 3;
         StartCoroutine(ResetCanOuch());
         StartCoroutine(stunouch(impact2));
         StartCoroutine(impactoEffect());
@@ -195,6 +201,7 @@ public class PlayerController : Stopmoving
 
     IEnumerator impactoEffect()
     {
+		coroutineisplayingcount++;
         vcamperlin = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         vcamperlin.m_AmplitudeGain = 0.5f;
         vcamperlin.m_FrequencyGain = 30;
@@ -204,9 +211,9 @@ public class PlayerController : Stopmoving
         coroutineisplayingcount--;
     }
 
-    public float timestunouch = 0.2f;
     IEnumerator stunouch(Vector2 impact)
     {
+		coroutineisplayingcount++;
         cannotmove = true;
         rigidbody2D.velocity = impact;
         spriteMaterial.SetFloat("_isflashing", 1);
@@ -218,6 +225,7 @@ public class PlayerController : Stopmoving
 
     IEnumerator ResetCanOuch()
     {
+		coroutineisplayingcount++;
         yield return new WaitForSeconds(invulnTime);
         canOuch = true;
         coroutineisplayingcount--;
@@ -250,6 +258,38 @@ public class PlayerController : Stopmoving
     }
 
     /*****************************************************************************************************************
+														DASH
+    *******************************************************************************************************************/
+
+	bool candash = true;
+
+	IEnumerator dash()
+	{
+		coroutineisplayingcount++;
+		if (move == 0)
+			Debug.Log(gameObject.name + " trying to dodge without moving");
+		else if (candash == true)
+		{
+			candash = false;
+			anim.SetBool("isdashing", true);
+			float timer = 0;
+			float movebysecond = distanceofdash / timedashinsc;
+			float sign = Mathf.Sign(move);
+			while (timer < timedashinsc)
+			{
+				rigidbody2D.MovePosition(transform.position + new Vector3(sign * movebysecond * Time.deltaTime, 0, 0));
+				timer += Time.deltaTime;
+				yield return new WaitForEndOfFrame();
+			}
+			yield return new WaitForSeconds(dashcd);
+			anim.SetBool("isdashing", false);
+			candash = true;
+		}
+		coroutineisplayingcount--;
+	}
+
+
+    /*****************************************************************************************************************
                                                         UPDATE
     *****************************************************************************************************************/
 
@@ -266,6 +306,9 @@ public class PlayerController : Stopmoving
 
         if (Input.GetKeyDown(KeyCode.LeftControl))
             StartCoroutine(Tapping());
+
+		if (Input.GetKeyDown(KeyCode.X))
+            StartCoroutine(dash());
     }
 
     protected virtual void FixedUpdate()
