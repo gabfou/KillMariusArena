@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class JumpingCharge : MonoBehaviour {
 
@@ -17,7 +18,7 @@ public class JumpingCharge : MonoBehaviour {
 	void Start () {
 		ps = GetComponentInParent<PlayerController>();
 		anim = GetComponentInParent<Animator>();
-		OuchZone = GetComponentInChildren<Collider2D>();
+		OuchZone = GetComponentsInChildren<Collider2D>(true).Where(c => c.tag == "ouch").FirstOrDefault();
 	}
 
 	private void OnEnable()
@@ -49,6 +50,7 @@ public class JumpingCharge : MonoBehaviour {
 			yield return new WaitForEndOfFrame();
 		}
 		OuchZone.enabled = false;
+		ps.istapping = false;
 		ps.Move(0);
 		anim.SetBool("TakingTimeToCoolDown", true);
 		yield return new WaitForSeconds(TimeToCoolDown);
@@ -57,14 +59,18 @@ public class JumpingCharge : MonoBehaviour {
 		ps.cannotmove = false;
 		actualcd = cd;
 		isInJumpingCharging = false;
-		ps.istapping = false;
+	}
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		OnTriggerStay2D(other);
 	}
 
 	private void OnTriggerStay2D(Collider2D other)
 	{
 		if (actualcd > 0 || isInJumpingCharging)
 			return ;
-		if (other.tag == "Player" && ps.grounded && ps.canJump && ps.istapping)
+		if (other.tag == "Player" && ps.grounded && ps.canJump && !ps.istapping)
 			StartCoroutine(JumpingCharging());
 	}
 }

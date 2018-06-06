@@ -44,10 +44,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
-      <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
+      <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
+      <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEditor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -128,6 +128,13 @@
      <Compile Include="Assets\Cinemachine\Timeline\CinemachineMixer.cs" />
      <Compile Include="Assets\Cinemachine\Timeline\CinemachineShot.cs" />
      <Compile Include="Assets\Cinemachine\Timeline\CinemachineTrack.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\DecalDestroyer.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\ExtinguishableFire.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\GunAim.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\GunShoot.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleCollision.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleExamples.cs" />
+     <Compile Include="Assets\EffectExamples\Shared\Scripts\ParticleMenu.cs" />
      <Compile Include="Assets\script\CameraEffect\camerabalancage.cs" />
      <Compile Include="Assets\script\CameraEffect\ShackyCam.cs" />
      <Compile Include="Assets\script\ForceColisionOnEnable.cs" />
@@ -143,6 +150,7 @@
      <Compile Include="Assets\script\Roomscript\RoomSO.cs" />
      <Compile Include="Assets\script\Roomscript\TpZone.cs" />
      <Compile Include="Assets\sprite\HellTheSecond\AnimationStupid.cs" />
+     <None Include="Assets\EffectExamples\Shared\Shaders\SurfaceShader_VC.shader" />
      <None Include="Assets\recolorshadder.shader" />
      <None Include="Assets\Anima2D\Examples\Shaders\VisibleInsideMask.shader" />
      <None Include="Assets\Anima2D\Examples\Shaders\VisibleOutsideMask.shader" />
@@ -179,199 +187,199 @@
  <HintPath>/Users/gfournie/NoNameYet/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AIModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.ARModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ARModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ARModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AccessibilityModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AccessibilityModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AnimationModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AnimationModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AnimationModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AssetBundleModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AssetBundleModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.AudioModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AudioModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AudioModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.BaselibModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.BaselibModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.BaselibModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.ClothModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.CloudWebServicesModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CloudWebServicesModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CloudWebServicesModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.ClusterInputModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.ClusterRendererModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.CoreModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.CrashReportingModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.CrashReportingModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.DirectorModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.DirectorModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.DirectorModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.FacebookModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.FacebookModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.FacebookModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.GameCenterModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.GameCenterModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.GameCenterModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.GridModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.GridModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.GridModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.HotReloadModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.HotReloadModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.HotReloadModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.IMGUIModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.IMGUIModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.IMGUIModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.ImageConversionModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ImageConversionModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.InputModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.InputModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.InputModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.JSONSerializeModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.JSONSerializeModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.ParticleSystemModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ParticleSystemModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.ParticlesLegacyModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ParticlesLegacyModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ParticlesLegacyModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.PerformanceReportingModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.PerformanceReportingModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.PhysicsModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.PhysicsModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.PhysicsModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Physics2DModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.Physics2DModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.Physics2DModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.ScreenCaptureModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.ScreenCaptureModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.SharedInternalsModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SharedInternalsModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.SpatialTrackingModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpatialTrackingModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpatialTrackingModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.SpriteMaskModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpriteMaskModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.SpriteShapeModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SpriteShapeModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.StyleSheetsModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.StyleSheetsModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.SubstanceModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SubstanceModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.SubstanceModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TLSModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TLSModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TLSModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TerrainModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TerrainModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TerrainModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TerrainPhysicsModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TerrainPhysicsModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TextRenderingModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TextRenderingModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TilemapModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TilemapModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TilemapModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.TimelineModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TimelineModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.TimelineModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UIModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UIModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UIModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UIElementsModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UIElementsModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UIElementsModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UNETModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UNETModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UNETModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UmbraModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UmbraModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UmbraModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UnityAnalyticsModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityAnalyticsModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UnityConnectModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityConnectModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UnityWebRequestModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UnityWebRequestAudioModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UnityWebRequestTextureModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UnityWebRequestWWWModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.VRModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VRModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VRModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.VehiclesModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VehiclesModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VehiclesModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.VideoModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VideoModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.VideoModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.WebModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.WebModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.WebModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.WindModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.WindModule.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.XRModule">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
  </Reference>
  <Reference Include="Unity.Locator">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/Managed/Unity.Locator.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/Managed/Unity.Locator.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Networking">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Timeline">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UIAutomation">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/UnityExtensions/Unity/UIAutomation/UnityEngine.UIAutomation.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.GoogleAudioSpatializer">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/UnityExtensions/Unity/UnityGoogleAudioSpatializer/RuntimeEditor/UnityEngine.GoogleAudioSpatializer.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.HoloLens">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.SpatialTracking">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
  </Reference>
  <Reference Include="NSubstitute">
  <HintPath>/Users/gfournie/Library/Unity/cache/packages/staging-packages.unity.com/com.unity.2d.common@1.0.9-preview/Tests/EditorTests/Lib/NSubstitute/NSubstitute.dll</HintPath>
@@ -383,31 +391,31 @@
  <HintPath>/Users/gfournie/Library/Unity/cache/packages/staging-packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
  </Reference>
  <Reference Include="mscorlib">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
  </Reference>
  <Reference Include="System">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.dll</HintPath>
  </Reference>
  <Reference Include="System.Core">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.Core.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.Core.dll</HintPath>
  </Reference>
  <Reference Include="System.Runtime.Serialization">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.Runtime.Serialization.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.Runtime.Serialization.dll</HintPath>
  </Reference>
  <Reference Include="System.Xml">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.Xml.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.Xml.dll</HintPath>
  </Reference>
  <Reference Include="System.Xml.Linq">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.Xml.Linq.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/System.Xml.Linq.dll</HintPath>
  </Reference>
  <Reference Include="UnityScript">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/UnityScript.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/UnityScript.dll</HintPath>
  </Reference>
  <Reference Include="UnityScript.Lang">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/UnityScript.Lang.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/UnityScript.Lang.dll</HintPath>
  </Reference>
  <Reference Include="Boo.Lang">
- <HintPath>/Users/gfournie/Unity/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
+ <HintPath>/Users/gfournie/Unity 2/Editor/2018.1.0f2/Unity.app/Contents/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
  </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

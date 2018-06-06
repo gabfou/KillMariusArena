@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using System.Linq;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : Stopmoving
@@ -14,7 +15,7 @@ public class PlayerController : Stopmoving
     public string ouchtag = "ouch";
     public float timestunouch = 0.2f;
 
-    [Header("Mobility and groundaison (and dash)")]
+    [Header("Mobility and groundaison")]
     public float maxSpeed = 1f;
     public float minSlideVelocity = 3f;
     public float slimeVelocityIgnore = .5f;
@@ -23,7 +24,9 @@ public class PlayerController : Stopmoving
     public Vector3 groundPosition;
     public Vector2 groundSize;
     public float maxYVelocity = 8f;
-    public float minYVelocity = -6f;	
+    public float minYVelocity = -6f;
+
+    [Header("Dash")]
 	public float timedashinsc = 0.1f;
 	public float distanceofdash = 10f;
 	public bool isinvuindash = true;
@@ -52,6 +55,8 @@ public class PlayerController : Stopmoving
     Animator anim;
     AudioSource audiosource;
 
+    Collider2D  col;
+
 
     // Use this for initialization
 
@@ -75,7 +80,7 @@ public class PlayerController : Stopmoving
         if (tag == "Player")
             isPlayer = true;
 		candash = true;
-
+        col = GetComponents<Collider2D>().Where(c => !c.isTrigger).FirstOrDefault();
     }
 
     void Start()
@@ -122,9 +127,9 @@ public class PlayerController : Stopmoving
                 audiosource.Stop();
         }
 
-        if (move > 0 && facingRight)
+        if (!istapping && move > 0 && facingRight)
             Flip();
-        else if (move < 0 && !facingRight)
+        else if (!istapping && move < 0 && !facingRight)
             Flip();
         anim.SetFloat("velx", move);
         anim.SetBool("ismoving", move != 0);
@@ -193,10 +198,10 @@ public class PlayerController : Stopmoving
             if (audiosource && ouchClip)
                 audiosource.PlayOneShot(ouchClip, .6f);
             anim.SetTrigger("ouch");
+            StartCoroutine(ResetCanOuch());
+            StartCoroutine(stunouch(impact2));
+            StartCoroutine(impactoEffect());
         }
-        StartCoroutine(ResetCanOuch());
-        StartCoroutine(stunouch(impact2));
-        StartCoroutine(impactoEffect());
     }
 
     IEnumerator impactoEffect()
@@ -272,6 +277,10 @@ public class PlayerController : Stopmoving
 		{
 			candash = false;
 			anim.SetBool("isdashing", true);
+            if (isinvuindash == false)
+                col.enabled = false;
+            else
+                col.isTrigger = true;
 			float timer = 0;
 			float movebysecond = distanceofdash / timedashinsc;
 			float sign = Mathf.Sign(move);
@@ -281,8 +290,12 @@ public class PlayerController : Stopmoving
 				timer += Time.deltaTime;
 				yield return new WaitForEndOfFrame();
 			}
+            if (isinvuindash == false)
+                col.enabled = true;
+            else
+                col.isTrigger = false;
+            anim.SetBool("isdashing", false);
 			yield return new WaitForSeconds(dashcd);
-			anim.SetBool("isdashing", false);
 			candash = true;
 		}
 		coroutineisplayingcount--;
@@ -298,7 +311,10 @@ public class PlayerController : Stopmoving
         if (life < 0)
             return;
         if (base.cannotmove == true)
+        {
+            Debug.Log("dfs");
             return;
+        }
         move = Input.GetAxisRaw("Horizontal");
 
         if (Input.GetKeyDown(KeyCode.Space))

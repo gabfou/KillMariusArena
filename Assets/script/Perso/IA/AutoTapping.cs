@@ -29,7 +29,6 @@ public class AutoTapping : MonoBehaviour {
 		pc = GetComponentInParent<PlayerController>();
 	}
 	
-	// Update is called once per frame
 	private void OnTriggerStay2D(Collider2D other)
 	{
 		if (other.tag == "Player" && pc.istapping == false)
