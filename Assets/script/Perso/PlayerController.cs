@@ -58,7 +58,18 @@ public class PlayerController : Stopmoving
     Collider2D  col;
 
 
-    // Use this for initialization
+    /*****************************************************************************************************************
+                                                        INITIALISATION
+    *****************************************************************************************************************/
+
+    protected void reinit()
+    {
+        isdashing = false;
+        // Flip();
+        // anim.SetBool("facingright", facingRight);
+        anim.SetBool("grounded", grounded);
+		candash = true;
+    }
 
     protected void init()
     {
@@ -73,20 +84,26 @@ public class PlayerController : Stopmoving
         audiosource = Camera.main.GetComponent<AudioSource>();
         vcam = Camera.main.GetComponent<CinemachineBrain>().ActiveVirtualCamera as CinemachineVirtualCamera;
         vcamperlin = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-		isdashing = false;
-        // Flip();
-        // anim.SetBool("facingright", facingRight);
-        anim.SetBool("grounded", grounded);
         if (tag == "Player")
             isPlayer = true;
-		candash = true;
         col = GetComponents<Collider2D>().Where(c => !c.isTrigger).FirstOrDefault();
+        reinit();
+    }
+
+    protected void OnEnable()
+    {
+        init();
     }
 
     void Start()
     {
-        init();
+        reinit();
     }
+
+
+    /*****************************************************************************************************************
+                                                        PAS RANGÉ
+    *****************************************************************************************************************/
 
     protected void allCheck()
     {
@@ -177,6 +194,7 @@ public class PlayerController : Stopmoving
         while (coroutineisplayingcount > 0)
             yield return new WaitForEndOfFrame();
 	gameObject.SetActive(false);
+    spriteRenderer.enabled = true;
         // GameObject.Destroy(gameObject);
     }
 

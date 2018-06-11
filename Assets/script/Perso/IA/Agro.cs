@@ -12,26 +12,26 @@ public class Agro : PlayerController {
 
 	void Start () {
 		init();
+		base.ouchtag = "bam";
 		// facingRight = !facingRight;
 		// rbody = GetComponent<Rigidbody2D>();
 		realcol = GetComponents<Collider2D>().Where(c => !c.isTrigger).FirstOrDefault();
 	}
 
-	private void OnEnable()
-	{
-		base.ouchtag = "bam";
-	}
 
 	// Update is called once per frame
 	protected override void FixedUpdate () {
-		if (Cible)
+		if (!base.cannotmove)
 		{
-			move = Mathf.Sign((Cible.position - transform.position).x);
-			if (!(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 2, LayerMask.GetMask("Ground"))))
+			if (Cible)
+			{
+				move = Mathf.Sign((Cible.position - transform.position).x);
+				if (!(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 2, LayerMask.GetMask("Ground"))))
+					move = 0;
+			}
+			else
 				move = 0;
 		}
-		else
-			move = 0;
 		base.FixedUpdate();
 		if (StayOnGround && Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), 2, LayerMask.GetMask("Ground")))
 			tryjump();

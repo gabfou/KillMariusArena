@@ -37,18 +37,23 @@ public class JumpingCharge : MonoBehaviour {
 
 	IEnumerator JumpingCharging()
 	{
+		float move = (ps.facingRight) ? -1 : 1;
+		ps.Move(move * 2);
 		isInJumpingCharging = true;
 		ps.cannotmove = true;
 		ps.istapping = true;
 		ps.tryjump(chargejumppower);
+		anim.SetBool("istapping", true);
 		OuchZone.enabled = true;
 		while (true)
 		{
+			ps.Move(move * coefspeed);
 			if (ps.grounded && ps.canJump)
 				break ;
 			ps.Move(ps.move * coefspeed);
 			yield return new WaitForEndOfFrame();
 		}
+		anim.SetBool("istapping", false);
 		OuchZone.enabled = false;
 		ps.istapping = false;
 		ps.Move(0);
