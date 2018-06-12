@@ -6436,8 +6436,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da2d8eec5d3a4968ad9f7e2d08e905f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chargejumppower: 10
-  coefspeed: 10
+  chargejumppower: 12
+  coefspeed: 20
   cd: 0.5
 --- !u!61 &705250763
 BoxCollider2D:
@@ -22372,7 +22372,7 @@ MonoBehaviour:
   maxYVelocity: 20
   minYVelocity: -15
   timedashinsc: 0.1
-  distanceofdash: 10
+  distanceofdash: 150
   isinvuindash: 1
   dashcd: 0.5
   ouchClip: {fileID: 0}
@@ -23161,7 +23161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1896101574
 Transform:
   m_ObjectHideFlags: 0
@@ -23181,7 +23181,7 @@ PolygonCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1896101573}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

@@ -83,7 +83,8 @@ public class PlayerController : Stopmoving
         anim = GetComponent<Animator>();
         audiosource = Camera.main.GetComponent<AudioSource>();
         vcam = Camera.main.GetComponent<CinemachineBrain>().ActiveVirtualCamera as CinemachineVirtualCamera;
-        vcamperlin = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+        if (vcam)
+            vcamperlin = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         if (tag == "Player")
             isPlayer = true;
         col = GetComponents<Collider2D>().Where(c => !c.isTrigger).FirstOrDefault();
@@ -302,12 +303,17 @@ public class PlayerController : Stopmoving
 			float timer = 0;
 			float movebysecond = distanceofdash / timedashinsc;
 			float sign = Mathf.Sign(move);
+            isdashing = true;
 			while (timer < timedashinsc)
 			{
-				rigidbody2D.MovePosition(transform.position + new Vector3(sign * movebysecond * Time.deltaTime, 0, 0));
+				// rigidbody2D.MovePosition(transform.position + new Vector3(sign * movebysecond * Time.deltaTime, 0, 0));
+                Debug.Log("dafuq");
+                rigidbody2D.velocity = new Vector2(sign * movebysecond * Time.deltaTime, 0);
 				timer += Time.deltaTime;
 				yield return new WaitForEndOfFrame();
 			}
+            isdashing = false;
+            rigidbody2D.velocity = new Vector2(0, 0);
             if (isinvuindash == false)
                 col.enabled = true;
             else
@@ -335,13 +341,31 @@ public class PlayerController : Stopmoving
         }
         move = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space)
+            #if UNITY_STANDALONE_OSX
+            || Input.GetButtonDown("joystick button 16")
+            #else
+            || Input.GetButtonDown("joystick button 0")
+            #endif
+            )
             tryjump();
 
-        if (Input.GetKeyDown(KeyCode.LeftControl))
+        if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetButtonDown("joystick button 2")
+            #if UNITY_STANDALONE_OSX
+            || Input.GetButtonDown("joystick button 18")
+            #else
+            || Input.GetButtonDown("joystick button 2")
+            #endif
+            )
             StartCoroutine(Tapping());
 
-		if (Input.GetKeyDown(KeyCode.X))
+		if (Input.GetKeyDown(KeyCode.X)
+            #if UNITY_STANDALONE_OSX
+            || Input.GetButtonDown("joystick button 13") || Input.GetButtonDown("joystick button 14")
+            #else
+            || Input.GetButtonDown("joystick button 4") || Input.GetButtonDown("joystick button 5")
+            #endif
+            )
             StartCoroutine(dash());
     }
 
