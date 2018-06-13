@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: 3f7f539ed52564d38bea8bed843eb78e
+guid: 4acba867a7c7e427595694254ceb51a2
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: perso1_2_0
-    21300002: perso1_2_1
-    21300004: perso1_2_2
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -41,7 +38,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -81,73 +78,35 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: perso1_2_0
-      rect:
-        serializedVersion: 2
-        x: 22
-        y: 1553
-        width: 1000
-        height: 1231
-      alignment: 9
-      pivot: {x: 0.5765977, y: 0.5738328}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae5b20d4e734c4578b461ed61f91b23b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: perso1_2_1
-      rect:
-        serializedVersion: 2
-        x: 988
-        y: 1640
-        width: 1158
-        height: 1397
-      alignment: 9
-      pivot: {x: 0.3257032, y: 0.47146857}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 76cf7980da15448df8f4866e2c9370e6
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: perso1_2_2
-      rect:
-        serializedVersion: 2
-        x: 3301
-        y: 1591
-        width: 1021
-        height: 966
-      alignment: 9
-      pivot: {x: 0.6063337, y: 0.4887612}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a03dbad3d4e3942b9b647b36ae9956db
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: e09a0c9b914f14c30a0fb0af192be7c6
+    spriteID: 
     vertices: []
     indices: 
     edges: []
