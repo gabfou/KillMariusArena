@@ -336,35 +336,34 @@ public class PlayerController : Stopmoving
             return;
         if (base.cannotmove == true)
         {
-            Debug.Log("dfs");
             return;
         }
         move = Input.GetAxisRaw("Horizontal");
 
         if (Input.GetKeyDown(KeyCode.Space)
-            // #if UNITY_STANDALONE_OSX
-            // || Input.GetButtonDown("joystick button 16")
-            // #else
-            // || Input.GetButtonDown("joystick button 0")
-            // #endif
+            #if UNITY_STANDALONE_OSX
+            || Input.GetKeyDown(KeyCode.Joystick1Button16)
+            #else
+            || Input.GetKeyDown(KeyCode.Joystick1Button0)
+            #endif
             )
             tryjump();
 
         if (Input.GetKeyDown(KeyCode.LeftControl)
-            // #if UNITY_STANDALONE_OSX
-            // || Input.GetButtonDown("joystick button 18")
-            // #else
-            // || Input.GetButtonDown("joystick button 2")
-            // #endif
+            #if UNITY_STANDALONE_OSX
+            || Input.GetKeyDown(KeyCode.Joystick1Button18)
+            #else
+            || Input.GetKeyDown(KeyCode.Joystick1Button2)
+            #endif
             )
             StartCoroutine(Tapping());
 
 		if (Input.GetKeyDown(KeyCode.X)
-            // #if UNITY_STANDALONE_OSX
-            // || Input.GetButtonDown("joystick button 13") || Input.GetButtonDown("joystick button 14")
-            // #else
-            // || Input.GetButtonDown("joystick button 4") || Input.GetButtonDown("joystick button 5")
-            // #endif
+            #if UNITY_STANDALONE_OSX
+            || Input.GetKeyDown(KeyCode.Joystick1Button13) || Input.GetKeyDown(KeyCode.Joystick1Button14)
+            #else
+            || Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.Joystick1Button5)
+            #endif
             )
             StartCoroutine(dash());
     }
