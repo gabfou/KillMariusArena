@@ -1,11 +1,13 @@
 fileFormatVersion: 2
-guid: 99076bc936ebe4f649ed05a2d9a4411b
+guid: 9302c8bf3d2cb42f4817fde56f5222bc
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Backround_0
-    21300002: Backround_1
-    21300004: Backround_2
-    21300006: Backround_3
+    21300000: nuage_0
+    21300002: nuage_1
+    21300004: nuage_2
+    21300006: nuage_3
+    21300008: nuage_4
+    21300010: nuage_5
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -84,77 +86,39 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Backround_0
+      name: nuage_0
       rect:
         serializedVersion: 2
-        x: 2
-        y: 889
-        width: 1358
-        height: 709
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cad8fbfb07b24074a8ca34f910f85e13
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Backround_1
-      rect:
-        serializedVersion: 2
-        x: 1391
-        y: 282
-        width: 1009
-        height: 1271
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e4d18cc1510b7384ebd2c2f97dee90be
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Backround_2
-      rect:
-        serializedVersion: 2
-        x: 31
-        y: 455
-        width: 1276
-        height: 330
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e50b5c1f380cc07449d5c3076ca1c97c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Backround_3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 147
-        width: 2400
-        height: 109
+        x: 86
+        y: 530
+        width: 540
+        height: 313
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,7 +126,107 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 919aa77dd488d6e4e94e9a210fc771ef
+      spriteID: 6dc56db77c8ae4b6e920ec04d713a64c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nuage_1
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 523
+        width: 554
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8d3b275b626b43c4935c036cbc17c61
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nuage_2
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 266
+        width: 677
+        height: 227
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d00aea364ae32490c9989627bd639779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nuage_3
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 239
+        width: 609
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4b9753b040804cbba500109c3fca185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nuage_4
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 28
+        width: 534
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad00dc832de6421995d8cdad155db31
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: nuage_5
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 37
+        width: 646
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 008e3fedc810d40d4bf355363aaaf48f
       vertices: []
       indices: 
       edges: []
@@ -170,7 +234,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2f97c977242bd45b1942097d73cda6d9
     vertices: []
     indices: 
     edges: []

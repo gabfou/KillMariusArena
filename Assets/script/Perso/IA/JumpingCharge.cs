@@ -31,6 +31,16 @@ public class JumpingCharge : MonoBehaviour {
 	void Update () {
 		if (actualcd > 0)
 			actualcd -= Time.deltaTime;
+		if (ps.istapping && ps.TakingDamage == true)
+		{
+			StopCoroutine("JumpingCharging");
+			anim.SetBool("istapping", false);
+			OuchZone.enabled = false;
+			ps.istapping = false;
+			ps.cannotmove = false;
+			isInJumpingCharging = false;
+			anim.SetBool("TakingTimeToCoolDown", false);
+		}
 	}
 
 	bool isInJumpingCharging = false;

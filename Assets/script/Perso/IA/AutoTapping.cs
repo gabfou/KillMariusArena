@@ -9,6 +9,10 @@ public class AutoTapping : MonoBehaviour {
     Animator anim;
     PlayerController pc;
 
+    private void Update()
+    {
+        
+    }
 	IEnumerator Tapping()
     {
         pc.istapping = true;
@@ -20,6 +24,11 @@ public class AutoTapping : MonoBehaviour {
         //     Flip();
 
         yield return new WaitForSeconds(0.5f);
+        StopTapping();
+    }
+
+    void StopTapping()
+    {
         anim.SetBool("istapping", false);
         pc.istapping = false;
     }

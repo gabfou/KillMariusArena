@@ -54,6 +54,7 @@ public class PlayerController : Stopmoving
     SpriteRenderer spriteRenderer;
     Animator anim;
     AudioSource audiosource;
+    [HideInInspector] public bool TakingDamage = false;
 
     Collider2D  col;
 
@@ -123,6 +124,11 @@ public class PlayerController : Stopmoving
         //     Flip();
 
         yield return new WaitForSeconds(0.3f);
+        StopTapping();
+    }
+
+    void    StopTapping()
+    {
         anim.SetBool("istapping", false);
         istapping = false;
     }
@@ -194,8 +200,8 @@ public class PlayerController : Stopmoving
     {
         while (coroutineisplayingcount > 0)
             yield return new WaitForEndOfFrame();
-	gameObject.SetActive(false);
-    spriteRenderer.enabled = true;
+        gameObject.SetActive(false);
+        spriteRenderer.enabled = true;
         // GameObject.Destroy(gameObject);
     }
 
@@ -210,6 +216,7 @@ public class PlayerController : Stopmoving
     {
         canOuch = false;
         life--;
+        StopTapping();
         if (life < 1)
             Die();
         else
@@ -226,10 +233,13 @@ public class PlayerController : Stopmoving
     IEnumerator impactoEffect()
     {
 		coroutineisplayingcount++;
+        TakingDamage = true;
         vcamperlin = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         vcamperlin.m_AmplitudeGain = 0.5f;
         vcamperlin.m_FrequencyGain = 30;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
+        TakingDamage = false;
+        yield return new WaitForSeconds(0.2f);
         vcamperlin.m_AmplitudeGain = 0;
         cannotmove = false;
         coroutineisplayingcount--;
@@ -404,7 +414,7 @@ public class PlayerController : Stopmoving
         }
 
         if (canOuch && other.tag == ouchtag)
-            ouch((transform.position - other.transform.position).normalized * 6 + Vector3.up * 12);
+            ouch((transform.position - other.transform.position).normalized * 2 + Vector3.up * 4);
     }
 
     void OnDrawGizmos()
