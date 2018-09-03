@@ -164,6 +164,5 @@ public class GeneratorUtil : MonoBehaviour {
 
 	void fillexit(Room r)
 	{
-		
 	}
 }
