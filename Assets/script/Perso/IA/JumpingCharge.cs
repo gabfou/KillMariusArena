@@ -55,6 +55,8 @@ public class JumpingCharge : MonoBehaviour {
 		ps.tryjump(chargejumppower);
 		anim.SetBool("istapping", true);
 		OuchZone.enabled = true;
+        if (ps.TappingClip)
+            ps.audiosource.PlayOneShot(ps.TappingClip, ps.tappingVolume);
 		while (true)
 		{
 			ps.Move(move * coefspeed);

@@ -17,13 +17,16 @@ public class AutoTapping : MonoBehaviour {
     {
         pc.istapping = true;
         anim.SetBool("istapping", true);
+
         // move = transform.position.x - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane)).x; // tape ducoter de la sourie (en gros la ca sert a rien)
         // if (!istapping && move > 0 && !facingRight)
         //     Flip();
         // else if (!istapping && move < 0 && facingRight)
         //     Flip();
-
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.25f);
+        if (pc.TappingClip)
+            pc.audiosource.PlayOneShot(pc.TappingClip, pc.tappingVolume);
+        yield return new WaitForSeconds(0.25f);
         StopTapping();
     }
 

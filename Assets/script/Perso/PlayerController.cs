@@ -34,7 +34,11 @@ public class PlayerController : Stopmoving
 
     [Header("Sound")]
     public AudioClip ouchClip;
+    [Range(0, 1)] public float ouchVolume = 0.8f;
     public AudioClip jumpClip;
+    [Range(0, 1)] public float jumpingVolume = 0.5f;
+    public AudioClip TappingClip;
+    [Range(0, 1)] public float tappingVolume = 0.5f;
 
     [HideInInspector] public bool canJump = true;
     [HideInInspector] public bool istapping = false;
@@ -53,7 +57,7 @@ public class PlayerController : Stopmoving
     new Rigidbody2D rigidbody2D;
     SpriteRenderer spriteRenderer;
     Animator anim;
-    AudioSource audiosource;
+    [HideInInspector] public AudioSource audiosource;
     [HideInInspector] public bool TakingDamage = false;
 
     Collider2D  col;
@@ -115,16 +119,21 @@ public class PlayerController : Stopmoving
 
     IEnumerator Tapping()
     {
-        istapping = true;
-        anim.SetBool("istapping", true);
-        // move = transform.position.x - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane)).x; // tape ducoter de la sourie (en gros la ca sert a rien)
-        // if (!istapping && move > 0 && !facingRight)
-        //     Flip();
-        // else if (!istapping && move < 0 && facingRight)
-        //     Flip();
+        if (istapping == false)
+        {
+            if (TappingClip)
+                audiosource.PlayOneShot(TappingClip);
+            istapping = true;
+            anim.SetBool("istapping", true);
+            // move = transform.position.x - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane)).x; // tape ducoter de la sourie (en gros la ca sert a rien)
+            // if (!istapping && move > 0 && !facingRight)
+            //     Flip();
+            // else if (!istapping && move < 0 && facingRight)
+            //     Flip();
 
-        yield return new WaitForSeconds(0.3f);
-        StopTapping();
+            yield return new WaitForSeconds(0.3f);
+            StopTapping();
+        }
     }
 
     void    StopTapping()
@@ -212,17 +221,29 @@ public class PlayerController : Stopmoving
         StartCoroutine(waitbefordying());
     }
 
+    void eventOnDie()
+    {
+        if (tag == "BadGuy")
+        {
+            if (Random.value < 0.05f)
+                audiosource.PlayOneShot(Camera.main.GetComponent<BankSoundStupid>().PlayerMockingHAHAHAHA, 0.7f);
+        }
+    }
+
     public void ouch(Vector2 impact2)
     {
         canOuch = false;
         life--;
         StopTapping();
         if (life < 1)
+        {
+            eventOnDie();
             Die();
+        }
         else
         {
             if (audiosource && ouchClip)
-                audiosource.PlayOneShot(ouchClip, .6f);
+                audiosource.PlayOneShot(ouchClip, ouchVolume);
             anim.SetTrigger("ouch");
             StartCoroutine(ResetCanOuch());
             StartCoroutine(stunouch(impact2));
@@ -317,7 +338,6 @@ public class PlayerController : Stopmoving
 			while (timer < timedashinsc)
 			{
 				// rigidbody2D.MovePosition(transform.position + new Vector3(sign * movebysecond * Time.deltaTime, 0, 0));
-                Debug.Log("dafuq");
                 rigidbody2D.velocity = new Vector2(sign * movebysecond * Time.deltaTime, 0);
 				timer += Time.deltaTime;
 				yield return new WaitForEndOfFrame();
