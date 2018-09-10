@@ -14,8 +14,10 @@ public class Agro : PlayerController {
 	Collider2D realcol;
     public float perfectdistancetocible = 0;
     public DistanceBehavior distanceBehavior = DistanceBehavior.Free;
+    public float MaxDistance = Mathf.Infinity;
 
-	void Start () {
+
+    void Start () {
 		init();
 		base.ouchtag = "bam";
 		// facingRight = !facingRight;
@@ -31,6 +33,11 @@ public class Agro : PlayerController {
 			if (Cible)
 			{
                 float distance = Vector2.Distance(Cible.position, transform.position);
+                if (distance > MaxDistance)
+                {
+                    Cible = null; // peut etre active reactive qaund respawn pres
+                    return ;
+                }
                 int sign = (distance > perfectdistancetocible) ? 1 : -1;
                 if (distance < 0.1f)
                     move = 0;

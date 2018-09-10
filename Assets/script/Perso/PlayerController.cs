@@ -122,7 +122,7 @@ public class PlayerController : Stopmoving
         if (istapping == false)
         {
             if (TappingClip)
-                audiosource.PlayOneShot(TappingClip);
+                audiosource.PlayOneShot(TappingClip, tappingVolume);
             istapping = true;
             anim.SetBool("istapping", true);
             // move = transform.position.x - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane)).x; // tape ducoter de la sourie (en gros la ca sert a rien)
@@ -225,7 +225,7 @@ public class PlayerController : Stopmoving
     {
         if (tag == "BadGuy")
         {
-            if (Random.value < 0.05f)
+            if (Random.value < 1f)
                 audiosource.PlayOneShot(Camera.main.GetComponent<BankSoundStupid>().PlayerMockingHAHAHAHA, 0.7f);
         }
     }
@@ -301,6 +301,7 @@ public class PlayerController : Stopmoving
     {
         if (grounded && canJump)
         {
+            audiosource.PlayOneShot(jumpClip, jumpingVolume);
             rigidbody2D.AddForce(new Vector2(0, jumppower), ForceMode2D.Impulse);
             StartCoroutine(JumpDelay());
             rigidbody2D.velocity = new Vector2(move * maxSpeed, Mathf.Clamp(rigidbody2D.velocity.y, minYVelocity, maxYVelocity));

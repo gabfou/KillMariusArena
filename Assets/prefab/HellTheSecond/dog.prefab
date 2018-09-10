@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4115634737367216}
   - component: {fileID: 60714897763787314}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: OuchZone
   m_TagString: ouch
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 4486265572535052}
   - component: {fileID: 61348282193193074}
   - component: {fileID: 114458426502551358}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: Charge attack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -75,7 +75,7 @@ GameObject:
   - component: {fileID: 4208840845847660}
   - component: {fileID: 61619235244815686}
   - component: {fileID: 114819771833988192}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: BasicAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4794126326889644}
   - component: {fileID: 61947909539786136}
-  m_Layer: 10
+  m_Layer: 14
   m_Name: ouchzone
   m_TagString: ouch
   m_Icon: {fileID: 0}
@@ -372,15 +372,20 @@ MonoBehaviour:
   isinvuindash: 1
   dashcd: 0.5
   ouchClip: {fileID: 0}
+  ouchVolume: 0.8
   jumpClip: {fileID: 0}
+  jumpingVolume: 0.5
+  TappingClip: {fileID: 8300000, guid: 8d2117b082abc5940a5efe2f59140072, type: 3}
+  tappingVolume: 0.176
   canJump: 1
   istapping: 0
   grounded: 0
   run: {fileID: 0}
   move: 0
+  audiosource: {fileID: 0}
   TakingDamage: 0
   StayOnGround: 1
-  perfectdistancetocible: 0
+  perfectdistancetocible: 2
   distanceBehavior: 0
 --- !u!114 &114458426502551358
 MonoBehaviour:

@@ -376,14 +376,18 @@ MonoBehaviour:
   distanceofdash: 1
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
+  ouchClip: {fileID: 8300000, guid: e32ceafbe67c43646b3474d50a888d81, type: 3}
+  ouchVolume: 0.8
   jumpClip: {fileID: 0}
+  jumpingVolume: 0.5
   TappingClip: {fileID: 8300000, guid: 32c93829e02324b4391ba40c378f846c, type: 3}
+  tappingVolume: 0.27
   canJump: 1
   istapping: 0
   grounded: 0
   run: {fileID: 0}
   move: 0
+  audiosource: {fileID: 0}
   TakingDamage: 0
   StayOnGround: 1
   perfectdistancetocible: 1.18
