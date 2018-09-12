@@ -40,6 +40,10 @@ public class PlayerController : Stopmoving
     public AudioClip TappingClip;
     [Range(0, 1)] public float tappingVolume = 0.5f;
 
+    [Header("Ouch")]
+    public float ouchJumpMultPushX = 2;
+    public float ouchJumpMultPushY = 4;
+
     [HideInInspector] public bool canJump = true;
     [HideInInspector] public bool istapping = false;
     [HideInInspector] public bool grounded;
@@ -211,8 +215,8 @@ public class PlayerController : Stopmoving
     {
         while (coroutineisplayingcount > 0)
             yield return new WaitForEndOfFrame();
-        gameObject.SetActive(false);
         spriteRenderer.enabled = true;
+        gameObject.SetActive(false);
         // GameObject.Destroy(gameObject);
     }
 
@@ -439,7 +443,7 @@ public class PlayerController : Stopmoving
         }
 
         if (canOuch && other.tag == ouchtag)
-            ouch((transform.position - other.transform.position).normalized * 2 + Vector3.up * 4);
+            ouch((transform.position - other.transform.position).normalized * ouchJumpMultPushX + Vector3.up * ouchJumpMultPushY);
     }
 
     void OnDrawGizmos()

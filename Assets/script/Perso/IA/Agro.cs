@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Cinemachine;
 
 public class Agro : PlayerController {
 
@@ -20,8 +21,6 @@ public class Agro : PlayerController {
     void Start () {
 		init();
 		base.ouchtag = "bam";
-		// facingRight = !facingRight;
-		// rbody = GetComponent<Rigidbody2D>();
 		realcol = GetComponents<Collider2D>().Where(c => !c.isTrigger).FirstOrDefault();
 	}
 
@@ -62,23 +61,36 @@ public class Agro : PlayerController {
 	{
 
 	}
- 
+
+	CinemachineTargetGroup.Target t; 
+
 	override protected void OnTriggerStay2D(Collider2D other)
 	{
 		if (other.tag == "Player")
+		{
 			Cible = other.transform;
+			t.radius = 2;
+			t.weight = 1;
+			t.target = transform;
+			if (!(!other || other.tag != "Player" || other.GetComponent<CinemachineTargetGroup>() == null))
+			{
+				// List<CinemachineTargetGroup.Target> targets =  other.GetComponent<CinemachineTargetGroup>().m_Targets.ToList();
+				// targets.Add(t);
+				// other.GetComponent<CinemachineTargetGroup>().m_Targets = targets.ToArray();
+			}
+		}
         if (realcol.bounds.Intersects(other.bounds))
             base.OnTriggerStay2D(other);
     }
 
-	// private void OnTriggerEnter2D(Collider2D other)
-	// {
-	// 	if (other.tag == "Player")
-	// 		Cible = other.transform;
-	// }
-
 	private void OnDisable()
 	{
-		Cible = null;
+		if (Cible)
+		{
+			// List<CinemachineTargetGroup.Target> targets =  Cible.GetComponent<CinemachineTargetGroup>().m_Targets.ToList();
+			// targets.Remove(t);
+			// Cible.GetComponent<CinemachineTargetGroup>().m_Targets = targets.ToArray();
+			Cible = null;
+		}
 	}
 }
