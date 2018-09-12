@@ -23,16 +23,27 @@ public class AutoTapping : MonoBehaviour {
         //     Flip();
         // else if (!istapping && move < 0 && facingRight)
         //     Flip();
-        yield return new WaitForSeconds(0.25f);
-        if (pc.TappingClip)
+        for (float i = 0; i < 0.25f; i += Time.deltaTime)
+        {
+            if (pc.istapping == false)
+                StopTapping();
+            yield return new WaitForEndOfFrame();
+        }
+        if (pc.TappingClip && pc.istapping)
             pc.audiosource.PlayOneShot(pc.TappingClip, pc.tappingVolume);
-        yield return new WaitForSeconds(0.25f);
+        for (float i = 0; i < 0.25f; i += Time.deltaTime)
+        {
+            if (pc.istapping == false)
+                StopTapping();
+            yield return new WaitForEndOfFrame();
+        }
         StopTapping();
     }
 
     void StopTapping()
     {
         anim.SetBool("istapping", false);
+        StopCoroutine(Tapping());
         pc.istapping = false;
     }
 
@@ -43,7 +54,7 @@ public class AutoTapping : MonoBehaviour {
 	
 	private void OnTriggerStay2D(Collider2D other)
 	{
-		if (other.tag == "Player" && pc.istapping == false)
+		if (other.tag == "Player" && pc.istapping == false && pc.IsOuchstun == false)
         {
 			StartCoroutine(Tapping());
         }

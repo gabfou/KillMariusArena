@@ -59,6 +59,7 @@ public class PlayerController : Stopmoving
     Animator anim;
     [HideInInspector] public AudioSource audiosource;
     [HideInInspector] public bool TakingDamage = false;
+    [HideInInspector] public bool IsOuchstun = false;
 
     Collider2D  col;
 
@@ -138,6 +139,7 @@ public class PlayerController : Stopmoving
 
     void    StopTapping()
     {
+        StopCoroutine(Tapping());
         anim.SetBool("istapping", false);
         istapping = false;
     }
@@ -269,6 +271,7 @@ public class PlayerController : Stopmoving
     IEnumerator stunouch(Vector2 impact)
     {
 		coroutineisplayingcount++;
+        IsOuchstun = true;
         cannotmove = true;
         rigidbody2D.velocity = impact;
         spriteMaterial.SetFloat("_isflashing", 1);
@@ -276,6 +279,7 @@ public class PlayerController : Stopmoving
         spriteMaterial.SetFloat("_isflashing", 0);
         cannotmove = false;
         coroutineisplayingcount--;
+        IsOuchstun = false;
     }
 
     IEnumerator ResetCanOuch()
@@ -380,7 +384,7 @@ public class PlayerController : Stopmoving
             )
             tryjump();
 
-        if (Input.GetKeyDown(KeyCode.LeftControl)
+        if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl)
             #if UNITY_STANDALONE_OSX
             || Input.GetKeyDown(KeyCode.Joystick1Button18)
             #else

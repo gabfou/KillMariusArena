@@ -47,6 +47,7 @@ public class JumpingCharge : MonoBehaviour {
 
 	IEnumerator JumpingCharging()
 	{
+		actualcd = cd;
 		float move = (ps.facingRight) ? -1 : 1;
 		ps.Move(move * 2);
 		isInJumpingCharging = true;
