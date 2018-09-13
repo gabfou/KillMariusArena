@@ -6,6 +6,7 @@ using System.Linq;
 public class JumpingCharge : MonoBehaviour {
 
 	public float chargejumppower = 10;
+    public float prepjumptime = 0.1f;
 	public float coefspeed = 2f;
 	PlayerController ps;
 	public float cd = 2;
@@ -35,13 +36,15 @@ public class JumpingCharge : MonoBehaviour {
 		{
 			StopCoroutine("JumpingCharging");
 			anim.SetBool("istapping", false);
-			OuchZone.enabled = false;
+            anim.SetBool("ispreptapping", false);
+            OuchZone.enabled = false;
 			ps.istapping = false;
 			ps.cannotmove = false;
 			isInJumpingCharging = false;
 			anim.SetBool("TakingTimeToCoolDown", false);
-		}
-	}
+            actualcd = cd;
+        }
+    }
 
 	bool isInJumpingCharging = false;
 
@@ -49,10 +52,15 @@ public class JumpingCharge : MonoBehaviour {
 	{
 		actualcd = cd;
 		float move = (ps.facingRight) ? -1 : 1;
-		ps.Move(move * 2);
 		isInJumpingCharging = true;
 		ps.cannotmove = true;
-		ps.istapping = true;
+        anim.SetBool("ispreptapping", true);
+        ps.Move(0);
+        yield return new WaitForSeconds(prepjumptime);
+        anim.SetBool("ispreptapping", false);
+
+        ps.Move(move * 2);
+        ps.istapping = true;
 		ps.tryjump(chargejumppower);
 		anim.SetBool("istapping", true);
 		OuchZone.enabled = true;

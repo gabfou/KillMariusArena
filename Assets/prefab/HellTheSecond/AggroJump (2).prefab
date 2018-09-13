@@ -382,16 +382,22 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 8300000, guid: 32c93829e02324b4391ba40c378f846c, type: 3}
   tappingVolume: 0.27
+  run: {fileID: 0}
+  runVolume: 0.5
+  ouchJumpMultPushX: 2
+  ouchJumpMultPushY: 4
   canJump: 1
   istapping: 0
   grounded: 0
-  run: {fileID: 0}
   move: 0
   audiosource: {fileID: 0}
+  audiosource2: {fileID: 0}
   TakingDamage: 0
+  IsOuchstun: 0
   StayOnGround: 1
   perfectdistancetocible: 1.18
   distanceBehavior: 2
+  MaxDistance: Infinity
 --- !u!114 &114977427069181060
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -404,6 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chargejumppower: 10
+  prepjumptime: 0.1
   coefspeed: 2
   cd: 2
 --- !u!212 &212156675783461152

@@ -39,6 +39,8 @@ public class PlayerController : Stopmoving
     [Range(0, 1)] public float jumpingVolume = 0.5f;
     public AudioClip TappingClip;
     [Range(0, 1)] public float tappingVolume = 0.5f;
+    public AudioClip run;
+    [Range(0, 1)] public float runVolume = 0.5f;
 
     [Header("Ouch")]
     public float ouchJumpMultPushX = 2;
@@ -47,7 +49,6 @@ public class PlayerController : Stopmoving
     [HideInInspector] public bool canJump = true;
     [HideInInspector] public bool istapping = false;
     [HideInInspector] public bool grounded;
-    public AudioClip run;
 
     [HideInInspector] public float move = 0;
 
@@ -62,6 +63,7 @@ public class PlayerController : Stopmoving
     SpriteRenderer spriteRenderer;
     Animator anim;
     [HideInInspector] public AudioSource audiosource;
+    [HideInInspector] public AudioSource audiosource2;
     [HideInInspector] public bool TakingDamage = false;
     [HideInInspector] public bool IsOuchstun = false;
 
@@ -92,6 +94,7 @@ public class PlayerController : Stopmoving
         rigidbody2D.interpolation = RigidbodyInterpolation2D.Interpolate;
         anim = GetComponent<Animator>();
         audiosource = Camera.main.GetComponent<AudioSource>();
+        audiosource2 = GetComponent<AudioSource>();
         vcam = Camera.main.GetComponent<CinemachineBrain>().ActiveVirtualCamera as CinemachineVirtualCamera;
         if (vcam)
             vcamperlin = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
@@ -154,16 +157,20 @@ public class PlayerController : Stopmoving
     {
 		if (isdashing)
 			return ;
-        if (audiosource && run)
+        if (audiosource2 && run)
         {
-            if (grounded && audiosource.isPlaying == false && move != 0)
+            if (grounded && audiosource2.isPlaying == false && move != 0 && grounded)
             {
-                audiosource.loop = true;
-                audiosource.clip = run;
-                audiosource.Play();
+                audiosource2.loop = true;
+                audiosource2.clip = run;
+                audiosource2.volume = runVolume;
+                audiosource2.Play();
             }
-            else if (move == 0 && audiosource.clip == run)
-                audiosource.Stop();
+            else if ((move == 0 || !grounded) && audiosource2.clip == run)
+            {
+                audiosource2.clip = null;
+                audiosource2.Stop();
+            }
         }
 
         if (!istapping && move > 0 && facingRight)
@@ -250,7 +257,6 @@ public class PlayerController : Stopmoving
         {
             if (audiosource && ouchClip)
                 audiosource.PlayOneShot(ouchClip, ouchVolume);
-            anim.SetTrigger("ouch");
             StartCoroutine(ResetCanOuch());
             StartCoroutine(stunouch(impact2));
             StartCoroutine(impactoEffect());
@@ -275,6 +281,7 @@ public class PlayerController : Stopmoving
     IEnumerator stunouch(Vector2 impact)
     {
 		coroutineisplayingcount++;
+        anim.SetBool("ouch", true);
         IsOuchstun = true;
         cannotmove = true;
         rigidbody2D.velocity = impact;
@@ -282,8 +289,9 @@ public class PlayerController : Stopmoving
         yield return new WaitForSeconds(timestunouch);
         spriteMaterial.SetFloat("_isflashing", 0);
         cannotmove = false;
-        coroutineisplayingcount--;
         IsOuchstun = false;
+        anim.SetBool("ouch", false);
+        coroutineisplayingcount--;
     }
 
     IEnumerator ResetCanOuch()
@@ -379,29 +387,29 @@ public class PlayerController : Stopmoving
         }
         move = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.Space)
+        if (Input.GetKey(KeyCode.Space)
             #if UNITY_STANDALONE_OSX
-            || Input.GetKeyDown(KeyCode.Joystick1Button16)
+            || Input.GetKey(KeyCode.Joystick1Button16)
             #else
-            || Input.GetKeyDown(KeyCode.Joystick1Button0)
+            || Input.GetKey(KeyCode.Joystick1Button0)
             #endif
             )
             tryjump();
 
-        if (Input.GetKeyDown(KeyCode.LeftControl) || Input.GetKeyDown(KeyCode.RightControl)
+        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)
             #if UNITY_STANDALONE_OSX
-            || Input.GetKeyDown(KeyCode.Joystick1Button18)
+            || Input.GetKey(KeyCode.Joystick1Button18)
             #else
-            || Input.GetKeyDown(KeyCode.Joystick1Button2)
+            || Input.GetKey(KeyCode.Joystick1Button2)
             #endif
             )
             StartCoroutine(Tapping());
 
-		if (Input.GetKeyDown(KeyCode.X)
+		if (Input.GetKey(KeyCode.X)
             #if UNITY_STANDALONE_OSX
-            || Input.GetKeyDown(KeyCode.Joystick1Button13) || Input.GetKeyDown(KeyCode.Joystick1Button14)
+            || Input.GetKey(KeyCode.Joystick1Button13) || Input.GetKey(KeyCode.Joystick1Button14)
             #else
-            || Input.GetKeyDown(KeyCode.Joystick1Button4) || Input.GetKeyDown(KeyCode.Joystick1Button5)
+            || Input.GetKey(KeyCode.Joystick1Button4) || Input.GetKey(KeyCode.Joystick1Button5)
             #endif
             )
             StartCoroutine(dash());
