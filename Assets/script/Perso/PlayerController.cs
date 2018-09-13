@@ -51,6 +51,7 @@ public class PlayerController : Stopmoving
     [HideInInspector] public bool grounded;
 
     [HideInInspector] public float move = 0;
+    [HideInInspector] public float movey = 0;
 
     Vector2 impacto = Vector2.zero;
     CinemachineVirtualCamera vcam;
@@ -66,6 +67,7 @@ public class PlayerController : Stopmoving
     [HideInInspector] public AudioSource audiosource2;
     [HideInInspector] public bool TakingDamage = false;
     [HideInInspector] public bool IsOuchstun = false;
+    float baseGravityScale;
 
     Collider2D  col;
 
@@ -81,6 +83,7 @@ public class PlayerController : Stopmoving
         // anim.SetBool("facingright", facingRight);
         anim.SetBool("grounded", grounded);
 		candash = true;
+        rigidbody2D.gravityScale = baseGravityScale;
     }
 
     protected void init()
@@ -101,6 +104,7 @@ public class PlayerController : Stopmoving
         if (tag == "Player")
             isPlayer = true;
         col = GetComponents<Collider2D>().Where(c => !c.isTrigger).FirstOrDefault();
+        baseGravityScale = rigidbody2D.gravityScale;
         reinit();
     }
 
@@ -153,7 +157,7 @@ public class PlayerController : Stopmoving
 
 	bool isdashing = false;
 
-    public void Move(float move)
+    public void Move(float move, float movey = 0)
     {
 		if (isdashing)
 			return ;
@@ -172,13 +176,14 @@ public class PlayerController : Stopmoving
                 audiosource2.Stop();
             }
         }
-
+        if (IsOnLadder)
+            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, movey * maxSpeed);
         if (!istapping && move > 0 && facingRight)
             Flip();
         else if (!istapping && move < 0 && !facingRight)
             Flip();
         anim.SetFloat("velx", move);
-        anim.SetBool("ismoving", move != 0);
+        anim.SetBool("ismoving", move != 0 || (IsOnLadder && movey != 0));
         rigidbody2D.velocity = new Vector2( Mathf.Clamp(move * maxSpeed + impacto.x, -maxSpeed, maxSpeed),
                                             Mathf.Clamp(rigidbody2D.velocity.y + impacto.y, minYVelocity, maxYVelocity));
         anim.SetFloat("vely", rigidbody2D.velocity.y);
@@ -382,10 +387,9 @@ public class PlayerController : Stopmoving
         if (life < 0)
             return;
         if (base.cannotmove == true)
-        {
             return;
-        }
         move = Input.GetAxisRaw("Horizontal");
+        movey = (IsOnLadder) ? Input.GetAxisRaw("Vertical") : 0;
 
         if (Input.GetKey(KeyCode.Space)
             #if UNITY_STANDALONE_OSX
@@ -424,12 +428,13 @@ public class PlayerController : Stopmoving
         if (base.cannotmove == true)
             return;
 
-        Move(move);
+        Move(move, movey);
     }
 
     /*****************************************************************************************************************
                                                         COLLISION
     *****************************************************************************************************************/
+    bool IsOnLadder = false;
 
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -437,6 +442,24 @@ public class PlayerController : Stopmoving
         {
             if (rigidbody2D.velocity.y < slimeVelocityIgnore)
                 rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0);
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "ladder")
+        {
+            rigidbody2D.gravityScale = 0;
+            IsOnLadder = true;
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "ladder")
+        {
+           rigidbody2D.gravityScale = baseGravityScale;
+           IsOnLadder = false;
         }
     }
 
