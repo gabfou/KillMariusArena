@@ -29,7 +29,7 @@ public class Agro : PlayerController {
 	protected override void FixedUpdate () {
 		if (!base.cannotmove)
 		{
-			if (Cible)
+            if (Cible)
 			{
                 float distance = Vector2.Distance(Cible.position, transform.position);
                 if (distance > MaxDistance)
@@ -38,7 +38,7 @@ public class Agro : PlayerController {
                     return ;
                 }
                 int sign = (distance > perfectdistancetocible) ? 1 : -1;
-                if (distance < 0.1f)
+                if (Mathf.Abs(distance - perfectdistancetocible) < 0.2f)
                     move = 0;
                 else if (!(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 2, LayerMask.GetMask("Ground"))))
                     move = 0;
@@ -47,6 +47,14 @@ public class Agro : PlayerController {
                     move = 0;
                 else
                     move = sign * Mathf.Sign((Cible.position - transform.position).x);
+
+                if (move == 0)
+                {
+                    if (Cible.position.x > transform.position.x && facingRight)
+                        Flip();
+                    if (Cible.position.x < transform.position.x && !facingRight)
+                        Flip();
+                }
             }
 			else
 				move = 0;

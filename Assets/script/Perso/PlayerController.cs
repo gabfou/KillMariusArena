@@ -210,7 +210,7 @@ public class PlayerController : Stopmoving
         anim.SetBool("sliding", sliding);
     }
 
-    void Flip()
+    protected void Flip()
     {
         facingRight = !facingRight;
         transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
@@ -463,6 +463,10 @@ public class PlayerController : Stopmoving
         }
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        OnTriggerStay2D(collision.collider);
+    }
 
     virtual protected void OnTriggerStay2D(Collider2D other)
     {
