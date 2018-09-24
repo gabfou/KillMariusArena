@@ -195,6 +195,10 @@ public class PlayerController : Stopmoving
         int collisionNumber = Physics2D.BoxCastNonAlloc(transform.position + groundPosition, groundSize, 0, Vector2.down, results, .0f, 1 << LayerMask.NameToLayer("Ground"));
 
         grounded = collisionNumber != 0;
+        collisionNumber = Physics2D.BoxCastNonAlloc(transform.position + groundPosition, groundSize, 0, Vector2.down, results, .0f, 1 << LayerMask.NameToLayer("Ladder"));
+        grounded = grounded || collisionNumber != 0;
+        IsOnLadder = collisionNumber != 0;
+        rigidbody2D.gravityScale = (IsOnLadder) ? 0 : baseGravityScale;
 
         anim.SetBool("grounded", grounded);
     }
@@ -442,24 +446,6 @@ public class PlayerController : Stopmoving
         {
             if (rigidbody2D.velocity.y < slimeVelocityIgnore)
                 rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0);
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "ladder")
-        {
-            rigidbody2D.gravityScale = 0;
-            IsOnLadder = true;
-        }
-    }
-
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.tag == "ladder")
-        {
-           rigidbody2D.gravityScale = baseGravityScale;
-           IsOnLadder = false;
         }
     }
 

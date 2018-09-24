@@ -56,8 +56,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1225304411648268}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 4.43, z: -0.017708063}
-  m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.19999999}
+  m_LocalPosition: {x: 61.01, y: -29.13, z: -0.017708063}
+  m_LocalScale: {x: -0.2, y: 0.19999999, z: 0.19999999}
   m_Children:
   - {fileID: 4889831770233992}
   m_Father: {fileID: 0}
@@ -94,7 +94,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 75426b610f27c437aaab134481f57c6d, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &58843985012081466
 CircleCollider2D:
@@ -108,9 +108,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -23.27531, y: 0}
+  m_Offset: {x: 0.17544748, y: 0}
   serializedVersion: 2
-  m_Radius: 61.996433
+  m_Radius: 85.44721
 --- !u!60 &60136020382539064
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -137,9 +137,9 @@ PolygonCollider2D:
     m_Paths:
     - - {x: 1.7899745, y: 2.7899768}
       - {x: 1.4706748, y: -2.849777}
-      - {x: 71.79558, y: -19.277887}
-      - {x: 74.97677, y: 8.890231}
-      - {x: 69.34099, y: 33.480476}
+      - {x: 82.73055, y: -33.034813}
+      - {x: 91.84207, y: 3.7472441}
+      - {x: 83.8034, y: 41.94628}
 --- !u!70 &70520926372950276
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannotmove: 0
-  facingRight: 0
+  facingRight: 1
   life: 2
   invulnTime: 0.1
   ouchtag: bam
@@ -205,7 +205,7 @@ MonoBehaviour:
   dashcd: 0.5
   ouchClip: {fileID: 8300000, guid: f0f0b798d9cb79744b895ded04534424, type: 3}
   ouchVolume: 0.8
-  jumpClip: {fileID: 0}
+  jumpClip: {fileID: 8300000, guid: 5521f61faf81c0b44afdf5d174c211fc, type: 3}
   jumpingVolume: 0.5
   TappingClip: {fileID: 8300000, guid: 32c93829e02324b4391ba40c378f846c, type: 3}
   tappingVolume: 0.27
