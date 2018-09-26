@@ -254,6 +254,7 @@ public class PlayerController : Stopmoving
 
     public void ouch(Vector2 impact2)
     {
+        rigidbody2D.velocity = Vector2.zero;
         canOuch = false;
         life--;
         StopTapping();
