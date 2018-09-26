@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872716, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -674,7 +674,7 @@ GameObject:
   - component: {fileID: 104064604}
   - component: {fileID: 104064603}
   - component: {fileID: 104064602}
-  m_Layer: 8
+  m_Layer: 16
   m_Name: ladder
   m_TagString: ladder
   m_Icon: {fileID: 0}
@@ -7374,7 +7374,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RootBone: {fileID: 996871908}
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &722835089
 GameObject:
   m_ObjectHideFlags: 0
@@ -9548,7 +9558,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RootBone: {fileID: 1801753444}
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &1020879346
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9960,7 +9980,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RootBone: {fileID: 1084954081}
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &1123475496
 SpriteRenderer:
   m_ObjectHideFlags: 0
