@@ -11,7 +11,10 @@ public class BecomeChildOfOnEnable : MonoBehaviour {
 	}
 	
 	private void OnEnable() {
+        Vector3 tmp;
+        tmp = transform.position;
 		transform.parent = futureDad;
+        transform.position = tmp;
 	}
 	// Update is called once per frame
 	void Update () {
