@@ -1,8 +1,10 @@
 fileFormatVersion: 2
-guid: b138b0d7e42e9418ea3e62ce40b45814
+guid: c92097ec060f14f42b12588383d9b095
 TextureImporter:
   fileIDToRecycleName:
-    21300000: nuagetest_0
+    21300000: Boss1_0
+    21300002: Boss1_1
+    21300004: Boss1_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -107,13 +109,33 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: nuagetest_0
+      name: Boss1_0
       rect:
         serializedVersion: 2
-        x: 37
-        y: 652
-        width: 413
-        height: 219
+        x: 338
+        y: 3130
+        width: 489
+        height: 750
+      alignment: 9
+      pivot: {x: 0.62337816, y: 0.49106184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5c5eb14bc3ba49bd8d9df353bfe861e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss1_1
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 3163
+        width: 348
+        height: 711
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,7 +143,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c4ba7d56abb4401f96cf9afcbd433e0
+      spriteID: 4150313e054a44c54b7bce27ae8b7b27
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Boss1_2
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 3143
+        width: 409
+        height: 804
+      alignment: 9
+      pivot: {x: 0.40165937, y: 0.44997305}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0832f134fdad24a32a612ec83b96995d
       vertices: []
       indices: 
       edges: []
@@ -129,7 +171,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 7a73a117177d248ba80a5e3b8b06f3c5
+    spriteID: da67e913905b7473eb3312113bcc90d6
     vertices: []
     indices: 
     edges: []

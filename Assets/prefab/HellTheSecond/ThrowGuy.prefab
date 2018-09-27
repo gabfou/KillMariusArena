@@ -185,6 +185,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannotmove: 0
+  lifeText: {fileID: 0}
   facingRight: 1
   life: 2
   invulnTime: 0.1
@@ -204,8 +205,8 @@ MonoBehaviour:
   isinvuindash: 1
   dashcd: 0.5
   ouchClip: {fileID: 8300000, guid: f0f0b798d9cb79744b895ded04534424, type: 3}
-  ouchVolume: 0.8
-  jumpClip: {fileID: 8300000, guid: 5521f61faf81c0b44afdf5d174c211fc, type: 3}
+  ouchVolume: 0
+  jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 8300000, guid: 32c93829e02324b4391ba40c378f846c, type: 3}
   tappingVolume: 0.27

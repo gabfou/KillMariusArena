@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using System.Linq;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : Stopmoving
 {
 
     [Header("Basic setting")]
+    public Text lifeText = null; 
     public bool facingRight = false;
     public int life = 5;
     public float invulnTime = 1f;
@@ -84,6 +86,8 @@ public class PlayerController : Stopmoving
         anim.SetBool("grounded", grounded);
 		candash = true;
         rigidbody2D.gravityScale = baseGravityScale;
+        if (lifeText)
+            lifeText.text = life.ToString();
     }
 
     protected void init()
@@ -257,6 +261,8 @@ public class PlayerController : Stopmoving
         rigidbody2D.velocity = Vector2.zero;
         canOuch = false;
         life--;
+        if (lifeText)
+            lifeText.text = life.ToString();
         StopTapping();
         if (life < 1)
         {

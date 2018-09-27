@@ -352,12 +352,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannotmove: 0
+  lifeText: {fileID: 0}
   facingRight: 0
   life: 2
   invulnTime: 0.1
   ouchtag: bam
   timestunouch: 0.2
-  maxSpeed: 9
+  maxSpeed: 14
   minSlideVelocity: 3
   slimeVelocityIgnore: 0.5
   jumpPower: 1000
@@ -384,6 +385,7 @@ MonoBehaviour:
   istapping: 0
   grounded: 0
   move: 0
+  movey: 0
   audiosource: {fileID: 0}
   audiosource2: {fileID: 0}
   TakingDamage: 0

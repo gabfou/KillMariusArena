@@ -40,7 +40,7 @@ public class Agro : PlayerController {
                 int sign = (distance > perfectdistancetocible) ? 1 : -1;
                 if (Mathf.Abs(distance - perfectdistancetocible) < 0.2f)
                     move = 0;
-                else if (!(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 2, LayerMask.GetMask("Ground"))))
+                else if (StayOnGround && !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 2, LayerMask.GetMask("Ground"))))
                     move = 0;
                 else if (DistanceBehavior.Free != distanceBehavior && ((DistanceBehavior.Justcharge == distanceBehavior && sign == -1)
                                                                        || (DistanceBehavior.JustFlee == distanceBehavior && sign == 1)))
