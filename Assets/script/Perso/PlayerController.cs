@@ -181,7 +181,7 @@ public class PlayerController : Stopmoving
             }
         }
         if (IsOnLadder)
-            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, movey * maxSpeed);
+            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, ((IsOnLadder) ?  movey : 0) * maxSpeed);
         if (!istapping && move > 0 && facingRight)
             Flip();
         else if (!istapping && move < 0 && !facingRight)
@@ -201,7 +201,8 @@ public class PlayerController : Stopmoving
         grounded = collisionNumber != 0;
         collisionNumber = Physics2D.BoxCastNonAlloc(transform.position + groundPosition, groundSize, 0, Vector2.down, results, .0f, 1 << LayerMask.NameToLayer("Ladder"));
         grounded = grounded || collisionNumber != 0;
-        IsOnLadder = collisionNumber != 0;
+        if (IsOnLadder || move == 0 || movey != 0)
+            IsOnLadder = collisionNumber != 0;
         rigidbody2D.gravityScale = (IsOnLadder) ? 0 : baseGravityScale;
 
         anim.SetBool("grounded", grounded);
@@ -400,7 +401,8 @@ public class PlayerController : Stopmoving
         if (base.cannotmove == true)
             return;
         move = Input.GetAxisRaw("Horizontal");
-        movey = (IsOnLadder) ? Input.GetAxisRaw("Vertical") : 0;
+        movey = Input.GetAxisRaw("Vertical");
+       // move = (istapping) ? move / 2 : move;
 
         if (Input.GetKey(KeyCode.Space)
             #if UNITY_STANDALONE_OSX
