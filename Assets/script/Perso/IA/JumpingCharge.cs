@@ -79,7 +79,13 @@ public class JumpingCharge : MonoBehaviour {
 		ps.istapping = false;
 		ps.Move(0);
 		anim.SetBool("TakingTimeToCoolDown", true);
-		yield return new WaitForSeconds(TimeToCoolDown);
+        float timeTmp = 0;
+        while (timeTmp < TimeToCoolDown)
+        {
+            yield return new WaitForEndOfFrame();
+            ps.Move(0);
+            timeTmp += Time.deltaTime;
+        }
 	
 		anim.SetBool("TakingTimeToCoolDown", false);
 		ps.cannotmove = false;
