@@ -55,14 +55,16 @@ public class Agro : PlayerController {
                     if (Cible.position.x < transform.position.x && !facingRight)
                         Flip();
                 }
+
+				if (move != 0 && !StayOnGround && (Cible.position.y - 3 > transform.position.y) &&
+					(Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), 2, LayerMask.GetMask("Ground"))
+					|| !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 2, LayerMask.GetMask("Ground")))))
+					tryjump();				
             }
 			else
 				move = 0;
 		}
 		base.FixedUpdate();
-		if (StayOnGround && Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), 2, LayerMask.GetMask("Ground")))
-			tryjump();
-
 	}
 
 	void Update()
