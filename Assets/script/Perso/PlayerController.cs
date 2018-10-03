@@ -133,6 +133,14 @@ public class PlayerController : Stopmoving
          SlideCheck();
     }
 
+    public void DoingDamage(Vector2 pos)
+    {
+        if (tag == "player")
+        {
+            rigidbody2D.velocity = new Vector2(Mathf.Sign(transform.position.x - pos.x) * 10, rigidbody2D.velocity.y);
+        }
+    }
+
     IEnumerator Tapping()
     {
         if (istapping == false)
@@ -473,7 +481,12 @@ public class PlayerController : Stopmoving
         }
 
         if (canOuch && other.tag == ouchtag)
-            ouch((transform.position - other.transform.position).normalized * ouchJumpMultPushX + Vector3.up * ouchJumpMultPushY);
+        {
+            PlayerController oponnent = other.GetComponentInParent<PlayerController>();
+            if (oponnent)
+                oponnent.DoingDamage(transform.position);
+            ouch(new Vector2(Mathf.Sign(transform.position.x - other.transform.position.x) * ouchJumpMultPushX, ouchJumpMultPushY));
+        }
     }
 
     void OnDrawGizmos()

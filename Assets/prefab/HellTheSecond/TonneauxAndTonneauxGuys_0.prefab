@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 50562006112798616}
   - component: {fileID: 114769818042395316}
   - component: {fileID: 61846194381062780}
+  - component: {fileID: 61602816746096734}
   m_Layer: 10
   m_Name: TonneauxAndTonneauxGuys_0
   m_TagString: Untagged
@@ -82,7 +83,7 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1567260469739720}
-  m_BodyType: 1
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -90,7 +91,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 7d4440a83cf483b42924952c749e4301, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -123,6 +124,31 @@ PolygonCollider2D:
       - {x: -27.601374, y: -5.4677324}
       - {x: -26.21841, y: 7.52394}
       - {x: 24.86434, y: 10.544673}
+--- !u!61 &61602816746096734
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1567260469739720}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.1486578, y: -0.36346114}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.14, y: 5.73}
+    newSize: {x: 3.14, y: 5.73}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1885862, y: 4.58683}
+  m_EdgeRadius: 0
 --- !u!61 &61846194381062780
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -132,7 +158,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 2.1431293, y: 10.221042}
@@ -198,8 +224,8 @@ MonoBehaviour:
   cannotmove: 0
   lifeText: {fileID: 0}
   facingRight: 0
-  life: 5
-  invulnTime: 1
+  life: 1
+  invulnTime: 0.1
   ouchtag: ouch
   timestunouch: 0.2
   maxSpeed: 0

@@ -22,6 +22,8 @@ public class Agro : PlayerController {
 		init();
 		base.ouchtag = "bam";
 		realcol = GetComponents<Collider2D>().Where(c => !c.isTrigger).FirstOrDefault();
+		if (!realcol)
+			realcol = GetComponents<Collider2D>().LastOrDefault();
 	}
 
 
