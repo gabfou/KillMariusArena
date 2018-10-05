@@ -51,7 +51,7 @@ public class JumpingCharge : MonoBehaviour {
 	IEnumerator JumpingCharging()
 	{
 		actualcd = cd;
-		float move = (ps.facingRight) ? -1 : 1;
+		float move = (ps.facingLeft) ? -1 : 1;
 		isInJumpingCharging = true;
 		ps.cannotmove = true;
         anim.SetBool("ispreptapping", true);

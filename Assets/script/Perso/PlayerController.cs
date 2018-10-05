@@ -11,7 +11,7 @@ public class PlayerController : Stopmoving
 
     [Header("Basic setting")]
     public Text lifeText = null; 
-    public bool facingRight = false;
+    public bool facingLeft = false;
     public int life = 5;
     public float invulnTime = 1f;
     public string ouchtag = "ouch";
@@ -63,8 +63,8 @@ public class PlayerController : Stopmoving
     bool canOuch = true;
     bool sliding = false;
     new Rigidbody2D rigidbody2D;
-    SpriteRenderer spriteRenderer;
-    Animator anim;
+    protected SpriteRenderer spriteRenderer;
+    protected Animator anim;
     [HideInInspector] public AudioSource audiosource;
     [HideInInspector] public AudioSource audiosource2;
     [HideInInspector] public bool TakingDamage = false;
@@ -82,7 +82,7 @@ public class PlayerController : Stopmoving
     {
         isdashing = false;
         // Flip();
-        // anim.SetBool("facingright", facingRight);
+        // anim.SetBool("facingLeft", facingLeft);
         anim.SetBool("grounded", grounded);
 		candash = true;
         rigidbody2D.gravityScale = baseGravityScale;
@@ -150,9 +150,9 @@ public class PlayerController : Stopmoving
             istapping = true;
             anim.SetBool("istapping", true);
             // move = transform.position.x - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane)).x; // tape ducoter de la sourie (en gros la ca sert a rien)
-            // if (!istapping && move > 0 && !facingRight)
+            // if (!istapping && move > 0 && !facingLeft)
             //     Flip();
-            // else if (!istapping && move < 0 && facingRight)
+            // else if (!istapping && move < 0 && facingLeft)
             //     Flip();
 
             yield return new WaitForSeconds(0.3f);
@@ -190,9 +190,9 @@ public class PlayerController : Stopmoving
         }
         if (IsOnLadder)
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, ((IsOnLadder) ?  movey : 0) * maxSpeed);
-        if (!istapping && move > 0 && facingRight)
+        if (!istapping && move > 0 && facingLeft)
             Flip();
-        else if (!istapping && move < 0 && !facingRight)
+        else if (!istapping && move < 0 && !facingLeft)
             Flip();
         anim.SetFloat("velx", move);
         anim.SetBool("ismoving", move != 0 || (IsOnLadder && movey != 0));
@@ -229,7 +229,7 @@ public class PlayerController : Stopmoving
 
     protected void Flip()
     {
-        facingRight = !facingRight;
+        facingLeft = !facingLeft;
         transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
     }
 

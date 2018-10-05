@@ -54,10 +54,10 @@ GameObject:
   - component: {fileID: 4832501368262470}
   - component: {fileID: 212156675783461152}
   - component: {fileID: 70866755801349278}
-  - component: {fileID: 58952605676737236}
   - component: {fileID: 50056761345331862}
   - component: {fileID: 114435318721529576}
   - component: {fileID: 95659943794417708}
+  - component: {fileID: 60656548244332032}
   m_Layer: 10
   m_Name: AggroJump (2)
   m_TagString: Untagged
@@ -159,8 +159,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1476813717873990}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.509815, y: -15.864615, z: -0.017708063}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalPosition: {x: 71.91, y: -31.36, z: -0.017708063}
+  m_LocalScale: {x: 0.19999999, y: 0.19999999, z: 0.19999999}
   m_Children:
   - {fileID: 4390840176992648}
   - {fileID: 4387667144659220}
@@ -187,8 +187,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &58952605676737236
-CircleCollider2D:
+--- !u!60 &60656548244332032
+PolygonCollider2D:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -199,9 +199,25 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.17887178, y: 0}
-  serializedVersion: 2
-  m_Radius: 38.9
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.4223384, y: 0.4801878}
+    oldSize: {x: 7.49, y: 11.009999}
+    newSize: {x: 3.1, y: 4}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 14.885636, y: -7.9831324}
+      - {x: -27.2213, y: -6.5575414}
+      - {x: -66.91403, y: 3.5958674}
+      - {x: -68.79067, y: 20.96821}
+      - {x: 58.913654, y: 5.879288}
+      - {x: 62.073334, y: -64.746445}
+      - {x: 13.269731, y: -64.534805}
 --- !u!61 &61111264043813804
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -310,7 +326,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1476813717873990}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: 75426b610f27c437aaab134481f57c6d, type: 2}
+  m_Material: {fileID: 6200000, guid: 7d4440a83cf483b42924952c749e4301, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -359,7 +375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannotmove: 0
   lifeText: {fileID: 0}
-  facingRight: 0
+  facingLeft: 0
   life: 2
   invulnTime: 0.1
   ouchtag: bam
@@ -396,7 +412,7 @@ MonoBehaviour:
   audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
-  StayOnGround: 1
+  StayOnGround: 0
   perfectdistancetocible: 1.18
   distanceBehavior: 0
   MaxDistance: Infinity
