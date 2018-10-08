@@ -186,7 +186,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: ab5a418680b724aed99528710c8c75ab, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -207,7 +207,7 @@ MonoBehaviour:
     type: 2}
   angleprecision: 5
   nbofshotbyburst: 1
-  timetoshoot: 1
+  timetoshoot: 0.2
   cd: 1
   impulsionForce: 10
 --- !u!114 &114769818042395316
@@ -223,8 +223,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannotmove: 0
   lifeText: {fileID: 0}
-  facingRight: 0
-  life: 1
+  facingLeft: 0
+  life: 2
   invulnTime: 0.1
   ouchtag: ouch
   timestunouch: 0.2
@@ -233,8 +233,8 @@ MonoBehaviour:
   slimeVelocityIgnore: 0.5
   jumpPower: 10
   jumpIdle: 0.3
-  groundPosition: {x: 0, y: 0, z: 0}
-  groundSize: {x: 0, y: 0}
+  groundPosition: {x: 0, y: -1.63, z: 0}
+  groundSize: {x: 0.72, y: 0.36}
   maxYVelocity: 8
   minYVelocity: -6
   timedashinsc: 0.1
@@ -262,7 +262,7 @@ MonoBehaviour:
   IsOuchstun: 0
   StayOnGround: 1
   perfectdistancetocible: 0
-  distanceBehavior: 0
+  distanceBehavior: 3
   MaxDistance: Infinity
 --- !u!212 &212742606124815642
 SpriteRenderer:

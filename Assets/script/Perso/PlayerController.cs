@@ -464,6 +464,7 @@ public class PlayerController : Stopmoving
             if (rigidbody2D.velocity.y < slimeVelocityIgnore)
                 rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0);
         }
+        OnTriggerStay2D(other.collider);
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -480,7 +481,7 @@ public class PlayerController : Stopmoving
             return;
         }
 
-        if (canOuch && other.tag == ouchtag)
+        if (canOuch && (other.tag == ouchtag || other.tag == "ouchbam"))
         {
             PlayerController oponnent = other.GetComponentInParent<PlayerController>();
             if (oponnent)
