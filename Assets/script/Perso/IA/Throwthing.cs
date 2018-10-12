@@ -31,7 +31,7 @@ public class Throwthing : MonoBehaviour {
     {
         if ((delay > 0 && willShoot) || delay > timetoshoot)
             delay -= Time.deltaTime;
-        if (agro && delay < timetoshoot && (agro.grounded == false || agro.move != 0))
+        if (agro && delay < timetoshoot && (agro.grounded == false || agro.move != 0 || agro.IsOuchstun == true))
             delay = timetoshoot;
 
         if (!playerInSight)

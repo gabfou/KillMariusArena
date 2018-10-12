@@ -171,7 +171,7 @@ public class PlayerController : Stopmoving
 
     public void Move(float move, float movey = 0)
     {
-		if (isdashing)
+		if (isdashing || rigidbody2D.bodyType != RigidbodyType2D.Dynamic)
 			return ;
         if (audiosource2 && run)
         {
@@ -201,12 +201,15 @@ public class PlayerController : Stopmoving
         anim.SetFloat("vely", rigidbody2D.velocity.y);
     }
 
+    Collider2D actualGround;
     void GroundCheck()
     {
         RaycastHit2D[] results = new RaycastHit2D[10];
         int collisionNumber = Physics2D.BoxCastNonAlloc(transform.position + groundPosition, groundSize, 0, Vector2.down, results, .0f, 1 << LayerMask.NameToLayer("Ground"));
 
         grounded = collisionNumber != 0;
+        if (collisionNumber != 0)
+            actualGround = results.First().collider;
         collisionNumber = Physics2D.BoxCastNonAlloc(transform.position + groundPosition, groundSize, 0, Vector2.down, results, .0f, 1 << LayerMask.NameToLayer("Ladder"));
         grounded = grounded || collisionNumber != 0;
         if (IsOnLadder || move == 0 || movey != 0)
@@ -354,6 +357,21 @@ public class PlayerController : Stopmoving
         tryjump(jumpPower);
     }
 
+    IEnumerator tryGoUnderCo()
+    {
+        Collider2D col2 = actualGround;
+
+        Physics2D.IgnoreCollision(col, col2, true);
+        yield return new WaitForSeconds(1);
+        Physics2D.IgnoreCollision(col, col2, false);
+    }
+
+    public void tryGoUnder()
+    {
+        if (actualGround.usedByEffector == true && actualGround.GetComponent<PlatformEffector2D>() != null)
+            StartCoroutine(tryGoUnderCo());
+    }
+
     /*****************************************************************************************************************
 														DASH
     *******************************************************************************************************************/
@@ -412,7 +430,18 @@ public class PlayerController : Stopmoving
         movey = Input.GetAxisRaw("Vertical");
        // move = (istapping) ? move / 2 : move;
 
-        if (Input.GetKey(KeyCode.Space)
+
+        if ((Input.GetKey(KeyCode.Space)
+            #if UNITY_STANDALONE_OSX
+            || Input.GetKey(KeyCode.Joystick1Button16)
+            #else
+            || Input.GetKey(KeyCode.Joystick1Button0)
+            #endif
+            )
+            && movey < 0)
+            tryGoUnder();
+
+        else if (Input.GetKey(KeyCode.Space)
             #if UNITY_STANDALONE_OSX
             || Input.GetKey(KeyCode.Joystick1Button16)
             #else
