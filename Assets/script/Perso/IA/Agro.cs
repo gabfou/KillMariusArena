@@ -74,6 +74,17 @@ public class Agro : PlayerController {
 				move = 0;
 		}
 		base.FixedUpdate();
+		if (Cible && base.cannotmove == false)
+		{
+				ContactFilter2D cf = new ContactFilter2D();
+				cf.SetLayerMask(gameObject.layer);
+				RaycastHit2D[] results = new RaycastHit2D[10];
+				if (col && col.Cast(transform.right, cf, results) > 0)
+				{
+					Debug.Log("dsfsf");
+					move += (results[0].transform.position.x > transform.position.x) ? -1 : 1;
+				}
+		}
 	}
 
 	void Update()

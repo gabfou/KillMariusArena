@@ -4,6 +4,7 @@ using UnityEngine;
 using Cinemachine;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : Stopmoving
@@ -71,7 +72,9 @@ public class PlayerController : Stopmoving
     [HideInInspector] public bool IsOuchstun = false;
     float baseGravityScale;
 
-    Collider2D  col;
+    protected Collider2D  col;
+
+	[HideInInspector] public Vector2 lastCheckpoint = Vector2.negativeInfinity;
 
 
     /*****************************************************************************************************************
@@ -80,6 +83,8 @@ public class PlayerController : Stopmoving
 
     protected void reinit()
     {
+        if (Vector2.negativeInfinity == lastCheckpoint)
+            lastCheckpoint = transform.position;
         isdashing = false;
         // Flip();
         // anim.SetBool("facingLeft", facingLeft);
@@ -249,6 +254,8 @@ public class PlayerController : Stopmoving
             yield return new WaitForEndOfFrame();
         spriteRenderer.enabled = true;
         gameObject.SetActive(false);
+        if (tag == "Player")
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         // GameObject.Destroy(gameObject);
     }
 
