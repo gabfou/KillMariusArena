@@ -14,19 +14,24 @@ public class lever : MonoBehaviour {
 
 	public void activator()
 	{
+		Animator a = null;
 		asbBeenActivated = true;
 		transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
 		foreach(GameObject g in activate)
 		{
 			if (g.tag == "porte")
 				g.GetComponent<Grille>().open();
+			else if (g.tag == "CaBouge")
+				g.GetComponent<CaBouge>().isDeplacing = true;
+			else if ((a = g.GetComponent<Animator>()) == true && a.enabled == false)
+				a.enabled = true;
 		}
 	}
 	
-	private void OnTriggerEnter2D(Collider2D other) {
+	private void OnTriggerEnter2D(Collider2D other)
+	{
 		Debug.Log(other.name);
 		if (!asbBeenActivated && activateurTag.Contains(other.tag))
 			activator();
-
 	}
 }

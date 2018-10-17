@@ -210,7 +210,7 @@ public class PlayerController : Stopmoving
     void GroundCheck()
     {
         RaycastHit2D[] results = new RaycastHit2D[10];
-        int collisionNumber = Physics2D.BoxCastNonAlloc(transform.position + groundPosition, groundSize, 0, Vector2.down, results, .0f, 1 << LayerMask.NameToLayer("Ground"));
+        int collisionNumber = Physics2D.BoxCastNonAlloc(transform.position + groundPosition, groundSize, 0, Vector2.down, results, .0f, 1 << (LayerMask.NameToLayer("Ground")) | 1 << (LayerMask.NameToLayer("GroundOneWay")));
 
         grounded = collisionNumber != 0;
         if (collisionNumber != 0)
