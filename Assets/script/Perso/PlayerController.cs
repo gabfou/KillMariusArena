@@ -4,6 +4,7 @@ using UnityEngine;
 using Cinemachine;
 using System.Linq;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : Stopmoving
@@ -71,7 +72,9 @@ public class PlayerController : Stopmoving
     [HideInInspector] public bool IsOuchstun = false;
     float baseGravityScale;
 
-    Collider2D  col;
+    protected Collider2D  col;
+
+	[HideInInspector] public Vector2 lastCheckpoint = Vector2.negativeInfinity;
 
 
     /*****************************************************************************************************************
@@ -80,6 +83,8 @@ public class PlayerController : Stopmoving
 
     protected void reinit()
     {
+        if (Vector2.negativeInfinity == lastCheckpoint)
+            lastCheckpoint = transform.position;
         isdashing = false;
         // Flip();
         // anim.SetBool("facingLeft", facingLeft);
@@ -205,7 +210,7 @@ public class PlayerController : Stopmoving
     void GroundCheck()
     {
         RaycastHit2D[] results = new RaycastHit2D[10];
-        int collisionNumber = Physics2D.BoxCastNonAlloc(transform.position + groundPosition, groundSize, 0, Vector2.down, results, .0f, 1 << LayerMask.NameToLayer("Ground"));
+        int collisionNumber = Physics2D.BoxCastNonAlloc(transform.position + groundPosition, groundSize, 0, Vector2.down, results, .0f, 1 << (LayerMask.NameToLayer("Ground")) | 1 << (LayerMask.NameToLayer("GroundOneWay")));
 
         grounded = collisionNumber != 0;
         if (collisionNumber != 0)
@@ -249,6 +254,8 @@ public class PlayerController : Stopmoving
             yield return new WaitForEndOfFrame();
         spriteRenderer.enabled = true;
         gameObject.SetActive(false);
+        if (tag == "Player")
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         // GameObject.Destroy(gameObject);
     }
 

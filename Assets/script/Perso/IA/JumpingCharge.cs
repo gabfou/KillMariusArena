@@ -68,10 +68,9 @@ public class JumpingCharge : MonoBehaviour {
             ps.audiosource.PlayOneShot(ps.TappingClip, ps.tappingVolume);
 		while (true)
 		{
-			ps.Move(move * coefspeed);
 			if (ps.grounded && ps.canJump)
 				break ;
-			ps.Move(ps.move * coefspeed);
+			ps.Move(move * coefspeed);
 			yield return new WaitForEndOfFrame();
 		}
 		anim.SetBool("istapping", false);
