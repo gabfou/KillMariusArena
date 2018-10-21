@@ -5,6 +5,7 @@ using Cinemachine;
 using System.Linq;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : Stopmoving
@@ -55,6 +56,9 @@ public class PlayerController : Stopmoving
 
     [HideInInspector] public float move = 0;
     [HideInInspector] public float movey = 0;
+
+    [Header("Events")]
+    public UnityEvent   onTakeDamage;
 
     Vector2 impacto = Vector2.zero;
     CinemachineVirtualCamera vcam;
@@ -277,6 +281,7 @@ public class PlayerController : Stopmoving
 
     public void ouch(Vector2 impact2)
     {
+        onTakeDamage.Invoke();
         rigidbody2D.velocity = Vector2.zero;
         canOuch = false;
         life--;
