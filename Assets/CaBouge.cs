@@ -9,6 +9,7 @@ public class CaBouge : MonoBehaviour {
 	public List<Vector3> listOfPassage = new List<Vector3>();
 	[HideInInspector]public bool isDeplacing = false;
 	public float speed;
+	List<Transform> l;
 
 	public int e = 0; 
 	float marge;
@@ -26,8 +27,8 @@ public class CaBouge : MonoBehaviour {
 	{
 		if (isDeplacing)
 		{
-			Debug.Log("dsf");
 			transform.position = Vector3.MoveTowards(transform.position, listOfPassage[e], Time.deltaTime * speed);
+			l.ForEach(c => c.transform.position = Vector3.MoveTowards(c.transform.position, listOfPassage[e], Time.deltaTime * speed));
 			if (Vector3.Distance(transform.position, listOfPassage[e]) < marge)
 			{
 				if (listOfPassage.Count >= ++e)
@@ -36,5 +37,16 @@ public class CaBouge : MonoBehaviour {
 					isDeplacing = false;
 			}
 		}
+	}
+
+	void OnCollisionEnter2D(Collision2D other)
+	{
+		if (other.gameObject.GetComponent<PlayerController>())
+			l.Add(other.transform);
+	}
+
+	void OnCollisionExit2D(Collision2D other)
+	{
+		l.Remove(l.Find(c => c.GetHashCode() == other.GetHashCode()));
 	}
 }
