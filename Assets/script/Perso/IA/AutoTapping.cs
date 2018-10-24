@@ -7,6 +7,9 @@ public class AutoTapping : MonoBehaviour {
 	// Use this for initialization
 
     Animator anim;
+    public float timeofanimbeforetap = 0.25f;
+    public float timeafter = 0.25f;
+
     PlayerController pc;
 
     private void Update()

@@ -211,7 +211,7 @@ public class PlayerController : Stopmoving
     }
 
     Collider2D actualGround;
-    void GroundCheck()
+    protected virtual void GroundCheck()
     {
         RaycastHit2D[] results = new RaycastHit2D[10];
         int collisionNumber = Physics2D.BoxCastNonAlloc(transform.position + groundPosition, groundSize, 0, Vector2.down, results, .0f, 1 << (LayerMask.NameToLayer("Ground")) | 1 << (LayerMask.NameToLayer("GroundOneWay")));
@@ -483,6 +483,11 @@ public class PlayerController : Stopmoving
 
     protected virtual void FixedUpdate()
     {
+        PCFixedUpdate();
+    }
+
+    protected void PCFixedUpdate()
+    {
         if (life < 0)
             return;
         allCheck();
@@ -496,7 +501,7 @@ public class PlayerController : Stopmoving
     /*****************************************************************************************************************
                                                         COLLISION
     *****************************************************************************************************************/
-    bool IsOnLadder = false;
+    protected bool IsOnLadder = false;
 
     void OnCollisionEnter2D(Collision2D other)
     {

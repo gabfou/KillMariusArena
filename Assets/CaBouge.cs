@@ -9,7 +9,7 @@ public class CaBouge : MonoBehaviour {
 	public List<Vector3> listOfPassage = new List<Vector3>();
 	[HideInInspector]public bool isDeplacing = false;
 	public float speed;
-	List<Transform> l;
+	public List<Transform> l = new List<Transform>();
 
 	public int e = 0; 
 	float marge;
@@ -19,7 +19,7 @@ public class CaBouge : MonoBehaviour {
 		listOfPassage.Add(transform.position);
 		if (activeOnAwake)
 			isDeplacing = true;
-		marge = speed * 2;
+		marge = 0.1f;
 	}
 	
 	// Update is called once per frame
@@ -41,12 +41,13 @@ public class CaBouge : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		if (other.gameObject.GetComponent<PlayerController>())
+		Debug.Log(other.gameObject.name);
+		if (other.gameObject.tag == "Player")
 			l.Add(other.transform);
 	}
 
 	void OnCollisionExit2D(Collision2D other)
 	{
-		l.Remove(l.Find(c => c.GetHashCode() == other.GetHashCode()));
+		l.Remove(l.Find(c => c.GetHashCode() == other.transform.GetHashCode()));
 	}
 }

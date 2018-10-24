@@ -30,7 +30,7 @@ public class lever : MonoBehaviour {
 	
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		Debug.Log(other.name);
+		// Debug.Log(other.name);
 		if (!asbBeenActivated && activateurTag.Contains(other.tag))
 			activator();
 	}

@@ -81,7 +81,6 @@ public class Agro : PlayerController {
 				RaycastHit2D[] results = new RaycastHit2D[10];
 				if (col && col.Cast(transform.right, cf, results) > 0)
 				{
-					Debug.Log("dsfsf");
 					move += (results[0].transform.position.x > transform.position.x) ? -1 : 1;
 				}
 		}
@@ -102,19 +101,24 @@ public class Agro : PlayerController {
 			changesprite = true;
 			anim.SetTrigger("Alert!");
 			Cible = other.transform;
-			t.radius = 2;
-			t.weight = 1;
-			t.target = transform;
-			if (!(!other || other.tag != "Player" || other.GetComponent<CinemachineTargetGroup>() == null))
-			{
-				// List<CinemachineTargetGroup.Target> targets =  other.GetComponent<CinemachineTargetGroup>().m_Targets.ToList();
-				// targets.Add(t);
-				// other.GetComponent<CinemachineTargetGroup>().m_Targets = targets.ToArray();
-			}
+			// t.radius = 2;
+			// t.weight = 1;
+			// t.target = transform;
+			// if (!(!other || other.tag != "Player" || other.GetComponent<CinemachineTargetGroup>() == null))
+			// {
+			// 	List<CinemachineTargetGroup.Target> targets =  other.GetComponent<CinemachineTargetGroup>().m_Targets.ToList();
+			// 	targets.Add(t);
+			// 	other.GetComponent<CinemachineTargetGroup>().m_Targets = targets.ToArray();
+			// }
 		}
         if (realcol.bounds.Intersects(other.bounds))
             base.OnTriggerStay2D(other);
     }
+
+	override protected void GroundCheck()
+	{
+		base.GroundCheck();
+	}
 
 	private void OnDisable()
 	{
