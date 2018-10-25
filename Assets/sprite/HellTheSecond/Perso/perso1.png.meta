@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: f50ca91538d9340ffb856e75a733dbf5
+guid: fc776c971874d4ac9b3a2d7f051486a4
 TextureImporter:
   fileIDToRecycleName:
-    21300000: chauvesourisguy_0
-    21300002: chauvesourisguy_1
-    21300004: chauvesourisguy_2
-    21300006: chauvesourisguy_3
-    21300008: chauvesourisguy_4
-    21300010: chauvesourisguy_5
+    21300000: perso1_0
+    21300002: perso1_1
+    21300004: perso1_2
+    21300006: perso1_3
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -86,147 +84,85 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: chauvesourisguy_0
+      name: perso1_0
       rect:
         serializedVersion: 2
-        x: 19
-        y: 3393
-        width: 1520
-        height: 1352
+        x: 495.65063
+        y: 128.304
+        width: 480.22253
+        height: 1210.2931
       alignment: 9
-      pivot: {x: 0.4894155, y: 0.5237997}
+      pivot: {x: 0.56296694, y: 0.5054114}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a8a242b9d91404ed2862d6a076d76b7e
+      spriteID: 0a2b2e07f85c34b63b0fb9fc8a42691b
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chauvesourisguy_1
+      name: perso1_1
       rect:
         serializedVersion: 2
-        x: 1612
-        y: 3426
-        width: 1512
-        height: 1319
-      alignment: 9
-      pivot: {x: 0.4840393, y: 0.50609905}
+        x: 1389
+        y: 173
+        width: 833
+        height: 1234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a26e5220a887243fe9c533c60b9b338a
+      spriteID: 28dfbcede683447d7b0bcd8977cb1013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chauvesourisguy_2
+      name: perso1_2
       rect:
         serializedVersion: 2
-        x: 3261
-        y: 3410
-        width: 1416
-        height: 1327
-      alignment: 9
-      pivot: {x: 0.4943196, y: 0.44544294}
+        x: 2301
+        y: 547
+        width: 731
+        height: 883
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d61ec77b34f2e470eba2f000fbadf69d
+      spriteID: 41d54fd4ce9bb4f4096a0139647fe69e
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: chauvesourisguy_3
+      name: perso1_3
       rect:
         serializedVersion: 2
-        x: 75
-        y: 1849
-        width: 1504
-        height: 1488
+        x: 3252
+        y: 222
+        width: 764
+        height: 884
       alignment: 9
-      pivot: {x: 0.48395437, y: 0.5108124}
+      pivot: {x: 0.28126407, y: 0.6242288}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3c35ae40fc40142c88aaa0cc6ced5d52
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chauvesourisguy_4
-      rect:
-        serializedVersion: 2
-        x: 1555
-        y: 1881
-        width: 1585
-        height: 1392
-      alignment: 9
-      pivot: {x: 0.5203011, y: 0.4595479}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fc7b70d65f2ee4668bdfa24cc4842f85
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: chauvesourisguy_5
-      rect:
-        serializedVersion: 2
-        x: 3381
-        y: 1551
-        width: 1392
-        height: 1714
-      alignment: 9
-      pivot: {x: 0.46532694, y: 0.48898318}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e8d8491ec61b2438b998ea97bccc15d4
+      spriteID: 56871ec2fc9f44528a278f74378c451b
       vertices: []
       indices: 
       edges: []
@@ -234,7 +170,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 0b23fb683024c4119a3c5871224873b4
+    spriteID: f6bff0adf78b3464bab717a6d27a1f9c
     vertices: []
     indices: 
     edges: []
@@ -242,6 +178,6 @@ TextureImporter:
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
-  userData: 
+  userData: 636635696350000000
   assetBundleName: 
   assetBundleVariant: 

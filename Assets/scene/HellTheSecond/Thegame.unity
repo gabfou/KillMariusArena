@@ -9438,10 +9438,10 @@ PolygonCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 363109453}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -19493,32 +19493,32 @@ Prefab:
     - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].x
-      value: -16.063768
+      value: -70.19776
       objectReference: {fileID: 0}
     - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
-      value: -8.221475
+      value: -32.955116
       objectReference: {fileID: 0}
     - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].x
-      value: -15.791819
+      value: -71.32588
       objectReference: {fileID: 0}
     - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[2].y
-      value: 7.7184687
+      value: 49.718994
       objectReference: {fileID: 0}
     - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].x
-      value: 15.583517
+      value: 96.31791
       objectReference: {fileID: 0}
     - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
-      value: 8.027879
+      value: 57.0285
       objectReference: {fileID: 0}
     - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
         type: 2}
@@ -19553,12 +19553,12 @@ Prefab:
     - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
-      value: 18.108522
+      value: 102.10957
       objectReference: {fileID: 0}
     - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
         type: 2}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
-      value: -8.341218
+      value: -27.474806
       objectReference: {fileID: 0}
     - target: {fileID: 50056761345331862, guid: 6e159ad71fc96454b8cdd260e6223039,
         type: 2}
@@ -19596,11 +19596,41 @@ Prefab:
       propertyPath: m_Color.b
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95659943794417708, guid: 6e159ad71fc96454b8cdd260e6223039,
+        type: 2}
+      propertyPath: m_UpdateMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.4894155
+      objectReference: {fileID: 0}
+    - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5237997
+      objectReference: {fileID: 0}
+    - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 15.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
+        type: 2}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 13.5199995
+      objectReference: {fileID: 0}
+    - target: {fileID: 1078446510357314, guid: 6e159ad71fc96454b8cdd260e6223039, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 0}
     - {fileID: 70866755801349278, guid: 6e159ad71fc96454b8cdd260e6223039, type: 2}
     - {fileID: 61321363197167012, guid: 6e159ad71fc96454b8cdd260e6223039, type: 2}
     - {fileID: 114435318721529576, guid: 6e159ad71fc96454b8cdd260e6223039, type: 2}
+    - {fileID: 61774998923367052, guid: 6e159ad71fc96454b8cdd260e6223039, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 6e159ad71fc96454b8cdd260e6223039, type: 2}
   m_IsPrefabAsset: 0
 --- !u!4 &691308668 stripped
@@ -26301,7 +26331,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1050104330}
   m_LocalRotation: {x: -0.098537564, y: -8.240022e-10, z: 9.71454e-11, w: 0.99513334}
-  m_LocalPosition: {x: -10.700004, y: -81.48621, z: 16.297417}
+  m_LocalPosition: {x: 120.44, y: -20.533756, z: 4.104709}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1835915080}
@@ -28452,7 +28482,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_RootBone: {fileID: 1084954081}
-  m_BoneTransforms: []
+  m_BoneTransforms:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &1123475496
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -39873,6 +39911,45 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1564124243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1078446510357314, guid: 6e159ad71fc96454b8cdd260e6223039,
+    type: 2}
+  m_PrefabInternal: {fileID: 691308667}
+--- !u!60 &1564124245
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1564124243}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 6.531525, y: -0.43973926}
+      - {x: 6.04168, y: 2.9733279}
+      - {x: 3.7388613, y: 4.5994763}
+      - {x: 4.3798833, y: 2.1766856}
+      - {x: 4.349709, y: 0.9009362}
+      - {x: 3.288689, y: -0.6869698}
+      - {x: 0.4871369, y: -2.5673296}
+      - {x: -0.26092532, y: -2.7701762}
+      - {x: 2.418175, y: -6.75787}
+      - {x: 5.657807, y: -4.2016416}
 --- !u!1 &1564166773
 GameObject:
   m_ObjectHideFlags: 0
@@ -44092,7 +44169,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1800483096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -62.5, y: -82.2, z: 0}
+  m_LocalPosition: {x: 68.64, y: -20.04, z: 0}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 1820728361}
@@ -46506,15 +46583,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -10.700004
+      value: 120.44
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -81.48621
+      value: -20.533756
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 16.297417
+      value: 4.104709
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 2}
       propertyPath: m_LocalRotation.x
@@ -51189,12 +51266,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannotmove: 0
   lifeText: {fileID: 0}
-  facingLeft: 0
+  facingLeft: 1
   life: 5
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
-  maxSpeed: 1
+  maxSpeed: 8.05
   minSlideVelocity: 3
   slimeVelocityIgnore: 0.5
   jumpPower: 10
@@ -51233,7 +51310,7 @@ MonoBehaviour:
   IsOuchstun: 0
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   StayOnGround: 1
-  perfectdistancetocible: 0
+  perfectdistancetocible: 1.13
   distanceBehavior: 0
   MaxDistance: Infinity
 --- !u!70 &2124446818

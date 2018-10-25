@@ -1,0 +1,45 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class FlyingAgro : Agro
+{
+
+	// Use this for initialization
+	// void Start () {
+		
+	// }
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
+
+	protected override void FixedUpdate ()
+	{
+		move = 0;
+		movey = 0;
+		if (!base.cannotmove)
+		{
+            if (Cible && !istapping)
+			{
+				float distance = Vector2.Distance(Cible.position, transform.position);
+                if (distance > MaxDistance)
+                {
+                    Cible = null; // peut etre active reactive qaund respawn pres
+                    return ;
+                }				
+				Vector2 dir = (Cible.position - transform.position).normalized;
+				dir = (distance > perfectdistancetocible) ? dir : -1 * dir;
+				move = dir.x;
+				movey = dir.y;
+			}
+		}
+		PCFixedUpdate();
+	}
+
+	override protected void GroundCheck()
+	{
+		IsOnLadder = true;
+	}
+}

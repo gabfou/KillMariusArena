@@ -199,9 +199,9 @@ public class PlayerController : Stopmoving
         }
         if (IsOnLadder)
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, ((IsOnLadder) ?  movey : 0) * maxSpeed);
-        if (!istapping && move > 0 && facingLeft)
+        if (/*!istapping && */move > 0 && facingLeft)
             Flip();
-        else if (!istapping && move < 0 && !facingLeft)
+        else if (/*!istapping && */move < 0 && !facingLeft)
             Flip();
         anim.SetFloat("velx", move);
         anim.SetBool("ismoving", move != 0 || (IsOnLadder && movey != 0));
@@ -440,9 +440,12 @@ public class PlayerController : Stopmoving
             return;
         move = Input.GetAxisRaw("Horizontal");
         movey = Input.GetAxisRaw("Vertical");
+        bool iscrouching;
        // move = (istapping) ? move / 2 : move;
 
 
+        
+        iscrouching = false;
         if ((Input.GetKey(KeyCode.Space)
             #if UNITY_STANDALONE_OSX
             || Input.GetKey(KeyCode.Joystick1Button16)
@@ -461,6 +464,12 @@ public class PlayerController : Stopmoving
             #endif
             )
             tryjump();
+        else if(movey < 0 && grounded)
+        {
+            move = 0;
+            iscrouching = true;
+        }
+        anim.SetBool("iscrouching", iscrouching);
 
         if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)
             #if UNITY_STANDALONE_OSX

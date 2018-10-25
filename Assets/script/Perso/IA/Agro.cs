@@ -8,7 +8,7 @@ public class Agro : PlayerController {
 
     public enum DistanceBehavior {Free, JustFlee, Justcharge, DontMove};
 
-    Transform Cible = null;
+    protected Transform Cible = null;
 
     [Header("Agro setting")]
     public bool StayOnGround = true;
@@ -111,8 +111,14 @@ public class Agro : PlayerController {
 			// 	other.GetComponent<CinemachineTargetGroup>().m_Targets = targets.ToArray();
 			// }
 		}
-        if (realcol.bounds.Intersects(other.bounds))
+		if (name == "chauveSourie" && other.name == "ZoneBam")
+            	Debug.Log(realcol +" " + other.name + " " + realcol.IsTouching(other));
+        if (realcol.IsTouching(other))
+		{
+			if (name == "chauveSourie")
+            	Debug.Log(other.name);
             base.OnTriggerStay2D(other);
+		}
     }
 
 	override protected void GroundCheck()
