@@ -5,15 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
 	public int lastCheckpoint = 0;
-	public int CheckpointPassed= 0;
+	public int CheckpointPassed = 0;
+	public PlayerController player;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public static GameManager instance;
+
+	void Awake()
+	{
+		instance  = this;
 	}
 }

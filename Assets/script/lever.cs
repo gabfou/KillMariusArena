@@ -25,6 +25,8 @@ public class lever : MonoBehaviour {
 				g.GetComponent<CaBouge>().isDeplacing = true;
 			else if ((a = g.GetComponent<Animator>()) == true && a.enabled == false)
 				a.enabled = true;
+			else if (a  && g.tag == "trigger")
+				a.SetTrigger("trigger");
 		}
 	}
 	

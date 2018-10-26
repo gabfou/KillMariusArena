@@ -20,9 +20,9 @@ public class ProjectileAutoRotateAndDestroy : MonoBehaviour {
         while (time < timeBeforeDestroy)
         {
             yield return new WaitForEndOfFrame();
-            Destroy(gameObject);
             time += Time.deltaTime;
         }
+        Destroy(gameObject);
     }
 
     bool beginToDestroy = false;
