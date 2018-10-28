@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 60556277976290462}
   - component: {fileID: 114095570113269202}
   - component: {fileID: 114495943699664800}
+  - component: {fileID: 114234608709404050}
   m_Layer: 14
   m_Name: ProjectileHacheBoss
   m_TagString: ouch
@@ -142,12 +143,26 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1505254009165692}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 313a58b7037fd4077bf38fc7268e8a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rotationspeed: 1
+--- !u!114 &114234608709404050
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1505254009165692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55a197fb2ca594c03960b456c7144d91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nbReCible: 1
+  reCibleBehaviour: 1
+  timeToStop: 2
 --- !u!114 &114495943699664800
 MonoBehaviour:
   m_ObjectHideFlags: 1
