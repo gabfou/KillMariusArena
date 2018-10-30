@@ -7,15 +7,24 @@ public class lever : MonoBehaviour {
 	public GameObject[]	activate;
 	public List<string> activateurTag = new List<string>(){"Player"};
 	bool asbBeenActivated = false;
-	// Use this for initialization
-	void Start () {
-		
+	public bool oneTimeUse = true;
+	public float delayInSec = -1;
+	float timeSinceLast = 3;
+	
+	/// <summary>
+	/// Update is called every frame, if the MonoBehaviour is enabled.
+	/// </summary>
+	void Update()
+	{
+		if (oneTimeUse == false)
+			timeSinceLast += Time.deltaTime;
 	}
 
 	public void activator()
 	{
 		Animator a = null;
-		asbBeenActivated = true;
+		if (oneTimeUse)
+			asbBeenActivated = true;
 		transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);
 		foreach(GameObject g in activate)
 		{
@@ -30,10 +39,24 @@ public class lever : MonoBehaviour {
 		}
 	}
 	
+	IEnumerator delay()
+	{
+		yield return new WaitForSeconds(delayInSec);
+		activator();
+	}
+
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		// Debug.Log(other.name);
-		if (!asbBeenActivated && activateurTag.Contains(other.tag))
-			activator();
+		if (!asbBeenActivated && activateurTag.Contains(other.tag) && timeSinceLast > 3)
+		{
+			Debug.Log("dsd");
+			timeSinceLast = 0;
+			if (delayInSec <= 0)
+				activator();
+			else
+				StartCoroutine(delay());
+			
+		}
 	}
 }
