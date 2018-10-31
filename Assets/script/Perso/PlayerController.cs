@@ -254,9 +254,10 @@ public class PlayerController : Stopmoving
 
     IEnumerator    waitbefordying()
     {
-        while (coroutineisplayingcount > 0)
-            yield return new WaitForEndOfFrame();
+        yield return new WaitForSeconds(1);
         spriteRenderer.enabled = true;
+        while (coroutineisplayingcount > 0)
+            yield return new WaitForEndOfFrame();;
         gameObject.SetActive(false);
         if (tag == "Player")
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);

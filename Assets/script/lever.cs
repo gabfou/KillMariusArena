@@ -9,7 +9,7 @@ public class lever : MonoBehaviour {
 	bool asbBeenActivated = false;
 	public bool oneTimeUse = true;
 	public float delayInSec = -1;
-	float timeSinceLast = 3;
+	float timeSinceLast = 4;
 	
 	/// <summary>
 	/// Update is called every frame, if the MonoBehaviour is enabled.
