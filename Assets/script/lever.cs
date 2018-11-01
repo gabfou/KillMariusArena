@@ -10,6 +10,7 @@ public class lever : MonoBehaviour {
 	public bool oneTimeUse = true;
 	public float delayInSec = -1;
 	float timeSinceLast = 4;
+	public bool ActiveOnStay = false;
 	
 	/// <summary>
 	/// Update is called every frame, if the MonoBehaviour is enabled.
@@ -58,5 +59,11 @@ public class lever : MonoBehaviour {
 				StartCoroutine(delay());
 			
 		}
+	}
+
+	private void OnTriggerStay2D(Collider2D other)
+	{
+		if (ActiveOnStay)
+			OnTriggerEnter2D(other);
 	}
 }

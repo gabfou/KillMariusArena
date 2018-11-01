@@ -185,7 +185,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 7d4440a83cf483b42924952c749e4301, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!58 &58838311555100926
 CircleCollider2D:
@@ -353,7 +353,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannotmove: 0
   lifeText: {fileID: 0}
-  facingRight: 0
+  facingLeft: 0
   life: 2
   invulnTime: 0.1
   ouchtag: bam
@@ -371,7 +371,7 @@ MonoBehaviour:
   distanceofdash: 1
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
+  ouchClip: {fileID: 8300000, guid: f1e942bb66373e544b469b94bd5e1104, type: 3}
   ouchVolume: 0.8
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
@@ -379,6 +379,8 @@ MonoBehaviour:
   tappingVolume: 0.176
   run: {fileID: 0}
   runVolume: 0.5
+  DieClip: {fileID: 0}
+  DieVolume: 0.5
   ouchJumpMultPushX: 6
   ouchJumpMultPushY: 12
   canJump: 1
@@ -386,10 +388,17 @@ MonoBehaviour:
   grounded: 0
   move: 0
   movey: 0
+  onTakeDamage:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
   audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
+  isDead: 0
+  lastCheckpoint: {x: -Infinity, y: -Infinity}
   StayOnGround: 1
   perfectdistancetocible: 2
   distanceBehavior: 0
@@ -405,6 +414,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c6f8aaf998ab4c828d1f280a818f359, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeofanimbeforetap: 0.25
+  timeafter: 0.25
 --- !u!114 &114817585439276954
 MonoBehaviour:
   m_ObjectHideFlags: 1

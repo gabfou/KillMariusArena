@@ -44,7 +44,9 @@ public class PlayerController : Stopmoving
     public AudioClip TappingClip;
     [Range(0, 1)] public float tappingVolume = 0.5f;
     public AudioClip run;
-    [Range(0, 1)] public float runVolume = 0.5f;
+    [Range(0, 1)] public float runVolume = 0.5f;    
+    public AudioClip DieClip;
+    [Range(0, 1)] public float DieVolume = 0.5f;
 
     [Header("Ouch")]
     public float ouchJumpMultPushX = 2;
@@ -77,7 +79,7 @@ public class PlayerController : Stopmoving
     float baseGravityScale;
 
     protected Collider2D  col;
-    bool isDead;
+    [HideInInspector] public bool isDead;
 
 	[HideInInspector] public Vector2 lastCheckpoint = Vector2.negativeInfinity;
     int baseLayer;
@@ -271,8 +273,12 @@ public class PlayerController : Stopmoving
 
     void Die()
     {
+        if (audiosource && DieClip)
+            audiosource.PlayOneShot(DieClip, DieVolume);
         // spriteRenderer.enabled = false;
         isDead = true;
+        IsOuchstun = true;
+        StopTapping();
         gameObject.layer = LayerMask.NameToLayer("TouchNothing");
         rigidbody2D.gravityScale = 0;
         cannotmove = true;
@@ -303,6 +309,8 @@ public class PlayerController : Stopmoving
             Flip();
         else if (impact2.x < 0 && facingLeft)
             Flip();
+        if (audiosource && ouchClip)
+            audiosource.PlayOneShot(ouchClip, ouchVolume);
         if (life < 1)
         {
             eventOnDie();
@@ -310,8 +318,7 @@ public class PlayerController : Stopmoving
         }
         else
         {
-            if (audiosource && ouchClip)
-                audiosource.PlayOneShot(ouchClip, ouchVolume);
+
             StartCoroutine(ResetCanOuch());
             StartCoroutine(stunouch(impact2));
             StartCoroutine(impactoEffect());
