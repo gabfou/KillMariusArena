@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class ProjectileAutoRotateAndDestroy : MonoBehaviour {
 
@@ -17,6 +18,10 @@ public class ProjectileAutoRotateAndDestroy : MonoBehaviour {
     public IEnumerator WaitTilDestroy()
     {
         float time = 0;
+        Collider2D[] collist = GetComponents<Collider2D>();
+
+        foreach(Collider2D g in collist)
+            GameObject.Destroy(g);
         while (time < timeBeforeDestroy)
         {
             yield return new WaitForEndOfFrame();

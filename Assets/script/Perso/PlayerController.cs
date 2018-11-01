@@ -77,8 +77,10 @@ public class PlayerController : Stopmoving
     float baseGravityScale;
 
     protected Collider2D  col;
+    bool isDead;
 
 	[HideInInspector] public Vector2 lastCheckpoint = Vector2.negativeInfinity;
+    int baseLayer;
 
 
     /*****************************************************************************************************************
@@ -95,8 +97,11 @@ public class PlayerController : Stopmoving
         anim.SetBool("grounded", grounded);
 		candash = true;
         rigidbody2D.gravityScale = baseGravityScale;
+        gameObject.layer = baseLayer;
         if (lifeText)
             lifeText.text = life.ToString();
+        IsOuchstun = false;
+        isDead =false;
     }
 
     protected void init()
@@ -106,7 +111,7 @@ public class PlayerController : Stopmoving
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         spriteMaterial = spriteRenderer.material;
         rigidbody2D = GetComponent<Rigidbody2D>();
-
+        baseLayer = gameObject.layer;
         rigidbody2D.interpolation = RigidbodyInterpolation2D.Interpolate;
         anim = GetComponent<Animator>();
         audiosource = Camera.main.GetComponent<AudioSource>();
@@ -255,7 +260,7 @@ public class PlayerController : Stopmoving
     IEnumerator    waitbefordying()
     {
         yield return new WaitForSeconds(1);
-        spriteRenderer.enabled = true;
+        // spriteRenderer.enabled = true;
         while (coroutineisplayingcount > 0)
             yield return new WaitForEndOfFrame();;
         gameObject.SetActive(false);
@@ -266,7 +271,12 @@ public class PlayerController : Stopmoving
 
     void Die()
     {
-        spriteRenderer.enabled = false;
+        // spriteRenderer.enabled = false;
+        isDead = true;
+        gameObject.layer = LayerMask.NameToLayer("TouchNothing");
+        rigidbody2D.gravityScale = 0;
+        cannotmove = true;
+        // GetComponentsInChildren<GameObject>();
         anim.SetTrigger("death");
         StartCoroutine(waitbefordying());
     }
@@ -289,6 +299,10 @@ public class PlayerController : Stopmoving
         if (lifeText)
             lifeText.text = life.ToString();
         StopTapping();
+        if (impact2.x > 0 && !facingLeft)
+            Flip();
+        else if (impact2.x < 0 && facingLeft)
+            Flip();
         if (life < 1)
         {
             eventOnDie();
@@ -498,7 +512,7 @@ public class PlayerController : Stopmoving
 
     protected void PCFixedUpdate()
     {
-        if (life < 0)
+        if (life <= 0)
             return;
         allCheck();
 
