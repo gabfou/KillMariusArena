@@ -51,7 +51,6 @@ public class lever : MonoBehaviour {
 		// Debug.Log(other.name);
 		if (!asbBeenActivated && activateurTag.Contains(other.tag) && timeSinceLast > 3)
 		{
-			Debug.Log("dsd");
 			timeSinceLast = 0;
 			if (delayInSec <= 0)
 				activator();

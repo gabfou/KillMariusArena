@@ -114,11 +114,7 @@ public class Agro : PlayerController {
 		if (name == "chauveSourie" && other.name == "ZoneBam")
             	Debug.Log(realcol +" " + other.name + " " + realcol.IsTouching(other));
         if (realcol.IsTouching(other))
-		{
-			if (name == "chauveSourie")
-            	Debug.Log(other.name);
             base.OnTriggerStay2D(other);
-		}
     }
 
 	override protected void GroundCheck()

@@ -32,6 +32,12 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
+  - m_Name: FacingLeft
+    m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -41,7 +47,7 @@ AnimatorController:
     m_Behaviours: []
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
-    m_DefaultWeight: 0
+    m_DefaultWeight: 1
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
@@ -787,10 +793,10 @@ AnimatorStateMachine:
     m_Position: {x: 1560, y: 120, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102709585743543376}
-    m_Position: {x: 1404, y: 252, z: 0}
+    m_Position: {x: 1416, y: 276, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102215679202106690}
-    m_Position: {x: 1092, y: 228, z: 0}
+    m_Position: {x: 1092, y: 276, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []

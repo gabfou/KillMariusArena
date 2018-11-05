@@ -103,7 +103,9 @@ public class PlayerController : Stopmoving
         if (lifeText)
             lifeText.text = life.ToString();
         IsOuchstun = false;
-        isDead =false;
+        isDead = false;
+        if (isPlayer && GameManager.instance.save.lastCheckpoint != Vector2.zero)
+            transform.position = GameManager.instance.save.lastCheckpoint;
     }
 
     protected void init()
@@ -125,6 +127,8 @@ public class PlayerController : Stopmoving
             isPlayer = true;
         col = GetComponents<Collider2D>().Where(c => !c.isTrigger).FirstOrDefault();
         baseGravityScale = rigidbody2D.gravityScale;
+        if (isPlayer)
+            GameManager.instance.player = this;
         reinit();
     }
 
@@ -267,7 +271,10 @@ public class PlayerController : Stopmoving
             yield return new WaitForEndOfFrame();;
         gameObject.SetActive(false);
         if (tag == "Player")
+        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            // SaveLoad.Save();
+        }
         // GameObject.Destroy(gameObject);
     }
 
@@ -422,9 +429,10 @@ public class PlayerController : Stopmoving
 			candash = false;
 			anim.SetBool("isdashing", true);
             if (isinvuindash == false)
-                col.enabled = false;
-            else
                 col.isTrigger = true;
+            else
+                gameObject.layer = 12;
+               
 			float timer = 0;
 			float movebysecond = distanceofdash / timedashinsc;
 			float sign = Mathf.Sign(move);
@@ -432,16 +440,16 @@ public class PlayerController : Stopmoving
 			while (timer < timedashinsc)
 			{
 				// rigidbody2D.MovePosition(transform.position + new Vector3(sign * movebysecond * Time.deltaTime, 0, 0));
-                rigidbody2D.velocity = new Vector2(sign * movebysecond * Time.deltaTime, 0);
-				timer += Time.deltaTime;
-				yield return new WaitForEndOfFrame();
+                rigidbody2D.velocity = new Vector2(sign * movebysecond * Time.fixedDeltaTime, 0);
+				timer += Time.fixedDeltaTime;
+				yield return new WaitForFixedUpdate();
 			}
             isdashing = false;
             rigidbody2D.velocity = new Vector2(0, 0);
             if (isinvuindash == false)
-                col.enabled = true;
-            else
                 col.isTrigger = false;
+            else
+                gameObject.layer = baseLayer;
             anim.SetBool("isdashing", false);
 			yield return new WaitForSeconds(dashcd);
 			candash = true;
@@ -502,7 +510,7 @@ public class PlayerController : Stopmoving
             )
             StartCoroutine(Tapping());
 
-		if (Input.GetKey(KeyCode.X)
+		if (Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftCommand)
             #if UNITY_STANDALONE_OSX
             || Input.GetKey(KeyCode.Joystick1Button13) || Input.GetKey(KeyCode.Joystick1Button14)
             #else

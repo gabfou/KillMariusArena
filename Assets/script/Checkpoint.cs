@@ -5,7 +5,6 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour {
 
 	public int num;
-	GameManager manager = null;
 	public Sprite sp;
 	SpriteRenderer spr;
 	// Use this for initialization
@@ -20,12 +19,8 @@ public class Checkpoint : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "Player")
 		{
-			other.GetComponent<PlayerController>().lastCheckpoint = transform.position;
-			if (!manager)
-				manager = Camera.main.GetComponentInParent<GameManager>();
-			manager.lastCheckpoint = num;
-			if (num > manager.CheckpointPassed)
-				manager.CheckpointPassed = num;
+			// other.GetComponent<PlayerController>().lastCheckpoint = transform.positio
+			GameManager.instance.save.lastCheckpoint = transform.position;
 			if (!spr)
 			{
 				spr = GetComponent<SpriteRenderer>();
