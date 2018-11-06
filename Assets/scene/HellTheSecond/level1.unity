@@ -2314,10 +2314,9 @@ MonoBehaviour:
   looping: 0
   activeOnAwake: 0
   listOfPassage:
-  - {x: -85.62, y: -199.1, z: 0}
+  - {x: -85.62, y: -199.1}
   isDeplacing: 0
-  speed: 200
-  l: []
+  speed: 150
   e: 0
 --- !u!4 &165968183
 Transform:
@@ -12534,6 +12533,7 @@ MonoBehaviour:
   IsOuchstun: 0
   isDead: 0
   lastCheckpoint: {x: -Infinity, y: -Infinity}
+  Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
   distanceBehavior: 3

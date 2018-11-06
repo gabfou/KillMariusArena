@@ -189,7 +189,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 3.41, y: 0.93, z: 0}
+        value: {x: -3.76, y: 1.31, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -223,7 +223,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.22, y: -3.62, z: 0}
+        value: {x: -0.07, y: -3.87, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -257,7 +257,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0.22, y: 1.65, z: 0}
+        value: {x: -0.03, y: 1.18, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -291,7 +291,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: -3.89, y: 1.76, z: 0}
+        value: {x: 3.28, y: 1.25, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -325,7 +325,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 1.98, y: 3.35, z: 0}
+        value: {x: 1.98, y: 3.41, z: 0}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -392,6 +392,25 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_Enabled
     path: 
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_SortingOrder
+    path: DeathStuff/chauvesourisguy_9
     classID: 212
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -473,6 +492,13 @@ AnimationClip:
       customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
+      path: 4183679559
+      attribute: 3762991556
+      script: {fileID: 0}
+      typeID: 212
+      customType: 26
+      isPPtrCurve: 0
+    - serializedVersion: 2
       path: 3696030282
       attribute: 2086281974
       script: {fileID: 0}
@@ -551,7 +577,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3.41
+        value: -3.76
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -588,7 +614,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.93
+        value: 1.31
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -773,7 +799,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.22
+        value: -0.07
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -810,7 +836,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -3.62
+        value: -3.87
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -995,7 +1021,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0.22
+        value: -0.03
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1032,7 +1058,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1.65
+        value: 1.18
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1217,7 +1243,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: -3.89
+        value: 3.28
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1254,7 +1280,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 1.76
+        value: 1.25
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1476,7 +1502,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 3.35
+        value: 3.41
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -1655,6 +1681,25 @@ AnimationClip:
     attribute: localEulerAnglesRaw.z
     path: DeathStuff/chauvesourisguy_9
     classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 103
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_SortingOrder
+    path: DeathStuff/chauvesourisguy_9
+    classID: 212
     script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:

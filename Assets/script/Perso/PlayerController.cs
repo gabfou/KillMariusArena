@@ -83,6 +83,7 @@ public class PlayerController : Stopmoving
 
 	[HideInInspector] public Vector2 lastCheckpoint = Vector2.negativeInfinity;
     int baseLayer;
+    [HideInInspector] public Rigidbody2D rbparent= null;
 
 
     /*****************************************************************************************************************
@@ -104,7 +105,7 @@ public class PlayerController : Stopmoving
             lifeText.text = life.ToString();
         IsOuchstun = false;
         isDead = false;
-        if (isPlayer && GameManager.instance.save.lastCheckpoint != Vector2.zero)
+        if (isPlayer && GameManager.instance && GameManager.instance.save.lastCheckpoint != Vector2.zero)
             transform.position = GameManager.instance.save.lastCheckpoint;
     }
 
@@ -127,7 +128,7 @@ public class PlayerController : Stopmoving
             isPlayer = true;
         col = GetComponents<Collider2D>().Where(c => !c.isTrigger).FirstOrDefault();
         baseGravityScale = rigidbody2D.gravityScale;
-        if (isPlayer)
+        if (isPlayer && GameManager.instance)
             GameManager.instance.player = this;
         reinit();
     }
@@ -219,6 +220,8 @@ public class PlayerController : Stopmoving
         rigidbody2D.velocity = new Vector2( Mathf.Clamp(move * maxSpeed + impacto.x, -maxSpeed, maxSpeed),
                                             Mathf.Clamp(rigidbody2D.velocity.y + impacto.y, minYVelocity, maxYVelocity));
         anim.SetFloat("vely", rigidbody2D.velocity.y);
+        if (rbparent)
+            rigidbody2D.velocity +=  new Vector2(rbparent.velocity.x, 0);
     }
 
     Collider2D actualGround;

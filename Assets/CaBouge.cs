@@ -6,11 +6,11 @@ public class CaBouge : MonoBehaviour {
 
 	public bool looping = true;
 	public bool activeOnAwake = true;
-	public List<Vector3> listOfPassage = new List<Vector3>();
-	[HideInInspector]public bool isDeplacing = false;
+	public List<Vector2> listOfPassage = new List<Vector2>();
+	public bool isDeplacing = false;
 	public float speed;
-	public List<Transform> l = new List<Transform>();
 	Rigidbody2D rigidbody;
+	List<Transform> l = new List<Transform>();
 
 	public int e = 0; 
 	float marge;
@@ -18,38 +18,58 @@ public class CaBouge : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigidbody = GetComponent<Rigidbody2D>();
-		listOfPassage.Add(transform.position);
+		listOfPassage.Insert(0, transform.localPosition);
 		if (activeOnAwake)
 			isDeplacing = true;
 		marge = 0.1f;
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	void FixedUpdate ()
 	{
 		if (isDeplacing)
 		{
-			rigidbody.velocity = (listOfPassage[e] - transform.position).normalized * Time.deltaTime * speed;
-			// l.ForEach(c => c.transform.position = Vector3.MoveTowards(c.transform.position, listOfPassage[e], Time.deltaTime * speed));
-			if (Vector3.Distance(transform.position, listOfPassage[e]) < marge)
+			rigidbody.velocity = (listOfPassage[e] - (Vector2)transform.localPosition).normalized * Time.fixedDeltaTime * speed;
+			if (Vector2.Distance(transform.localPosition, listOfPassage[e]) < marge)
 			{
-				if (listOfPassage.Count >= ++e)
+				if (listOfPassage.Count <= ++e)
+				{
 					e = 0;
-				if (looping == false)
-					isDeplacing = false;
+					if (looping == false)
+						isDeplacing = false;
+				}
 			}
 		}
 	}
 
-	// void OnCollisionEnter2D(Collision2D other)
-	// {
-	// 	Debug.Log(other.gameObject.name);
-	// 	if (other.gameObject.tag == "Player")
-	// 		l.Add(other.transform);
-	// }
+	void OnCollisionEnter2D(Collision2D other)
+	{
+		Debug.Log(other.gameObject.name);
+		PlayerController player;
+		if ((player = other.gameObject.GetComponent<PlayerController>()) && other.transform.parent == null && other.gameObject.GetComponent<FlyingAgro>() == null)
+		{
+			other.transform.parent = transform;
+			player.rbparent = rigidbody;
+			l.Add(other.transform);
+		}
+	}
 
-	// void OnCollisionExit2D(Collision2D other)
-	// {
-	// 	l.Remove(l.Find(c => c.GetHashCode() == other.transform.GetHashCode()));
-	// }
+	IEnumerator WaitBeforeDesync(Transform t)
+	{
+		yield return new WaitForSeconds(0.1f);
+		t.parent = null;
+		t.GetComponent<PlayerController>().rbparent = null;
+		l.Remove(t);
+	}
+
+	void OnCollisionExit2D(Collision2D other)
+	{
+		Transform t = l.Find(c => c.GetInstanceID() == other.transform.GetInstanceID());
+		if (t)
+		{
+			t.parent = null;
+			t.GetComponent<PlayerController>().rbparent = null;
+			l.Remove(t);
+		}
+	}
 }

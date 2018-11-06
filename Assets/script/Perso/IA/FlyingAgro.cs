@@ -24,13 +24,13 @@ public class FlyingAgro : Agro
             if (Cible && !istapping)
 			{
 				float distance = Vector2.Distance(Cible.position, transform.position);
+				Vector2 realCible = (Vector2)Cible.position + (new Vector2((Cible.position.x - transform.position.x < 0) ? -1 : 1, 1)) * perfectdistancetocible;
                 if (distance > MaxDistance)
                 {
                     Cible = null; // peut etre active reactive qaund respawn pres
                     return ;
-                }				
-				Vector2 dir = (Cible.position - transform.position).normalized;
-				dir = (distance > perfectdistancetocible) ? dir : -1 * dir;
+                }
+				Vector2 dir = (realCible - (Vector2)transform.position).normalized;
 				move = dir.x;
 				movey = dir.y;
 			}
