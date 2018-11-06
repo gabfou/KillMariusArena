@@ -10,12 +10,14 @@ public class CaBouge : MonoBehaviour {
 	[HideInInspector]public bool isDeplacing = false;
 	public float speed;
 	public List<Transform> l = new List<Transform>();
+	Rigidbody2D rigidbody;
 
 	public int e = 0; 
 	float marge;
 
 	// Use this for initialization
 	void Start () {
+		rigidbody = GetComponent<Rigidbody2D>();
 		listOfPassage.Add(transform.position);
 		if (activeOnAwake)
 			isDeplacing = true;
@@ -27,8 +29,8 @@ public class CaBouge : MonoBehaviour {
 	{
 		if (isDeplacing)
 		{
-			transform.position = Vector3.MoveTowards(transform.position, listOfPassage[e], Time.deltaTime * speed);
-			l.ForEach(c => c.transform.position = Vector3.MoveTowards(c.transform.position, listOfPassage[e], Time.deltaTime * speed));
+			rigidbody.velocity = (listOfPassage[e] - transform.position).normalized * Time.deltaTime * speed;
+			// l.ForEach(c => c.transform.position = Vector3.MoveTowards(c.transform.position, listOfPassage[e], Time.deltaTime * speed));
 			if (Vector3.Distance(transform.position, listOfPassage[e]) < marge)
 			{
 				if (listOfPassage.Count >= ++e)
@@ -39,15 +41,15 @@ public class CaBouge : MonoBehaviour {
 		}
 	}
 
-	void OnCollisionEnter2D(Collision2D other)
-	{
-		Debug.Log(other.gameObject.name);
-		if (other.gameObject.tag == "Player")
-			l.Add(other.transform);
-	}
+	// void OnCollisionEnter2D(Collision2D other)
+	// {
+	// 	Debug.Log(other.gameObject.name);
+	// 	if (other.gameObject.tag == "Player")
+	// 		l.Add(other.transform);
+	// }
 
-	void OnCollisionExit2D(Collision2D other)
-	{
-		l.Remove(l.Find(c => c.GetHashCode() == other.transform.GetHashCode()));
-	}
+	// void OnCollisionExit2D(Collision2D other)
+	// {
+	// 	l.Remove(l.Find(c => c.GetHashCode() == other.transform.GetHashCode()));
+	// }
 }

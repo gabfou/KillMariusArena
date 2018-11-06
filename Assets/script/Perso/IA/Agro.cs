@@ -8,7 +8,7 @@ public class Agro : PlayerController {
 
     public enum DistanceBehavior {Free, JustFlee, Justcharge, DontMove};
 
-    protected Transform Cible = null;
+    [HideInInspector] public Transform Cible = null;
 
     [Header("Agro setting")]
     public bool StayOnGround = true;

@@ -470,12 +470,10 @@ public class PlayerController : Stopmoving
             return;
         move = Input.GetAxisRaw("Horizontal");
         movey = Input.GetAxisRaw("Vertical");
-        bool iscrouching;
+        bool iscrouching = false;
        // move = (istapping) ? move / 2 : move;
 
 
-        
-        iscrouching = false;
         if ((Input.GetKey(KeyCode.Space)
             #if UNITY_STANDALONE_OSX
             || Input.GetKey(KeyCode.Joystick1Button16)
@@ -496,6 +494,7 @@ public class PlayerController : Stopmoving
             tryjump();
         else if(movey < 0 && grounded)
         {
+            Debug.Log("dsf");
             move = 0;
             iscrouching = true;
         }
