@@ -278,7 +278,7 @@ public class PlayerController : Stopmoving
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             // SaveLoad.Save();
         }
-        // GameObject.Destroy(gameObject);
+        GameObject.Destroy(gameObject);
     }
 
     void Die()
@@ -497,7 +497,6 @@ public class PlayerController : Stopmoving
             tryjump();
         else if(movey < 0 && grounded)
         {
-            Debug.Log("dsf");
             move = 0;
             iscrouching = true;
         }

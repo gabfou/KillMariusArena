@@ -8,6 +8,8 @@ public class Spawn : MonoBehaviour {
 	public float cd =1;
 	public float decalage = 0;
 	float actualcd;
+	public bool onlyIfLastDie = false;
+	GameObject last = null;
 	void Start () {
 		actualcd = cd;
 	}
@@ -20,10 +22,10 @@ public class Spawn : MonoBehaviour {
 			return ;
 		}
 		actualcd -= Time.fixedDeltaTime;
-		if (actualcd <= 0)
+		if (actualcd <= 0 && (onlyIfLastDie == false || last == null))
 		{
 			actualcd = cd;
-			GameObject.Instantiate(gameObject, transform.position, Quaternion.identity);
+			last = GameObject.Instantiate(gameObject, transform.position, Quaternion.identity);
 		}
 	}
 }
