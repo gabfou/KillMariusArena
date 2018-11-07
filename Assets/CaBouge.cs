@@ -18,7 +18,7 @@ public class CaBouge : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigidbody = GetComponent<Rigidbody2D>();
-		listOfPassage.Insert(0, transform.localPosition);
+		listOfPassage.Insert(0, transform.position);
 		if (activeOnAwake)
 			isDeplacing = true;
 		marge = 0.1f;
@@ -29,14 +29,17 @@ public class CaBouge : MonoBehaviour {
 	{
 		if (isDeplacing)
 		{
-			rigidbody.velocity = (listOfPassage[e] - (Vector2)transform.localPosition).normalized * Time.fixedDeltaTime * speed;
-			if (Vector2.Distance(transform.localPosition, listOfPassage[e]) < marge)
+			rigidbody.velocity = (listOfPassage[e] - (Vector2)transform.position).normalized * Time.fixedDeltaTime * speed;
+			if (Vector2.Distance(transform.position, listOfPassage[e]) < marge)
 			{
 				if (listOfPassage.Count <= ++e)
 				{
 					e = 0;
 					if (looping == false)
+					{
+						rigidbody.velocity = Vector2.zero;
 						isDeplacing = false;
+					}
 				}
 			}
 		}
