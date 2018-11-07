@@ -107,6 +107,11 @@ public class PlayerController : Stopmoving
         isDead = false;
         if (isPlayer && GameManager.instance && GameManager.instance.save.lastCheckpoint != Vector2.zero)
             transform.position = GameManager.instance.save.lastCheckpoint;
+        if (isPlayer)
+        {
+            vcam.Follow = transform;
+            vcam.LookAt = transform;
+        }
     }
 
     protected void init()

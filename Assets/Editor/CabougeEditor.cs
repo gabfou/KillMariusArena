@@ -5,7 +5,7 @@ using UnityEditor;
 using System.Linq;
 
 
-[CustomEditor(typeof(CaBouge))]
+[CustomEditor(typeof(CaBouge)), CanEditMultipleObjects]
 public class CabougeInspector : Editor {
 
 	CaBouge cabouge;
