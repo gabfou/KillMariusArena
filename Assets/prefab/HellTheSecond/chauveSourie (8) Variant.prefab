@@ -2,7 +2,8 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1 &1674374467104931368 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 1909758998339404, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
+  m_CorrespondingSourceObject: {fileID: 1909758998339404, guid: debb6d207de8f46c3aa13698bb9748d7,
+    type: 3}
   m_PrefabInstance: {fileID: 1673749573685092708}
   m_PrefabAsset: {fileID: 0}
 --- !u!60 &1410260225
@@ -79,7 +80,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1909758998339404, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
       propertyPath: m_Name
-      value: chauveSourie (8)
+      value: chauveSourie (8) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 114209388165257004, guid: debb6d207de8f46c3aa13698bb9748d7,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 60479176297310040, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}

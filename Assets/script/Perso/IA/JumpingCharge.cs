@@ -68,7 +68,7 @@ public class JumpingCharge : MonoBehaviour {
             ps.audiosource.PlayOneShot(ps.TappingClip, ps.tappingVolume);
 		while (true)
 		{
-			if (ps.grounded && ps.canJump)
+			if ((ps.grounded && ps.canJump) || ps.IsOuchstun)
 				break ;
 			ps.Move(move * coefspeed);
 			yield return new WaitForEndOfFrame();

@@ -33,14 +33,14 @@ public class tonneaux : MonoBehaviour {
 				side = targetside;
 			}
 		}
-		side = Mathf.SmoothDamp(side, targetside, ref sideVelocity, 0.6f);
-		// if (Mathf.Abs(rbody.velocity.y) < 1)
-			rbody.velocity = new Vector2( side * speed, rbody.velocity.y);
+		side = Mathf.SmoothDamp(side, targetside, ref sideVelocity, 0.6f);			rbody.velocity = new Vector2( side * speed, rbody.velocity.y);
 	}
 
 	IEnumerator Death()
 	{
 		GetComponent<Animator>()?.SetTrigger("death");
+		GameObject.Destroy(GetComponent<rotateOnVX>());
+		rbody.angularVelocity = 0;
 		yield return new WaitForSeconds(0.5f);
 		GameObject.Destroy(gameObject);
 	}

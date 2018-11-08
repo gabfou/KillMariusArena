@@ -437,9 +437,9 @@ public class PlayerController : Stopmoving
 			candash = false;
 			anim.SetBool("isdashing", true);
             if (isinvuindash == false)
-                col.isTrigger = true;
-            else
                 gameObject.layer = 12;
+            else
+                gameObject.layer = 13;
                
 			float timer = 0;
 			float movebysecond = distanceofdash / timedashinsc;
@@ -455,7 +455,7 @@ public class PlayerController : Stopmoving
             isdashing = false;
             rigidbody2D.velocity = new Vector2(0, 0);
             if (isinvuindash == false)
-                col.isTrigger = false;
+                gameObject.layer = baseLayer;
             else
                 gameObject.layer = baseLayer;
             anim.SetBool("isdashing", false);
