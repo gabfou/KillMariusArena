@@ -38,6 +38,13 @@ public class tonneaux : MonoBehaviour {
 			rbody.velocity = new Vector2( side * speed, rbody.velocity.y);
 	}
 
+	IEnumerator Death()
+	{
+		GetComponent<Animator>()?.SetTrigger("death");
+		yield return new WaitForSeconds(0.5f);
+		GameObject.Destroy(gameObject);
+	}
+
 	void OnCollisionEnter2D(Collision2D other)
 	{
 		if (l.Contains(other.gameObject.GetInstanceID()))
@@ -51,6 +58,9 @@ public class tonneaux : MonoBehaviour {
 			targetside  = -targetside;
 		}
 		else if (other.gameObject.tag == "DestroyTonneaux")
-			GameObject.Destroy(gameObject);
+		{
+			// GameObject.Destroy(gameObject);
+			StartCoroutine(Death());
+		}
 	}
 }

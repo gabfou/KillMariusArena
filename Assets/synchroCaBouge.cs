@@ -20,7 +20,6 @@ public class synchroCaBouge : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        listb.ForEach(b => Debug.Log(b));
         int i = 0;
         foreach(var cb in list)
         {
