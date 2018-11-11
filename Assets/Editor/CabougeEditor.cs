@@ -9,12 +9,14 @@ using System.Linq;
 public class CabougeInspector : Editor {
 
 	CaBouge cabouge;
+	int actualSize;
 
 	// List<Vector2>	list = new List<Vector2>();
 
 	void OnEnable()
 	{ 
 		cabouge = target as CaBouge;
+		actualSize = cabouge.listOfPassage.Count;
 	}
 
 	public override void OnInspectorGUI()
@@ -24,8 +26,15 @@ public class CabougeInspector : Editor {
 
 	public void OnSceneGUI()
 	{
-		for (int i = 0; i < cabouge.listOfPassage.Count; i++) // pour l instant c est stupide (meme boxBound pour toute la liste)
+		if (actualSize > cabouge.listOfPassage.Count)
+			actualSize = cabouge.listOfPassage.Count;
+		for (int i = 0; i < cabouge.listOfPassage.Count; i++)
 		{
+			if (actualSize < i)
+			{
+				actualSize = i;
+				cabouge.listOfPassage[i] = cabouge.transform.position;
+			}
 			cabouge.listOfPassage[i] = Handles.PositionHandle(cabouge.listOfPassage[i], Quaternion.identity);
 		}
 	}
