@@ -166,11 +166,11 @@ public class PlayerController : Stopmoving
             rigidbody2D.velocity = new Vector2(Mathf.Sign(transform.position.x - pos.x) * 10, rigidbody2D.velocity.y);
         }
     }
-
     IEnumerator Tapping()
     {
         if (istapping == false)
         {
+            Debug.Log("Tapping");
             if (TappingClip)
                 audiosource.PlayOneShot(TappingClip, tappingVolume);
             istapping = true;
@@ -180,14 +180,16 @@ public class PlayerController : Stopmoving
             //     Flip();
             // else if (!istapping && move < 0 && facingLeft)
             //     Flip();
-
             yield return new WaitForSeconds(0.3f);
+            anim.SetBool("istapping", false);
+            yield return new WaitForSeconds(0.15f);
             StopTapping();
         }
     }
 
     void    StopTapping()
     {
+            Debug.Log("StopTapping");
         StopCoroutine(Tapping());
         anim.SetBool("istapping", false);
         istapping = false;
@@ -232,6 +234,11 @@ public class PlayerController : Stopmoving
     Collider2D actualGround;
     protected virtual void GroundCheck()
     {
+        if (groundPosition == Vector3.zero && groundSize == Vector2.zero)
+        {
+            grounded = true;
+            return ;
+        }
         RaycastHit2D[] results = new RaycastHit2D[10];
         int collisionNumber = Physics2D.BoxCastNonAlloc(transform.position + groundPosition, groundSize, 0, Vector2.down, results, .0f, 1 << (LayerMask.NameToLayer("Ground")) | 1 << (LayerMask.NameToLayer("GroundOneWay")));
 
@@ -516,7 +523,7 @@ public class PlayerController : Stopmoving
             )
             StartCoroutine(Tapping());
 
-		if (Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftCommand)
+		if (Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftCommand) || Input.GetKey(KeyCode.RightShift)
             #if UNITY_STANDALONE_OSX
             || Input.GetKey(KeyCode.Joystick1Button13) || Input.GetKey(KeyCode.Joystick1Button14)
             #else

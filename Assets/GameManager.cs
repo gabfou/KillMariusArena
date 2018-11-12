@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour {
 		// 	instance  = this;
 		// lastCheckpoint = instance.lastCheckpoint;
 		// CheckpointPassed = instance.CheckpointPassed;
+		// Random.InitState(System.DateTime.Now.Millisecond);
 		if (instance == null)
 			instance = this;
 		else 

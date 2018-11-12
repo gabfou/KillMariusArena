@@ -47,7 +47,7 @@ public class CaBouge : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		Debug.Log(other.gameObject.name);
+		// Debug.Log(other.gameObject.name);
 		PlayerController player;
 		if ((player = other.gameObject.GetComponent<PlayerController>()) && other.transform.parent == null && other.gameObject.GetComponent<FlyingAgro>() == null)
 		{

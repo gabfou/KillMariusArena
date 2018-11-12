@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+// using UnityEngine.Random;
 
 public class Throwthing : MonoBehaviour {
     public Rigidbody2D Projectile;
@@ -57,13 +58,12 @@ public class Throwthing : MonoBehaviour {
         anim.SetTrigger("shooting");
         for (int i = 0; i < nbofshotbyburst; i++)
         {
+            Debug.Log(Random.Range(-angleprecision / 2, angleprecision / 2));;
+
+
             Rigidbody2D lastmp = GameObject.Instantiate(Projectile, transform.position, Quaternion.identity);
             lastmp.transform.right = (cible - (Vector2)transform.position).normalized;
-
-            var rotation = transform.rotation;
-            transform.Rotate(transform.forward, Random.Range(-angleprecision / 2, angleprecision / 2));
-            transform.rotation = rotation;
-
+            lastmp.transform.Rotate(transform.forward, Random.Range(-angleprecision / 2, angleprecision / 2));
             lastmp.AddForce(lastmp.transform.right * impulsionForce, ForceMode2D.Impulse);
         }
     }
@@ -81,6 +81,7 @@ public class Throwthing : MonoBehaviour {
     {
         if (collision.tag == "Player")
         {
+            // Debug.Log("sadad22");
             playerInSight = false;
             willShoot = false;
             anim.SetBool("willshoot", false);

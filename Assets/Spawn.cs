@@ -7,11 +7,12 @@ public class Spawn : MonoBehaviour {
 	public GameObject gameObject = null;
 	public float cd =1;
 	public float decalage = 0;
+	public float randomFrom0 = 0;
 	float actualcd;
 	public bool onlyIfLastDie = false;
 	GameObject last = null;
 	void Start () {
-		actualcd = cd;
+		actualcd = cd + Random.Range(0, randomFrom0);
 	}
 	
 	// Update is called once per frame
@@ -24,7 +25,7 @@ public class Spawn : MonoBehaviour {
 		actualcd -= Time.fixedDeltaTime;
 		if (actualcd <= 0 && (onlyIfLastDie == false || last == null))
 		{
-			actualcd = cd;
+			actualcd = cd + Random.Range(0, randomFrom0);
 			last = GameObject.Instantiate(gameObject, transform.position, Quaternion.identity);
 		}
 	}
