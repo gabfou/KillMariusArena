@@ -6,7 +6,6 @@ using System.Linq;
 public class ProjectileAutoRotateAndDestroy : MonoBehaviour {
 
     public float timeBeforeDestroy = 1;
-
 	void Start () {
 		
 	}
@@ -18,13 +17,15 @@ public class ProjectileAutoRotateAndDestroy : MonoBehaviour {
     public IEnumerator WaitTilDestroy()
     {
         float time = 0;
-        Collider2D[] collist = GetComponents<Collider2D>();
-
-        foreach(Collider2D g in collist)
-            GameObject.Destroy(g);
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+        Color c = spriteRenderer.color;
+        float s = transform.localScale.x;
         while (time < timeBeforeDestroy)
         {
             yield return new WaitForEndOfFrame();
+            c.a -= Time.deltaTime / timeBeforeDestroy;
+            spriteRenderer.color = c;
+            transform.localScale -= new Vector3(Time.deltaTime / timeBeforeDestroy * s,Time.deltaTime / timeBeforeDestroy * s);
             time += Time.deltaTime;
         }
         Destroy(gameObject);
@@ -36,8 +37,12 @@ public class ProjectileAutoRotateAndDestroy : MonoBehaviour {
     {
         if (beginToDestroy)
             return ;
+        Collider2D[] collist = GetComponents<Collider2D>();
+
+        for (int i = 0; i < collist.Length; i++)
+            GameObject.Destroy(collist[i]);
         beginToDestroy = true;
-        GetComponent<Rigidbody2D>().AddTorque(10, ForceMode2D.Impulse);
+        GetComponent<Rigidbody2D>().AddTorque(15 * Mathf.Sign(GetComponent<Rigidbody2D>().rotation), ForceMode2D.Impulse);
         StartCoroutine(WaitTilDestroy());
     }
 }
