@@ -85,6 +85,8 @@ public class PlayerController : Stopmoving
     int baseLayer;
     [HideInInspector] public Rigidbody2D rbparent= null;
 
+    protected LayerMask groundLayer;
+
 
     /*****************************************************************************************************************
                                                         INITIALISATION
@@ -116,6 +118,7 @@ public class PlayerController : Stopmoving
 
     protected void init()
     {
+        groundLayer = 1 << (LayerMask.NameToLayer("Ground")) | 1 << (LayerMask.NameToLayer("GroundOneWay"));
         spriteRenderer = GetComponent<SpriteRenderer>();
         if (spriteRenderer == null)
             spriteRenderer = GetComponentInChildren<SpriteRenderer>();
@@ -240,7 +243,7 @@ public class PlayerController : Stopmoving
             return ;
         }
         RaycastHit2D[] results = new RaycastHit2D[10];
-        int collisionNumber = Physics2D.BoxCastNonAlloc(transform.position + groundPosition, groundSize, 0, Vector2.down, results, .0f, 1 << (LayerMask.NameToLayer("Ground")) | 1 << (LayerMask.NameToLayer("GroundOneWay")));
+        int collisionNumber = Physics2D.BoxCastNonAlloc(transform.position + groundPosition, groundSize, 0, Vector2.down, results, .0f, groundLayer);
 
         grounded = collisionNumber != 0;
         if (collisionNumber != 0)
@@ -491,23 +494,26 @@ public class PlayerController : Stopmoving
 
         if ((Input.GetKey(KeyCode.Space)
             #if UNITY_STANDALONE_OSX
-            || Input.GetKey(KeyCode.Joystick1Button16)
+            || Input.GetKey(KeyCode.Joystick1Button0)
             #else
             || Input.GetKey(KeyCode.Joystick1Button0)
             #endif
             )
-            && movey < 0)
+            && movey < -0.6f)
+        {
+            Debug.Log(movey);
             tryGoUnder();
+        }
 
         else if (Input.GetKey(KeyCode.Space)
             #if UNITY_STANDALONE_OSX
-            || Input.GetKey(KeyCode.Joystick1Button16)
+            || Input.GetKey(KeyCode.Joystick1Button0)
             #else
             || Input.GetKey(KeyCode.Joystick1Button0)
             #endif
             )
             tryjump();
-        else if(movey < 0 && grounded)
+        else if(movey < -0.6f && grounded)
         {
             move = 0;
             iscrouching = true;
@@ -516,7 +522,7 @@ public class PlayerController : Stopmoving
 
         if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)
             #if UNITY_STANDALONE_OSX
-            || Input.GetKey(KeyCode.Joystick1Button18)
+            || Input.GetKey(KeyCode.Joystick1Button2)
             #else
             || Input.GetKey(KeyCode.Joystick1Button2)
             #endif
@@ -525,9 +531,9 @@ public class PlayerController : Stopmoving
 
 		if (Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftCommand) || Input.GetKey(KeyCode.RightShift)
             #if UNITY_STANDALONE_OSX
-            || Input.GetKey(KeyCode.Joystick1Button13) || Input.GetKey(KeyCode.Joystick1Button14)
+            || Input.GetKey(KeyCode.Joystick1Button6) || Input.GetKey(KeyCode.Joystick1Button7)
             #else
-            || Input.GetKey(KeyCode.Joystick1Button4) || Input.GetKey(KeyCode.Joystick1Button5)
+            || Input.GetKey(KeyCode.Joystick1Button6) || Input.GetKey(KeyCode.Joystick1Button7)
             #endif
             )
             StartCoroutine(dash());

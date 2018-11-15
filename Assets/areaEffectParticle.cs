@@ -4,23 +4,39 @@ using UnityEngine;
 
 public class areaEffectParticle : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    ParticleSystem ps;
+    List<ParticleSystem.Particle> inside = new List<ParticleSystem.Particle>();
+    List<ParticleSystem.Particle> exit = new List<ParticleSystem.Particle>();
+
+    void OnEnable()
     {
-        
+        ps = GetComponent<ParticleSystem>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    /// <summary>
-    /// OnParticleTrigger is called when any particles in a particle system
-    /// meet the conditions in the trigger module.
-    /// </summary>
     void OnParticleTrigger()
     {
-        Debug.Log("fdsf");
+        if (!ps)
+            return ;
+        int numInside = ps.GetTriggerParticles(ParticleSystemTriggerEventType.Inside, inside);
+        int numExit = ps.GetTriggerParticles(ParticleSystemTriggerEventType.Exit, exit);
+
+        for (int i = 0; i < numInside; i++)
+        {
+            ParticleSystem.Particle p = inside[i];
+            p.velocity += new Vector3(-1,0,0);
+            p.velocity = new Vector3(Mathf.Clamp(p.velocity.x, -20, 20), p.velocity.y, p.velocity.z);
+            inside[i] = p;
+        }
+
+        for (int i = 0; i < numExit; i++)
+        {
+            ParticleSystem.Particle p = exit[i];
+            p.velocity = new Vector3(0, p.velocity.y, p.velocity.z);
+            exit[i] = p;
+        }
+
+        ps.SetTriggerParticles(ParticleSystemTriggerEventType.Inside, inside);
+        ps.SetTriggerParticles(ParticleSystemTriggerEventType.Exit, exit);
+        Debug.Log("numInside " + numInside);
     }
 }

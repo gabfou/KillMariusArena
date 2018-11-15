@@ -33,7 +33,8 @@ public class tonneaux : MonoBehaviour {
 				side = targetside;
 			}
 		}
-		side = Mathf.SmoothDamp(side, targetside, ref sideVelocity, 0.6f);			rbody.velocity = new Vector2( side * speed, rbody.velocity.y);
+		side = Mathf.SmoothDamp(side, targetside, ref sideVelocity, 0.6f);
+		rbody.velocity = new Vector2( side * speed, rbody.velocity.y);
 	}
 
 	IEnumerator Death()

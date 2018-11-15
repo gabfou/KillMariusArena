@@ -6,7 +6,7 @@ using Cinemachine;
 
 public class Agro : PlayerController {
 
-    public enum DistanceBehavior {Free, JustFlee, Justcharge, DontMove};
+    public enum DistanceBehavior {Free, JustFlee, Justcharge, DontMove, Mounted};
 
     [HideInInspector] public Transform Cible = null;
 
@@ -16,6 +16,8 @@ public class Agro : PlayerController {
     public float perfectdistancetocible = 0;
     public DistanceBehavior distanceBehavior = DistanceBehavior.Free;
     public float MaxDistance = Mathf.Infinity;
+	float moveSmooth = 0;
+
 
 	// public Sprite changeSpriteOnAgro;
 	// public List<string> listOfAnimtOverwrite = new List<string>();
@@ -30,6 +32,32 @@ public class Agro : PlayerController {
 			realcol = GetComponents<Collider2D>().LastOrDefault();
 	}
 
+	void MountedFixedUpdate(float distance)
+	{
+				Debug.Log("dsf2 " + move);
+		float sign = Mathf.Sign((Cible.position - transform.position).x);
+		if ((StayOnGround || (move != 0 && Mathf.Sign(move) != sign)) && !(Physics2D.Raycast(transform.position, new Vector3(Mathf.Sign(move), -1, 0), 4, groundLayer)))
+			move = 0;
+		// else if (move != 0 && Mathf.Sign(move) != sign && !(Physics2D.Raycast(transform.position, new Vector3(move, -2, 0), 2, groundLayer)))
+		// 	move = 0;
+		else if (Mathf.Sign(move) != sign)
+			move = Mathf.Clamp(move + sign * 1f * Time.fixedDeltaTime, -1, 1);
+		else
+			move = sign;
+		if (move == 0)
+		{
+			if (Cible.position.x > transform.position.x && facingLeft)
+				Flip();
+			if (Cible.position.x < transform.position.x && !facingLeft)
+				Flip();
+		}
+
+		if (move != 0 && !StayOnGround && (Cible.position.y - 3 > transform.position.y)
+			&& (Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), 2, groundLayer)
+				|| !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 2, groundLayer))))
+			tryjump();
+		base.FixedUpdate();
+	}
 
 	// Update is called once per frame
 	protected override void FixedUpdate ()
@@ -38,18 +66,23 @@ public class Agro : PlayerController {
 		{
             if (Cible)
 			{
-                float distance = Vector2.Distance(Cible.position, transform.position);
+				float distance = Vector2.Distance(Cible.position, transform.position);
                 if (distance > MaxDistance)
                 {
                     Cible = null; // peut etre active reactive qaund respawn pres
                     return ;
                 }
-                int sign = (distance > perfectdistancetocible) ? 1 : -1;
+				int sign = (distance > perfectdistancetocible) ? 1 : -1;
+				if (DistanceBehavior.Mounted == distanceBehavior)
+				{
+					MountedFixedUpdate(distance);
+					return ;
+				}
 				if (DistanceBehavior.DontMove == distanceBehavior)
 					move = 0;
                 else if (Mathf.Abs(distance - perfectdistancetocible) < 0.2f)
                     move = 0;
-                else if (StayOnGround && !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 2, LayerMask.GetMask("Ground"))))
+                else if (StayOnGround && !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 2, groundLayer)))
                     move = 0;
                 else if (DistanceBehavior.Free != distanceBehavior && ((DistanceBehavior.Justcharge == distanceBehavior && sign == -1)
 																		|| (DistanceBehavior.JustFlee == distanceBehavior && sign == 1)))
@@ -66,29 +99,29 @@ public class Agro : PlayerController {
                 }
 
 				if (move != 0 && !StayOnGround && (Cible.position.y - 3 > transform.position.y)
-					&& (Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), 2, LayerMask.GetMask("Ground"))
-						|| !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 2, LayerMask.GetMask("Ground")))))
+					&& (Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), 2, groundLayer)
+						|| !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 2, groundLayer))))
 					tryjump();
             }
 			else
 				move = 0;
 		}
 		base.FixedUpdate();
-		if (Cible && base.cannotmove == false)
-		{
-				ContactFilter2D cf = new ContactFilter2D();
-				cf.SetLayerMask(gameObject.layer);
-				RaycastHit2D[] results = new RaycastHit2D[10];
-				if (col && col.Cast(transform.right, cf, results) > 0)
-				{
-					move += (results[0].transform.position.x > transform.position.x) ? -1 : 1;
-				}
-		}
+		// if (Cible && base.cannotmove == false)
+		// {
+		// 		ContactFilter2D cf = new ContactFilter2D();
+		// 		cf.SetLayerMask(gameObject.layer);
+		// 		RaycastHit2D[] results = new RaycastHit2D[10];
+		// 		if (col && col.Cast(transform.right, cf, results) > 0)
+		// 		{
+		// 			move += (results[0].transform.position.x > transform.position.x) ? -1 : 1;
+		// 		}
+		// }
 	}
 
 	void Update()
 	{
-
+		
 	}
 
 	CinemachineTargetGroup.Target t; 
@@ -99,7 +132,10 @@ public class Agro : PlayerController {
 		if (other.tag == "Player")
 		{
 			changesprite = true;
-			anim.SetTrigger("Alert!");
+			if (anim)
+				anim.SetTrigger("Alert!");
+			else
+				Debug.Log(name + " pas D'anim");
 			Cible = other.transform;
 			// t.radius = 2;
 			// t.weight = 1;
@@ -111,9 +147,9 @@ public class Agro : PlayerController {
 			// 	other.GetComponent<CinemachineTargetGroup>().m_Targets = targets.ToArray();
 			// }
 		}
-		if (name == "chauveSourie" && other.name == "ZoneBam")
-            	Debug.Log(realcol +" " + other.name + " " + realcol.IsTouching(other));
-        if (realcol.IsTouching(other))
+		if (!realcol)
+			Debug.Log(name + " pas de realcol");
+        else if (realcol.IsTouching(other))
             base.OnTriggerStay2D(other);
     }
 
