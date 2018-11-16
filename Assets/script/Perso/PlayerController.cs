@@ -18,6 +18,7 @@ public class PlayerController : Stopmoving
     public float invulnTime = 1f;
     public string ouchtag = "ouch";
     public float timestunouch = 0.2f;
+    public bool stunStopMove = true;
 
     [Header("Mobility and groundaison")]
     public float maxSpeed = 1f;
@@ -324,7 +325,8 @@ public class PlayerController : Stopmoving
     public void ouch(Vector2 impact2)
     {
         onTakeDamage.Invoke();
-        rigidbody2D.velocity = Vector2.zero;
+        if (stunStopMove)
+            rigidbody2D.velocity = Vector2.zero;
         canOuch = false;
         life--;
         if (lifeText)
@@ -370,7 +372,8 @@ public class PlayerController : Stopmoving
 		coroutineisplayingcount++;
         anim.SetBool("ouch", true);
         IsOuchstun = true;
-        cannotmove = true;
+        if (stunStopMove)
+            cannotmove = true;
         rigidbody2D.velocity = impact;
         spriteMaterial.SetFloat("_isflashing", 1);
         yield return new WaitForSeconds(timestunouch);

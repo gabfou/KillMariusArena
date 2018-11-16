@@ -34,14 +34,13 @@ public class Agro : PlayerController {
 
 	void MountedFixedUpdate(float distance)
 	{
-				Debug.Log("dsf2 " + move);
 		float sign = Mathf.Sign((Cible.position - transform.position).x);
 		if ((StayOnGround || (move != 0 && Mathf.Sign(move) != sign)) && !(Physics2D.Raycast(transform.position, new Vector3(Mathf.Sign(move), -1, 0), 4, groundLayer)))
 			move = 0;
 		// else if (move != 0 && Mathf.Sign(move) != sign && !(Physics2D.Raycast(transform.position, new Vector3(move, -2, 0), 2, groundLayer)))
 		// 	move = 0;
 		else if (Mathf.Sign(move) != sign)
-			move = Mathf.Clamp(move + sign * 1f * Time.fixedDeltaTime, -1, 1);
+			move = Mathf.Clamp(move + sign * 0.7f * Time.fixedDeltaTime, -1, 1);
 		else
 			move = sign;
 		if (move == 0)

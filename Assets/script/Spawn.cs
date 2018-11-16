@@ -17,7 +17,7 @@ public class Spawn : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (decalage > 0)
+		if (decalage > 0 && (onlyIfLastDie == false || last == null))
 		{
 			decalage -= Time.fixedDeltaTime;
 			return ;

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class AutoTapping : MonoBehaviour {
 
@@ -9,13 +10,47 @@ public class AutoTapping : MonoBehaviour {
     Animator anim;
     public float timeofanimbeforetap = 0.25f;
     public float timeafter = 0.25f;
+    public float SimulateIn = -1;
 
-    PlayerController pc;
+    Agro pc;
+    Rigidbody2D rb;
+    Collider2D col;
+    Collider2D colCible = null;
+    Vector2 actualSpeed = Vector2.zero;
+    Vector2 lastPos;
 
-    private void Update()
+    Vector3 defaultPos;
+    private void Start()
     {
-        
+        anim = GetComponentInParent<Animator>();
+		pc = GetComponentInParent<Agro>();
+        if (SimulateIn > 0)
+        {
+            col = GetComponent<Collider2D>();
+            rb = GetComponent<Rigidbody2D>();
+            lastPos = transform.position;
+            defaultPos = transform.localPosition;
+
+        }
     }
+    private void FixedUpdate()
+    {   
+        if (SimulateIn > 0)
+        {
+            actualSpeed = ((Vector2)transform.parent.position - lastPos) / Time.fixedDeltaTime * -Mathf.Sign(transform.lossyScale.x);
+            if (pc.Cible)
+            {
+                if (colCible == null)
+                    colCible = pc.Cible.GetComponents<Collider2D>().Where(c => !c.isTrigger).FirstOrDefault();
+                Vector3 pos = transform.GetChild(0).position;
+                col.transform.localPosition = defaultPos + ((Vector3)actualSpeed * SimulateIn);
+                transform.GetChild(0).position = pos;
+            }
+            lastPos = transform.parent.position;
+        }
+
+    }
+
 	IEnumerator Tapping()
     {
         pc.istapping = true;
@@ -50,10 +85,6 @@ public class AutoTapping : MonoBehaviour {
         pc.istapping = false;
     }
 
-	void Start () {
-		anim = GetComponentInParent<Animator>();
-		pc = GetComponentInParent<PlayerController>();
-	}
 	
 	private void OnTriggerStay2D(Collider2D other)
 	{
@@ -62,4 +93,11 @@ public class AutoTapping : MonoBehaviour {
 			StartCoroutine(Tapping());
         }
 	}
+    /// <summary>
+    /// This function is called when the behaviour becomes disabled or inactive.
+    /// </summary>
+    void OnDisable()
+    {
+        colCible = null;
+    }
 }
