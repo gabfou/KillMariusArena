@@ -30,9 +30,10 @@ public class Throwthing : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        agro.cannotmove = willShoot;
         if ((delay > 0 && willShoot) || delay > timetoshoot)
             delay -= Time.deltaTime;
-        if (agro && delay < timetoshoot && (agro.grounded == false || agro.move != 0 || agro.IsOuchstun == true))
+        if (agro && delay < timetoshoot && (agro.grounded == false || agro.IsOuchstun == true))
             delay = timetoshoot;
 
         if (!playerInSight)

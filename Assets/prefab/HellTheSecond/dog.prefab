@@ -73,6 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeofanimbeforetap: 0.25
   timeafter: 0.25
+  SimulateIn: -1
 --- !u!1 &1356542757344544
 GameObject:
   m_ObjectHideFlags: 0
@@ -231,6 +232,7 @@ MonoBehaviour:
   invulnTime: 0.05
   ouchtag: bam
   timestunouch: 0.2
+  stunStopMove: 1
   maxSpeed: 14
   minSlideVelocity: 3
   slimeVelocityIgnore: 0.5
@@ -425,8 +427,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4da2d8eec5d3a4968ad9f7e2d08e905f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chargejumppower: 12
-  prepjumptime: 0.2
+  chargejumppower: 11
+  prepjumptime: 0.3
   coefspeed: 20
   cd: 0.5
 --- !u!1 &1988701123282258

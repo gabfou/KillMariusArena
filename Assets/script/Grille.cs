@@ -69,4 +69,12 @@ public class Grille : MonoBehaviour {
 		StartCoroutine("closeCoroutine");
 		StopCoroutine("openCoroutine");
 	}
+
+	public void openOrClose()
+	{
+		if (isOpen == IsOpen.Open)
+			close();
+		else if (isOpen == IsOpen.Close)
+			open();
+	}
 }

@@ -37,6 +37,6 @@ public class areaEffectParticle : MonoBehaviour
 
         ps.SetTriggerParticles(ParticleSystemTriggerEventType.Inside, inside);
         ps.SetTriggerParticles(ParticleSystemTriggerEventType.Exit, exit);
-        Debug.Log("numInside " + numInside);
+        // Debug.Log("numInside " + numInside);
     }
 }

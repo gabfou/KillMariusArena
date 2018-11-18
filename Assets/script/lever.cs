@@ -30,13 +30,15 @@ public class lever : MonoBehaviour {
 		foreach(GameObject g in activate)
 		{
 			if (g.tag == "porte")
-				g.GetComponent<Grille>().open();
+				g.GetComponent<Grille>().openOrClose();
 			else if (g.tag == "CaBouge")
 				g.GetComponent<CaBouge>().isDeplacing = true;
 			else if ((a = g.GetComponent<Animator>()) == true && a.enabled == false)
 				a.enabled = true;
 			else if (a  && g.tag == "trigger")
 				a.SetTrigger("trigger");
+			else if (g.activeSelf == false)
+				g.SetActive(true);
 		}
 	}
 	
