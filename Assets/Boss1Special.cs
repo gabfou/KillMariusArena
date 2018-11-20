@@ -28,6 +28,11 @@ public class Boss1Special : MonoBehaviour {
 		}
 	}
 
+	public void ActivateTrigger()
+	{
+		animator.SetTrigger("trigger");
+	}
+
 	void LateUpdate () {
 		if (Mathf.Sign(Cible.position.x - transform.position.x) != Mathf.Sign(transform.localScale.x))
 			transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y, transform.localScale.z);

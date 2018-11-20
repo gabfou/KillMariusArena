@@ -22,6 +22,9 @@ public class CaBouge : MonoBehaviour {
 		if (activeOnAwake)
 			isDeplacing = true;
 		marge = 0.1f;
+		PlayerController p;
+		if (p = GetComponentInChildren<PlayerController>())
+			p.rbparent = rigidbody;
 	}
 	
 	// Update is called once per frame

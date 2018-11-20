@@ -30,6 +30,7 @@ public class PlayerController : Stopmoving
     public Vector2 groundSize;
     public float maxYVelocity = 8f;
     public float minYVelocity = -6f;
+    public bool flying = false;
 
     [Header("Dash")]
 	public float timedashinsc = 0.1f;
@@ -112,8 +113,8 @@ public class PlayerController : Stopmoving
             transform.position = GameManager.instance.save.lastCheckpoint;
         if (isPlayer)
         {
-            vcam.Follow = transform;
-            vcam.LookAt = transform;
+            vcam.Follow = (transform.parent) ?? transform;
+            vcam.LookAt = (transform.parent) ?? transform;
         }
     }
 
@@ -142,14 +143,14 @@ public class PlayerController : Stopmoving
         reinit();
     }
 
-    protected void OnEnable()
-    {
-        init();
-    }
+    // protected void OnEnable()
+    // {
+    //     reinit();
+    // }
 
     void Start()
     {
-        reinit();
+        init();
     }
 
 
@@ -174,7 +175,9 @@ public class PlayerController : Stopmoving
     {
         if (istapping == false)
         {
-            Debug.Log("Tapping");
+            float y = transform.localScale.y;
+            if (flying && movey < 0)
+                transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
             if (TappingClip)
                 audiosource.PlayOneShot(TappingClip, tappingVolume);
             istapping = true;
@@ -188,6 +191,8 @@ public class PlayerController : Stopmoving
             anim.SetBool("istapping", false);
             yield return new WaitForSeconds(0.15f);
             StopTapping();
+            if (flying)
+                transform.localScale = new Vector3(transform.localScale.x, y, transform.localScale.z);
         }
     }
 
@@ -221,7 +226,7 @@ public class PlayerController : Stopmoving
             }
         }
         if (IsOnLadder)
-            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, ((IsOnLadder) ?  movey : 0) * maxSpeed);
+            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, movey * maxSpeed);
         if (/*!istapping && */move > 0 && facingLeft)
             Flip();
         else if (/*!istapping && */move < 0 && !facingLeft)
@@ -232,14 +237,20 @@ public class PlayerController : Stopmoving
                                             Mathf.Clamp(rigidbody2D.velocity.y + impacto.y, minYVelocity, maxYVelocity));
         anim.SetFloat("vely", rigidbody2D.velocity.y);
         if (rbparent)
-            rigidbody2D.velocity +=  new Vector2(rbparent.velocity.x, 0);
+            rigidbody2D.velocity += new Vector2(rbparent.velocity.x, (IsOnLadder) ? rbparent.velocity.y : 0);
     }
 
     Collider2D actualGround;
     protected virtual void GroundCheck()
     {
+        if (flying)
+        {
+            IsOnLadder = true;
+            return ;
+        }
         if (groundPosition == Vector3.zero && groundSize == Vector2.zero)
         {
+            
             grounded = true;
             return ;
         }
@@ -443,7 +454,7 @@ public class PlayerController : Stopmoving
 	IEnumerator dash()
 	{
 		coroutineisplayingcount++;
-		if (move == 0)
+		if (move == 0 && (!flying || movey == 0))
 			Debug.Log(gameObject.name + " trying to dodge without moving");
 		else if (candash == true)
 		{
@@ -456,12 +467,12 @@ public class PlayerController : Stopmoving
                
 			float timer = 0;
 			float movebysecond = distanceofdash / timedashinsc;
-			float sign = Mathf.Sign(move);
+			Vector2 sign = new Vector2((move == 0) ? 0 : Mathf.Sign(move), (flying) ? (movey == 0) ? 0 : Mathf.Sign(movey) : 0).normalized;
             isdashing = true;
 			while (timer < timedashinsc)
 			{
 				// rigidbody2D.MovePosition(transform.position + new Vector3(sign * movebysecond * Time.deltaTime, 0, 0));
-                rigidbody2D.velocity = new Vector2(sign * movebysecond * Time.fixedDeltaTime, 0);
+                rigidbody2D.velocity = sign * movebysecond * Time.fixedDeltaTime;
 				timer += Time.fixedDeltaTime;
 				yield return new WaitForFixedUpdate();
 			}
