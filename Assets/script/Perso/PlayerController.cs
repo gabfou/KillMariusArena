@@ -7,10 +7,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
-public SignOr0(float a)
-{
-    return ((a > 0) ? 1 : (a == 0) ? 0 : -1);
-}
+
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : Stopmoving
@@ -472,7 +469,7 @@ public class PlayerController : Stopmoving
                
 			float timer = 0;
 			float movebysecond = distanceofdash / timedashinsc;
-			Vector2 sign = new Vector2(SignOr0(move), (flying) ? Mathf.SignOr0(movey) : 0).normalized;
+			Vector2 sign = new Vector2(Utils.SignOr0(move), (flying) ? Utils.SignOr0(movey) : 0).normalized;
             isdashing = true;
 			while (timer < timedashinsc)
 			{

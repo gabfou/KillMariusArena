@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class CaBouge : MonoBehaviour {
 
@@ -11,8 +12,9 @@ public class CaBouge : MonoBehaviour {
 	public float speed;
 	Rigidbody2D rigidbody;
 	List<Transform> l = new List<Transform>();
+	public List<Rigidbody2D> AffectAlso = new List<Rigidbody2D>();
 
-	public int e = 0; 
+	[HideInInspector] public int e = 0; 
 	float marge;
 
 	// Use this for initialization
@@ -33,6 +35,7 @@ public class CaBouge : MonoBehaviour {
 		if (isDeplacing)
 		{
 			rigidbody.velocity = (listOfPassage[e] - (Vector2)transform.position).normalized * Time.fixedDeltaTime * speed;
+			AffectAlso.ForEach(aa => aa.velocity = (listOfPassage[e] - (Vector2)transform.position).normalized * Time.fixedDeltaTime * speed);
 			if (Vector2.Distance(transform.position, listOfPassage[e]) < marge)
 			{
 				if (listOfPassage.Count <= ++e)
@@ -42,6 +45,7 @@ public class CaBouge : MonoBehaviour {
 					{
 						rigidbody.velocity = Vector2.zero;
 						isDeplacing = false;
+						AffectAlso.ForEach(aa => aa.velocity = Vector2.zero);
 					}
 				}
 			}

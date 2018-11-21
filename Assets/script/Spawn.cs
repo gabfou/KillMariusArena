@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spawn : MonoBehaviour {
 
 	public GameObject gameObject = null;
+	public Transform parent = null;
 	public float cd =1;
 	public float decalage = 0;
 	public float randomFrom0 = 0;
@@ -26,7 +27,7 @@ public class Spawn : MonoBehaviour {
 		if (actualcd <= 0 && (onlyIfLastDie == false || last == null))
 		{
 			actualcd = cd + Random.Range(0, randomFrom0);
-			last = GameObject.Instantiate(gameObject, transform.position, Quaternion.identity);
+			last = GameObject.Instantiate(gameObject, transform.position, Quaternion.identity, parent);
 		}
 	}
 }

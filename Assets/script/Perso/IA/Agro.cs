@@ -42,22 +42,38 @@ public class Agro : PlayerController {
 
 	void MountedFixedUpdate(float distance)
 	{
-		float sign = Mathf.Sign((Cible.position - transform.position).x);
-		if (!flying && (StayOnGround || (move != 0 && Mathf.Sign(move) != sign)) && !(Physics2D.Raycast(transform.position, new Vector3(Mathf.Sign(move), -1, 0), 4, groundLayer)))
-			move = 0;
-		// else if (move != 0 && Mathf.Sign(move) != sign && !(Physics2D.Raycast(transform.position, new Vector3(move, -2, 0), 2, groundLayer)))
-		// 	move = 0;
-		else if (Mathf.Sign(move) != sign)
-			move = Mathf.Clamp(move + sign * 0.7f * Time.fixedDeltaTime, -1, 1);
+		Vector2 dir = new Vector2(move, movey);
+		Vector2 dirCible = (Cible.position - transform.position).normalized;
+		bool isInSameDir = Vector2.Dot(dir.normalized, dirCible) < 50;
+		if (!flying && (StayOnGround || (dir.x != 0 && isInSameDir)) && !(Physics2D.Raycast(transform.position, new Vector3(Mathf.Sign(dir.x), -1, 0), 4, groundLayer)))
+			dir.x = 0;
+		// else if (dir.x != 0 && Mathf.Sign(dir.x) != sign && !(Physics2D.Raycast(transform.position, new Vector3(dir.x, -2, 0), 2, groundLayer)))
+		// 	dir.x = 0;
+		else if (isInSameDir)
+		{
+			dir.x = Mathf.Clamp(dir.x + dirCible.x * 0.7f * Time.fixedDeltaTime, -1, 1);
+		}
 		else
-			move = sign;
-		if (move == 0)
+			dir.x = dirCible.x;
+		if (dir.x == 0)
 			FacePlayer();
 
-		if (move != 0 && !StayOnGround && (Cible.position.y - 3 > transform.position.y)
-			&& (Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), 3, groundLayer)
-				|| !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 3, groundLayer))))
+		if (flying)
+		{
+			if (isInSameDir)
+				dir.y = Mathf.Clamp(dir.y + dirCible.y * 0.7f * Time.fixedDeltaTime, -1, 1);
+			else
+				dir.y = dirCible.y;
+		}
+
+		if (!flying && dir.x != 0 && !StayOnGround && (Cible.position.y - 3 > transform.position.y)
+			&& (Physics2D.Raycast(transform.position, new Vector3(dir.x, 0, 0), 3, groundLayer)
+				|| !(Physics2D.Raycast(transform.position, new Vector3(dir.x, -1, 0), 3, groundLayer))))
 			tryjump();
+
+
+		move = dir.x;
+		movey = dir.y;
 		base.FixedUpdate();
 	}
 

@@ -564,6 +564,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: isdashing
     m_EventTreshold: 0
+  - m_ConditionMode: 3
+    m_ConditionEvent: velx
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 1102306902926229698}
   m_Solo: 0
