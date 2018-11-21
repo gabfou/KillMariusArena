@@ -23,6 +23,14 @@ public class Agro : PlayerController {
 	// public List<string> listOfAnimtOverwrite = new List<string>();
 
 
+	public void FacePlayer()
+	{
+		if (Cible.position.x > transform.position.x && facingLeft)
+			Flip();
+		if (Cible.position.x < transform.position.x && !facingLeft)
+			Flip();
+	}
+
     void Start ()
 	{
 		init();
@@ -35,7 +43,7 @@ public class Agro : PlayerController {
 	void MountedFixedUpdate(float distance)
 	{
 		float sign = Mathf.Sign((Cible.position - transform.position).x);
-		if ((StayOnGround || (move != 0 && Mathf.Sign(move) != sign)) && !(Physics2D.Raycast(transform.position, new Vector3(Mathf.Sign(move), -1, 0), 4, groundLayer)))
+		if (!flying && (StayOnGround || (move != 0 && Mathf.Sign(move) != sign)) && !(Physics2D.Raycast(transform.position, new Vector3(Mathf.Sign(move), -1, 0), 4, groundLayer)))
 			move = 0;
 		// else if (move != 0 && Mathf.Sign(move) != sign && !(Physics2D.Raycast(transform.position, new Vector3(move, -2, 0), 2, groundLayer)))
 		// 	move = 0;
@@ -44,12 +52,7 @@ public class Agro : PlayerController {
 		else
 			move = sign;
 		if (move == 0)
-		{
-			if (Cible.position.x > transform.position.x && facingLeft)
-				Flip();
-			if (Cible.position.x < transform.position.x && !facingLeft)
-				Flip();
-		}
+			FacePlayer();
 
 		if (move != 0 && !StayOnGround && (Cible.position.y - 3 > transform.position.y)
 			&& (Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), 3, groundLayer)
@@ -90,12 +93,7 @@ public class Agro : PlayerController {
                     move = sign * Mathf.Sign((Cible.position - transform.position).x);
 
                 if (move == 0)
-                {
-                    if (Cible.position.x > transform.position.x && facingLeft)
-                        Flip();
-                    if (Cible.position.x < transform.position.x && !facingLeft)
-                        Flip();
-                }
+					FacePlayer();
 
 				if (move != 0 && !StayOnGround && (Cible.position.y - 3 > transform.position.y)
 					&& (Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), 2, groundLayer)
