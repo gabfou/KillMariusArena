@@ -16,9 +16,14 @@ public class NextLevel : MonoBehaviour {
 		SceneManager.LoadScene(nexTSceneName);
 	}
 
-	void OnTriggerEnter(Collider other)
+	void OnTriggerStay2D(Collider2D other)
 	{
+		Debug.Log("sdfads");
 		if (other.tag == tagAccepted)
+		{
 			StartCoroutine(WaitForNext());
+			Debug.Log("sdfad2222s");
+		}
+
 	}
 }

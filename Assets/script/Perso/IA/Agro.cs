@@ -22,11 +22,17 @@ public class Agro : PlayerController {
 	// public Sprite changeSpriteOnAgro;
 	// public List<string> listOfAnimtOverwrite = new List<string>();
 
+	public bool IsFacingPlayer()
+	{
+		if (Cible && ((Cible.position.x > transform.position.x && facingLeft)
+			|| (Cible.position.x < transform.position.x && !facingLeft)))
+			return false;
+		return true;
+	}
+
 	protected void FacePlayer()
 	{
-		if (Cible.position.x > transform.position.x && facingLeft)
-			Flip();
-		if (Cible.position.x < transform.position.x && !facingLeft)
+		if (!IsFacingPlayer())
 			Flip();
 	}
 
@@ -44,7 +50,10 @@ public class Agro : PlayerController {
 		Vector2 dir = new Vector2(move, movey);
 		Vector2 dirCible = (Cible.position - transform.position).normalized;
 		bool isInSameDir = Vector2.Dot(dir.normalized, dirCible) > 0.5f;
-		if (!flying && (StayOnGround || (dir.x != 0 && isInSameDir)) && !(Physics2D.Raycast(transform.position, new Vector3(Mathf.Sign(dir.x), -1, 0), 4, groundLayer)))
+		RaycastHit2D raycastHit2D;
+		if (!flying && (StayOnGround || (dir.x != 0 && isInSameDir))
+			&& (!(raycastHit2D = Physics2D.Raycast(transform.position, new Vector3(Mathf.Sign(dir.x), -1, 0), 4, groundLayer))
+				|| (raycastHit2D.collider && raycastHit2D.collider.tag == ouchtag)))
 			dir.x = 0;
 		// else if (dir.x != 0 && Mathf.Sign(dir.x) != sign && !(Physics2D.Raycast(transform.position, new Vector3(dir.x, -2, 0), 2, groundLayer)))
 		// 	dir.x = 0;
@@ -83,6 +92,7 @@ public class Agro : PlayerController {
 		{
             if (Cible)
 			{
+				RaycastHit2D raycastHit2D;
 				float distance = Vector2.Distance(Cible.position, transform.position);
                 if (distance > MaxDistance)
                 {
@@ -99,7 +109,8 @@ public class Agro : PlayerController {
 					move = 0;
                 else if (Mathf.Abs(distance - perfectdistancetocible) < 0.2f)
                     move = 0;
-                else if (StayOnGround && !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 2, groundLayer)))
+                else if (StayOnGround && (!(raycastHit2D = Physics2D.Raycast(transform.position, new Vector3(Mathf.Sign(move), -1, 0), 4, groundLayer))
+				|| (raycastHit2D.collider && raycastHit2D.collider.tag == ouchtag)))
                     move = 0;
                 else if (DistanceBehavior.Free != distanceBehavior && ((DistanceBehavior.Justcharge == distanceBehavior && sign == -1)
 																		|| (DistanceBehavior.JustFlee == distanceBehavior && sign == 1)))
@@ -110,9 +121,10 @@ public class Agro : PlayerController {
                 if (move == 0)
 					FacePlayer();
 
-				if (move != 0 && !StayOnGround && (Cible.position.y - 3 > transform.position.y)
+				if (move != 0 && !StayOnGround && (Cible.position.y + 3 > transform.position.y)
 					&& (Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), 2, groundLayer)
-						|| !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 2, groundLayer))))
+						|| !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 2, groundLayer))
+						|| ((raycastHit2D = Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 5, groundLayer)).collider && raycastHit2D.collider.tag == ouchtag)))
 					tryjump();
             }
 			else

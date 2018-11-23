@@ -18,6 +18,8 @@ public class Throwthing : MonoBehaviour {
     Agro agro = null;
     bool playerInSight = false;
     Transform cible = null;
+    Transform parent;
+    Vector3 savelocalScale;
 
     // Use this for initialization
     void Start()
@@ -25,6 +27,8 @@ public class Throwthing : MonoBehaviour {
         anim = GetComponentInParent<Animator>();
         delay = timetoshoot;
         agro = GetComponentInParent<Agro>();
+        if (transform.parent.GetInstanceID() != agro.transform.GetInstanceID())
+            parent = transform.parent;
     }
 
     // Update is called once per frame
@@ -43,11 +47,21 @@ public class Throwthing : MonoBehaviour {
         {
             willShoot = true;
             anim.SetBool("willshoot", true);
+            if (parent)
+                savelocalScale = transform.parent.localScale;
         }
-
+        if (parent)
+        {
+            if (agro && !agro.IsFacingPlayer())
+                parent.localScale = new Vector3(-savelocalScale.x,savelocalScale.y,savelocalScale.z);
+            else
+                parent.localScale = savelocalScale;
+        }
         if (delay > 0)
             return;
 
+        if (parent)
+            parent.localScale = savelocalScale;
         willShoot = false;
         anim.SetBool("willshoot", false);
         delay = cd + timetoshoot;
@@ -59,7 +73,6 @@ public class Throwthing : MonoBehaviour {
         anim.SetTrigger("shooting");
         for (int i = 0; i < nbofshotbyburst; i++)
         {
-            Debug.Log(Random.Range(-angleprecision / 2, angleprecision / 2));;
 
 
             Rigidbody2D lastmp = GameObject.Instantiate(Projectile, transform.position, Quaternion.identity);

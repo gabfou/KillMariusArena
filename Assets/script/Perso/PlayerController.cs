@@ -202,7 +202,7 @@ public class PlayerController : Stopmoving
             //     Flip();
             yield return new WaitForSeconds(0.3f);
             anim.SetBool("istapping", false);
-            yield return new WaitForSeconds(0.15f);
+            yield return new WaitForSeconds(0.05f);
             StopTapping();
             if (flying)
                 transform.localScale = new Vector3(transform.localScale.x, y, transform.localScale.z);
@@ -245,11 +245,12 @@ public class PlayerController : Stopmoving
             Flip();
         anim.SetFloat("velx", move);
         anim.SetBool("ismoving", move != 0 || (IsOnLadder && movey != 0));
-        rigidbody2D.velocity = new Vector2( Mathf.Clamp(move * maxSpeed + impacto.x, -maxSpeed, maxSpeed),
-                                            Mathf.Clamp(rigidbody2D.velocity.y + impacto.y, minYVelocity, maxYVelocity));
+        rigidbody2D.velocity = new Vector2( Mathf.Clamp(move * maxSpeed, -maxSpeed, maxSpeed),
+                                            Mathf.Clamp(rigidbody2D.velocity.y, minYVelocity, maxYVelocity));
         anim.SetFloat("vely", rigidbody2D.velocity.y);
         if (rbparent)
             rigidbody2D.velocity += new Vector2(rbparent.velocity.x, (IsOnLadder) ? rbparent.velocity.y : 0);
+        rigidbody2D.velocity += impacto;
     }
 
     Collider2D actualGround;
@@ -380,7 +381,7 @@ public class PlayerController : Stopmoving
 		coroutineisplayingcount++;
         TakingDamage = true;
         vcamperlin = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        vcamperlin.m_AmplitudeGain = 0.5f;
+        vcamperlin.m_AmplitudeGain = 0.25f;
         vcamperlin.m_FrequencyGain = 30;
         yield return new WaitForSeconds(0.1f);
         TakingDamage = false;
@@ -569,9 +570,24 @@ public class PlayerController : Stopmoving
     {
         PCFixedUpdate();
     }
+        Collider2D[] ctmp = new Collider2D[52];
 
     protected void PCFixedUpdate()
     {
+        impacto = Vector2.zero;
+        if (Physics2D.OverlapCircleNonAlloc(transform.position, 1.4f, ctmp, 1 << gameObject.layer) > 1)
+        {
+            Collider2D col;
+            // Debug.Log(ctmp);
+            if (col = ctmp.FirstOrDefault(c => c && !c.transform.IsChildOf(transform) && c.gameObject != gameObject && !c.isTrigger))
+            {
+                Debug.Log(col);
+                impacto = (transform.position - col.transform.position ) * 2f;
+                if (!flying)
+                    impacto.y = 0;
+            }
+            
+        }
         if (life <= 0)
             return;
         allCheck();
