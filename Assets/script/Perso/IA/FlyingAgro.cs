@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyingAgro : Agro
+public class FlyingAgro : FlyingBaseAgro
 {
 
 	// Use this for initialization
@@ -36,10 +36,5 @@ public class FlyingAgro : Agro
 			}
 		}
 		PCFixedUpdate();
-	}
-
-	override protected void GroundCheck()
-	{
-		IsOnLadder = true;
 	}
 }

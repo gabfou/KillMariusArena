@@ -130,6 +130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeofanimbeforetap: 0.25
   timeafter: 0.25
+  SimulateIn: -1
 --- !u!1 &1375566829635652
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +354,7 @@ MonoBehaviour:
   invulnTime: 0.05
   ouchtag: bam
   timestunouch: 0.2
+  stunStopMove: 1
   maxSpeed: 6
   minSlideVelocity: 3
   slimeVelocityIgnore: 0.5
@@ -362,6 +364,7 @@ MonoBehaviour:
   groundSize: {x: 0.6, y: 0.2}
   maxYVelocity: 22
   minYVelocity: -15
+  flying: 0
   timedashinsc: 0.3
   distanceofdash: 1
   isinvuindash: 1

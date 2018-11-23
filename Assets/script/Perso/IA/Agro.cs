@@ -22,8 +22,7 @@ public class Agro : PlayerController {
 	// public Sprite changeSpriteOnAgro;
 	// public List<string> listOfAnimtOverwrite = new List<string>();
 
-
-	public void FacePlayer()
+	protected void FacePlayer()
 	{
 		if (Cible.position.x > transform.position.x && facingLeft)
 			Flip();
@@ -44,12 +43,12 @@ public class Agro : PlayerController {
 	{
 		Vector2 dir = new Vector2(move, movey);
 		Vector2 dirCible = (Cible.position - transform.position).normalized;
-		bool isInSameDir = Vector2.Dot(dir.normalized, dirCible) < 50;
+		bool isInSameDir = Vector2.Dot(dir.normalized, dirCible) > 0.5f;
 		if (!flying && (StayOnGround || (dir.x != 0 && isInSameDir)) && !(Physics2D.Raycast(transform.position, new Vector3(Mathf.Sign(dir.x), -1, 0), 4, groundLayer)))
 			dir.x = 0;
 		// else if (dir.x != 0 && Mathf.Sign(dir.x) != sign && !(Physics2D.Raycast(transform.position, new Vector3(dir.x, -2, 0), 2, groundLayer)))
 		// 	dir.x = 0;
-		else if (isInSameDir)
+		else if (!isInSameDir)
 		{
 			dir.x = Mathf.Clamp(dir.x + dirCible.x * 0.7f * Time.fixedDeltaTime, -1, 1);
 		}
@@ -60,7 +59,7 @@ public class Agro : PlayerController {
 
 		if (flying)
 		{
-			if (isInSameDir)
+			if (!isInSameDir)
 				dir.y = Mathf.Clamp(dir.y + dirCible.y * 0.7f * Time.fixedDeltaTime, -1, 1);
 			else
 				dir.y = dirCible.y;

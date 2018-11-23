@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 114907904944573272}
   - component: {fileID: 70032649558040228}
   - component: {fileID: 95513907486032430}
-  - component: {fileID: 114432599879912424}
   - component: {fileID: 82147005710638708}
   m_Layer: 9
   m_Name: The Watchmen Bertrand
@@ -79,6 +78,7 @@ MonoBehaviour:
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
+  stunStopMove: 1
   maxSpeed: 10
   minSlideVelocity: 3
   slimeVelocityIgnore: 0.5
@@ -88,6 +88,7 @@ MonoBehaviour:
   groundSize: {x: 0.07, y: 0.4}
   maxYVelocity: 22
   minYVelocity: -15
+  flying: 0
   timedashinsc: 0.2
   distanceofdash: 200
   isinvuindash: 1
@@ -156,25 +157,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114432599879912424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024669050778126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5eb80d8e62d9d145bb50fb783c0f731, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PositionMode: 0
-  m_RotationMode: 0
-  m_UpdateMethod: 2
-  m_Targets:
-  - target: {fileID: 4899300555096600}
-    weight: 1
-    radius: 12
 --- !u!82 &82147005710638708
 AudioSource:
   m_ObjectHideFlags: 0

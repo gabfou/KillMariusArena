@@ -96,6 +96,20 @@ public class PlayerController : Stopmoving
                                                         INITIALISATION
     *****************************************************************************************************************/
 
+    IEnumerator WaitForCam()
+    {
+        while (!vcam)
+        {
+            vcam = Camera.main.GetComponent<CinemachineBrain>().ActiveVirtualCamera as CinemachineVirtualCamera;
+            yield return new WaitForEndOfFrame();
+        }
+        if (isPlayer)
+        {
+            vcam.Follow = (transform.parent) ?? transform;
+            vcam.LookAt = (transform.parent) ?? transform;
+        }
+    }
+
     protected void reinit()
     {
         if (Vector2.negativeInfinity == lastCheckpoint)
@@ -113,11 +127,11 @@ public class PlayerController : Stopmoving
         isDead = false;
         if (isPlayer && GameManager.instance && GameManager.instance.save.lastCheckpoint != Vector2.zero)
             transform.position = GameManager.instance.save.lastCheckpoint;
-        if (isPlayer)
-        {
-            vcam.Follow = (transform.parent) ?? transform;
-            vcam.LookAt = (transform.parent) ?? transform;
-        }
+
+        StartCoroutine(WaitForCam());
+        CaBouge cbtmp = GetComponentInParent<CaBouge>();
+        if (cbtmp)
+            rbparent = cbtmp.GetComponent<Rigidbody2D>();
     }
 
     protected void init()
@@ -133,9 +147,6 @@ public class PlayerController : Stopmoving
         anim = GetComponent<Animator>();
         audiosource = Camera.main.GetComponent<AudioSource>();
         audiosource2 = GetComponent<AudioSource>();
-        vcam = Camera.main.GetComponent<CinemachineBrain>().ActiveVirtualCamera as CinemachineVirtualCamera;
-        if (vcam)
-            vcamperlin = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
         if (tag == "Player")
             isPlayer = true;
         col = GetComponents<Collider2D>().Where(c => !c.isTrigger).FirstOrDefault();
@@ -200,7 +211,6 @@ public class PlayerController : Stopmoving
 
     void    StopTapping()
     {
-            Debug.Log("StopTapping");
         StopCoroutine(Tapping());
         anim.SetBool("istapping", false);
         istapping = false;
@@ -210,7 +220,7 @@ public class PlayerController : Stopmoving
 
     public void Move(float move, float movey = 0)
     {
-		if (isdashing || rigidbody2D.bodyType != RigidbodyType2D.Dynamic)
+		if (isdashing || rigidbody2D.bodyType == RigidbodyType2D.Static)
 			return ;
         if (audiosource2 && run)
         {
@@ -229,9 +239,9 @@ public class PlayerController : Stopmoving
         }
         if (IsOnLadder)
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, movey * maxSpeed);
-        if (/*!istapping && */move > 0 && facingLeft)
+        if (!istapping && move > 0 && facingLeft)
             Flip();
-        else if (/*!istapping && */move < 0 && !facingLeft)
+        else if (!istapping && move < 0 && !facingLeft)
             Flip();
         anim.SetFloat("velx", move);
         anim.SetBool("ismoving", move != 0 || (IsOnLadder && movey != 0));
@@ -273,13 +283,13 @@ public class PlayerController : Stopmoving
 
     void SlideCheck()
     {
-        float arx = Mathf.Abs(rigidbody2D.velocity.x);
-        if (arx > minSlideVelocity && Input.GetKeyDown(KeyCode.DownArrow))
-            sliding = true;
-        if (arx < minSlideVelocity || !grounded)
-            sliding = false;
+        // float arx = Mathf.Abs(rigidbody2D.velocity.x);
+        // if (arx > minSlideVelocity && Input.GetKeyDown(KeyCode.DownArrow))
+        //     sliding = true;
+        // if (arx < minSlideVelocity || !grounded)
+        //     sliding = false;
 
-        anim.SetBool("sliding", sliding);
+        // anim.SetBool("sliding", sliding);
     }
 
     protected void Flip()
