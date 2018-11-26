@@ -29,6 +29,7 @@ public class AutoReCible : MonoBehaviour {
 			rb.velocity = velocity * t;
 			yield return new WaitForEndOfFrame();
 		}
+		isInRecible = false;
 	}
 
 	IEnumerator ReCiblePlayer()
@@ -50,6 +51,7 @@ public class AutoReCible : MonoBehaviour {
 			}
 			yield return new WaitForEndOfFrame();
 		}
+		isInRecible = false;
 	}
 
 	// Update is called once per frame

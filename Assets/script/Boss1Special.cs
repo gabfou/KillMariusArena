@@ -7,23 +7,29 @@ public class Boss1Special : MonoBehaviour {
 	Transform Cible;
 	Animator animator;
 	int initialife;
-	AutoReCible autoReCible;
 	Agro agro;
+	float nbReCible = 1;
 	// Use this for initialization
 	void Start ()
 	{
 		agro = GetComponent<Agro>();
 		initialife = agro.life;
-		Cible = GameManager.instance.player.transform;
 		animator = GetComponent<Animator>();
-		autoReCible = GetComponentInChildren<Throwthing>().Projectile.GetComponent<AutoReCible>();
+		GetComponentInChildren<Throwthing>().modifProjectile = modif;
 	}
 	
+	public void modif(Rigidbody2D rb)
+	{
+		rb.GetComponent<AutoReCible>().nbReCible = nbReCible;
+	}
+
 	void Update()
 	{
+		if (!Cible)
+			Cible = GameManager.instance.player.transform;
 		if (initialife - agro.life > 4)
 		{
-			autoReCible.nbReCible++;
+			nbReCible++;
 			initialife = agro.life;
 		}
 	}

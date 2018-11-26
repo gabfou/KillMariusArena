@@ -9,6 +9,7 @@ public class Throwthing : MonoBehaviour {
     public float nbofshotbyburst = 1;
     public float timetoshoot = 1;
     public float cd = 1;
+    public float distanceMin = 2;
 
 
     float delay = 0;
@@ -37,7 +38,7 @@ public class Throwthing : MonoBehaviour {
         agro.cannotmove = willShoot;
         if ((delay > 0 && willShoot) || delay > timetoshoot)
             delay -= Time.deltaTime;
-        if (agro && delay < timetoshoot && ((agro.grounded == false && agro.flying == false) || agro.IsOuchstun == true))
+        if (agro && delay < timetoshoot && ((agro.grounded == false && agro.flying == false) || agro.IsOuchstun == true || !cible || distanceMin > Vector2.Distance(transform.position, cible.position)))
             delay = timetoshoot;
 
         if (!playerInSight)
@@ -68,17 +69,23 @@ public class Throwthing : MonoBehaviour {
         shoot(cible.position);
     }
 
+    [HideInInspector] public delegate void ModifProjectile(Rigidbody2D rb);
+    [HideInInspector]public ModifProjectile modifProjectile = null; 
+
+    [HideInInspector] public Rigidbody2D lastmp;
     public void shoot(Vector2 cible)
     {
+
         anim.SetTrigger("shooting");
         for (int i = 0; i < nbofshotbyburst; i++)
         {
 
-
-            Rigidbody2D lastmp = GameObject.Instantiate(Projectile, transform.position, Quaternion.identity);
+            lastmp = GameObject.Instantiate(Projectile, transform.position, Quaternion.identity);
             lastmp.transform.right = (cible - (Vector2)transform.position).normalized;
             lastmp.transform.Rotate(transform.forward, Random.Range(-angleprecision / 2, angleprecision / 2));
             lastmp.AddForce(lastmp.transform.right * impulsionForce, ForceMode2D.Impulse);
+            if (modifProjectile != null)
+                modifProjectile(lastmp);    
         }
     }
 
