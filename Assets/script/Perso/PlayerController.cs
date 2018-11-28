@@ -239,9 +239,9 @@ public class PlayerController : Stopmoving
         }
         if (IsOnLadder)
             rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, movey * maxSpeed);
-        if (!istapping && move > 0 && facingLeft)
+        if ((!istapping || isPlayer) && move > 0 && facingLeft)
             Flip();
-        else if (!istapping && move < 0 && !facingLeft)
+        else if ((!istapping || isPlayer) && move < 0 && !facingLeft)
             Flip();
         anim.SetFloat("velx", move);
         anim.SetBool("ismoving", move != 0 || (IsOnLadder && movey != 0));
@@ -581,7 +581,7 @@ public class PlayerController : Stopmoving
             // Debug.Log(ctmp);
             if (col = ctmp.FirstOrDefault(c => c && !c.transform.IsChildOf(transform) && c.gameObject != gameObject && !c.isTrigger))
             {
-                Debug.Log(col);
+                // Debug.Log(col);
                 impacto = (transform.position - col.transform.position ) * 2f;
                 if (!flying)
                     impacto.y = 0;

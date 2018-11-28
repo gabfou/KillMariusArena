@@ -48,7 +48,7 @@ public class Agro : PlayerController {
 	void MountedFixedUpdate(float distance)
 	{
 		Vector2 dir = new Vector2(move, movey);
-		Vector2 dirCible = (Cible.position - transform.position).normalized;
+		Vector2 dirCible = ((Vector2)Cible.position - (Vector2)transform.position).normalized;
 		bool isInSameDir = Vector2.Dot(dir.normalized, dirCible) > 0.5f;
 		RaycastHit2D raycastHit2D;
 		if (!flying && (StayOnGround || (dir.x != 0 && isInSameDir))

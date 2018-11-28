@@ -10,10 +10,11 @@ public class Throwthing : MonoBehaviour {
     public float timetoshoot = 1;
     public float cd = 1;
     public float distanceMin = 2;
+    public float impulsionForce = 10;
+    public bool cannotLoseSight = false;
 
 
     float delay = 0;
-    public float impulsionForce = 10;
     Animator anim = null;
     bool willShoot = false;
     Agro agro = null;
@@ -38,7 +39,10 @@ public class Throwthing : MonoBehaviour {
         agro.cannotmove = willShoot;
         if ((delay > 0 && willShoot) || delay > timetoshoot)
             delay -= Time.deltaTime;
-        if (agro && delay < timetoshoot && ((agro.grounded == false && agro.flying == false) || agro.IsOuchstun == true || !cible || distanceMin > Vector2.Distance(transform.position, cible.position)))
+        if (agro && delay < timetoshoot && ((agro.grounded == false && agro.flying == false)
+                                            || agro.IsOuchstun == true
+                                            || !cible
+                                            || distanceMin > Vector2.Distance(transform.position, cible.position)))
             delay = timetoshoot;
 
         if (!playerInSight)
@@ -100,9 +104,9 @@ public class Throwthing : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (!cannotLoseSight && collision.tag == "Player")
         {
-            // Debug.Log("sadad22");
+            Debug.Log("sadad22");
             playerInSight = false;
             willShoot = false;
             anim.SetBool("willshoot", false);
