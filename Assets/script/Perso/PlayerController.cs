@@ -87,7 +87,7 @@ public class PlayerController : Stopmoving
 
 	[HideInInspector] public Vector2 lastCheckpoint = Vector2.negativeInfinity;
     int baseLayer;
-    [HideInInspector] public Rigidbody2D rbparent= null;
+    [HideInInspector] public Rigidbody2D rbparent = null;
 
     protected LayerMask groundLayer;
 
@@ -217,11 +217,16 @@ public class PlayerController : Stopmoving
     }
 
 	bool isdashing = false;
+    Vector2 oldV = Vector2.zero;
+    Vector2 currentV = Vector2.zero;
+
 
     public void Move(float move, float movey = 0)
     {
+        Vector2 newVCible = Vector2.zero;
 		if (isdashing || rigidbody2D.bodyType == RigidbodyType2D.Static)
 			return ;
+
         if (audiosource2 && run)
         {
             if (grounded && audiosource2.isPlaying == false && move != 0 && grounded)
@@ -237,17 +242,22 @@ public class PlayerController : Stopmoving
                 audiosource2.Stop();
             }
         }
-        if (IsOnLadder)
-            rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, movey * maxSpeed);
+
+        newVCible.x = Mathf.Clamp(move * maxSpeed, -maxSpeed, maxSpeed);
+        newVCible.y = Mathf.Clamp((IsOnLadder) ? movey * maxSpeed : rigidbody2D.velocity.y, minYVelocity, maxYVelocity);
+
         if ((!istapping || isPlayer) && move > 0 && facingLeft)
             Flip();
         else if ((!istapping || isPlayer) && move < 0 && !facingLeft)
             Flip();
-        anim.SetFloat("velx", move);
+        
+        rigidbody2D.velocity = (flying) ? Vector2.SmoothDamp(oldV, newVCible, ref currentV, 0.2f) : newVCible;
+        oldV = rigidbody2D.velocity;
+
         anim.SetBool("ismoving", move != 0 || (IsOnLadder && movey != 0));
-        rigidbody2D.velocity = new Vector2( Mathf.Clamp(move * maxSpeed, -maxSpeed, maxSpeed),
-                                            Mathf.Clamp(rigidbody2D.velocity.y, minYVelocity, maxYVelocity));
+        anim.SetFloat("velx", rigidbody2D.velocity.x);
         anim.SetFloat("vely", rigidbody2D.velocity.y);
+
         if (rbparent)
             rigidbody2D.velocity += new Vector2(rbparent.velocity.x, (IsOnLadder) ? rbparent.velocity.y : 0);
         rigidbody2D.velocity += impacto;
@@ -309,10 +319,8 @@ public class PlayerController : Stopmoving
     IEnumerator    waitbefordying()
     {
         yield return new WaitForSeconds(1);
-        // spriteRenderer.enabled = true;
         while (coroutineisplayingcount > 0)
-            yield return new WaitForEndOfFrame();;
-        gameObject.SetActive(false);
+            yield return new WaitForEndOfFrame();
         if (tag == "Player")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -325,14 +333,12 @@ public class PlayerController : Stopmoving
     {
         if (audiosource && DieClip)
             audiosource.PlayOneShot(DieClip, DieVolume);
-        // spriteRenderer.enabled = false;
         isDead = true;
         IsOuchstun = true;
         StopTapping();
         gameObject.layer = LayerMask.NameToLayer("TouchNothing");
         rigidbody2D.gravityScale = 0;
         cannotmove = true;
-        // GetComponentsInChildren<GameObject>();
         anim.SetTrigger("death");
         StartCoroutine(waitbefordying());
     }

@@ -41,6 +41,7 @@ public class tonneaux : MonoBehaviour {
 	{
 		GetComponent<Animator>()?.SetTrigger("death");
 		GameObject.Destroy(GetComponent<rotateOnVX>());
+		GameObject.Destroy(GetComponent<Collider2D>());
 		rbody.angularVelocity = 0;
 		yield return new WaitForSeconds(0.5f);
 		GameObject.Destroy(gameObject);
