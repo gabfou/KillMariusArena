@@ -532,7 +532,7 @@ public class PlayerController : Stopmoving
             || Input.GetKey(KeyCode.Joystick1Button0)
             #endif
             )
-            && movey < -0.6f)
+            && Mathf.Abs(move) < Mathf.Abs(movey) - 0.4f)
         {
             Debug.Log(movey);
             tryGoUnder();
@@ -546,7 +546,7 @@ public class PlayerController : Stopmoving
             #endif
             )
             tryjump();
-        else if(movey < -0.6f && grounded)
+        else if(Mathf.Abs(move) < Mathf.Abs(movey) - 0.4f && grounded)
         {
             move = 0;
             iscrouching = true;

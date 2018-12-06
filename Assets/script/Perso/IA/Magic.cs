@@ -10,6 +10,7 @@ public class Magic : MonoBehaviour
     public Vector3 offset = new Vector3(0,0,0);
     public Transform OverideofCible = null;
     public AudioClip clip;
+    public float maxDist = 100;
     [Range(0, 1)] public float volume = 1;
     Animator anim;
     
@@ -50,7 +51,7 @@ public class Magic : MonoBehaviour
     }
     void Update()
     {
-        if (pc.Cible && !pc.istapping)
+        if (pc.Cible && !pc.istapping && Vector2.Distance(pc.Cible.position, transform.position) < maxDist)
             StartCoroutine(magic());
     }
 }
