@@ -243,11 +243,12 @@ MonoBehaviour:
   groundSize: {x: 0.6, y: 0.2}
   maxYVelocity: 20
   minYVelocity: -15
+  flying: 0
   timedashinsc: 0.3
   distanceofdash: 1
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 8300000, guid: f1e942bb66373e544b469b94bd5e1104, type: 3}
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
   ouchVolume: 0.8
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
@@ -255,7 +256,7 @@ MonoBehaviour:
   tappingVolume: 0.176
   run: {fileID: 0}
   runVolume: 0.5
-  DieClip: {fileID: 0}
+  DieClip: {fileID: 8300000, guid: f1e942bb66373e544b469b94bd5e1104, type: 3}
   DieVolume: 0.5
   ouchJumpMultPushX: 6
   ouchJumpMultPushY: 12

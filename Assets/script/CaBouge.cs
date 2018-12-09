@@ -15,7 +15,9 @@ public class CaBouge : MonoBehaviour {
 	public List<Rigidbody2D> AffectAlso = new List<Rigidbody2D>();
 
 	[HideInInspector] public int e = 0; 
-	float marge;
+	
+	[Min(0.1f)]
+	public float marge = 0.1f;
 
 	// Use this for initialization
 	void Start () {
@@ -23,7 +25,8 @@ public class CaBouge : MonoBehaviour {
 		listOfPassage.Insert(0, transform.position);
 		if (activeOnAwake)
 			isDeplacing = true;
-		marge = 0.1f;
+			if (marge < 0.1f)
+				marge = 0.1f;
 	}
 	
 	// Update is called once per frame
