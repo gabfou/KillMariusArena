@@ -9,7 +9,8 @@ public class ChauveSourisKill : MonoBehaviour
     bool HasDo = false;
     Animator animator;
 
-    private void Start() {
+    private void Start()
+    {
         animator = GetComponent<Animator>();
     }
 
