@@ -8,6 +8,7 @@ public class Throwthing : MonoBehaviour {
     public float angleprecision = 0;
     public float nbofshotbyburst = 1;
     public float timetoshoot = 1;
+    public float timetoshootRand = 0;
     public float cd = 1;
     public float distanceMin = 2;
     public float impulsionForce = 10;
@@ -27,28 +28,29 @@ public class Throwthing : MonoBehaviour {
     void Start()
     {
         anim = GetComponentInParent<Animator>();
-        delay = timetoshoot;
+        actualTimeToShoot = timetoshoot + Random.Range(0, timetoshootRand);
+        delay = actualTimeToShoot;
         agro = GetComponentInParent<Agro>();
         if (transform.parent.GetInstanceID() != agro.transform.GetInstanceID())
             parent = transform.parent;
     }
-
+    float actualTimeToShoot;
     // Update is called once per frame
     void Update()
     {
         agro.cannotmove = willShoot;
-        if ((delay > 0 && willShoot) || delay > timetoshoot)
+        if ((delay > 0 && willShoot) || delay > actualTimeToShoot)
             delay -= Time.deltaTime;
-        if (agro && delay < timetoshoot && ((agro.grounded == false && agro.flying == false)
+        if (agro && delay < actualTimeToShoot && ((agro.grounded == false && agro.flying == false)
                                             || agro.IsOuchstun == true
                                             || !cible
                                             || distanceMin > Vector2.Distance(transform.position, cible.position)))
-            delay = timetoshoot;
+            delay = actualTimeToShoot;
 
         if (!playerInSight)
             return;
 
-        if ( willShoot == false && delay <= timetoshoot)
+        if ( willShoot == false && delay <= actualTimeToShoot)
         {
             willShoot = true;
             anim.SetBool("willshoot", true);
@@ -69,7 +71,8 @@ public class Throwthing : MonoBehaviour {
             parent.localScale = savelocalScale;
         willShoot = false;
         anim.SetBool("willshoot", false);
-        delay = cd + timetoshoot;
+        actualTimeToShoot = timetoshoot + Random.Range(0, timetoshootRand);
+        delay = cd + actualTimeToShoot;
         shoot(cible.position);
     }
 

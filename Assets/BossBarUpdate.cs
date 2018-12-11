@@ -18,7 +18,7 @@ public class BossBarUpdate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (agro.Cible)
+        if (agro.Cible && slider != null)
         {
             slider.gameObject.SetActive(true);
             slider.value = agro.life / MaxHp;

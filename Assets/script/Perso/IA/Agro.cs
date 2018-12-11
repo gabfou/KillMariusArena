@@ -90,7 +90,7 @@ public class Agro : PlayerController {
 	{
 		if (!base.cannotmove)
 		{
-            if (Cible)
+            if (Cible && DistanceBehavior.DontMove != distanceBehavior)
 			{
 				RaycastHit2D raycastHit2D;
 				float distance = Vector2.Distance(Cible.position, transform.position);
@@ -105,9 +105,7 @@ public class Agro : PlayerController {
 					MountedFixedUpdate(distance);
 					return ;
 				}
-				if (DistanceBehavior.DontMove == distanceBehavior)
-					move = 0;
-                else if (Mathf.Abs(distance - perfectdistancetocible) < 0.2f)
+                if (Mathf.Abs(distance - perfectdistancetocible) < 0.2f)
                     move = 0;
                 else if (StayOnGround && (!(raycastHit2D = Physics2D.Raycast(transform.position, new Vector3(Mathf.Sign(move), -1, 0), 4, groundLayer))
 				|| (raycastHit2D.collider && raycastHit2D.collider.tag == ouchtag)))
@@ -192,20 +190,5 @@ public class Agro : PlayerController {
 			// Cible.GetComponent<CinemachineTargetGroup>().m_Targets = targets.ToArray();
 			Cible = null;
 		}
-	}
-
-	/// <summary>
-	/// LateUpdate is called every frame, if the Behaviour is enabled.
-	/// It is called after all Update functions have been called.
-	/// </summary>
-	void LateUpdate()
-	{
-		// if (changesprite)
-		// {
-		// 	 AnimatorClipInfo[] m_CurrentClipInfo = anim.GetCurrentAnimatorClipInfo(0);
-		// 	if (changeSpriteOnAgro && m_CurrentClipInfo)
-		// 		spriteRenderer.sprite = changeSpriteOnAgro;
-		// 	// changesprite = false;
-		// }
 	}
 }

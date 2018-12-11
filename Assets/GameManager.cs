@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour {
 	public PlayerController player;
 
 	public static GameManager instance;
+	public float DistanceOfSound = 50;
 
 	void Awake()
 	{

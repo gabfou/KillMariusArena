@@ -9,7 +9,6 @@ using UnityEngine.Events;
 
 
 
-[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : Stopmoving
 {
 
@@ -65,6 +64,7 @@ public class PlayerController : Stopmoving
 
     [Header("Events")]
     public UnityEvent   onTakeDamage;
+    public UnityEvent   onDie;
 
     Vector2 impacto = Vector2.zero;
     CinemachineVirtualCamera vcam;
@@ -119,7 +119,8 @@ public class PlayerController : Stopmoving
         // anim.SetBool("facingLeft", facingLeft);
         anim.SetBool("grounded", grounded);
 		candash = true;
-        rigidbody2D.gravityScale = baseGravityScale;
+        if (rigidbody2D)
+            rigidbody2D.gravityScale = baseGravityScale;
         gameObject.layer = baseLayer;
         if (lifeText)
             lifeText.text = life.ToString();
@@ -143,14 +144,16 @@ public class PlayerController : Stopmoving
         spriteMaterial = spriteRenderer.material;
         rigidbody2D = GetComponent<Rigidbody2D>();
         baseLayer = gameObject.layer;
-        rigidbody2D.interpolation = RigidbodyInterpolation2D.Interpolate;
+        if (rigidbody2D)
+            rigidbody2D.interpolation = RigidbodyInterpolation2D.Interpolate;
         anim = GetComponent<Animator>();
         audiosource = Camera.main.GetComponent<AudioSource>();
         audiosource2 = GetComponent<AudioSource>();
         if (tag == "Player")
             isPlayer = true;
         col = GetComponents<Collider2D>().Where(c => !c.isTrigger).FirstOrDefault();
-        baseGravityScale = rigidbody2D.gravityScale;
+        if (rigidbody2D)
+            baseGravityScale = rigidbody2D.gravityScale;
         if (isPlayer && GameManager.instance)
             GameManager.instance.player = this;
         reinit();
@@ -171,9 +174,15 @@ public class PlayerController : Stopmoving
                                                         PAS RANGÉ
     *****************************************************************************************************************/
 
+    float DistToPlayer()
+    {
+        return Vector2.Distance(GameManager.instance.player.transform.position, transform.position);
+    }
+
     protected void allCheck()
     {
-         GroundCheck();
+        if (rigidbody2D)
+             GroundCheck();
          SlideCheck();
     }
 
@@ -192,7 +201,7 @@ public class PlayerController : Stopmoving
             if (flying && movey < 0)
                 transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
             if (TappingClip)
-                audiosource.PlayOneShot(TappingClip, tappingVolume);
+                audiosource2.PlayOneShot(TappingClip, tappingVolume);
             istapping = true;
             anim.SetBool("istapping", true);
             // move = transform.position.x - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Camera.main.nearClipPlane)).x; // tape ducoter de la sourie (en gros la ca sert a rien)
@@ -224,7 +233,7 @@ public class PlayerController : Stopmoving
     public void Move(float move, float movey = 0)
     {
         Vector2 newVCible = Vector2.zero;
-		if (isdashing || rigidbody2D.bodyType == RigidbodyType2D.Static)
+		if (isdashing || rigidbody2D == null || rigidbody2D.bodyType == RigidbodyType2D.Static)
 			return ;
 
         if (audiosource2 && run)
@@ -331,13 +340,14 @@ public class PlayerController : Stopmoving
 
     void Die()
     {
-        if (audiosource && DieClip)
-            audiosource.PlayOneShot(DieClip, DieVolume);
+        if (audiosource2 && DieClip && DistToPlayer() < GameManager.instance.DistanceOfSound)
+            audiosource2.PlayOneShot(DieClip, DieVolume);
         isDead = true;
         IsOuchstun = true;
         StopTapping();
         gameObject.layer = LayerMask.NameToLayer("TouchNothing");
-        rigidbody2D.gravityScale = 0;
+        if (rigidbody2D)
+            rigidbody2D.gravityScale = 0;
         cannotmove = true;
         anim.SetTrigger("death");
         StartCoroutine(waitbefordying());
@@ -350,12 +360,13 @@ public class PlayerController : Stopmoving
             if (Random.value < 1f)
                 audiosource.PlayOneShot(Camera.main.GetComponent<BankSoundStupid>().PlayerMockingHAHAHAHA, 0.7f);
         }
+        onDie.Invoke();
     }
 
     public void ouch(Vector2 impact2)
     {
         onTakeDamage.Invoke();
-        if (stunStopMove)
+        if (stunStopMove && rigidbody2D)
             rigidbody2D.velocity = Vector2.zero;
         canOuch = false;
         life--;
@@ -366,8 +377,8 @@ public class PlayerController : Stopmoving
             Flip();
         else if (impact2.x < 0 && facingLeft)
             Flip();
-        if (audiosource && ouchClip)
-            audiosource.PlayOneShot(ouchClip, ouchVolume);
+        if (audiosource2 && ouchClip && DistToPlayer() < GameManager.instance.DistanceOfSound)
+            audiosource2.PlayOneShot(ouchClip, ouchVolume);
         if (life < 1)
         {
             eventOnDie();
@@ -404,7 +415,8 @@ public class PlayerController : Stopmoving
         IsOuchstun = true;
         if (stunStopMove)
             cannotmove = true;
-        rigidbody2D.velocity = impact;
+        if (rigidbody2D)
+            rigidbody2D.velocity = impact;
         spriteMaterial.SetFloat("_isflashing", 1);
         yield return new WaitForSeconds(timestunouch);
         spriteMaterial.SetFloat("_isflashing", 0);
@@ -437,7 +449,8 @@ public class PlayerController : Stopmoving
     {
         if (grounded && canJump)
         {
-            audiosource.PlayOneShot(jumpClip, jumpingVolume);
+            if (jumpClip && audiosource2)
+                audiosource2.PlayOneShot(jumpClip, jumpingVolume);
             rigidbody2D.AddForce(new Vector2(0, jumppower), ForceMode2D.Impulse);
             StartCoroutine(JumpDelay());
             rigidbody2D.velocity = new Vector2(move * maxSpeed, Mathf.Clamp(rigidbody2D.velocity.y, minYVelocity, maxYVelocity));
@@ -581,13 +594,12 @@ public class PlayerController : Stopmoving
     protected void PCFixedUpdate()
     {
         impacto = Vector2.zero;
-        if (Physics2D.OverlapCircleNonAlloc(transform.position, 1.4f, ctmp, 1 << gameObject.layer) > 1)
+        if (move != 0 && Physics2D.OverlapCircleNonAlloc(transform.position, 1.4f, ctmp, 1 << gameObject.layer) > 1)
         {
             Collider2D col;
             // Debug.Log(ctmp);
             if (col = ctmp.FirstOrDefault(c => c && !c.transform.IsChildOf(transform) && c.gameObject != gameObject && !c.isTrigger))
             {
-                // Debug.Log(col);
                 impacto = (transform.position - col.transform.position ) * 2f;
                 if (!flying)
                     impacto.y = 0;

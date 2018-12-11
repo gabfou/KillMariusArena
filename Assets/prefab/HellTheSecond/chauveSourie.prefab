@@ -293,6 +293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeofanimbeforetap: 0.25
   timeafter: 0.25
+  SimulateIn: -1
 --- !u!60 &60903170621577062
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -420,6 +421,7 @@ GameObject:
   - component: {fileID: 60479176297310040}
   - component: {fileID: 114209388165257004}
   - component: {fileID: 60075780734733480}
+  - component: {fileID: 6804648272794203398}
   m_Layer: 20
   m_Name: chauveSourie
   m_TagString: Untagged
@@ -580,6 +582,7 @@ MonoBehaviour:
   invulnTime: 0.05
   ouchtag: ouch
   timestunouch: 0.2
+  stunStopMove: 1
   maxSpeed: 8.05
   minSlideVelocity: 3
   slimeVelocityIgnore: 0.5
@@ -589,11 +592,12 @@ MonoBehaviour:
   groundSize: {x: 0, y: 0}
   maxYVelocity: 8
   minYVelocity: -6
+  flying: 0
   timedashinsc: 0.1
   distanceofdash: 10
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 8300000, guid: f0f0b798d9cb79744b895ded04534424, type: 3}
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
   ouchVolume: 0.487
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
@@ -613,7 +617,8 @@ MonoBehaviour:
   onTakeDamage:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
   audiosource2: {fileID: 0}
   TakingDamage: 0
@@ -626,6 +631,7 @@ MonoBehaviour:
   perfectdistancetocible: 1.13
   distanceBehavior: 0
   MaxDistance: Infinity
+  ydecal: 1
 --- !u!60 &60075780734733480
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -670,6 +676,102 @@ PolygonCollider2D:
       - {x: -0.23176195, y: 1.5964891}
       - {x: -3.8027196, y: 3.6761668}
       - {x: -7.82631, y: 3.8738446}
+--- !u!82 &6804648272794203398
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909758998339404}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 0.602
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 164
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1920497037803970
 GameObject:
   m_ObjectHideFlags: 0
