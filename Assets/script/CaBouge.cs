@@ -25,8 +25,8 @@ public class CaBouge : MonoBehaviour {
 		listOfPassage.Insert(0, transform.position);
 		if (activeOnAwake)
 			isDeplacing = true;
-			if (marge < 0.1f)
-				marge = 0.1f;
+		if (marge < 0.1f)
+			marge = 0.1f;
 	}
 	
 	// Update is called once per frame

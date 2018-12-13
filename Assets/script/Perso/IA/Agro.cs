@@ -116,9 +116,6 @@ public class Agro : PlayerController {
                 else
                     move = sign * Mathf.Sign((Cible.position - transform.position).x);
 
-                if (move == 0)
-					FacePlayer();
-
 				if (move != 0 && !StayOnGround && (Cible.position.y + 3 > transform.position.y)
 					&& (Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), 2, groundLayer)
 						|| !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 2, groundLayer))
@@ -127,6 +124,8 @@ public class Agro : PlayerController {
             }
 			else
 				move = 0;
+			if (Cible && move == 0)
+				FacePlayer();
 		}
 		base.FixedUpdate();
 		// if (Cible && base.cannotmove == false)

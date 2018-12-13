@@ -105,8 +105,11 @@ public class PlayerController : Stopmoving
         }
         if (isPlayer)
         {
-            vcam.Follow = (transform.parent) ?? transform;
-            vcam.LookAt = (transform.parent) ?? transform;
+            Transform transform2;
+            if ((transform2 = ((transform.parent) ?? transform)) == vcam.Follow)
+                vcam.Follow = transform2;
+            if ((transform2 = ((transform.parent) ?? transform)) == vcam.LookAt)
+               vcam.LookAt = transform2;
         }
     }
 
@@ -144,8 +147,6 @@ public class PlayerController : Stopmoving
         spriteMaterial = spriteRenderer.material;
         rigidbody2D = GetComponent<Rigidbody2D>();
         baseLayer = gameObject.layer;
-        if (rigidbody2D)
-            rigidbody2D.interpolation = RigidbodyInterpolation2D.Interpolate;
         anim = GetComponent<Animator>();
         audiosource = Camera.main.GetComponent<AudioSource>();
         audiosource2 = GetComponent<AudioSource>();
@@ -525,12 +526,13 @@ public class PlayerController : Stopmoving
     /*****************************************************************************************************************
                                                         UPDATE
     *****************************************************************************************************************/
+    [HideInInspector] public bool canControle = false;
 
     void Update()
     {
         if (life < 0)
             return;
-        if (base.cannotmove == true)
+        if (base.cannotmove == true || canControle == true)
             return;
         move = Input.GetAxisRaw("Horizontal");
         movey = Input.GetAxisRaw("Vertical");
@@ -545,7 +547,7 @@ public class PlayerController : Stopmoving
             || Input.GetKey(KeyCode.Joystick1Button0)
             #endif
             )
-            && Mathf.Abs(move) < Mathf.Abs(movey) - 0.4f)
+            && Mathf.Abs(move) < Mathf.Abs(movey) - 0.4f && movey < 0)
         {
             Debug.Log(movey);
             tryGoUnder();
@@ -559,7 +561,7 @@ public class PlayerController : Stopmoving
             #endif
             )
             tryjump();
-        else if(Mathf.Abs(move) < Mathf.Abs(movey) - 0.4f && grounded)
+        else if(Mathf.Abs(move) < Mathf.Abs(movey) - 0.4f && movey < 0 && grounded)
         {
             move = 0;
             iscrouching = true;

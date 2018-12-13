@@ -12,6 +12,8 @@ public class Spawn : MonoBehaviour {
 	float actualcd;
 	public bool onlyIfLastDie = false;
 	GameObject last = null;
+	public float distToplayer = -1;
+	Transform player;
 	void Start () {
 		actualcd = cd + Random.Range(0, randomFrom0);
 	}
@@ -24,7 +26,7 @@ public class Spawn : MonoBehaviour {
 			return ;
 		}
 		actualcd -= Time.fixedDeltaTime;
-		if (actualcd <= 0 && (onlyIfLastDie == false || last == null))
+		if (actualcd <= 0 && (onlyIfLastDie == false || last == null) && (distToplayer <= 0 || distToplayer < Vector2.Distance(GameManager.instance.player.transform.transform.position, transform.position)))
 		{
 			actualcd = cd + Random.Range(0, randomFrom0);
 			last = GameObject.Instantiate(gameObject, transform.position, Quaternion.identity, parent);
