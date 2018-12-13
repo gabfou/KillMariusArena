@@ -336,7 +336,8 @@ public class PlayerController : Stopmoving
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             // SaveLoad.Save();
         }
-        GameObject.Destroy(gameObject);
+        if (name != "BossLevel1")
+            GameObject.Destroy(gameObject);
     }
 
     void Die()

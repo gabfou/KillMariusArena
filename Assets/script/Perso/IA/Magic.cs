@@ -51,7 +51,7 @@ public class Magic : MonoBehaviour
     }
     void Update()
     {
-        if (pc.Cible && !pc.istapping && Vector2.Distance(pc.Cible.position, transform.position) < maxDist)
+        if (pc.Cible && !pc.istapping && !pc.isDead && Vector2.Distance(pc.Cible.position, transform.position) < maxDist)
             StartCoroutine(magic());
     }
 }
