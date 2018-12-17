@@ -415,10 +415,11 @@ MonoBehaviour:
   isDead: 0
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   rbparent: {fileID: 0}
+  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 0
   perfectdistancetocible: 1.18
-  distanceBehavior: 0
+  distanceBehavior: 2
   MaxDistance: Infinity
 --- !u!95 &95659943794417708
 Animator:

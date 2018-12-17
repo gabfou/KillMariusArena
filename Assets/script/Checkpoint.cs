@@ -7,6 +7,7 @@ public class Checkpoint : MonoBehaviour {
 	public int num;
 	public Sprite sp;
 	SpriteRenderer spr;
+	public GameObject replaceBy = null;
 	// Use this for initialization
 	void Start () {
 		
@@ -24,7 +25,8 @@ public class Checkpoint : MonoBehaviour {
 			if (!spr)
 			{
 				spr = GetComponent<SpriteRenderer>();
-				spr.sprite = sp;
+				if (spr)
+					spr.sprite = sp;
 			}
 		}
 	}

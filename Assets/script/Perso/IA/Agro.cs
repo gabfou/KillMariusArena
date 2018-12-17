@@ -118,7 +118,7 @@ public class Agro : PlayerController {
 
 				if (move != 0 && !StayOnGround && (Cible.position.y + 3 > transform.position.y)
 					&& (Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), 2, groundLayer)
-						|| !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 2, groundLayer))
+						|| !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 3, groundLayer))
 						|| ((raycastHit2D = Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 5, groundLayer)).collider && raycastHit2D.collider.tag == ouchtag)))
 					tryjump();
             }

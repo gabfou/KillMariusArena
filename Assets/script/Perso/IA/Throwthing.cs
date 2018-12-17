@@ -13,6 +13,7 @@ public class Throwthing : MonoBehaviour {
     public float distanceMin = 2;
     public float impulsionForce = 10;
     public bool cannotLoseSight = false;
+    public bool willShootStopMove = true;
 
 
     float delay = 0;
@@ -38,7 +39,8 @@ public class Throwthing : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        agro.cannotmove = willShoot;
+        if (willShootStopMove)
+            agro.cannotmove = (agro.cannotmove) ? willShoot : false;
         if ((delay > 0 && willShoot) || delay > actualTimeToShoot)
             delay -= Time.deltaTime;
         if (agro && delay < actualTimeToShoot && ((agro.grounded == false && agro.flying == false)
@@ -116,5 +118,8 @@ public class Throwthing : MonoBehaviour {
             delay = cd + timetoshoot;
             cible = null;
         }
+    }
+    private void OnDisable() {
+        anim.SetBool("willshoot", false);
     }
 }

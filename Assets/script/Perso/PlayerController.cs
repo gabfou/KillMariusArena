@@ -80,13 +80,13 @@ public class PlayerController : Stopmoving
     [HideInInspector] public AudioSource audiosource2;
     [HideInInspector] public bool TakingDamage = false;
     [HideInInspector] public bool IsOuchstun = false;
-    float baseGravityScale;
+    [HideInInspector] public float baseGravityScale;
 
     protected Collider2D  col;
     [HideInInspector] public bool isDead;
 
 	[HideInInspector] public Vector2 lastCheckpoint = Vector2.negativeInfinity;
-    int baseLayer;
+    [HideInInspector] public int baseLayer;
     [HideInInspector] public Rigidbody2D rbparent = null;
 
     protected LayerMask groundLayer;
@@ -270,6 +270,7 @@ public class PlayerController : Stopmoving
 
         if (rbparent)
             rigidbody2D.velocity += new Vector2(rbparent.velocity.x, (IsOnLadder) ? rbparent.velocity.y : 0);
+        // if (impacto.magnitude < new Vector2(maxSpeed,maxYVelocity).magnitude / 2)
         rigidbody2D.velocity += impacto;
     }
 
@@ -368,7 +369,7 @@ public class PlayerController : Stopmoving
     public void ouch(Vector2 impact2)
     {
         onTakeDamage.Invoke();
-        if (stunStopMove && rigidbody2D)
+        if (stunStopMove && rigidbody2D && rigidbody2D.bodyType != RigidbodyType2D.Static)
             rigidbody2D.velocity = Vector2.zero;
         canOuch = false;
         life--;
