@@ -32,6 +32,8 @@ public class Boss1Special : MonoBehaviour {
 			nbReCible++;
 			initialife = agro.life;
 		}
+		if (agro.life < 1)
+			animator.SetBool("CASSOS", true);
 	}
 
 	public void ActivateTrigger()
