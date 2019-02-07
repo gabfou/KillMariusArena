@@ -14,7 +14,7 @@ public class CaBouge : MonoBehaviour {
 	List<Transform> l = new List<Transform>();
 	public List<Rigidbody2D> AffectAlso = new List<Rigidbody2D>();
 
-	[HideInInspector] public int e = 0; 
+	public int e = 0; 
 	
 	[Min(0.1f)]
 	public float marge = 0.1f;

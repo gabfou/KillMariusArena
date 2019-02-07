@@ -6,7 +6,7 @@ using Cinemachine;
 
 public class Agro : PlayerController {
 
-    public enum DistanceBehavior {Free, JustFlee, Justcharge, DontMove, Mounted};
+    public enum DistanceBehavior {Free, JustFlee, Justcharge, DontMove, Mounted, justTakeDamage};
 
     [HideInInspector] public Transform Cible = null;
 
@@ -88,6 +88,8 @@ public class Agro : PlayerController {
 	// Update is called once per frame
 	protected override void FixedUpdate ()
 	{
+		if (DistanceBehavior.justTakeDamage == distanceBehavior)
+			return ;
 		if (!base.cannotmove)
 		{
             if (Cible && DistanceBehavior.DontMove != distanceBehavior)

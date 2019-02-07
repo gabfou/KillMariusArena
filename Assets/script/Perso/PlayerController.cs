@@ -20,6 +20,7 @@ public class PlayerController : Stopmoving
     public string ouchtag = "ouch";
     public float timestunouch = 0.2f;
     public bool stunStopMove = true;
+    public bool dontDestroy = false;
 
     [Header("Mobility and groundaison")]
     public float maxSpeed = 1f;
@@ -337,7 +338,7 @@ public class PlayerController : Stopmoving
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             // SaveLoad.Save();
         }
-        if (name != "BossLevel1")
+        if (dontDestroy == false)
             GameObject.Destroy(gameObject);
     }
 
