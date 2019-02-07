@@ -250,7 +250,7 @@ MonoBehaviour:
   isinvuindash: 1
   dashcd: 0.5
   ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
-  ouchVolume: 0.8
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 8300000, guid: 8d2117b082abc5940a5efe2f59140072, type: 3}
@@ -271,13 +271,21 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  onDie:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
   audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
+  baseGravityScale: 0
   isDead: 0
   lastCheckpoint: {x: -Infinity, y: -Infinity}
+  baseLayer: 0
   rbparent: {fileID: 0}
+  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 2
