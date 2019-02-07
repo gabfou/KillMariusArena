@@ -392,7 +392,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218166976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 73.4, y: 34.15, z: -10}
+  m_LocalPosition: {x: 51.4, y: 32.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -559,6 +559,7 @@ MonoBehaviour:
   m_SoftZoneHeight: 0.8
   m_BiasX: 0
   m_BiasY: 0
+  m_CenterOnActivate: 1
   m_GroupFramingMode: 2
   m_AdjustmentMode: 2
   m_GroupFramingSize: 0.8
@@ -732,6 +733,7 @@ MonoBehaviour:
   m_SoftZoneHeight: 0.8
   m_BiasX: 0
   m_BiasY: 0
+  m_CenterOnActivate: 1
   m_GroupFramingMode: 2
   m_AdjustmentMode: 2
   m_GroupFramingSize: 0.8
@@ -986,8 +988,6 @@ PlayableDirector:
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
-  - key: {fileID: 114663486978407388, guid: d79af801dbc134dedbfc53220c9bf18c, type: 2}
-    value: {fileID: 1386234019}
   - key: {fileID: 114197134373203808, guid: d79af801dbc134dedbfc53220c9bf18c, type: 2}
     value: {fileID: 483443816}
   - key: {fileID: 114683888486135262, guid: d79af801dbc134dedbfc53220c9bf18c, type: 2}

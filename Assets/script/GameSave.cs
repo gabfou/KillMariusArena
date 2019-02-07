@@ -13,4 +13,9 @@ public class GameSave {
 	void Update () {
 		
 	}
+
+	public void levelChangeReinit()
+	{
+		lastCheckpoint= Vector2.zero;
+	}
 }
