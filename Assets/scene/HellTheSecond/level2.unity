@@ -19947,7 +19947,6 @@ GameObject:
   m_Component:
   - component: {fileID: 592587510}
   - component: {fileID: 592587511}
-  - component: {fileID: 592587512}
   m_Layer: 0
   m_Name: Boss1_9
   m_TagString: Untagged
@@ -20017,18 +20016,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &592587512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 592587509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6c19951f3b374ce687a3c5f0c1bbe01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &596647426
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32142,8 +32129,8 @@ GameObject:
   - component: {fileID: 974108249}
   - component: {fileID: 974108251}
   - component: {fileID: 974108252}
-  - component: {fileID: 974108253}
   - component: {fileID: 974108254}
+  - component: {fileID: 974108253}
   m_Layer: 20
   m_Name: ChauveSourieBoss_0
   m_TagString: Untagged
@@ -32327,28 +32314,6 @@ MonoBehaviour:
   onDie:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 88563993}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1050104330}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 592587509}
         m_MethodName: 
         m_Mode: 1
@@ -32503,14 +32468,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 974108242}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7e9e4e842eab8433aace6624b0b212db, type: 3}
+  m_Script: {fileID: 11500000, guid: 58e7f9a8dd04f4745a0639e92bb5abd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTreshold: 0
-  thingToActive:
-  - {fileID: 1085203244}
 --- !u!114 &974108254
 MonoBehaviour:
   m_ObjectHideFlags: 0
