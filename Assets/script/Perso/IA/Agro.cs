@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 using Cinemachine;
+using UnityEngine.Events;
 
 public class Agro : PlayerController {
 
@@ -17,6 +18,7 @@ public class Agro : PlayerController {
     public DistanceBehavior distanceBehavior = DistanceBehavior.Free;
     public float MaxDistance = Mathf.Infinity;
 	float moveSmooth = 0;
+	public UnityEvent eventOnAgro;
 
 
 	// public Sprite changeSpriteOnAgro;
@@ -98,7 +100,7 @@ public class Agro : PlayerController {
 				float distance = Vector2.Distance(Cible.position, transform.position);
                 if (distance > MaxDistance)
                 {
-                    Cible = null; // peut etre active reactive qaund respawn pres
+                    Cible = null;// peut etre active reactive qaund respawn pres
                     return ;
                 }
 				int sign = (distance > perfectdistancetocible) ? 1 : -1;
@@ -159,7 +161,9 @@ public class Agro : PlayerController {
 				anim.SetTrigger("Alert!");
 			else
 				Debug.Log(name + " pas D'anim");
+			
 			Cible = other.transform;
+			eventOnAgro.Invoke();
 			// t.radius = 2;
 			// t.weight = 1;
 			// t.target = transform;

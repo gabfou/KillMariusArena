@@ -10,13 +10,15 @@ public class PrepNextLevel : MonoBehaviour
 
 
 
-    public ActiveScene()
+    public void ActiveScene()
     {
         if (ao != null)
             ao.allowSceneActivation = true;
+        else
+            SceneManager.LoadScene(nextSceneName);
     }
 
-    public PreLoadScene()
+    public void PreLoadScene()
     {
         if (ao == null)
         {
