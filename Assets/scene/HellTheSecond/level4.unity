@@ -2467,10 +2467,10 @@ PolygonCollider2D:
       - {x: 81.00797, y: 44.80011}
       - {x: 80.69348, y: 18.14392}
       - {x: 80.69348, y: 18.14392}
-      - {x: 31.7214, y: 17.92399}
-      - {x: 31.7214, y: 17.92399}
-      - {x: 31.78845, y: 16.27376}
-      - {x: 31.78845, y: 16.27376}
+      - {x: 31.80562, y: 16.95198}
+      - {x: 31.80562, y: 16.95198}
+      - {x: 31.7884, y: 15.30174}
+      - {x: 31.7884, y: 15.30174}
       - {x: 80.67349, y: 16.34602}
       - {x: 80.67349, y: 16.34602}
       - {x: 80.64145, y: 2.61383}
@@ -2567,7 +2567,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 0
-    - position: {x: 31.721403, y: 17.923998, z: 0}
+    - position: {x: 31.805622, y: 16.951986, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -2576,7 +2576,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 0
-    - position: {x: 31.788452, y: 16.273764, z: 0}
+    - position: {x: 31.788404, y: 15.301747, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -3862,8 +3862,11 @@ MonoBehaviour:
     level: 0
     lastlevel: 0
     lastCheckpoint: {x: 0, y: 0}
+    replaceBy: {fileID: 0}
   player: {fileID: 1800483101}
   DistanceOfSound: 50
+  life: {fileID: 283256743}
+  replacedPlayer: 0
 --- !u!4 &112588838
 Transform:
   m_ObjectHideFlags: 0
@@ -5294,13 +5297,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannotmove: 0
-  lifeText: {fileID: 0}
   facingLeft: 1
   life: 20
   invulnTime: 0.05
   ouchtag: bam
   timestunouch: 0.2
   stunStopMove: 1
+  dontDestroy: 0
   maxSpeed: 10
   minSlideVelocity: 3
   slimeVelocityIgnore: 0.4
@@ -5368,6 +5371,11 @@ MonoBehaviour:
   perfectdistancetocible: 1.5
   distanceBehavior: 0
   MaxDistance: Infinity
+  eventOnAgro:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!58 &133904391
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9501,18 +9509,18 @@ PolygonCollider2D:
     - - {x: -2.00573, y: 47.49653}
       - {x: -1.78283, y: -3.03426}
       - {x: -1.78283, y: -3.03426}
-      - {x: 48.38241, y: -3.27732}
-      - {x: 48.38241, y: -3.27732}
-      - {x: 48.23516, y: -1.35714}
-      - {x: 48.23516, y: -1.35714}
+      - {x: 48.15883, y: -4.61952}
+      - {x: 48.15883, y: -4.61952}
+      - {x: 48.23516, y: -2.58756}
+      - {x: 48.23516, y: -2.58756}
       - {x: 1.2776, y: -0.87402}
       - {x: 1.2776, y: -0.87402}
       - {x: 1.50539, y: 12.32147}
       - {x: 1.50539, y: 12.32147}
-      - {x: 50.50593, y: 11.96569}
-      - {x: 50.50593, y: 11.96569}
-      - {x: 50.40688, y: 13.91283}
-      - {x: 50.40688, y: 13.91283}
+      - {x: 50.45002, y: 10.39968}
+      - {x: 50.45002, y: 10.39968}
+      - {x: 50.57465, y: 12.12311}
+      - {x: 50.57465, y: 12.12311}
       - {x: 1.58095, y: 13.98516}
       - {x: 1.58095, y: 13.98516}
       - {x: -0.38474, y: 13.9876}
@@ -9557,7 +9565,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 0
-    - position: {x: 48.382416, y: -3.2773285, z: 0}
+    - position: {x: 48.158836, y: -4.619524, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -9566,7 +9574,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 0
-    - position: {x: 48.23516, y: -1.3571494, z: 0}
+    - position: {x: 48.23516, y: -2.5875654, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -9593,7 +9601,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 0
-    - position: {x: 50.505928, y: 11.965696, z: 0}
+    - position: {x: 50.45002, y: 10.399683, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -9602,7 +9610,7 @@ MonoBehaviour:
       bevelSize: 0
       spriteIndex: 0
       corner: 0
-    - position: {x: 50.406883, y: 13.912836, z: 0}
+    - position: {x: 50.57465, y: 12.12311, z: 0}
       leftTangent: {x: 0, y: 0, z: 0}
       rightTangent: {x: 0, y: 0, z: 0}
       mode: 0
@@ -9714,8 +9722,8 @@ SpriteShapeRenderer:
   - {fileID: 0}
   - {fileID: 0}
   m_LocalAABB:
-    m_Center: {x: 24.249454, y: 22.104433, z: -0.0065}
-    m_Extent: {x: 27.25518, y: 26.38175, z: 0.0065}
+    m_Center: {x: 24.283161, y: 21.433582, z: -0.0065}
+    m_Extent: {x: 27.288887, y: 27.0526, z: 0.0065}
 --- !u!4 &283765935
 Transform:
   m_ObjectHideFlags: 0
@@ -20721,7 +20729,7 @@ GameObject:
   - component: {fileID: 665631306}
   - component: {fileID: 665631304}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -22147,7 +22155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 0}
+  replaceBy: {fileID: 1024669050778126, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
 --- !u!61 &699880858
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26800,7 +26808,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 0}
+  replaceBy: {fileID: 1024669050778126, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
 --- !u!61 &908585209
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -29234,7 +29242,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050104330}
-  m_LocalRotation: {x: -0.09853757, y: 0.000008274152, z: -0.0000007191966, w: 0.99513334}
+  m_LocalRotation: {x: -0.040122677, y: -0.6896166, z: 0.09819864, w: 0.71636313}
   m_LocalPosition: {x: 1818.1901, y: 142.72736, z: -28.576256}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -30964,7 +30972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 0}
+  replaceBy: {fileID: 1024669050778126, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
 --- !u!61 &1094328521
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31130,7 +31138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 0}
+  replaceBy: {fileID: 1024669050778126, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
 --- !u!61 &1103078191
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34889,7 +34897,7 @@ PrefabInstance:
     - target: {fileID: 1191584582427350201, guid: 1a72990872aa64d2c8487aa2bfc517ee,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1196725843252913327, guid: 1a72990872aa64d2c8487aa2bfc517ee,
         type: 3}
@@ -35615,7 +35623,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1024669050778126, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4899300555096600, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -41111,7 +41119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 0}
+  replaceBy: {fileID: 1024669050778126, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
 --- !u!61 &1498655124
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51841,19 +51849,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.09853757
+      value: -0.040122677
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000008274152
+      value: -0.6896166
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000007191966
+      value: 0.09819864
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99513334
+      value: 0.71636313
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_RootOrder
@@ -51907,7 +51915,7 @@ PrefabInstance:
     - target: {fileID: 20635841621633658, guid: e74e62d0edf024f09969d37c8ad9c8e6,
         type: 3}
       propertyPath: orthographic size
-      value: 15
+      value: 22.558842
       objectReference: {fileID: 0}
     - target: {fileID: 20635841621633658, guid: e74e62d0edf024f09969d37c8ad9c8e6,
         type: 3}

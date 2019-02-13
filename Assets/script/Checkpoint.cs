@@ -20,8 +20,8 @@ public class Checkpoint : MonoBehaviour {
 	private void OnTriggerEnter2D(Collider2D other) {
 		if (other.tag == "Player")
 		{
-			// other.GetComponent<PlayerController>().lastCheckpoint = transform.positio
 			GameManager.instance.save.lastCheckpoint = transform.position;
+			GameManager.instance.save.replaceBy = replaceBy;
 			if (!spr)
 			{
 				spr = GetComponent<SpriteRenderer>();

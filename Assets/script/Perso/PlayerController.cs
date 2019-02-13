@@ -13,7 +13,6 @@ public class PlayerController : Stopmoving
 {
 
     [Header("Basic setting")]
-    public Text lifeText = null; 
     public bool facingLeft = false;
     public int life = 5;
     public float invulnTime = 1f;
@@ -107,17 +106,33 @@ public class PlayerController : Stopmoving
         if (isPlayer)
         {
             Transform transform2;
-            if ((transform2 = ((transform.parent) ?? transform)) == vcam.Follow)
+            if ((transform2 = ((transform.parent) ?? transform)) != vcam.Follow)
                 vcam.Follow = transform2;
-            if ((transform2 = ((transform.parent) ?? transform)) == vcam.LookAt)
+            if ((transform2 = ((transform.parent) ?? transform)) != vcam.LookAt)
                vcam.LookAt = transform2;
         }
     }
 
     protected void reinit()
     {
-        if (Vector2.negativeInfinity == lastCheckpoint)
-            lastCheckpoint = transform.position;
+        if (isPlayer)
+        {
+            if (Vector2.negativeInfinity == lastCheckpoint)
+                lastCheckpoint = transform.position;
+
+            if (GameManager.instance.save.replaceBy != null && GameManager.instance.replacedPlayer == false)
+            {
+                GameManager.instance.replacedPlayer = true;
+                GameObject.Instantiate(GameManager.instance.save.replaceBy);
+                GameObject.Destroy(gameObject);
+            }
+
+            if (GameManager.instance?.life)
+                GameManager.instance.life.text = life.ToString();
+                
+            if (GameManager.instance?.save.lastCheckpoint != Vector2.zero)
+                transform.position = GameManager.instance.save.lastCheckpoint;
+        }
         isdashing = false;
         // Flip();
         // anim.SetBool("facingLeft", facingLeft);
@@ -126,13 +141,10 @@ public class PlayerController : Stopmoving
         if (rigidbody2D)
             rigidbody2D.gravityScale = baseGravityScale;
         gameObject.layer = baseLayer;
-        if (lifeText)
-            lifeText.text = life.ToString();
+        
         IsOuchstun = false;
         isDead = false;
-        if (isPlayer && GameManager.instance && GameManager.instance.save.lastCheckpoint != Vector2.zero)
-            transform.position = GameManager.instance.save.lastCheckpoint;
-
+ 
         StartCoroutine(WaitForCam());
         CaBouge cbtmp = GetComponentInParent<CaBouge>();
         if (cbtmp)
@@ -374,8 +386,8 @@ public class PlayerController : Stopmoving
             rigidbody2D.velocity = Vector2.zero;
         canOuch = false;
         life--;
-        if (lifeText)
-            lifeText.text = life.ToString();
+        if (isPlayer && GameManager.instance?.life)
+            GameManager.instance.life.text = life.ToString();
         StopTapping();
         if (impact2.x > 0 && !facingLeft)
             Flip();

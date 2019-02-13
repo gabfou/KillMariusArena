@@ -7,15 +7,17 @@ public class GameSave {
 	public int level = 0;
 	public int lastlevel = 0;
 	public Vector2 lastCheckpoint= Vector2.zero;
-	// Use this for initialization
-	
-	// Update is called once per frame
+	public GameObject replaceBy = null;
+
+
 	void Update () {
 		
 	}
 
 	public void levelChangeReinit()
 	{
+
+		replaceBy = null;
 		lastCheckpoint= Vector2.zero;
 	}
 }

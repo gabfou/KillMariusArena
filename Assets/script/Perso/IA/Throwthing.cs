@@ -111,7 +111,6 @@ public class Throwthing : MonoBehaviour {
     {
         if (!cannotLoseSight && collision.tag == "Player")
         {
-            Debug.Log("sadad22");
             playerInSight = false;
             willShoot = false;
             anim.SetBool("willshoot", false);

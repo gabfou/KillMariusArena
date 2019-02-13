@@ -201,9 +201,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1987763411
+  m_SortingLayer: 1
+  m_SortingOrder: 42
   m_Sprite: {fileID: 21300014, guid: 2e41215ea801643f08cafa9d6012788f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -280,9 +280,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1987763411
+  m_SortingLayer: 1
+  m_SortingOrder: 42
   m_Sprite: {fileID: 21300008, guid: 2e41215ea801643f08cafa9d6012788f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -359,9 +359,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1987763411
+  m_SortingLayer: 1
+  m_SortingOrder: 42
   m_Sprite: {fileID: 21300016, guid: 2e41215ea801643f08cafa9d6012788f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -438,9 +438,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1987763411
+  m_SortingLayer: 1
+  m_SortingOrder: 42
   m_Sprite: {fileID: 21300018, guid: 2e41215ea801643f08cafa9d6012788f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -517,9 +517,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -1987763411
+  m_SortingLayer: 1
+  m_SortingOrder: 42
   m_Sprite: {fileID: 21300010, guid: 2e41215ea801643f08cafa9d6012788f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -597,16 +597,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.19999999
       objectReference: {fileID: 0}
-    - target: {fileID: 50172381259275154, guid: 16da5a28e9687451f9c8db06cced34f3,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 50172381259275154, guid: 16da5a28e9687451f9c8db06cced34f3,
-        type: 3}
-      propertyPath: m_GravityScale
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 114907904944573272, guid: 16da5a28e9687451f9c8db06cced34f3,
         type: 3}
       propertyPath: flying
@@ -626,6 +616,16 @@ PrefabInstance:
         type: 3}
       propertyPath: maxSpeed
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 50172381259275154, guid: 16da5a28e9687451f9c8db06cced34f3,
+        type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50172381259275154, guid: 16da5a28e9687451f9c8db06cced34f3,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 95513907486032430, guid: 16da5a28e9687451f9c8db06cced34f3,
         type: 3}

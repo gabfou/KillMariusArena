@@ -7,11 +7,11 @@ public class NextLevelOnEnable : MonoBehaviour
 {
 	public float WaitInSeconds = 2;
     public string nexTSceneName;
+	AsyncOperation ao;
 	
 	IEnumerator WaitForNext()
 	{
-		AsyncOperation ao = SceneManager.LoadSceneAsync(nexTSceneName);
-		ao.allowSceneActivation = false;
+
 		yield return new WaitForSeconds(WaitInSeconds);
 		GameManager.instance.save.levelChangeReinit();
 		ao.allowSceneActivation = true;
@@ -19,6 +19,8 @@ public class NextLevelOnEnable : MonoBehaviour
 
 	void OnEnable()
 	{
+			ao = SceneManager.LoadSceneAsync(nexTSceneName);
+			ao.allowSceneActivation = false;
 			StartCoroutine(WaitForNext());
     }
 }

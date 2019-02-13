@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 
 public class GameManager : MonoBehaviour {
@@ -12,6 +13,8 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager instance;
 	public float DistanceOfSound = 50;
+	public Text life;
+	[HideInInspector] public bool replacedPlayer = false;
 
 	void Awake()
 	{
@@ -25,7 +28,10 @@ public class GameManager : MonoBehaviour {
 		// Random.InitState(System.DateTime.Now.Millisecond);
 		if (instance == null)
 			instance = this;
-		else 
+		else
+		{
+			replacedPlayer = false;
 			GameObject.Destroy(gameObject);
+		}
 	}
 }

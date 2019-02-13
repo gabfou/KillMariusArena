@@ -138,6 +138,8 @@ public class Boss4Special : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
+		if (agro.Cible == null)
+			return;
 		if (isInSpecial == false)
 			time -= Time.deltaTime;
 		if (time < 0)
