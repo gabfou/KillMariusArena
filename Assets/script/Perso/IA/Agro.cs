@@ -164,15 +164,6 @@ public class Agro : PlayerController {
 			
 			Cible = other.transform;
 			eventOnAgro.Invoke();
-			// t.radius = 2;
-			// t.weight = 1;
-			// t.target = transform;
-			// if (!(!other || other.tag != "Player" || other.GetComponent<CinemachineTargetGroup>() == null))
-			// {
-			// 	List<CinemachineTargetGroup.Target> targets =  other.GetComponent<CinemachineTargetGroup>().m_Targets.ToList();
-			// 	targets.Add(t);
-			// 	other.GetComponent<CinemachineTargetGroup>().m_Targets = targets.ToArray();
-			// }
 		}
 		if (!realcol)
 			Debug.Log(name + " pas de realcol");

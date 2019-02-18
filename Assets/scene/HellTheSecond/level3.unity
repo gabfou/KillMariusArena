@@ -22379,7 +22379,7 @@ PolygonCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475920840}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -52802,7 +52802,7 @@ MonoBehaviour:
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
-  stunStopMove: 1
+  stunStopMove: 0
   dontDestroy: 0
   maxSpeed: 1
   minSlideVelocity: 3
@@ -55579,7 +55579,7 @@ MonoBehaviour:
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
-  stunStopMove: 1
+  stunStopMove: 0
   dontDestroy: 0
   maxSpeed: 1
   minSlideVelocity: 3
@@ -60202,7 +60202,7 @@ MonoBehaviour:
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
-  stunStopMove: 1
+  stunStopMove: 0
   dontDestroy: 0
   maxSpeed: 1
   minSlideVelocity: 3
@@ -79446,7 +79446,6 @@ GameObject:
   - component: {fileID: 1495197605}
   - component: {fileID: 1495197604}
   - component: {fileID: 1495197603}
-  - component: {fileID: 1495197602}
   - component: {fileID: 1495197601}
   - component: {fileID: 1495197600}
   - component: {fileID: 1495197599}
@@ -79490,7 +79489,7 @@ MonoBehaviour:
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
-  stunStopMove: 1
+  stunStopMove: 0
   dontDestroy: 0
   maxSpeed: 1
   minSlideVelocity: 3
@@ -79599,29 +79598,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1495197602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495197597}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e6fa99e288de432494a9179acb711c9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  looping: 1
-  activeOnAwake: 1
-  listOfPassage:
-  - {x: 1714.7938, y: 105.08685}
-  - {x: 1645.574, y: 117.55562}
-  isDeplacing: 0
-  speed: 50
-  AffectAlso:
-  - {fileID: 1048373675}
-  e: 0
-  marge: 0.1
 --- !u!233 &1495197603
 HingeJoint2D:
   m_ObjectHideFlags: 0

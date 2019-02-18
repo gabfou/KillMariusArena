@@ -10,7 +10,7 @@ public class CameraFollowStupide : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		dist = Camera.main.transform.position.z;
-		if (follow = null)
+		if (follow == null)
 			follow = transform;
 	}
 	
