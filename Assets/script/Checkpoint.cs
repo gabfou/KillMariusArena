@@ -8,6 +8,8 @@ public class Checkpoint : MonoBehaviour {
 	public Sprite sp;
 	SpriteRenderer spr;
 	public GameObject replaceBy = null;
+	public GameObject parent = null;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -17,11 +19,13 @@ public class Checkpoint : MonoBehaviour {
 	void Update () {
 		
 	}
-	private void OnTriggerEnter2D(Collider2D other) {
+	private void OnTriggerEnter2D(Collider2D other)
+	{
 		if (other.tag == "Player")
 		{
 			GameManager.instance.save.lastCheckpoint = transform.position;
 			GameManager.instance.save.replaceBy = replaceBy;
+			GameManager.instance.save.parent = parent;
 			if (!spr)
 			{
 				spr = GetComponent<SpriteRenderer>();

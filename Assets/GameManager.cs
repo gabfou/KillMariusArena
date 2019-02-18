@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
 			instance = this;
 		else
 		{
-			replacedPlayer = false;
+			instance.replacedPlayer = false;
 			GameObject.Destroy(gameObject);
 		}
 	}

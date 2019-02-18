@@ -119,6 +119,7 @@ public class Throwthing : MonoBehaviour {
         }
     }
     private void OnDisable() {
-        anim.SetBool("willshoot", false);
+        if (anim)
+            anim.SetBool("willshoot", false);
     }
 }

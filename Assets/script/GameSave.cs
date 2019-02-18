@@ -8,6 +8,7 @@ public class GameSave {
 	public int lastlevel = 0;
 	public Vector2 lastCheckpoint= Vector2.zero;
 	public GameObject replaceBy = null;
+	public GameObject parent = null;
 
 
 	void Update () {
@@ -18,6 +19,7 @@ public class GameSave {
 	{
 
 		replaceBy = null;
+		parent = null;
 		lastCheckpoint= Vector2.zero;
 	}
 }

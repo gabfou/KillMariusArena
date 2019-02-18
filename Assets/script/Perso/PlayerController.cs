@@ -113,26 +113,33 @@ public class PlayerController : Stopmoving
         }
     }
 
+    private void PlayerSpecificReinit()
+    {
+        if (Vector2.negativeInfinity == lastCheckpoint)
+            lastCheckpoint = transform.position;
+
+        if (GameManager.instance.save.replaceBy != null && GameManager.instance.replacedPlayer == false)
+        {
+            GameManager.instance.replacedPlayer = true;
+            GameObject.Instantiate(GameManager.instance.save.replaceBy);
+            GameObject.Destroy(gameObject);
+        }
+		if (GameManager.instance?.save.parent)
+			transform.parent = GameManager.instance.save.parent.transform;
+        if (GameManager.instance)
+            GameManager.instance.player = this;
+
+        if (GameManager.instance?.life)
+            GameManager.instance.life.text = life.ToString();
+            
+        if (GameManager.instance?.save.lastCheckpoint != Vector2.zero)
+            transform.position = GameManager.instance.save.lastCheckpoint;
+    }
+
     protected void reinit()
     {
         if (isPlayer)
-        {
-            if (Vector2.negativeInfinity == lastCheckpoint)
-                lastCheckpoint = transform.position;
-
-            if (GameManager.instance.save.replaceBy != null && GameManager.instance.replacedPlayer == false)
-            {
-                GameManager.instance.replacedPlayer = true;
-                GameObject.Instantiate(GameManager.instance.save.replaceBy);
-                GameObject.Destroy(gameObject);
-            }
-
-            if (GameManager.instance?.life)
-                GameManager.instance.life.text = life.ToString();
-                
-            if (GameManager.instance?.save.lastCheckpoint != Vector2.zero)
-                transform.position = GameManager.instance.save.lastCheckpoint;
-        }
+            PlayerSpecificReinit();
         isdashing = false;
         // Flip();
         // anim.SetBool("facingLeft", facingLeft);
@@ -168,15 +175,8 @@ public class PlayerController : Stopmoving
         col = GetComponents<Collider2D>().Where(c => !c.isTrigger).FirstOrDefault();
         if (rigidbody2D)
             baseGravityScale = rigidbody2D.gravityScale;
-        if (isPlayer && GameManager.instance)
-            GameManager.instance.player = this;
         reinit();
     }
-
-    // protected void OnEnable()
-    // {
-    //     reinit();
-    // }
 
     void Start()
     {
