@@ -29,47 +29,49 @@ public class CaBouge : MonoBehaviour {
 			marge = 0.1f;
 	}
 	
-	// Update is called once per frame
 	void FixedUpdate ()
 	{
-		if (isDeplacing && rigidbody)
+		if (!isDeplacing)
+			return;
+
+		// deplacement
+		if (rigidbody)
 		{
 			rigidbody.velocity = (listOfPassage[e] - (Vector2)transform.position).normalized * Time.fixedDeltaTime * speed;
-			AffectAlso.ForEach(aa => {if (aa) aa.velocity = (listOfPassage[e] - (Vector2)transform.position).normalized * Time.fixedDeltaTime * speed;});
-			if (Vector2.Distance(transform.position, listOfPassage[e]) < marge)
+			AffectAlso.ForEach(aa => {if (aa) aa.velocity = rigidbody.velocity;});
+		}
+		else
+			transform.position += (Vector3)((listOfPassage[e] - (Vector2)transform.position).normalized * Time.fixedDeltaTime * speed);
+
+
+		// next Point
+		if (Vector2.Distance(transform.position, listOfPassage[e]) < marge)
+		{
+			if (listOfPassage.Count <= ++e)
 			{
-				if (listOfPassage.Count <= ++e)
+				e = 0;
+				if (looping == false)
 				{
-					e = 0;
-					if (looping == false)
-					{
+					if (rigidbody)
 						rigidbody.velocity = Vector2.zero;
-						isDeplacing = false;
-						AffectAlso.ForEach(aa => aa.velocity = Vector2.zero);
-					}
+					isDeplacing = false;
+					AffectAlso.ForEach(aa => aa.velocity = Vector2.zero);
 				}
 			}
 		}
+
+
 	}
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		// Debug.Log(other.gameObject.name);
 		PlayerController player;
-		if ((player = other.gameObject.GetComponent<PlayerController>()) && other.transform.parent == null && other.gameObject.GetComponent<FlyingAgro>() == null)
+		if (rigidbody && (player = other.gameObject.GetComponent<PlayerController>()) && other.transform.parent == null && other.gameObject.GetComponent<FlyingAgro>() == null)
 		{
 			other.transform.parent = transform;
 			player.rbparent = rigidbody;
 			l.Add(other.transform);
 		}
-	}
-
-	IEnumerator WaitBeforeDesync(Transform t)
-	{
-		yield return new WaitForSeconds(0.1f);
-		t.parent = null;
-		t.GetComponent<PlayerController>().rbparent = null;
-		l.Remove(t);
 	}
 
 	void OnCollisionExit2D(Collision2D other)
