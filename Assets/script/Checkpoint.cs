@@ -10,19 +10,17 @@ public class Checkpoint : MonoBehaviour {
 	public GameObject replaceBy = null;
 	public GameObject parent = null;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	bool asBeenActivated = false;
+
 	private void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Player")
 		{
+			if (asBeenActivated == false)
+			{
+				asBeenActivated = true;
+				GameManager.instance.player.life = GameManager.instance.player.maxLife;
+			}
 			GameManager.instance.save.lastCheckpoint = transform.position;
 			GameManager.instance.save.replaceBy = replaceBy;
 			GameManager.instance.save.parent = parent;

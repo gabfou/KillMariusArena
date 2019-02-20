@@ -13,7 +13,8 @@ public class NextLevelOnEnable : MonoBehaviour
 	{
 
 		yield return new WaitForSeconds(WaitInSeconds);
-		GameManager.instance.save.levelChangeReinit();
+		if (GameManager.instance != null)
+			GameManager.instance.save.levelChangeReinit();
 		ao.allowSceneActivation = true;
 	}
 
