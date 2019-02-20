@@ -2757,6 +2757,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -4104,11 +4105,6 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
       value: 74.47827
       objectReference: {fileID: 0}
-    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -5
-      objectReference: {fileID: 0}
     - target: {fileID: 114633631619848612, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: timetoshootRand
@@ -4118,6 +4114,11 @@ PrefabInstance:
         type: 3}
       propertyPath: timetoshoot
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50966411238324620, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -5365,6 +5366,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: life
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1181362295722612049, guid: 36207b7c64bab40dea85188fa1267225,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -5387,11 +5393,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a36c5904a4a0d415b92567fe22f8cf30,
         type: 3}
-    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: life
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36207b7c64bab40dea85188fa1267225, type: 3}
 --- !u!1 &129495582
@@ -5871,6 +5872,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -9827,6 +9829,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -10711,6 +10714,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -16890,6 +16894,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -20137,11 +20142,6 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
       value: 74.47827
       objectReference: {fileID: 0}
-    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -5
-      objectReference: {fileID: 0}
     - target: {fileID: 114633631619848612, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: timetoshootRand
@@ -20151,6 +20151,11 @@ PrefabInstance:
         type: 3}
       propertyPath: timetoshoot
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50966411238324620, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -21208,6 +21213,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -25239,11 +25245,6 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
       value: 74.47827
       objectReference: {fileID: 0}
-    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -5
-      objectReference: {fileID: 0}
     - target: {fileID: 114633631619848612, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: timetoshootRand
@@ -25253,6 +25254,11 @@ PrefabInstance:
         type: 3}
       propertyPath: timetoshoot
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50966411238324620, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -29552,6 +29558,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: life
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.39
+      objectReference: {fileID: 0}
     - target: {fileID: 1181362295722612049, guid: 36207b7c64bab40dea85188fa1267225,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -29574,16 +29590,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a36c5904a4a0d415b92567fe22f8cf30,
         type: 3}
-    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: life
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: m_Radius
-      value: 5.39
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36207b7c64bab40dea85188fa1267225, type: 3}
 --- !u!114 &611007505 stripped
@@ -30080,6 +30086,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -32943,6 +32950,7 @@ MonoBehaviour:
   DistanceOfSound: 500
   life: {fileID: 283256743}
   replacedPlayer: 0
+  audioSource: {fileID: 0}
 --- !u!4 &665631306
 Transform:
   m_ObjectHideFlags: 0
@@ -37778,11 +37786,6 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
       value: 74.47827
       objectReference: {fileID: 0}
-    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -5
-      objectReference: {fileID: 0}
     - target: {fileID: 114633631619848612, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: timetoshootRand
@@ -37792,6 +37795,11 @@ PrefabInstance:
         type: 3}
       propertyPath: timetoshoot
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50966411238324620, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -45372,6 +45380,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -46017,11 +46026,6 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
       value: 74.47827
       objectReference: {fileID: 0}
-    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -5
-      objectReference: {fileID: 0}
     - target: {fileID: 114633631619848612, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: timetoshootRand
@@ -46031,6 +46035,11 @@ PrefabInstance:
         type: 3}
       propertyPath: timetoshoot
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50966411238324620, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -50566,6 +50575,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: life
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1181362295722612049, guid: 36207b7c64bab40dea85188fa1267225,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -50588,11 +50602,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a36c5904a4a0d415b92567fe22f8cf30,
         type: 3}
-    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: life
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36207b7c64bab40dea85188fa1267225, type: 3}
 --- !u!1 &992509377
@@ -52816,6 +52825,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 4
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -53266,6 +53276,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: -1
       objectReference: {fileID: 0}
+    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: life
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: facingLeft
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.39
+      objectReference: {fileID: 0}
     - target: {fileID: 1181362295722612049, guid: 36207b7c64bab40dea85188fa1267225,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -53288,21 +53313,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a36c5904a4a0d415b92567fe22f8cf30,
         type: 3}
-    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: life
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: facingLeft
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: m_Radius
-      value: 5.39
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 36207b7c64bab40dea85188fa1267225, type: 3}
@@ -55189,6 +55199,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -55593,6 +55604,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 4
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -58137,6 +58149,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -60216,6 +60229,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 4
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -66270,6 +66284,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -68818,6 +68833,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -69687,6 +69703,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -72703,6 +72720,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: life
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1181362295722612049, guid: 36207b7c64bab40dea85188fa1267225,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -72725,11 +72747,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a36c5904a4a0d415b92567fe22f8cf30,
         type: 3}
-    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: life
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36207b7c64bab40dea85188fa1267225, type: 3}
 --- !u!1 &1389845716
@@ -74216,6 +74233,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -76248,6 +76266,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -77026,6 +77045,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -79503,6 +79523,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 4
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -82082,6 +82103,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -83573,6 +83595,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -84336,6 +84359,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -85865,6 +85889,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -88294,28 +88319,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1181362295722612049, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181362295722612049, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.12
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181362295722612048, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300006, guid: a36c5904a4a0d415b92567fe22f8cf30,
-        type: 3}
-    - target: {fileID: 1181362296625077705, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a36c5904a4a0d415b92567fe22f8cf30,
-        type: 3}
     - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
         type: 3}
       propertyPath: life
@@ -88325,6 +88328,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Radius
       value: 5.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181362295722612049, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181362295722612049, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 5762267391978516181, guid: 36207b7c64bab40dea85188fa1267225,
         type: 3}
@@ -88441,6 +88454,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1181362295722612048, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300006, guid: a36c5904a4a0d415b92567fe22f8cf30,
+        type: 3}
+    - target: {fileID: 1181362296625077705, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a36c5904a4a0d415b92567fe22f8cf30,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36207b7c64bab40dea85188fa1267225, type: 3}
 --- !u!1001 &1687990960
@@ -88515,6 +88540,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: life
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.39
+      objectReference: {fileID: 0}
     - target: {fileID: 1181362295722612049, guid: 36207b7c64bab40dea85188fa1267225,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -88537,16 +88572,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a36c5904a4a0d415b92567fe22f8cf30,
         type: 3}
-    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: life
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: m_Radius
-      value: 5.39
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 36207b7c64bab40dea85188fa1267225, type: 3}
@@ -90023,6 +90048,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -93039,6 +93065,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -94999,6 +95026,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -95257,6 +95285,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: life
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1181362295722612049, guid: 36207b7c64bab40dea85188fa1267225,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -95279,11 +95312,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a36c5904a4a0d415b92567fe22f8cf30,
         type: 3}
-    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: life
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36207b7c64bab40dea85188fa1267225, type: 3}
 --- !u!4 &1810383520 stripped
@@ -100502,7 +100530,7 @@ PrefabInstance:
     - target: {fileID: 20635841621633658, guid: e74e62d0edf024f09969d37c8ad9c8e6,
         type: 3}
       propertyPath: orthographic size
-      value: 433.38678
+      value: 432.98734
       objectReference: {fileID: 0}
     - target: {fileID: 20635841621633658, guid: e74e62d0edf024f09969d37c8ad9c8e6,
         type: 3}
@@ -100587,102 +100615,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1888996233}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1888996241
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888996234}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 02caa956e0c5a42cfaa8ac61716e126f, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &1888996242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -101483,11 +101415,6 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
       value: 74.47827
       objectReference: {fileID: 0}
-    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -5
-      objectReference: {fileID: 0}
     - target: {fileID: 114633631619848612, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: timetoshootRand
@@ -101497,6 +101424,11 @@ PrefabInstance:
         type: 3}
       propertyPath: timetoshoot
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50966411238324620, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -102636,6 +102568,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -105225,6 +105158,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -110655,6 +110589,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 1
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
@@ -110828,6 +110763,7 @@ MonoBehaviour:
   cannotmove: 0
   facingLeft: 1
   life: 15
+  maxLife: 0
   invulnTime: 0.1
   ouchtag: ouch
   timestunouch: 0.2

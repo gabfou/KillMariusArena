@@ -7,7 +7,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
-
+// TO DO: change float move and float movey by Vector2 move
 
 public class PlayerController : Stopmoving
 {
@@ -119,7 +119,7 @@ public class PlayerController : Stopmoving
         if (Vector2.negativeInfinity == lastCheckpoint)
             lastCheckpoint = transform.position;
 
-        if (GameManager.instance.save.replaceBy != null && GameManager.instance.replacedPlayer == false)
+        if (GameManager.instance?.save.replaceBy != null && GameManager.instance.replacedPlayer == false)
         {
             GameManager.instance.replacedPlayer = true;
             GameObject.Instantiate(GameManager.instance.save.replaceBy);
@@ -196,8 +196,26 @@ public class PlayerController : Stopmoving
         return Vector2.Distance(GameManager.instance.player.transform.position, transform.position);
     }
 
-    protected void allCheck()
+    void    StopConglomération()
     {
+        impacto = Vector2.zero;
+        if (move != 0 && Physics2D.OverlapCircleNonAlloc(transform.position, 1.4f, ctmp, 1 << gameObject.layer) > 1)
+        {
+            Collider2D col;
+            if (col = ctmp.FirstOrDefault(c => c && !c.transform.IsChildOf(transform) && c.gameObject != gameObject && !c.isTrigger))
+            {
+                Vector2 v = (transform.position - col.transform.position).normalized;
+                move += v.x * 0.3f;
+                if (!flying)
+                    movey += v.y * 0.3f;
+            }
+            
+        }
+    }
+
+    protected void allCheck()
+    {   if (Time.frameCount % 4 == 0)
+            StopConglomération();
         if (rigidbody2D)
              GroundCheck();
          SlideCheck();
@@ -286,6 +304,7 @@ public class PlayerController : Stopmoving
     }
 
     Collider2D actualGround;
+    RaycastHit2D[] results = new RaycastHit2D[10];
     protected virtual void GroundCheck()
     {
         if (flying)
@@ -299,9 +318,11 @@ public class PlayerController : Stopmoving
             grounded = true;
             return ;
         }
-        RaycastHit2D[] results = new RaycastHit2D[10];
-        int collisionNumber = Physics2D.BoxCastNonAlloc(transform.position + groundPosition, groundSize, 0, Vector2.down, results, .0f, groundLayer);
 
+        if (rigidbody2D.IsSleeping())
+            return ;
+        
+        int collisionNumber = Physics2D.BoxCastNonAlloc(transform.position + groundPosition, groundSize, 0, Vector2.down, results, .0f, groundLayer);
         grounded = collisionNumber != 0;
         if (collisionNumber != 0)
             actualGround = results.First().collider;
@@ -541,6 +562,7 @@ public class PlayerController : Stopmoving
     *****************************************************************************************************************/
     [HideInInspector] public bool canControle = false;
 
+
     void Update()
     {
         if (life < 0)
@@ -600,29 +622,13 @@ public class PlayerController : Stopmoving
             StartCoroutine(dash());
     }
 
-    protected virtual void FixedUpdate()
-    {
-        PCFixedUpdate();
-    }
         Collider2D[] ctmp = new Collider2D[52];
 
     protected void PCFixedUpdate()
     {
-        impacto = Vector2.zero;
-        if (move != 0 && Physics2D.OverlapCircleNonAlloc(transform.position, 1.4f, ctmp, 1 << gameObject.layer) > 1)
-        {
-            Collider2D col;
-            // Debug.Log(ctmp);
-            if (col = ctmp.FirstOrDefault(c => c && !c.transform.IsChildOf(transform) && c.gameObject != gameObject && !c.isTrigger))
-            {
-                impacto = (transform.position - col.transform.position ) * 2f;
-                if (!flying)
-                    impacto.y = 0;
-            }
-            
-        }
         if (life <= 0)
             return;
+
         allCheck();
 
         if (base.cannotmove == true)
@@ -630,6 +636,12 @@ public class PlayerController : Stopmoving
 
         Move(move, movey);
     }
+
+    protected virtual void FixedUpdate()
+    {
+        PCFixedUpdate();
+    }
+
 
     /*****************************************************************************************************************
                                                         COLLISION

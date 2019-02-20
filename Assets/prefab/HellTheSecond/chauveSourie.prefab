@@ -511,7 +511,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 6200000, guid: 7d4440a83cf483b42924952c749e4301, type: 2}
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -576,13 +576,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannotmove: 0
-  lifeText: {fileID: 0}
   facingLeft: 1
   life: 2
+  maxLife: 0
   invulnTime: 0.05
   ouchtag: ouch
   timestunouch: 0.2
   stunStopMove: 1
+  dontDestroy: 0
   maxSpeed: 8.05
   minSlideVelocity: 3
   slimeVelocityIgnore: 0.5
@@ -639,6 +640,11 @@ MonoBehaviour:
   perfectdistancetocible: 1.13
   distanceBehavior: 0
   MaxDistance: Infinity
+  eventOnAgro:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
   ydecal: 1
 --- !u!60 &60075780734733480
 PolygonCollider2D:

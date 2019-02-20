@@ -8,26 +8,22 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour {
 
 	public GameSave save;
-	// public int CheckpointPassed = 0;
 	public PlayerController player;
 
 	public static GameManager instance;
 	public float DistanceOfSound = 50;
 	public Text life;
 	[HideInInspector] public bool replacedPlayer = false;
+	[HideInInspector] public AudioSource audioSource;
 
 	void Awake()
 	{
 		DontDestroyOnLoad(gameObject);
-		// SaveLoad.Load();
-		// instance = SaveLoad.savedGames.FirstOrDefault();
-		// if (instance == null)
-		// 	instance  = this;
-		// lastCheckpoint = instance.lastCheckpoint;
-		// CheckpointPassed = instance.CheckpointPassed;
-		// Random.InitState(System.DateTime.Now.Millisecond);
 		if (instance == null)
+		{
+			audioSource = GetComponent<AudioSource>();
 			instance = this;
+		}
 		else
 		{
 			instance.replacedPlayer = false;

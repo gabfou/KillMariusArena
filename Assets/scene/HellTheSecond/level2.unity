@@ -517,7 +517,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &14215737
@@ -926,7 +926,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &25112282
@@ -1384,7 +1384,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &44762827
@@ -2038,7 +2038,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &57926103
@@ -2235,7 +2235,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &58773727
@@ -2432,7 +2432,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &58805491
@@ -2535,6 +2535,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: -0.19999999
       objectReference: {fileID: 0}
+    - target: {fileID: 114435318721529576, guid: 6e159ad71fc96454b8cdd260e6223039,
+        type: 3}
+      propertyPath: facingLeft
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -2619,11 +2624,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].x
       value: 27.903826
-      objectReference: {fileID: 0}
-    - target: {fileID: 114435318721529576, guid: 6e159ad71fc96454b8cdd260e6223039,
-        type: 3}
-      propertyPath: facingLeft
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039, type: 3}
@@ -2893,7 +2893,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &75092756
@@ -3253,7 +3253,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &81530808
@@ -3548,7 +3548,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &87272886
@@ -3893,7 +3893,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &91233662
@@ -4090,7 +4090,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &95135659
@@ -4709,7 +4709,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &103913245
@@ -4906,7 +4906,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &112617504
@@ -5281,7 +5281,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &126864554
@@ -5557,7 +5557,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &127706697
@@ -6031,7 +6031,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &140122741
@@ -6148,6 +6148,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: -0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 114435318721529576, guid: 6e159ad71fc96454b8cdd260e6223039,
+        type: 3}
+      propertyPath: facingLeft
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -6232,11 +6237,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].x
       value: 27.903826
-      objectReference: {fileID: 0}
-    - target: {fileID: 114435318721529576, guid: 6e159ad71fc96454b8cdd260e6223039,
-        type: 3}
-      propertyPath: facingLeft
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039, type: 3}
@@ -6463,6 +6463,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: -0.19999999
       objectReference: {fileID: 0}
+    - target: {fileID: 114435318721529576, guid: 6e159ad71fc96454b8cdd260e6223039,
+        type: 3}
+      propertyPath: facingLeft
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -6547,11 +6552,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].x
       value: 27.903826
-      objectReference: {fileID: 0}
-    - target: {fileID: 114435318721529576, guid: 6e159ad71fc96454b8cdd260e6223039,
-        type: 3}
-      propertyPath: facingLeft
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039, type: 3}
@@ -6813,7 +6813,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &176342830
@@ -7061,7 +7061,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &183737675
@@ -7317,7 +7317,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &185177998
@@ -7764,7 +7764,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &199189285
@@ -7961,7 +7961,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &203412334
@@ -8664,7 +8664,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &224828004
@@ -9019,11 +9019,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.59999996
       objectReference: {fileID: 0}
-    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 212386324969314418, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
         type: 3}
       propertyPath: m_Color.a
@@ -9038,6 +9033,11 @@ PrefabInstance:
         type: 3}
       propertyPath: facingLeft
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 58838311555100926, guid: 6ce4dd8e9770c4be4ada3d7152eac08f, type: 3}
@@ -9183,7 +9183,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &240712725
@@ -9380,7 +9380,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &241447172
@@ -9711,7 +9711,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &246737052
@@ -10252,7 +10252,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &270236374
@@ -10528,7 +10528,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &273629400
@@ -10642,119 +10642,79 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -139.69092, y: -83.87483}
-      - {x: -139.6716, y: -83.83548}
+    - - {x: -139.6722, y: -83.8596}
       - {x: -137.67554, y: -3.16192}
       - {x: -131.0089, y: -2.97783}
-      - {x: -131.03629, y: -4.99143}
-      - {x: -130.9804, y: -5.05043}
+      - {x: -131.03706, y: -5.04814}
       - {x: -127.61805, y: -5.18629}
       - {x: -127.59816, y: -7.53844}
-      - {x: -131.1188, y: -7.60647}
-      - {x: -131.17584, y: -7.66372}
-      - {x: -131.20917, y: -9.81891}
-      - {x: -131.15099, y: -9.87848}
-      - {x: -120.7183, y: -9.96412}
-      - {x: -120.65801, y: -9.89669}
-      - {x: -120.93801, y: -7.57271}
-      - {x: -120.99803, y: -7.52196}
+      - {x: -131.17497, y: -7.60755}
+      - {x: -131.21008, y: -9.878}
+      - {x: -120.64982, y: -9.96468}
+      - {x: -120.94443, y: -7.51944}
       - {x: -123.48891, y: -7.63901}
       - {x: -123.35463, y: -5.27103}
-      - {x: -120.63499, y: -5.41019}
-      - {x: -120.57449, y: -5.3587}
+      - {x: -120.58046, y: -5.41298}
       - {x: -120.3374, y: -3.20188}
       - {x: -93.70621, y: -3.19754}
-      - {x: -93.86516, y: -5.35944}
-      - {x: -93.80291, y: -5.42382}
+      - {x: -93.87009, y: -5.4265}
       - {x: -90.61224, y: -5.29677}
       - {x: -90.66563, y: -7.91883}
-      - {x: -93.60787, y: -7.79958}
-      - {x: -93.66779, y: -7.85161}
-      - {x: -93.91156, y: -10.27417}
-      - {x: -93.85449, y: -10.33948}
-      - {x: -84.78593, y: -10.65053}
-      - {x: -84.72524, y: -10.59333}
-      - {x: -84.65453, y: -7.75102}
-      - {x: -84.71491, y: -7.69041}
+      - {x: -93.66234, y: -7.79737}
+      - {x: -93.91791, y: -10.33731}
+      - {x: -84.72671, y: -10.65256}
+      - {x: -84.65299, y: -7.6891}
       - {x: -88.11917, y: -7.76267}
       - {x: -87.97644, y: -5.29098}
-      - {x: -84.53212, y: -5.30114}
-      - {x: -84.47295, y: -5.2402}
+      - {x: -84.47095, y: -5.30133}
       - {x: -84.53486, y: -3.34866}
       - {x: -64.26859, y: -3.3118}
-      - {x: -64.2931, y: -4.54019}
-      - {x: -64.23495, y: -4.60007}
+      - {x: -64.29429, y: -4.59953}
       - {x: -61.73398, y: -4.6231}
       - {x: -61.74343, y: -6.54656}
-      - {x: -64.0947, y: -6.48771}
-      - {x: -64.1545, y: -6.54366}
-      - {x: -64.22446, y: -8.23893}
-      - {x: -64.16729, y: -8.3001}
-      - {x: -56.76707, y: -8.49445}
-      - {x: -56.70669, y: -8.43595}
-      - {x: -56.69738, y: -6.70792}
-      - {x: -56.7551, y: -6.64913}
+      - {x: -64.15213, y: -6.48627}
+      - {x: -64.22692, y: -8.29853}
+      - {x: -56.70701, y: -8.49603}
+      - {x: -56.69707, y: -6.64989}
       - {x: -59.65233, y: -6.61116}
       - {x: -59.45951, y: -4.74834}
-      - {x: -56.81319, y: -4.71007}
-      - {x: -56.75587, y: -4.65302}
+      - {x: -56.75695, y: -4.70926}
       - {x: -56.72918, y: -3.26535}
       - {x: -31.35824, y: -3.25988}
-      - {x: -31.28647, y: -5.02206}
-      - {x: -31.23013, y: -5.07749}
+      - {x: -31.28427, y: -5.07616}
       - {x: -28.32275, y: -5.14924}
       - {x: -28.4474, y: -7.74232}
-      - {x: -31.11598, y: -7.60875}
-      - {x: -31.17864, y: -7.67083}
-      - {x: -31.08372, y: -10.00268}
-      - {x: -31.02425, y: -10.05863}
-      - {x: -21.95337, y: -9.87448}
-      - {x: -21.89708, y: -9.8207}
-      - {x: -21.79489, y: -8.26919}
-      - {x: -21.85044, y: -8.20667}
+      - {x: -31.1813, y: -7.60548}
+      - {x: -31.08139, y: -10.05979}
+      - {x: -21.90056, y: -9.87341}
+      - {x: -21.79097, y: -8.20978}
       - {x: -24.28941, y: -8.07918}
       - {x: -24.22608, y: -5.07357}
-      - {x: -21.63886, y: -4.93976}
-      - {x: -21.58466, y: -4.88612}
+      - {x: -21.58783, y: -4.93712}
       - {x: -21.48352, y: -3.25958}
       - {x: -11.20092, y: -3.47404}
-      - {x: -11.68473, y: -17.26599}
-      - {x: -11.62429, y: -17.32733}
-      - {x: -0.12354, y: -17.09245}
-      - {x: -0.0669, y: -17.0369}
+      - {x: -11.68692, y: -17.32861}
+      - {x: -0.06907, y: -17.09134}
       - {x: 0.44064, y: -4.29229}
-      - {x: 3.19431, y: -4.3542}
-      - {x: 3.1976, y: -4.35417}
+      - {x: 3.19596, y: -4.35424}
       - {x: 5.81566, y: -4.24095}
-      - {x: 7.87256, y: -4.51361}
-      - {x: 7.88265, y: -4.51392}
-      - {x: 11.95885, y: -4.22793}
-      - {x: 11.9591, y: -4.22791}
+      - {x: 7.87759, y: -4.51427}
+      - {x: 11.95898, y: -4.22792}
       - {x: 16.31128, y: -3.90087}
-      - {x: 24.18664, y: -3.98078}
-      - {x: 24.18674, y: -3.98078}
-      - {x: 48.53718, y: -4.18069}
-      - {x: 48.59648, y: -4.1212}
+      - {x: 24.18669, y: -3.98078}
+      - {x: 48.59716, y: -4.18118}
       - {x: 48.45254, y: 8.41168}
-      - {x: 48.21394, y: 48.9076}
-      - {x: 48.15808, y: 48.96527}
-      - {x: 34.46369, y: 49.48314}
-      - {x: 34.46185, y: 49.48318}
+      - {x: 48.21361, y: 48.96317}
+      - {x: 34.46277, y: 49.48318}
       - {x: -46.29098, y: 49.56066}
-      - {x: -59.57895, y: 68.42531}
-      - {x: -59.62218, y: 68.44777}
-      - {x: -74.23508, y: 68.46874}
-      - {x: -74.29378, y: 68.41}
+      - {x: -59.59475, y: 68.44774}
+      - {x: -74.29391, y: 68.46882}
       - {x: -74.17815, y: 12.01934}
-      - {x: -144.23613, y: 9.89042}
-      - {x: -144.28935, y: 9.84555}
-      - {x: -147.02254, y: -3.60407}
-      - {x: -147.02353, y: -3.61269}
+      - {x: -144.28052, y: 9.88907}
+      - {x: -147.0234, y: -3.60834}
       - {x: -148.47342, y: -57.37607}
-      - {x: -340.21393, y: -58.39577}
-      - {x: -340.27335, y: -58.46496}
-      - {x: -338.88867, y: -67.88037}
-      - {x: -338.83243, y: -67.929}
+      - {x: -340.28348, y: -58.39614}
+      - {x: -338.88153, y: -67.92896}
       - {x: -148.7624, y: -68.09044}
       - {x: -149.39696, y: -91.62076}
       - {x: -149.28189, y: -91.6774}
@@ -11452,9 +11412,9 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
-  m_ColliderCornerType: 0
+  m_ColliderCornerType: 2
 --- !u!1971053207 &281579294
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
@@ -11649,7 +11609,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &282186485
@@ -11716,6 +11676,7 @@ GameObject:
   - component: {fileID: 283256742}
   - component: {fileID: 283256744}
   - component: {fileID: 283256743}
+  - component: {fileID: 283256745}
   m_Layer: 21
   m_Name: Text
   m_TagString: Untagged
@@ -11784,6 +11745,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283256741}
   m_CullTransparentMesh: 0
+--- !u!114 &283256745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283256741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67380147070314d0abdc48826635b2fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &287317150
 GameObject:
   m_ObjectHideFlags: 0
@@ -12020,7 +11993,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &308328782
@@ -12135,11 +12108,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.59999996
       objectReference: {fileID: 0}
-    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 212386324969314418, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
         type: 3}
       propertyPath: m_Color.a
@@ -12154,6 +12122,11 @@ PrefabInstance:
         type: 3}
       propertyPath: facingLeft
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 58838311555100926, guid: 6ce4dd8e9770c4be4ada3d7152eac08f, type: 3}
@@ -12378,7 +12351,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &319650804
@@ -12660,7 +12633,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &324237843
@@ -12913,7 +12886,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &331010211
@@ -13066,11 +13039,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.59999996
       objectReference: {fileID: 0}
-    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 212386324969314418, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
         type: 3}
       propertyPath: m_Color.a
@@ -13085,6 +13053,11 @@ PrefabInstance:
         type: 3}
       propertyPath: facingLeft
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 58838311555100926, guid: 6ce4dd8e9770c4be4ada3d7152eac08f, type: 3}
@@ -13339,7 +13312,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &355467797
@@ -13772,7 +13745,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &369370977
@@ -14138,7 +14111,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &381456430
@@ -14725,7 +14698,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &415771556
@@ -15001,7 +14974,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &417341408
@@ -15198,7 +15171,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &420020550
@@ -15395,7 +15368,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &423980777
@@ -15677,7 +15650,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &448331204
@@ -16024,7 +15997,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &472386690
@@ -16271,7 +16244,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &480330370
@@ -16588,7 +16561,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &489352746
@@ -16864,7 +16837,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &504563382
@@ -17061,7 +17034,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &504638522
@@ -17309,7 +17282,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &517059086
@@ -17585,7 +17558,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &524336436
@@ -18028,7 +18001,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &541915043
@@ -18095,10 +18068,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1909758998339404, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
-      propertyPath: m_Name
-      value: chauveSourie (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 4613850500874372, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 41.18
@@ -18130,6 +18099,10 @@ PrefabInstance:
     - target: {fileID: 4613850500874372, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
       propertyPath: m_RootOrder
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909758998339404, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
+      propertyPath: m_Name
+      value: chauveSourie (1)
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 60479176297310040, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
@@ -18275,7 +18248,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &547697644
@@ -18523,7 +18496,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &554792412
@@ -18869,7 +18842,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &562814431
@@ -19155,7 +19128,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &569193001
@@ -19883,7 +19856,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &591355858
@@ -20077,11 +20050,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.59999996
       objectReference: {fileID: 0}
-    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 212386324969314418, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
         type: 3}
       propertyPath: m_Color.a
@@ -20096,6 +20064,11 @@ PrefabInstance:
         type: 3}
       propertyPath: facingLeft
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 58838311555100926, guid: 6ce4dd8e9770c4be4ada3d7152eac08f, type: 3}
@@ -20279,7 +20252,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &597472019
@@ -20797,7 +20770,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &606326837
@@ -20994,7 +20967,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &606509982
@@ -21229,7 +21202,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &609374157
@@ -21505,7 +21478,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &612861461
@@ -21708,7 +21681,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &615789591
@@ -22103,7 +22076,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &624775059
@@ -22390,7 +22363,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &636074779
@@ -22587,7 +22560,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &640775646
@@ -22822,7 +22795,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &641935958
@@ -23019,7 +22992,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &644318128
@@ -23216,7 +23189,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &649227407
@@ -23480,6 +23453,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: -0.19999999
       objectReference: {fileID: 0}
+    - target: {fileID: 114435318721529576, guid: 6e159ad71fc96454b8cdd260e6223039,
+        type: 3}
+      propertyPath: facingLeft
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -23564,11 +23542,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].x
       value: 27.903826
-      objectReference: {fileID: 0}
-    - target: {fileID: 114435318721529576, guid: 6e159ad71fc96454b8cdd260e6223039,
-        type: 3}
-      propertyPath: facingLeft
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039, type: 3}
@@ -23818,7 +23791,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &657413545
@@ -24015,7 +23988,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &659119638
@@ -24218,7 +24191,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &663414083
@@ -24410,6 +24383,7 @@ MonoBehaviour:
   DistanceOfSound: 50
   life: {fileID: 283256743}
   replacedPlayer: 0
+  audioSource: {fileID: 0}
 --- !u!4 &665631306
 Transform:
   m_ObjectHideFlags: 0
@@ -24792,11 +24766,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.59999996
       objectReference: {fileID: 0}
-    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 212386324969314418, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
         type: 3}
       propertyPath: m_Color.a
@@ -24811,6 +24780,11 @@ PrefabInstance:
         type: 3}
       propertyPath: facingLeft
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 58838311555100926, guid: 6ce4dd8e9770c4be4ada3d7152eac08f, type: 3}
@@ -25095,7 +25069,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &702347962
@@ -25426,7 +25400,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &706113052
@@ -25623,7 +25597,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &709844439
@@ -25738,11 +25712,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.59999996
       objectReference: {fileID: 0}
-    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 212386324969314418, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
         type: 3}
       propertyPath: m_Color.a
@@ -25757,6 +25726,11 @@ PrefabInstance:
         type: 3}
       propertyPath: facingLeft
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 58838311555100926, guid: 6ce4dd8e9770c4be4ada3d7152eac08f, type: 3}
@@ -26104,7 +26078,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &756239483
@@ -26574,7 +26548,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &765008456
@@ -27468,7 +27442,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &798668889
@@ -27874,7 +27848,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &814360359
@@ -28162,7 +28136,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &824600306
@@ -28392,10 +28366,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1909758998339404, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
-      propertyPath: m_Name
-      value: chauveSourie (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 4613850500874372, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 55.91
@@ -28427,6 +28397,10 @@ PrefabInstance:
     - target: {fileID: 4613850500874372, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
       propertyPath: m_RootOrder
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909758998339404, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
+      propertyPath: m_Name
+      value: chauveSourie (2)
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 60479176297310040, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
@@ -28899,7 +28873,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &848987473
@@ -29272,11 +29246,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.59999996
       objectReference: {fileID: 0}
-    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 212386324969314418, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
         type: 3}
       propertyPath: m_Color.a
@@ -29291,6 +29260,11 @@ PrefabInstance:
         type: 3}
       propertyPath: facingLeft
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 58838311555100926, guid: 6ce4dd8e9770c4be4ada3d7152eac08f, type: 3}
@@ -29559,7 +29533,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &866271827
@@ -30077,7 +30051,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &900850270
@@ -30309,6 +30283,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: -0.19999999
       objectReference: {fileID: 0}
+    - target: {fileID: 114435318721529576, guid: 6e159ad71fc96454b8cdd260e6223039,
+        type: 3}
+      propertyPath: facingLeft
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -30393,11 +30372,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].x
       value: 27.903826
-      objectReference: {fileID: 0}
-    - target: {fileID: 114435318721529576, guid: 6e159ad71fc96454b8cdd260e6223039,
-        type: 3}
-      propertyPath: facingLeft
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039, type: 3}
@@ -30596,7 +30570,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &922390606
@@ -30873,7 +30847,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &929350229
@@ -31155,7 +31129,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &939535473
@@ -31621,7 +31595,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &950744329
@@ -31867,7 +31841,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &968935200
@@ -32064,7 +32038,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &973790902
@@ -32278,6 +32252,7 @@ MonoBehaviour:
   cannotmove: 1
   facingLeft: 0
   life: 30
+  maxLife: 0
   invulnTime: 0.05
   ouchtag: ouch
   timestunouch: 0.2
@@ -32703,7 +32678,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &980950048
@@ -32900,7 +32875,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &986454950
@@ -33097,7 +33072,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &986645954
@@ -33544,7 +33519,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1002043355
@@ -33741,7 +33716,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1007882147
@@ -33971,11 +33946,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: -0.6
       objectReference: {fileID: 0}
-    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 212386324969314418, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
         type: 3}
       propertyPath: m_Color.a
@@ -33990,6 +33960,11 @@ PrefabInstance:
         type: 3}
       propertyPath: facingLeft
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ce4dd8e9770c4be4ada3d7152eac08f, type: 3}
@@ -34478,7 +34453,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050104330}
-  m_LocalRotation: {x: 0.00000009536741, y: -1.422881e-14, z: 0.00000014919992, w: 1}
+  m_LocalRotation: {x: 0.00000009536741, y: -1.4255427e-14, z: 0.000000149479, w: 1}
   m_LocalPosition: {x: -2490.1152, y: 182.8911, z: 8.0625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -35025,7 +35000,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1081914079
@@ -35222,7 +35197,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1084051018
@@ -35464,7 +35439,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1093064811
@@ -36033,7 +36008,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1120859386
@@ -36230,7 +36205,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1123588469
@@ -36427,7 +36402,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1130717958
@@ -36624,7 +36599,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1146414857
@@ -37053,7 +37028,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1156748746
@@ -37329,7 +37304,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1167813775
@@ -37692,7 +37667,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1177796019
@@ -38426,7 +38401,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1210278194
@@ -38959,7 +38934,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1231958049
@@ -39235,7 +39210,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1247681531
@@ -39745,6 +39720,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: -0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 114435318721529576, guid: 6e159ad71fc96454b8cdd260e6223039,
+        type: 3}
+      propertyPath: facingLeft
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -39829,11 +39809,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].x
       value: 27.903826
-      objectReference: {fileID: 0}
-    - target: {fileID: 114435318721529576, guid: 6e159ad71fc96454b8cdd260e6223039,
-        type: 3}
-      propertyPath: facingLeft
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 60656548244332032, guid: 6e159ad71fc96454b8cdd260e6223039, type: 3}
@@ -40198,7 +40173,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1265302565
@@ -40701,7 +40676,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1290112718
@@ -41067,7 +41042,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1301685701
@@ -41842,7 +41817,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1343691860
@@ -42099,7 +42074,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1345117879
@@ -42825,7 +42800,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1358363744
@@ -43022,7 +42997,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1381192237
@@ -43137,11 +43112,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.59999996
       objectReference: {fileID: 0}
-    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 212386324969314418, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
         type: 3}
       propertyPath: m_Color.a
@@ -43156,6 +43126,11 @@ PrefabInstance:
         type: 3}
       propertyPath: facingLeft
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 58838311555100926, guid: 6ce4dd8e9770c4be4ada3d7152eac08f, type: 3}
@@ -43301,7 +43276,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1381804950
@@ -43498,7 +43473,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1393528815
@@ -43752,7 +43727,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1401188611
@@ -43949,7 +43924,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1406353999
@@ -44443,7 +44418,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1441017315
@@ -44654,7 +44629,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1445588424
@@ -44902,7 +44877,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1456108084
@@ -45178,7 +45153,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1459146797
@@ -45375,7 +45350,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1459436968
@@ -45579,7 +45554,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1463036643
@@ -46019,7 +45994,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1473927289
@@ -46216,7 +46191,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1485145860
@@ -46719,7 +46694,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1498669650
@@ -47071,7 +47046,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1511351669
@@ -47287,7 +47262,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1526118953
@@ -47564,7 +47539,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1533531704
@@ -47824,7 +47799,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1541189049
@@ -48033,7 +48008,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1549268236
@@ -48314,7 +48289,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1562176711
@@ -48559,7 +48534,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1567077035
@@ -48756,7 +48731,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1571526579
@@ -49112,7 +49087,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1574269400
@@ -49439,7 +49414,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1576812035
@@ -49701,7 +49676,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1583229857
@@ -50247,7 +50222,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1600667363
@@ -50523,7 +50498,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1601127870
@@ -50720,7 +50695,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1603836064
@@ -50970,7 +50945,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1605361546
@@ -51167,7 +51142,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1605844689
@@ -51500,7 +51475,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1628478264
@@ -51883,7 +51858,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1635366610
@@ -52159,7 +52134,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1646786147
@@ -52356,7 +52331,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1647432591
@@ -53054,7 +53029,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1689161594
@@ -53251,7 +53226,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1689964443
@@ -53448,7 +53423,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1700814171
@@ -53740,7 +53715,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1717373935
@@ -54046,7 +54021,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1723393979
@@ -54367,7 +54342,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1729031390
@@ -54576,11 +54551,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.59999996
       objectReference: {fileID: 0}
-    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 212386324969314418, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
         type: 3}
       propertyPath: m_Color.a
@@ -54595,6 +54565,11 @@ PrefabInstance:
         type: 3}
       propertyPath: facingLeft
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 58838311555100926, guid: 6ce4dd8e9770c4be4ada3d7152eac08f, type: 3}
@@ -54740,7 +54715,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1732663793
@@ -55071,7 +55046,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1752330476
@@ -55268,7 +55243,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1758327864
@@ -55383,11 +55358,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.59999996
       objectReference: {fileID: 0}
-    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 212386324969314418, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
         type: 3}
       propertyPath: m_Color.a
@@ -55402,6 +55372,11 @@ PrefabInstance:
         type: 3}
       propertyPath: facingLeft
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 58838311555100926, guid: 6ce4dd8e9770c4be4ada3d7152eac08f, type: 3}
@@ -55741,7 +55716,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1770957172
@@ -56154,7 +56129,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1790427729
@@ -56508,7 +56483,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1797139346
@@ -56691,7 +56666,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1801674890
@@ -56953,7 +56928,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1809229760
@@ -57226,11 +57201,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.59999996
       objectReference: {fileID: 0}
-    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 212386324969314418, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
         type: 3}
       propertyPath: m_Color.a
@@ -57245,6 +57215,11 @@ PrefabInstance:
         type: 3}
       propertyPath: facingLeft
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1160035205003613285, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 58838311555100926, guid: 6ce4dd8e9770c4be4ada3d7152eac08f, type: 3}
@@ -57499,7 +57474,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1831079555
@@ -57898,7 +57873,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1836978992
@@ -58199,10 +58174,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1909758998339404, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
-      propertyPath: m_Name
-      value: chauveSourie (5)
-      objectReference: {fileID: 0}
     - target: {fileID: 4613850500874372, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 40.87
@@ -58234,6 +58205,10 @@ PrefabInstance:
     - target: {fileID: 4613850500874372, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
       propertyPath: m_RootOrder
       value: 39
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909758998339404, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
+      propertyPath: m_Name
+      value: chauveSourie (5)
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 60479176297310040, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
@@ -58522,7 +58497,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1881766039
@@ -58686,11 +58661,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -1.422881e-14
+      value: -1.4255427e-14
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00000014919992
+      value: 0.000000149479
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -58833,102 +58808,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1888996233}
   m_PrefabAsset: {fileID: 0}
---- !u!82 &1888996241
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1888996234}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 02caa956e0c5a42cfaa8ac61716e126f, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 1
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!114 &1888996242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59171,7 +59050,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1899047809
@@ -59609,71 +59488,49 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 91.99376, y: -1.2383}
-      - {x: 91.77796, y: 11.15851}
+    - - {x: 91.77796, y: 11.15851}
       - {x: 93.67002, y: 121.3723}
       - {x: 109.74316, y: 121.92196}
-      - {x: 311.44424, y: 121.4829}
-      - {x: 311.50278, y: 121.5404}
-      - {x: 313.8438, y: 270.52414}
-      - {x: 313.78748, y: 270.58337}
+      - {x: 311.5019, y: 121.48278}
+      - {x: 313.84467, y: 270.58136}
       - {x: 89.43273, y: 278.4344}
-      - {x: 89.60323, y: 349.53928}
-      - {x: 89.54682, y: 349.59763}
-      - {x: 79.62799, y: 349.90875}
-      - {x: 79.56718, y: 349.84985}
-      - {x: 79.56718, y: 347.6576}
-      - {x: 79.61926, y: 347.60037}
+      - {x: 89.60336, y: 349.5959}
+      - {x: 79.56718, y: 349.91068}
+      - {x: 79.56718, y: 347.6053}
       - {x: 82.43357, y: 347.33447}
       - {x: 82.46353, y: 343.3292}
-      - {x: 79.62257, y: 343.19943}
-      - {x: 79.56718, y: 343.14145}
-      - {x: 79.56718, y: 262.84592}
-      - {x: 79.62439, y: 262.7876}
+      - {x: 79.56718, y: 343.19687}
+      - {x: 79.56718, y: 262.7887}
       - {x: 302.61115, y: 258.45367}
-      - {x: 302.6784, y: 178.13013}
-      - {x: 302.73788, y: 178.07144}
+      - {x: 302.67847, y: 178.07068}
       - {x: 305.27652, y: 178.10384}
       - {x: 305.32593, y: 175.59064}
       - {x: 302.77805, y: 175.49928}
-      - {x: 266.9822, y: 175.03268}
-      - {x: 266.96753, y: 175.03027}
+      - {x: 266.9747, y: 175.03258}
       - {x: 235.54932, y: 164.97713}
-      - {x: 208.95415, y: 165.22226}
-      - {x: 208.93063, y: 165.21674}
+      - {x: 208.94173, y: 165.22237}
       - {x: 180.54248, y: 150.75633}
-      - {x: 144.31274, y: 151.11494}
-      - {x: 144.29007, y: 151.10983}
+      - {x: 144.30081, y: 151.11507}
       - {x: 108.81253, y: 133.84236}
-      - {x: 75.55537, y: 134.07973}
-      - {x: 75.49687, y: 134.02412}
-      - {x: 75.4425, y: 132.78178}
-      - {x: 75.49728, y: 132.72096}
+      - {x: 75.49932, y: 134.08012}
+      - {x: 75.43999, y: 132.72446}
       - {x: 77.75077, y: 132.58429}
       - {x: 77.68132, y: 130.22249}
-      - {x: 75.54026, y: 130.09103}
-      - {x: 75.48617, y: 130.03464}
+      - {x: 75.48721, y: 130.08778}
       - {x: 73.13072, y: 9.98542}
       - {x: -0.39161, y: 10.25025}
       - {x: -0.00936, y: 38.18878}
-      - {x: 12.95256, y: 38.10474}
-      - {x: 13.01148, y: 38.16276}
+      - {x: 13.01095, y: 38.10437}
       - {x: 14.78846, y: 234.8512}
-      - {x: 36.82932, y: 235.45352}
-      - {x: 36.88598, y: 235.51176}
-      - {x: 36.88598, y: 418.5675}
-      - {x: 36.82604, y: 418.6263}
-      - {x: 27.84349, y: 418.45465}
-      - {x: 27.78647, y: 418.39755}
+      - {x: 36.88598, y: 235.45508}
+      - {x: 36.88598, y: 418.62744}
+      - {x: 27.78747, y: 418.4536}
       - {x: 24.79447, y: 251.27554}
-      - {x: 1.16272, y: 252.39784}
-      - {x: 1.10078, y: 252.33891}
+      - {x: 1.10094, y: 252.40076}
       - {x: 0.59464, y: 54.40816}
-      - {x: -14.28074, y: 54.84737}
-      - {x: -14.34127, y: 54.78926}
-      - {x: -14.95594, y: 0.14702}
-      - {x: -14.89814, y: 0.08781}
-      - {x: 91.93405, y: -1.29827}
+      - {x: -14.3406, y: 54.84914}
+      - {x: -14.9566, y: 0.08856}
+      - {x: 91.99482, y: -1.29906}
 --- !u!114 &1934878195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60080,9 +59937,9 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
-  m_ColliderCornerType: 0
+  m_ColliderCornerType: 2
 --- !u!1971053207 &1934878196
 SpriteShapeRenderer:
   m_ObjectHideFlags: 0
@@ -60169,10 +60026,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1909758998339404, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
-      propertyPath: m_Name
-      value: chauveSourie (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 4613850500874372, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 59.99
@@ -60204,6 +60057,10 @@ PrefabInstance:
     - target: {fileID: 4613850500874372, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
       propertyPath: m_RootOrder
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909758998339404, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
+      propertyPath: m_Name
+      value: chauveSourie (4)
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 60479176297310040, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
@@ -60395,7 +60252,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1941272189
@@ -60683,7 +60540,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1958417533
@@ -60880,7 +60737,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1964170290
@@ -61219,7 +61076,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1986563966
@@ -61601,7 +61458,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1993993875
@@ -61877,7 +61734,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &1995750904
@@ -62060,7 +61917,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2000327228
@@ -62751,7 +62608,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2019185845
@@ -62928,7 +62785,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2019470027
@@ -63226,7 +63083,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2040648605
@@ -63504,7 +63361,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2041621220
@@ -63839,7 +63696,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2047225862
@@ -64115,7 +63972,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2050740575
@@ -64298,7 +64155,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2051531862
@@ -64509,7 +64366,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2052851097
@@ -65332,7 +65189,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2066283770
@@ -65588,7 +65445,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2068370844
@@ -65901,7 +65758,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2070909625
@@ -66098,7 +65955,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2078009613
@@ -66295,7 +66152,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2080920546
@@ -66594,7 +66451,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2085202312
@@ -66661,10 +66518,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1909758998339404, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
-      propertyPath: m_Name
-      value: chauveSourie (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 4613850500874372, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
       propertyPath: m_LocalPosition.x
       value: 76.97
@@ -66696,6 +66549,10 @@ PrefabInstance:
     - target: {fileID: 4613850500874372, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
       propertyPath: m_RootOrder
       value: 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 1909758998339404, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
+      propertyPath: m_Name
+      value: chauveSourie (3)
       objectReference: {fileID: 0}
     - target: {fileID: 1993238891658372, guid: debb6d207de8f46c3aa13698bb9748d7, type: 3}
       propertyPath: m_IsActive
@@ -67288,7 +67145,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2109753179
@@ -67621,7 +67478,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2124831361
@@ -67927,7 +67784,7 @@ MonoBehaviour:
   m_SplineDetail: 16
   m_AdaptiveUV: 0
   m_UpdateCollider: 1
-  m_ColliderDetail: 16
+  m_ColliderDetail: 4
   m_ColliderOffset: 0.1
   m_ColliderCornerType: 0
 --- !u!1971053207 &2138912450

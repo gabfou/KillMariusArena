@@ -84,6 +84,7 @@ MonoBehaviour:
   distanceMin: 2
   impulsionForce: 12
   cannotLoseSight: 0
+  willShootStopMove: 1
   lastmp: {fileID: 0}
 --- !u!1 &1225304411648268
 GameObject:
@@ -222,7 +223,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 4
   m_Material: {fileID: 6200000, guid: 7d4440a83cf483b42924952c749e4301, type: 2}
-  m_Interpolate: 1
+  m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -239,13 +240,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannotmove: 0
-  lifeText: {fileID: 0}
   facingLeft: 1
   life: 2
+  maxLife: 0
   invulnTime: 0.1
   ouchtag: bam
   timestunouch: 0.2
   stunStopMove: 1
+  dontDestroy: 0
   maxSpeed: 6
   minSlideVelocity: 3
   slimeVelocityIgnore: 0.5
@@ -291,14 +293,22 @@ MonoBehaviour:
   audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
+  baseGravityScale: 0
   isDead: 0
   lastCheckpoint: {x: -Infinity, y: -Infinity}
+  baseLayer: 0
   rbparent: {fileID: 0}
+  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 3
   distanceBehavior: 1
   MaxDistance: Infinity
+  eventOnAgro:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!95 &95461223560661622
 Animator:
   serializedVersion: 3
