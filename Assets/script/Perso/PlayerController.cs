@@ -47,11 +47,10 @@ public class PlayerController : Stopmoving
     [Range(0, 1)] public float jumpingVolume = 0.5f;
     public AudioClip TappingClip;
     [Range(0, 1)] public float tappingVolume = 0.5f;
-    public AudioClip run;
-    [Range(0, 1)] public float runVolume = 0.5f;    
     public AudioClip DieClip;
     [Range(0, 1)] public float DieVolume = 0.5f;
-
+    public AudioClip dashClip;
+    [Range(0, 1)] public float dashVolume = 0.5f;    
     [Header("Ouch")]
     public float ouchJumpMultPushX = 2;
     public float ouchJumpMultPushY = 4;
@@ -78,7 +77,6 @@ public class PlayerController : Stopmoving
     protected SpriteRenderer spriteRenderer;
     protected Animator anim;
     [HideInInspector] public AudioSource audiosource;
-    [HideInInspector] public AudioSource audiosource2;
     [HideInInspector] public bool TakingDamage = false;
     [HideInInspector] public bool IsOuchstun = false;
     [HideInInspector] public float baseGravityScale;
@@ -171,8 +169,7 @@ public class PlayerController : Stopmoving
         rigidbody2D = GetComponent<Rigidbody2D>();
         baseLayer = gameObject.layer;
         anim = GetComponent<Animator>();
-        audiosource = Camera.main.GetComponent<AudioSource>();
-        audiosource2 = GetComponent<AudioSource>();
+        audiosource = GetComponent<AudioSource>();
         if (tag == "Player")
             isPlayer = true;
         col = GetComponents<Collider2D>().Where(c => !c.isTrigger).FirstOrDefault();
@@ -236,7 +233,7 @@ public class PlayerController : Stopmoving
             if (flying && movey < 0)
                 transform.localScale = new Vector3(transform.localScale.x, -transform.localScale.y, transform.localScale.z);
             if (TappingClip)
-                audiosource2.PlayOneShot(TappingClip, tappingVolume);
+                audiosource.PlayOneShot(TappingClip, tappingVolume);
             istapping = true;
             anim.SetBool("istapping", true);
             yield return new WaitForSeconds(0.3f);
@@ -265,22 +262,6 @@ public class PlayerController : Stopmoving
         Vector2 newVCible = Vector2.zero;
 		if (isdashing || rigidbody2D == null || rigidbody2D.bodyType == RigidbodyType2D.Static)
 			return ;
-
-        if (audiosource2 && run)
-        {
-            if (grounded && audiosource2.isPlaying == false && move != 0 && grounded)
-            {
-                audiosource2.loop = true;
-                audiosource2.clip = run;
-                audiosource2.volume = runVolume;
-                audiosource2.Play();
-            }
-            else if ((move == 0 || !grounded) && audiosource2.clip == run)
-            {
-                audiosource2.clip = null;
-                audiosource2.Stop();
-            }
-        }
 
         newVCible.x = Mathf.Clamp(move * maxSpeed, -maxSpeed, maxSpeed);
         newVCible.y = Mathf.Clamp((IsOnLadder) ? movey * maxSpeed : rigidbody2D.velocity.y, minYVelocity, maxYVelocity);
@@ -375,8 +356,8 @@ public class PlayerController : Stopmoving
 
     void Die()
     {
-        if (audiosource2 && DieClip && DistToPlayer() < GameManager.instance.DistanceOfSound)
-            audiosource2.PlayOneShot(DieClip, DieVolume);
+        if (audiosource && DieClip && DistToPlayer() < GameManager.instance.DistanceOfSound)
+            audiosource.PlayOneShot(DieClip, DieVolume);
         isDead = true;
         IsOuchstun = true;
         StopTapping();
@@ -412,8 +393,8 @@ public class PlayerController : Stopmoving
             Flip();
         else if (impact2.x < 0 && facingLeft)
             Flip();
-        if (audiosource2 && ouchClip && DistToPlayer() < GameManager.instance.DistanceOfSound)
-            audiosource2.PlayOneShot(ouchClip, ouchVolume);
+        if (audiosource && ouchClip && DistToPlayer() < GameManager.instance.DistanceOfSound)
+            audiosource.PlayOneShot(ouchClip, ouchVolume);
         if (life < 1)
         {
             eventOnDie();
@@ -484,8 +465,8 @@ public class PlayerController : Stopmoving
     {
         if (grounded && canJump)
         {
-            if (jumpClip && audiosource2)
-                audiosource2.PlayOneShot(jumpClip, jumpingVolume);
+            if (jumpClip && audiosource)
+                audiosource.PlayOneShot(jumpClip, jumpingVolume);
             rigidbody2D.AddForce(new Vector2(0, jumppower), ForceMode2D.Impulse);
             StartCoroutine(JumpDelay());
             rigidbody2D.velocity = new Vector2(move * maxSpeed, Mathf.Clamp(rigidbody2D.velocity.y, minYVelocity, maxYVelocity));
@@ -531,6 +512,9 @@ public class PlayerController : Stopmoving
                 gameObject.layer = 12;
             else
                 gameObject.layer = 13;
+            if (audiosource && dashClip)
+                audiosource.PlayOneShot(dashClip, dashVolume);
+
                
 			float timer = 0;
 			float movebysecond = distanceofdash / timedashinsc;

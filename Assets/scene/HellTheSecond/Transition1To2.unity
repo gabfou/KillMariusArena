@@ -392,7 +392,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218166976}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 73.4, y: 34.15, z: -10}
+  m_LocalPosition: {x: 51.4, y: 32.25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -928,6 +928,8 @@ GameObject:
   - component: {fileID: 1386234021}
   - component: {fileID: 1386234020}
   - component: {fileID: 1386234019}
+  - component: {fileID: 1386234022}
+  - component: {fileID: 1386234023}
   m_Layer: 0
   m_Name: timeline
   m_TagString: Untagged
@@ -943,7 +945,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1386234018}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 0}
   m_CullingMode: 0
@@ -973,6 +975,8 @@ PlayableDirector:
     value: {fileID: 483443816}
   - key: {fileID: 114683888486135262, guid: d79af801dbc134dedbfc53220c9bf18c, type: 2}
     value: {fileID: 756806149}
+  - key: {fileID: 114449716153483556, guid: d79af801dbc134dedbfc53220c9bf18c, type: 2}
+    value: {fileID: 1386234019}
   m_ExposedReferences:
     m_References:
     - fa8884c1d4abb4932820ee0f305e44ad: {fileID: 483443815}
@@ -993,6 +997,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1386234022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386234018}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98decc8d1ad69416ab26e97440d726b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: {fileID: 8300000, guid: ea591b8c02c9f4244ba40d1903d2fa82, type: 3}
+  volume: 0.1
+--- !u!114 &1386234023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386234018}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a09aaa8699e947dfbb28c7967dcde0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WaitInSeconds: 7
+  nexTSceneName: level2
 --- !u!1 &1722540867
 GameObject:
   m_ObjectHideFlags: 0

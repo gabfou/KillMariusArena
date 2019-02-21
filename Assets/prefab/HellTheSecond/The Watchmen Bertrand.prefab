@@ -74,13 +74,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannotmove: 0
-  lifeText: {fileID: 0}
   facingLeft: 0
   life: 5
+  maxLife: 0
   invulnTime: 1
   ouchtag: ouch
   timestunouch: 0.2
   stunStopMove: 1
+  dontDestroy: 0
   maxSpeed: 10
   minSlideVelocity: 3
   slimeVelocityIgnore: 0.5
@@ -101,10 +102,10 @@ MonoBehaviour:
   jumpingVolume: 0.313
   TappingClip: {fileID: 8300000, guid: 5bf8badd923abc1489f715f807ba9c5d, type: 3}
   tappingVolume: 0.5
-  run: {fileID: 8300000, guid: 02d3537f01013d24284d147c8980b37a, type: 3}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 8300000, guid: f3abc65e1e59e3b468b89efdea68244a, type: 3}
+  dashVolume: 0.272
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -123,11 +124,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
+  baseGravityScale: 0
   isDead: 0
   lastCheckpoint: {x: -Infinity, y: -Infinity}
+  baseLayer: 0
   rbparent: {fileID: 0}
   canControle: 0
 --- !u!70 &70032649558040228

@@ -11,6 +11,8 @@ public class tonneaux : MonoBehaviour {
 	float targetside;
 	float sideVelocity;
 	float timeWithoutMoving = 0;
+	public AudioClip deathClip;
+	[Range(0,1)] public float deathVolume = 1;
 	void Start () {
 		targetside = side;
 		rbody = GetComponent<Rigidbody2D>();
@@ -42,6 +44,8 @@ public class tonneaux : MonoBehaviour {
 		GetComponent<Animator>()?.SetTrigger("death");
 		GameObject.Destroy(GetComponent<rotateOnVX>());
 		GameObject.Destroy(GetComponent<Collider2D>());
+		if (deathClip)
+			AudioSource.PlayClipAtPoint(deathClip, transform.position, deathVolume);
 		rbody.angularVelocity = 0;
 		yield return new WaitForSeconds(0.5f);
 		GameObject.Destroy(gameObject);

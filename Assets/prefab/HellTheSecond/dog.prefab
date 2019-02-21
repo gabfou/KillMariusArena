@@ -228,13 +228,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cannotmove: 0
-  lifeText: {fileID: 0}
   facingLeft: 0
   life: 2
+  maxLife: 0
   invulnTime: 0.05
   ouchtag: bam
   timestunouch: 0.2
   stunStopMove: 1
+  dontDestroy: 0
   maxSpeed: 14
   minSlideVelocity: 3
   slimeVelocityIgnore: 0.5
@@ -254,11 +255,11 @@ MonoBehaviour:
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 8300000, guid: 8d2117b082abc5940a5efe2f59140072, type: 3}
-  tappingVolume: 0.176
-  run: {fileID: 0}
-  runVolume: 0.5
-  DieClip: {fileID: 8300000, guid: f1e942bb66373e544b469b94bd5e1104, type: 3}
+  tappingVolume: 0.262
+  DieClip: {fileID: 8300000, guid: 541bd5973ef64bb48a58fc8c5925f937, type: 3}
   DieVolume: 0.298
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 6
   ouchJumpMultPushY: 12
   canJump: 1
@@ -277,7 +278,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -291,6 +291,11 @@ MonoBehaviour:
   perfectdistancetocible: 2
   distanceBehavior: 0
   MaxDistance: Infinity
+  eventOnAgro:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!95 &95212462288583246
 Animator:
   serializedVersion: 3
