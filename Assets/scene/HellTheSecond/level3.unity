@@ -2783,10 +2783,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -2816,7 +2816,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -4105,6 +4104,11 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
       value: 74.47827
       objectReference: {fileID: 0}
+    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 114633631619848612, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: timetoshootRand
@@ -4114,11 +4118,6 @@ PrefabInstance:
         type: 3}
       propertyPath: timetoshoot
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50966411238324620, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -5898,10 +5897,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -5931,7 +5930,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -9855,10 +9853,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -9888,7 +9886,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -10740,10 +10737,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -10773,7 +10770,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -16920,10 +16916,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -16953,7 +16949,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -20142,6 +20137,11 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
       value: 74.47827
       objectReference: {fileID: 0}
+    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 114633631619848612, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: timetoshootRand
@@ -20151,11 +20151,6 @@ PrefabInstance:
         type: 3}
       propertyPath: timetoshoot
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50966411238324620, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -21239,10 +21234,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -21272,7 +21267,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -25245,6 +25239,11 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
       value: 74.47827
       objectReference: {fileID: 0}
+    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 114633631619848612, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: timetoshootRand
@@ -25254,11 +25253,6 @@ PrefabInstance:
         type: 3}
       propertyPath: timetoshoot
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50966411238324620, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -29563,11 +29557,6 @@ PrefabInstance:
       propertyPath: life
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: m_Radius
-      value: 5.39
-      objectReference: {fileID: 0}
     - target: {fileID: 1181362295722612049, guid: 36207b7c64bab40dea85188fa1267225,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -29590,6 +29579,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a36c5904a4a0d415b92567fe22f8cf30,
         type: 3}
+    - target: {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.39
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36207b7c64bab40dea85188fa1267225, type: 3}
 --- !u!114 &611007505 stripped
@@ -30112,10 +30106,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -30145,7 +30139,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -32842,7 +32835,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ea591b8c02c9f4244ba40d1903d2fa82, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b7ba8a82a374343f59d2be3674b4e648, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.113
   m_Pitch: 1
@@ -35017,7 +35010,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 1
-  m_FollowOffset: {x: 0, y: 0, z: -200}
+  m_FollowOffset: {x: 0, y: 0, z: -20}
   m_XDamping: 0
   m_YDamping: 0
   m_ZDamping: 0
@@ -37786,6 +37779,11 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
       value: 74.47827
       objectReference: {fileID: 0}
+    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 114633631619848612, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: timetoshootRand
@@ -37795,11 +37793,6 @@ PrefabInstance:
         type: 3}
       propertyPath: timetoshoot
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50966411238324620, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -45406,10 +45399,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -45439,7 +45432,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -45626,15 +45618,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4899300555096600, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1705.8
+      value: -28.5
       objectReference: {fileID: 0}
     - target: {fileID: 4899300555096600, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 152.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4899300555096600, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4899300555096600, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
       propertyPath: m_LocalRotation.x
@@ -46026,6 +46018,11 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
       value: 74.47827
       objectReference: {fileID: 0}
+    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 114633631619848612, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: timetoshootRand
@@ -46035,11 +46032,6 @@ PrefabInstance:
         type: 3}
       propertyPath: timetoshoot
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50966411238324620, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -52851,10 +52843,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 0
   ouchJumpMultPushY: 0
   canJump: 1
@@ -52884,7 +52876,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -53286,11 +53277,6 @@ PrefabInstance:
       propertyPath: facingLeft
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: m_Radius
-      value: 5.39
-      objectReference: {fileID: 0}
     - target: {fileID: 1181362295722612049, guid: 36207b7c64bab40dea85188fa1267225,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -53313,6 +53299,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a36c5904a4a0d415b92567fe22f8cf30,
         type: 3}
+    - target: {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.39
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 36207b7c64bab40dea85188fa1267225, type: 3}
@@ -55225,10 +55216,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -55258,7 +55249,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -55630,10 +55620,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 0
   ouchJumpMultPushY: 0
   canJump: 1
@@ -55663,7 +55653,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -58175,10 +58164,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -58208,7 +58197,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -60255,10 +60243,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 0
   ouchJumpMultPushY: 0
   canJump: 1
@@ -60288,7 +60276,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -66310,10 +66297,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -66343,7 +66330,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -68859,10 +68845,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -68892,7 +68878,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -69729,10 +69714,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -69762,7 +69747,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -71040,8 +71024,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340972697}
-  m_LocalRotation: {x: 5.1900737e-26, y: 1.2826189e-28, z: 0.000000094129206, w: -1}
-  m_LocalPosition: {x: -532.6438, y: 69.035095, z: -153.50336}
+  m_LocalRotation: {x: 3.2579324e-25, y: 1.4435706e-29, z: 0.000000095663445, w: -1}
+  m_LocalPosition: {x: -532.6438, y: 69.035095, z: 26.496635}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 701808934}
@@ -74259,10 +74243,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -74292,7 +74276,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -76292,10 +76275,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -76325,7 +76308,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -77071,10 +77053,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -77104,7 +77086,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -78367,7 +78348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1476729781}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 607.37, y: 9.64, z: 0}
+  m_LocalPosition: {x: 607.54, y: 9.06, z: 0}
   m_LocalScale: {x: 1.0000086, y: 0.99999374, z: 1}
   m_Children: []
   m_Father: {fileID: 1074115529}
@@ -79549,10 +79530,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 0
   ouchJumpMultPushY: 0
   canJump: 1
@@ -79582,7 +79563,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -82129,10 +82109,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -82162,7 +82142,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -82976,7 +82955,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1572289028}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 594, y: 3.2, z: 0}
+  m_LocalPosition: {x: 594, y: 2.88, z: 0}
   m_LocalScale: {x: 1.0000086, y: 0.99999374, z: 1}
   m_Children: []
   m_Father: {fileID: 1074115529}
@@ -83621,10 +83600,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -83654,7 +83633,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -84385,10 +84363,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -84418,7 +84396,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -85915,10 +85892,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -85948,7 +85925,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -88324,11 +88300,6 @@ PrefabInstance:
       propertyPath: life
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: m_Radius
-      value: 5.39
-      objectReference: {fileID: 0}
     - target: {fileID: 1181362295722612049, guid: 36207b7c64bab40dea85188fa1267225,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -88338,6 +88309,23 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1181362295722612048, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300006, guid: a36c5904a4a0d415b92567fe22f8cf30,
+        type: 3}
+    - target: {fileID: 1181362296625077705, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: a36c5904a4a0d415b92567fe22f8cf30,
+        type: 3}
+    - target: {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.39
       objectReference: {fileID: 0}
     - target: {fileID: 5762267391978516181, guid: 36207b7c64bab40dea85188fa1267225,
         type: 3}
@@ -88454,18 +88442,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1181362295722612048, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300006, guid: a36c5904a4a0d415b92567fe22f8cf30,
-        type: 3}
-    - target: {fileID: 1181362296625077705, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: a36c5904a4a0d415b92567fe22f8cf30,
-        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 36207b7c64bab40dea85188fa1267225, type: 3}
 --- !u!1001 &1687990960
@@ -88545,11 +88521,6 @@ PrefabInstance:
       propertyPath: life
       value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: m_Radius
-      value: 5.39
-      objectReference: {fileID: 0}
     - target: {fileID: 1181362295722612049, guid: 36207b7c64bab40dea85188fa1267225,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -88572,6 +88543,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: a36c5904a4a0d415b92567fe22f8cf30,
         type: 3}
+    - target: {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: m_Radius
+      value: 5.39
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 36207b7c64bab40dea85188fa1267225, type: 3}
@@ -90074,10 +90050,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -90107,7 +90083,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -93091,10 +93066,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -93124,7 +93099,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -95052,10 +95026,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -95085,7 +95059,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -100460,19 +100433,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -153.50336
+      value: 26.496635
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 5.1900737e-26
+      value: 3.2579324e-25
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1.2826189e-28
+      value: 1.4435706e-29
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.000000094129206
+      value: 0.000000095663445
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -101415,6 +101388,11 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
       value: 74.47827
       objectReference: {fileID: 0}
+    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -5
+      objectReference: {fileID: 0}
     - target: {fileID: 114633631619848612, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: timetoshootRand
@@ -101424,11 +101402,6 @@ PrefabInstance:
         type: 3}
       propertyPath: timetoshoot
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 212853515786316282, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 50966411238324620, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -102594,10 +102567,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -102627,7 +102600,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -105184,10 +105156,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -105217,7 +105189,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -107075,7 +107046,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032533242}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 626.3, y: 27, z: 0}
+  m_LocalPosition: {x: 626.33, y: 26.36, z: 0}
   m_LocalScale: {x: 0.7446047, y: 0.6605001, z: 0.58343}
   m_Children: []
   m_Father: {fileID: 1074115529}
@@ -110615,10 +110586,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -110648,7 +110619,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -110789,10 +110759,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  run: {fileID: 0}
-  runVolume: 0.5
   DieClip: {fileID: 0}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -110822,7 +110792,6 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0

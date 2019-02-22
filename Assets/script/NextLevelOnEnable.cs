@@ -11,7 +11,6 @@ public class NextLevelOnEnable : MonoBehaviour
 	
 	IEnumerator WaitForNext()
 	{
-
 		yield return new WaitForSeconds(WaitInSeconds);
 		if (GameManager.instance != null)
 			GameManager.instance.save.levelChangeReinit();
@@ -20,8 +19,12 @@ public class NextLevelOnEnable : MonoBehaviour
 
 	void OnEnable()
 	{
-			ao = SceneManager.LoadSceneAsync(nexTSceneName);
-			ao.allowSceneActivation = false;
-			StartCoroutine(WaitForNext());
+		ao = SceneManager.LoadSceneAsync(nexTSceneName);
+		ao.allowSceneActivation = false;
+		StartCoroutine(WaitForNext());
     }
+
+	private void Update() {
+		Debug.Log(ao.progress);
+	}
 }

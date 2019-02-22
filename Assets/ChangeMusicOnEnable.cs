@@ -10,9 +10,13 @@ public class ChangeMusicOnEnable : MonoBehaviour
     void OnEnable() {
         if (GameManager.instance?.audioSource)
         {
-            GameManager.instance.audioSource.clip = music;
-            GameManager.instance.audioSource.volume = volume;
-            GameManager.instance.audioSource.Play();
+            Debug.Log("sfaf");
+            if (GameManager.instance.audioSource.clip != music || GameManager.instance.audioSource.isPlaying == false)
+            {
+                GameManager.instance.audioSource.clip = music;
+                GameManager.instance.audioSource.volume = volume;
+                GameManager.instance.audioSource.Play();
+            }
         }
         else
             Debug.LogWarning(name + " No GameManager.instance?.audioSource");
