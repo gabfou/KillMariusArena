@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Events;
 
 // TO DO: change float move and float movey by Vector2 move
+// NEXT GAME TO DO laisser seulement ce qui concerne le player ici et le faire heriter
 
 public class PlayerController : Stopmoving
 {
@@ -131,8 +132,11 @@ public class PlayerController : Stopmoving
         if (GameManager.instance?.life)
             GameManager.instance.life.text = life.ToString();
             
-        if (GameManager.instance?.save.lastCheckpoint != Vector2.zero)
+        if (GameManager.instance?.save.lastCheckpoint != Vector2.zero && GameManager.instance?.playerSpawned == false)
             transform.position = GameManager.instance.save.lastCheckpoint;
+        if (GameManager.instance?.save.camToActive != null)
+            GameManager.instance.save.camToActive.SetActive(true);
+        GameManager.instance.playerSpawned = true;
     }
 
     protected void reinit()

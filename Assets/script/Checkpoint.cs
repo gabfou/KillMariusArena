@@ -9,6 +9,7 @@ public class Checkpoint : MonoBehaviour {
 	SpriteRenderer spr;
 	public GameObject replaceBy = null;
 	public GameObject parent = null;
+	public GameObject CamToActive = null;
 
 	bool asBeenActivated = false;
 

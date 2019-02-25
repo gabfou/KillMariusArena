@@ -7,7 +7,7 @@ using System.Linq;
 public class boss3Special : MonoBehaviour
 {
     public Agro[] chauveSouris;
-    UnityEvent End;
+    public UnityEvent End;
     // Start is called before the first frame update
     void Start()
     {

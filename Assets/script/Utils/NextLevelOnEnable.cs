@@ -11,20 +11,19 @@ public class NextLevelOnEnable : MonoBehaviour
 	
 	IEnumerator WaitForNext()
 	{
+		AsyncOperation ao;
+
+		yield return null; //wait one frame in case the scene just loaded
+		ao = SceneManager.LoadSceneAsync(nexTSceneName);
+		ao.allowSceneActivation = false;
 		yield return new WaitForSeconds(WaitInSeconds);
-		if (GameManager.instance != null)
-			GameManager.instance.save.levelChangeReinit();
 		ao.allowSceneActivation = true;
 	}
 
 	void OnEnable()
 	{
-		ao = SceneManager.LoadSceneAsync(nexTSceneName);
-		ao.allowSceneActivation = false;
+		
 		StartCoroutine(WaitForNext());
     }
 
-	private void Update() {
-		Debug.Log(ao.progress);
-	}
 }
