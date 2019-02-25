@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4899300555096600}
   - component: {fileID: 50172381259275154}
-  - component: {fileID: 114907904944573272}
+  - component: {fileID: 4919582632923328031}
   - component: {fileID: 70032649558040228}
   - component: {fileID: 95513907486032430}
   - component: {fileID: 82147005710638708}
@@ -61,7 +61,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &114907904944573272
+--- !u!114 &4919582632923328031
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -70,7 +70,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1024669050778126}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6159ae8a3b471a240b383950a2c13743, type: 3}
+  m_Script: {fileID: 11500000, guid: fae96c7d5b3ce4b8dbbe70e324eaaacc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cannotmove: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   ouchClip: {fileID: 8300000, guid: d03cb854194d8b948a9eff6065ea9728, type: 3}
   ouchVolume: 0.8
   jumpClip: {fileID: 8300000, guid: bddc1df20ab9f1444bebfa94aeca5306, type: 3}
-  jumpingVolume: 0.313
+  jumpingVolume: 0.5
   TappingClip: {fileID: 8300000, guid: 5bf8badd923abc1489f715f807ba9c5d, type: 3}
   tappingVolume: 0.5
   DieClip: {fileID: 0}

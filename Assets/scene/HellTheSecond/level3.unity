@@ -2594,6 +2594,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -2602,7 +2603,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -9220,6 +9220,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -9228,7 +9229,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -10025,6 +10025,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -10033,7 +10034,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -17268,16 +17268,6 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].y
       value: 98.26456
       objectReference: {fileID: 0}
-    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 59.92817
-      objectReference: {fileID: 0}
-    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_Radius
-      value: 145.1999
-      objectReference: {fileID: 0}
     - target: {fileID: 50966411238324620, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: m_Interpolate
@@ -17292,6 +17282,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Material
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 59.92817
+      objectReference: {fileID: 0}
+    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_Radius
+      value: 145.1999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -22908,16 +22908,6 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].y
       value: 98.26456
       objectReference: {fileID: 0}
-    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 59.92817
-      objectReference: {fileID: 0}
-    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_Radius
-      value: 145.1999
-      objectReference: {fileID: 0}
     - target: {fileID: 50966411238324620, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: m_CollisionDetection
@@ -22927,6 +22917,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Interpolate
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 59.92817
+      objectReference: {fileID: 0}
+    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_Radius
+      value: 145.1999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -23333,16 +23333,6 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].y
       value: 98.26456
       objectReference: {fileID: 0}
-    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 59.92817
-      objectReference: {fileID: 0}
-    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_Radius
-      value: 145.1999
-      objectReference: {fileID: 0}
     - target: {fileID: 114633631619848612, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: angleprecision
@@ -23352,6 +23342,16 @@ PrefabInstance:
         type: 3}
       propertyPath: timetoshoot
       value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 59.92817
+      objectReference: {fileID: 0}
+    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_Radius
+      value: 145.1999
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -23907,6 +23907,11 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 46.098743
       objectReference: {fileID: 0}
+    - target: {fileID: 50562006112798616, guid: 0d9ee397f685d42919f94a5418bcdac5,
+        type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 60619858936736050, guid: 0d9ee397f685d42919f94a5418bcdac5,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
@@ -23946,11 +23951,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].y
       value: -0.41911843
-      objectReference: {fileID: 0}
-    - target: {fileID: 50562006112798616, guid: 0d9ee397f685d42919f94a5418bcdac5,
-        type: 3}
-      propertyPath: m_Simulated
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d9ee397f685d42919f94a5418bcdac5, type: 3}
@@ -27233,6 +27233,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -27241,7 +27242,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -29799,7 +29799,7 @@ MonoBehaviour:
     parent: {fileID: 0}
     camToActive: {fileID: 0}
     SceneName: 
-  player: {fileID: 1723514368}
+  player: {fileID: 0}
   DistanceOfSound: 500
   life: {fileID: 283256743}
   replacedPlayer: 0
@@ -32854,16 +32854,6 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].y
       value: 98.26456
       objectReference: {fileID: 0}
-    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 59.92817
-      objectReference: {fileID: 0}
-    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_Radius
-      value: 145.1999
-      objectReference: {fileID: 0}
     - target: {fileID: 114633631619848612, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: angleprecision
@@ -32873,6 +32863,16 @@ PrefabInstance:
         type: 3}
       propertyPath: timetoshoot
       value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 59.92817
+      objectReference: {fileID: 0}
+    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_Radius
+      value: 145.1999
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -47120,6 +47120,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -47128,7 +47129,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -49410,6 +49410,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -49418,7 +49419,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -49814,6 +49814,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -49822,7 +49823,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -52346,6 +52346,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -52354,7 +52355,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -54117,6 +54117,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -54125,7 +54126,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -59574,6 +59574,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -59582,7 +59583,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -62350,6 +62350,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -62358,7 +62359,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -67898,6 +67898,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -67906,7 +67907,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -70586,6 +70586,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -70594,7 +70595,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -72893,6 +72893,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -72901,7 +72902,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -74258,6 +74258,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -74266,7 +74267,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -75021,6 +75021,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -75029,7 +75030,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -79451,16 +79451,6 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].y
       value: 98.26456
       objectReference: {fileID: 0}
-    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 59.92817
-      objectReference: {fileID: 0}
-    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_Radius
-      value: 145.1999
-      objectReference: {fileID: 0}
     - target: {fileID: 114633631619848612, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: angleprecision
@@ -79470,6 +79460,16 @@ PrefabInstance:
         type: 3}
       propertyPath: timetoshoot
       value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 59.92817
+      objectReference: {fileID: 0}
+    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_Radius
+      value: 145.1999
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -80192,18 +80192,6 @@ Transform:
   m_Father: {fileID: 976054917}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1723514368 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114907904944573272, guid: 16da5a28e9687451f9c8db06cced34f3,
-    type: 3}
-  m_PrefabInstance: {fileID: 886145991}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 281211722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6159ae8a3b471a240b383950a2c13743, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1723514370 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4899300555096600, guid: 16da5a28e9687451f9c8db06cced34f3,
@@ -82596,6 +82584,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -82604,7 +82593,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -84550,6 +84538,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -84558,7 +84547,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -91001,16 +90989,6 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[6].y
       value: 98.26456
       objectReference: {fileID: 0}
-    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_Offset.x
-      value: 59.92817
-      objectReference: {fileID: 0}
-    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
-        type: 3}
-      propertyPath: m_Radius
-      value: 145.1999
-      objectReference: {fileID: 0}
     - target: {fileID: 114633631619848612, guid: 99bde45934c767642a1e583c1c499f8c,
         type: 3}
       propertyPath: angleprecision
@@ -91020,6 +90998,16 @@ PrefabInstance:
         type: 3}
       propertyPath: timetoshoot
       value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 59.92817
+      objectReference: {fileID: 0}
+    - target: {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c,
+        type: 3}
+      propertyPath: m_Radius
+      value: 145.1999
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 58843985012081466, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
@@ -93744,6 +93732,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -93752,7 +93741,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -98806,6 +98794,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -98814,7 +98803,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -98979,6 +98967,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
@@ -98987,7 +98976,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 0
@@ -100804,6 +100792,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[7].y
       value: -4.200325
+      objectReference: {fileID: 0}
+    - target: {fileID: 6111145438880057512, guid: 1a72990872aa64d2c8487aa2bfc517ee,
+        type: 3}
+      propertyPath: resetCamOnPlayer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a72990872aa64d2c8487aa2bfc517ee, type: 3}

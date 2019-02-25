@@ -633,9 +633,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 22100000, guid: f0278246e64e3463ab9ec68a4c3f0eb1,
         type: 2}
-    - target: {fileID: 4775168447998246, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.59
+    - target: {fileID: 4919582632923328031, guid: 16da5a28e9687451f9c8db06cced34f3,
+        type: 3}
+      propertyPath: flying
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919582632923328031, guid: 16da5a28e9687451f9c8db06cced34f3,
+        type: 3}
+      propertyPath: distanceofdash
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919582632923328031, guid: 16da5a28e9687451f9c8db06cced34f3,
+        type: 3}
+      propertyPath: timedashinsc
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919582632923328031, guid: 16da5a28e9687451f9c8db06cced34f3,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4499537460373718, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
       propertyPath: m_LocalRotation.x
@@ -664,6 +680,10 @@ PrefabInstance:
     - target: {fileID: 4499537460373718, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: -19.431002
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775168447998246, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.59
       objectReference: {fileID: 0}
     - target: {fileID: 60146591138972876, guid: 16da5a28e9687451f9c8db06cced34f3,
         type: 3}

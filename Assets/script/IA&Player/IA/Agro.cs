@@ -5,7 +5,7 @@ using System.Linq;
 using Cinemachine;
 using UnityEngine.Events;
 
-public class Agro : PlayerController {
+public class Agro : Character {
 
     public enum DistanceBehavior {Free, JustFlee, Justcharge, DontMove, Mounted, justTakeDamage};
 

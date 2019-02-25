@@ -65,8 +65,8 @@ public class CaBouge : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D other)
 	{
-		PlayerController player;
-		if (rigidbody && (player = other.gameObject.GetComponent<PlayerController>()) && other.transform.parent == null && other.gameObject.GetComponent<FlyingAgro>() == null)
+		Character player;
+		if (rigidbody && (player = other.gameObject.GetComponent<Character>()) && other.transform.parent == null && other.gameObject.GetComponent<FlyingAgro>() == null)
 		{
 			other.transform.parent = transform;
 			player.rbparent = rigidbody;
@@ -80,7 +80,7 @@ public class CaBouge : MonoBehaviour {
 		if (t)
 		{
 			t.parent = null;
-			t.GetComponent<PlayerController>().rbparent = null;
+			t.GetComponent<Character>().rbparent = null;
 			l.Remove(t);
 		}
 	}

@@ -14,7 +14,7 @@ public class SpeMovingFly : MonoBehaviour
 
     void OnEnable()
     {
-        player = GetComponentInChildren<PlayerController>().transform;
+        player = GetComponentInChildren<Character>().transform;
     }
 
     // Update is called once per frame

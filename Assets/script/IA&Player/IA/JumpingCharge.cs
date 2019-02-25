@@ -8,7 +8,7 @@ public class JumpingCharge : MonoBehaviour {
 	public float chargejumppower = 10;
     public float prepjumptime = 0.1f;
 	public float coefspeed = 2f;
-	PlayerController ps;
+	Character ps;
 	public float cd = 2;
 	float	actualcd;
 	float	TimeToCoolDown = 1f;
@@ -17,7 +17,7 @@ public class JumpingCharge : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		ps = GetComponentInParent<PlayerController>();
+		ps = GetComponentInParent<Character>();
 		anim = GetComponentInParent<Animator>();
 		OuchZone = GetComponentsInChildren<Collider2D>(true).Where(c => c.tag == "ouch").FirstOrDefault();
 	}
