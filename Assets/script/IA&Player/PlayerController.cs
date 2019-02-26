@@ -25,14 +25,13 @@ public class PlayerController : Character
 
     private void PlayerSpecificReinit()
     {
-        if (Vector2.negativeInfinity == lastCheckpoint)
-            lastCheckpoint = transform.position;
 
         if (GameManager.instance?.save.replaceBy != null && GameManager.instance.replacedPlayer == false)
         {
             GameManager.instance.replacedPlayer = true;
             GameObject.Instantiate(GameManager.instance.save.replaceBy);
             GameObject.Destroy(gameObject);
+            return ;
         }
 		if (GameManager.instance?.save.parent)
 			transform.parent = GameManager.instance.save.parent.transform;

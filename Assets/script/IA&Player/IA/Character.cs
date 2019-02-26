@@ -84,8 +84,6 @@ public class Character : Stopmoving
 
     protected Collider2D  col;
     [HideInInspector] public bool isDead;
-
-	[HideInInspector] public Vector2 lastCheckpoint = Vector2.negativeInfinity;
     [HideInInspector] public int baseLayer;
     [HideInInspector] public Rigidbody2D rbparent = null;
 

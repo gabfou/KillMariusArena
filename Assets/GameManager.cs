@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 		if (instance == null)
 		{
 			audioSource = GetComponent<AudioSource>();
+			save.levelChangeReinit();
 			instance = this;
 		}
 		else
