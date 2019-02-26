@@ -447,7 +447,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 0.63
+  orthographic size: 30.9
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -470,8 +470,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 218166976}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 57.69431, y: 67.152306, z: -97.89212}
+  m_LocalRotation: {x: -2.2838567e-30, y: -3.7238021e-25, z: 0.000000011965113, w: 1}
+  m_LocalPosition: {x: 39.91, y: 79.86, z: -97.89212}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 690319152}
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WaitInSeconds: 5
-  nexTSceneName: level3
+  nexTSceneName: level4
 --- !u!4 &233906122
 Transform:
   m_ObjectHideFlags: 0
@@ -2095,6 +2095,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   music: {fileID: 8300000, guid: 9ba36933629ae4cbe9e15b26d097d79d, type: 3}
   volume: 0.1
+  timeToFadeInSec: 0.5
 --- !u!1 &1737569638
 GameObject:
   m_ObjectHideFlags: 0

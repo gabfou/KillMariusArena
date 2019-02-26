@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class UpdateAnimatorIsMoving : MonoBehaviour {
 
-	Rigidbody2D rigidbody;
+	Rigidbody2D rbody;
 	Animator animator;
 	// Use this for initialization
 	void Start () {
-		rigidbody = GetComponent<Rigidbody2D>();
+		rbody = GetComponent<Rigidbody2D>();
 		animator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		animator.SetBool("ismoving", rigidbody.velocity != Vector2.zero);
+		animator.SetBool("ismoving", rbody.velocity != Vector2.zero);
 	}
 }

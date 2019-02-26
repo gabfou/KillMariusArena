@@ -20,7 +20,8 @@ public class CaBouge : MonoBehaviour {
 	public float marge = 0.1f;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		rigidbody = GetComponent<Rigidbody2D>();
 		listOfPassage.Insert(0, transform.position);
 		if (activeOnAwake)
@@ -59,8 +60,6 @@ public class CaBouge : MonoBehaviour {
 				}
 			}
 		}
-
-
 	}
 
 	void OnCollisionEnter2D(Collision2D other)

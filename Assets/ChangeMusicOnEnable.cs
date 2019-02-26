@@ -33,6 +33,6 @@ public class ChangeMusicOnEnable : MonoBehaviour
     }
 
     void OnEnable() {
-
+        StartCoroutine(ChangeMusic());
     } 
 }

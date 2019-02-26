@@ -17,7 +17,6 @@ public class Agro : Character {
     public float perfectdistancetocible = 0;
     public DistanceBehavior distanceBehavior = DistanceBehavior.Free;
     public float MaxDistance = Mathf.Infinity;
-	float moveSmooth = 0;
 	public UnityEvent eventOnAgro;
 
 

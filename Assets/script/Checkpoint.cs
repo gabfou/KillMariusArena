@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Checkpoint : MonoBehaviour {
-
+public class Checkpoint : MonoBehaviour
+{
 	public int num;
 	public Sprite sp;
 	SpriteRenderer spr;

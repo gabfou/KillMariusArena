@@ -7,15 +7,15 @@ public class ShackyCam : MonoBehaviour {
 
 	public	float		power = 0.7f;
 	public	float		duration = 1.0f;
-	Transform	camera;
+	Transform	cam;
 	public	bool		ShouldShake = false;
 
 	private	Vector3	startPosition;
 	private	float	initialDuration;
 	// Use this for initialization
 	void Start () {
-		camera = Camera.main.transform;
-		startPosition = camera.eulerAngles;
+		cam = Camera.main.transform;
+		startPosition = cam.eulerAngles;
 		initialDuration = duration;
 	}
 	
@@ -23,13 +23,13 @@ public class ShackyCam : MonoBehaviour {
 	void Update () {
 		if (ShouldShake) {
 			if (duration > 0) {
-				camera.eulerAngles = startPosition + Random.insideUnitSphere * power;
+				cam.eulerAngles = startPosition + Random.insideUnitSphere * power;
 				duration -= Time.deltaTime;
 			}
 			else {
 				ShouldShake = false;
 				duration = initialDuration;
-				camera.eulerAngles = startPosition;
+				cam.eulerAngles = startPosition;
 			}
 		}
 	}
