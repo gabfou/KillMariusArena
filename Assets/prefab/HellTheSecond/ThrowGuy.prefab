@@ -268,10 +268,10 @@ MonoBehaviour:
   jumpingVolume: 0.5
   TappingClip: {fileID: 8300000, guid: 32c93829e02324b4391ba40c378f846c, type: 3}
   tappingVolume: 0.27
-  run: {fileID: 0}
-  runVolume: 0.5
-  DieClip: {fileID: 8300000, guid: f0f0b798d9cb79744b895ded04534424, type: 3}
+  DieClip: {fileID: 8300000, guid: e0e4ee6f3e5ab804f900b4eb9438bb16, type: 3}
   DieVolume: 0.5
+  dashClip: {fileID: 0}
+  dashVolume: 0.5
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -289,8 +289,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
-  audiosource2: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
@@ -298,7 +298,6 @@ MonoBehaviour:
   lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 3

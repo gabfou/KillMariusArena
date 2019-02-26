@@ -2556,13 +2556,13 @@ MonoBehaviour:
   distanceofdash: 10
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
-  ouchVolume: 0.8
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  DieClip: {fileID: 0}
+  DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
@@ -3720,7 +3720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4232906829953506, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -43.801197
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4232906829953506, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -9182,13 +9182,13 @@ MonoBehaviour:
   distanceofdash: 10
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
-  ouchVolume: 0.8
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  DieClip: {fileID: 0}
+  DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
@@ -9987,13 +9987,13 @@ MonoBehaviour:
   distanceofdash: 10
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
-  ouchVolume: 0.8
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  DieClip: {fileID: 0}
+  DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
@@ -12706,7 +12706,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305130222}
   m_LocalRotation: {x: -0, y: 0, z: 0.764725, w: 0.6443568}
-  m_LocalPosition: {x: -86.3, y: 0.9, z: 48.05499}
+  m_LocalPosition: {x: -86.3, y: 0.9, z: 0}
   m_LocalScale: {x: 5.485729, y: 5.485729, z: 1.0971181}
   m_Children: []
   m_Father: {fileID: 891772814}
@@ -14438,7 +14438,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 365257111}
   m_LocalRotation: {x: -0, y: 0, z: 0.764725, w: 0.6443568}
-  m_LocalPosition: {x: -43.4, y: -3.5, z: 48.05499}
+  m_LocalPosition: {x: -43.4, y: -3.5, z: 0}
   m_LocalScale: {x: 5.485729, y: 5.485729, z: 1.0971181}
   m_Children: []
   m_Father: {fileID: 891772814}
@@ -16404,6 +16404,7 @@ GameObject:
   - component: {fileID: 410741053}
   - component: {fileID: 410741055}
   - component: {fileID: 410741054}
+  - component: {fileID: 410741056}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -16519,6 +16520,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 410741056}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onTriggerStay:
@@ -16557,6 +16569,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 41.055603, y: 14.075363}
   m_EdgeRadius: 0
+--- !u!114 &410741056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 410741052}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98decc8d1ad69416ab26e97440d726b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: {fileID: 8300000, guid: a3ab84190888347efa9cd788f8215067, type: 3}
+  volume: 0.1
 --- !u!1 &417671545
 GameObject:
   m_ObjectHideFlags: 0
@@ -17078,7 +17104,7 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
-  m_UsedByComposite: 1
+  m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
@@ -17976,7 +18002,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4232906829953506, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -43.801197
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4232906829953506, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -19710,7 +19736,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 475920840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -58.300034, y: -58.642494, z: 48.05499}
+  m_LocalPosition: {x: -58.300034, y: -58.642494, z: 0}
   m_LocalScale: {x: 5.4171615, y: 5.4857326, z: 1.097116}
   m_Children:
   - {fileID: 2116861906}
@@ -22470,7 +22496,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4232906829953506, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -43.801197
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4232906829953506, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -27195,13 +27221,13 @@ MonoBehaviour:
   distanceofdash: 10
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
-  ouchVolume: 0.8
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  DieClip: {fileID: 0}
+  DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
@@ -31677,7 +31703,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701568796}
   m_LocalRotation: {x: -0, y: -0, z: 0.764725, w: 0.6443568}
-  m_LocalPosition: {x: 3.4, y: -28.6, z: 48.05499}
+  m_LocalPosition: {x: 3.4, y: -28.6, z: 0}
   m_LocalScale: {x: 5.485732, y: 5.485732, z: 1.097116}
   m_Children: []
   m_Father: {fileID: 891772814}
@@ -33668,7 +33694,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4232906829953506, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -43.801197
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4232906829953506, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -40869,7 +40895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4232906829953506, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -43.801197
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4232906829953506, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -47083,7 +47109,7 @@ MonoBehaviour:
   isinvuindash: 1
   dashcd: 0.5
   ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
-  ouchVolume: 0.8
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
@@ -49372,8 +49398,8 @@ MonoBehaviour:
   distanceofdash: 10
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
-  ouchVolume: 0.8
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
@@ -49777,7 +49803,7 @@ MonoBehaviour:
   isinvuindash: 1
   dashcd: 0.5
   ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
-  ouchVolume: 0.8
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
@@ -52308,13 +52334,13 @@ MonoBehaviour:
   distanceofdash: 10
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
-  ouchVolume: 0.8
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  DieClip: {fileID: 0}
+  DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
@@ -54080,7 +54106,7 @@ MonoBehaviour:
   isinvuindash: 1
   dashcd: 0.5
   ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
-  ouchVolume: 0.8
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
@@ -59536,13 +59562,13 @@ MonoBehaviour:
   distanceofdash: 10
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
-  ouchVolume: 0.8
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  DieClip: {fileID: 0}
+  DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
@@ -62312,13 +62338,13 @@ MonoBehaviour:
   distanceofdash: 10
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
-  ouchVolume: 0.8
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  DieClip: {fileID: 0}
+  DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
@@ -63615,7 +63641,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356054280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -638.92883, y: 69.035095, z: 46.496635}
+  m_LocalPosition: {x: -638.92883, y: 69.035095, z: 28.0625}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1116114301}
@@ -67860,13 +67886,13 @@ MonoBehaviour:
   distanceofdash: 10
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
-  ouchVolume: 0.8
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  DieClip: {fileID: 0}
+  DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
@@ -70549,7 +70575,7 @@ MonoBehaviour:
   isinvuindash: 1
   dashcd: 0.5
   ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
-  ouchVolume: 0.8
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
@@ -72855,13 +72881,13 @@ MonoBehaviour:
   distanceofdash: 10
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
-  ouchVolume: 0.8
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  DieClip: {fileID: 0}
+  DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
@@ -74220,13 +74246,13 @@ MonoBehaviour:
   distanceofdash: 10
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
-  ouchVolume: 0.8
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  DieClip: {fileID: 0}
+  DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
@@ -74983,13 +75009,13 @@ MonoBehaviour:
   distanceofdash: 10
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
-  ouchVolume: 0.8
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  DieClip: {fileID: 0}
+  DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
@@ -82546,13 +82572,13 @@ MonoBehaviour:
   distanceofdash: 10
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
-  ouchVolume: 0.8
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  DieClip: {fileID: 0}
+  DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
@@ -83752,7 +83778,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1781678453}
   m_LocalRotation: {x: -0, y: -0, z: 0.7051962, w: 0.70901227}
-  m_LocalPosition: {x: -150.7, y: -10, z: 48.05499}
+  m_LocalPosition: {x: -150.7, y: -10, z: 0}
   m_LocalScale: {x: 5.485734, y: 5.485734, z: 1.097116}
   m_Children: []
   m_Father: {fileID: 891772814}
@@ -84500,13 +84526,13 @@ MonoBehaviour:
   distanceofdash: 10
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
-  ouchVolume: 0.8
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  DieClip: {fileID: 0}
+  DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
@@ -90217,7 +90243,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4232906829953506, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -43.801197
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4232906829953506, guid: 99bde45934c767642a1e583c1c499f8c, type: 3}
       propertyPath: m_LocalRotation.x
@@ -93694,13 +93720,13 @@ MonoBehaviour:
   distanceofdash: 10
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
-  ouchVolume: 0.8
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  DieClip: {fileID: 0}
+  DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
@@ -98756,13 +98782,13 @@ MonoBehaviour:
   distanceofdash: 10
   isinvuindash: 1
   dashcd: 0.5
-  ouchClip: {fileID: 0}
-  ouchVolume: 0.8
+  ouchClip: {fileID: 8300000, guid: 135b7dd577b4f44c692b924a4d24125f, type: 3}
+  ouchVolume: 0.155
   jumpClip: {fileID: 0}
   jumpingVolume: 0.5
   TappingClip: {fileID: 0}
   tappingVolume: 0.5
-  DieClip: {fileID: 0}
+  DieClip: {fileID: 8300000, guid: 72806ae5e7cb33a458c1e1866feac8e9, type: 3}
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
@@ -98858,7 +98884,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2116861905}
   m_LocalRotation: {x: -0, y: -0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.143487, y: 6.934804, z: -43.801197}
+  m_LocalPosition: {x: -13.143487, y: 6.934804, z: 0}
   m_LocalScale: {x: 0.4772124, y: 0.4712473, z: 0.47125426}
   m_Children:
   - {fileID: 656933822}
@@ -99775,7 +99801,7 @@ PrefabInstance:
     - target: {fileID: 2149875653393332080, guid: 0a4992b701d2b466b9eef1bc31c33a3f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 55.36316
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2149875653393332080, guid: 0a4992b701d2b466b9eef1bc31c33a3f,
         type: 3}
