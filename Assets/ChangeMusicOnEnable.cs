@@ -6,11 +6,21 @@ public class ChangeMusicOnEnable : MonoBehaviour
 {
     public AudioClip music;
     [Range(0,1)]public float volume = 1;
+    public float timeToFadeInSec = 0.5f;
 
-    void OnEnable() {
+
+    IEnumerator ChangeMusic()
+    {
+        float time = timeToFadeInSec;
+        float volumeInitial = GameManager.instance.audioSource.volume;
+        while (time > 0)
+        {
+            time -= Time.deltaTime;
+            GameManager.instance.audioSource.volume = volumeInitial * (time / timeToFadeInSec);
+            yield return new WaitForEndOfFrame();
+        }
         if (GameManager.instance?.audioSource)
         {
-            Debug.Log("sfaf");
             if (GameManager.instance.audioSource.clip != music || GameManager.instance.audioSource.isPlaying == false)
             {
                 GameManager.instance.audioSource.clip = music;
@@ -20,5 +30,9 @@ public class ChangeMusicOnEnable : MonoBehaviour
         }
         else
             Debug.LogWarning(name + " No GameManager.instance?.audioSource");
+    }
+
+    void OnEnable() {
+
     } 
 }
