@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class lever : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class lever : MonoBehaviour {
 	public float delayInSec = -1;
 	float timeSinceLast = 4;
 	public bool ActiveOnStay = false;
+	public UnityEvent	activeEvent;
 	
 	/// <summary>
 	/// Update is called every frame, if the MonoBehaviour is enabled.
@@ -40,6 +42,7 @@ public class lever : MonoBehaviour {
 			else if (g.activeSelf == false)
 				g.SetActive(true);
 		}
+		activeEvent.Invoke();
 	}
 	
 	IEnumerator delay()

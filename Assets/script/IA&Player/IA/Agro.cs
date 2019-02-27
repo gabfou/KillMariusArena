@@ -46,13 +46,27 @@ public class Agro : Character {
 			realcol = GetComponents<Collider2D>().LastOrDefault();
 	}
 
+	void pseudoPathfinding() // jump or not 
+	{
+		RaycastHit2D raycastHit2D;
+		if (move != 0 && !StayOnGround && (Cible.position.y + 3 > transform.position.y)
+			&& (Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), 2, groundLayer)
+				|| !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 3, groundLayer))
+				|| ((raycastHit2D = Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 5, groundLayer)).collider && raycastHit2D.collider.tag == ouchtag)))
+			tryjump();
+		else if (transform.position.y - Cible.position.y > 7 && Mathf.Abs(transform.position.x - Cible.position.x) < 2)
+			tryGoUnder();
+		else if (transform.position.y - Cible.position.y < 7 && Mathf.Abs(transform.position.x - Cible.position.x) < 2)
+			tryjump();
+	}
+
 	void MountedFixedUpdate(float distance)
 	{
 		Vector2 dir = new Vector2(move, movey);
 		Vector2 dirCible = ((Vector2)Cible.position - (Vector2)transform.position).normalized;
 		bool isInSameDir = Vector2.Dot(dir.normalized, dirCible) > 0.5f;
 		RaycastHit2D raycastHit2D;
-		if (!flying && (StayOnGround || (dir.x != 0 && isInSameDir))
+		if (!flying && (StayOnGround || (dir.x != 0 && (Mathf.Sign(dir.x) != Mathf.Sign(dirCible.x))))
 			&& (!(raycastHit2D = Physics2D.Raycast(transform.position, new Vector3(Mathf.Sign(dir.x), -1, 0), 4, groundLayer))
 				|| (raycastHit2D.collider && raycastHit2D.collider.tag == ouchtag)))
 			dir.x = 0;
@@ -75,10 +89,7 @@ public class Agro : Character {
 				dir.y = dirCible.y;
 		}
 
-		if (!flying && dir.x != 0 && !StayOnGround && (Cible.position.y - 3 > transform.position.y)
-			&& (Physics2D.Raycast(transform.position, new Vector3(dir.x, 0, 0), 3, groundLayer)
-				|| !(Physics2D.Raycast(transform.position, new Vector3(dir.x, -1, 0), 3, groundLayer))))
-			tryjump();
+		pseudoPathfinding();
 
 
 		move = dir.x;
@@ -119,11 +130,7 @@ public class Agro : Character {
                 else
                     move = sign * Mathf.Sign((Cible.position - transform.position).x);
 
-				if (move != 0 && !StayOnGround && (Cible.position.y + 3 > transform.position.y)
-					&& (Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), 2, groundLayer)
-						|| !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 3, groundLayer))
-						|| ((raycastHit2D = Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 5, groundLayer)).collider && raycastHit2D.collider.tag == ouchtag)))
-					tryjump();
+				pseudoPathfinding();
             }
 			else
 				move = 0;

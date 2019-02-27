@@ -30,21 +30,24 @@ public class CaBouge : MonoBehaviour {
 			marge = 0.1f;
 	}
 	
+	void AproachNextPoint(int IdNextPoint)
+	{
+		if (rigidbody)
+		{
+			rigidbody.velocity = (listOfPassage[IdNextPoint] - (Vector2)transform.position).normalized * Time.fixedDeltaTime * speed;
+			AffectAlso.ForEach(aa => {if (aa) aa.velocity = rigidbody.velocity;});
+		}
+		else
+			transform.position += (Vector3)((listOfPassage[IdNextPoint] - (Vector2)transform.position).normalized * Time.fixedDeltaTime * speed);
+	}
+
 	void FixedUpdate ()
 	{
 		if (!isDeplacing)
 			return;
 
-		// deplacement
-		if (rigidbody)
-		{
-			rigidbody.velocity = (listOfPassage[e] - (Vector2)transform.position).normalized * Time.fixedDeltaTime * speed;
-			AffectAlso.ForEach(aa => {if (aa) aa.velocity = rigidbody.velocity;});
-		}
-		else
-			transform.position += (Vector3)((listOfPassage[e] - (Vector2)transform.position).normalized * Time.fixedDeltaTime * speed);
-
-
+		AproachNextPoint(e);
+	
 		// next Point
 		if (Vector2.Distance(transform.position, listOfPassage[e]) < marge)
 		{
@@ -60,6 +63,19 @@ public class CaBouge : MonoBehaviour {
 				}
 			}
 		}
+	}
+
+	public IEnumerator ReinitCoroutine()
+	{
+		while (Vector2.Distance(transform.position, listOfPassage[0]) > marge)
+		{
+			AproachNextPoint(0);
+			yield return new WaitForEndOfFrame();
+		}
+	}
+	public void Reinit()
+	{
+		StartCoroutine(ReinitCoroutine());
 	}
 
 	void OnCollisionEnter2D(Collision2D other)

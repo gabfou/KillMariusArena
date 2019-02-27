@@ -426,7 +426,7 @@ public class Character : Stopmoving
 
     public void tryGoUnder()
     {
-        if (actualGround.usedByEffector == true && actualGround.GetComponent<PlatformEffector2D>() != null)
+        if (actualGround && actualGround.usedByEffector == true && actualGround.GetComponent<PlatformEffector2D>() != null)
             StartCoroutine(tryGoUnderCo());
     }
 

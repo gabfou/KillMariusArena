@@ -14,7 +14,8 @@ public class Vaguator : MonoBehaviour
         currentAgro.Clear();
         for (int i = 0; i < listVague.First().transform.childCount; i++)
             currentAgro.Add(listVague.First().transform.GetChild(i).GetComponent<Agro>());
-        currentAgro.ForEach(a => a.Cible = player);
+        foreach (Agro a in currentAgro)
+            if (a) a.Cible = player;
     }
 
     void Start()
