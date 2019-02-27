@@ -78,9 +78,9 @@ MonoBehaviour:
     type: 3}
   angleprecision: 0
   nbofshotbyburst: 1
-  timetoshoot: 1
+  timetoshoot: 0.5
   timetoshootRand: 0
-  cd: 1
+  cd: 1.5
   distanceMin: 2
   impulsionForce: 12
   cannotLoseSight: 0
@@ -295,7 +295,6 @@ MonoBehaviour:
   IsOuchstun: 0
   baseGravityScale: 0
   isDead: 0
-  lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
   Cible: {fileID: 0}

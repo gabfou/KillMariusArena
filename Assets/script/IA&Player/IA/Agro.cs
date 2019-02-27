@@ -56,7 +56,7 @@ public class Agro : Character {
 			tryjump();
 		else if (transform.position.y - Cible.position.y > 7 && Mathf.Abs(transform.position.x - Cible.position.x) < 2)
 			tryGoUnder();
-		else if (transform.position.y - Cible.position.y < 7 && Mathf.Abs(transform.position.x - Cible.position.x) < 2)
+		else if (transform.position.y - Cible.position.y < -7 && Mathf.Abs(transform.position.x - Cible.position.x) < 2)
 			tryjump();
 	}
 
