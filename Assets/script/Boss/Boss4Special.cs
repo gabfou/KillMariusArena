@@ -8,10 +8,12 @@ public class Boss4Special : MonoBehaviour
 	Rigidbody2D rb;
 	Animator animator;
 	bool isInSpecial = false;
+	float lifeLast;
 
 	[Header("General")]
 	public float timeBetweenTwoAction = 5;
 	public float addRandomTime = 2;
+	public int	lifeLostForceAction = 3;
 
 	[Header("Tourbilol")]
 	public float distMin = 5;
@@ -23,11 +25,13 @@ public class Boss4Special : MonoBehaviour
 	public GameObject colliderTourbilol;
 
 	[Header("PIOUPIOUPIOU")]
-	public float speedOfJump = 40;
+	public float timeOfBackJumpInSec = 0.5f;
 	public float timeOfBackFlip = 0.1f;
 	public List<Vector2> posofJump = new List<Vector2>();
 	public float TimeOfShoot = 2;
 	public GameObject throwThing;
+	public float baseStunOuch;
+
 
 	
 	// Start is called before the first frame update
@@ -37,6 +41,8 @@ public class Boss4Special : MonoBehaviour
 		agro = GetComponent<Agro>();
 		rb = GetComponent<Rigidbody2D>();
 		time = timeBetweenTwoAction + Random.Range(0, addRandomTime);
+		lifeLast = agro.life;
+		baseStunOuch = agro.timestunouch;
 	}
 
 	IEnumerator TourbilolToutDroit()
@@ -86,7 +92,7 @@ public class Boss4Special : MonoBehaviour
 		isInSpecial = true;
 		agro.cannotmove = true;
 		agro.istapping = true;
-		rb.AddForce(new Vector2(Mathf.Sign(transform.position.x - agro.Cible.position.x), 0.5f).normalized * impulseOfFlee, ForceMode2D.Impulse);
+		rb.AddForce(new Vector2(Mathf.Sign(transform.position.x - agro.Cible.position.x), 0.6f).normalized * impulseOfFlee, ForceMode2D.Impulse);
 		float time = timeOfFlee;
 		while (time > 0)
 		{
@@ -100,18 +106,21 @@ public class Boss4Special : MonoBehaviour
 
 	IEnumerator Pioupiou()
 	{
-				Debug.Log("dasd");
 		isInSpecial = true;
 		agro.cannotmove = true;
 		gameObject.layer = 19;
-		rb.gravityScale = 0;
+		rb.bodyType = RigidbodyType2D.Kinematic;
+		float	speed = Vector2.Distance(posofJump[0], (Vector2)transform.position) / timeOfBackJumpInSec;
+		int r = Random.Range(0, posofJump.Count);
 
 		Quaternion rotateO = transform.rotation;
-		while (Vector2.Distance(transform.position, posofJump[0]) > 0.5f)
+		while (Vector2.Distance(transform.position, posofJump[r]) > speed * Time.fixedDeltaTime * 2)
 		{
-			rb.velocity = (posofJump[0] - (Vector2)transform.position).normalized * speedOfJump;
+			// rb.velocity = (posofJump[0] - (Vector2)transform.position).normalized * speedOfJump;
 			// transform.eulerAngles = new Vector3(transform.rotation.x, transform.rotation.y, transform.rotation.z + (360f / timeOfBackFlip) * Time.deltaTime);
-			yield return new WaitForEndOfFrame();
+			rb.MovePosition(Vector2.MoveTowards(transform.position, posofJump[r], speed * Time.fixedDeltaTime));
+
+			yield return new WaitForFixedUpdate();
 		}
 		transform.rotation = rotateO;
 		gameObject.layer = agro.baseLayer;
@@ -129,7 +138,21 @@ public class Boss4Special : MonoBehaviour
 		throwThing.SetActive(false);
 		agro.cannotmove = false;
 		isInSpecial = false;
-		rb.gravityScale = agro.baseGravityScale;
+		rb.bodyType = RigidbodyType2D.Dynamic;
+	}
+
+	IEnumerator BerzerkCoroutine(float time)
+	{
+		transform.localScale *= 1.2f;
+		agro.timestunouch = 0.01f;
+		yield return new WaitForSeconds(time);
+		agro.timestunouch = 0.01f;
+		transform.localScale /= 1.2f;
+	}
+
+	public void Berzerk(float time)
+	{
+		StartCoroutine(BerzerkCoroutine(time));
 	}
 
 
@@ -142,10 +165,11 @@ public class Boss4Special : MonoBehaviour
 			return;
 		if (isInSpecial == false)
 			time -= Time.deltaTime;
-		if (time < 0)
+		if (time < 0 || lifeLast - agro.life >= lifeLostForceAction)
 		{
-			int r = (Random.Range(0, 5));
-			if (r < 4)
+			lifeLast = agro.life;
+			int r = (Random.Range(0, 100));
+			if (r < 75)
 				StartCoroutine(FleeThenTourbilol());
 			else
 				StartCoroutine(Pioupiou());

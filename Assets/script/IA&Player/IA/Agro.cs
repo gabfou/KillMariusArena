@@ -54,9 +54,9 @@ public class Agro : Character {
 				|| !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 3, groundLayer))
 				|| ((raycastHit2D = Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 5, groundLayer)).collider && raycastHit2D.collider.tag == ouchtag)))
 			tryjump();
-		else if (transform.position.y - Cible.position.y > 7 && Mathf.Abs(transform.position.x - Cible.position.x) < 2)
+		else if (transform.position.y - Cible.position.y > 4 && Mathf.Abs(transform.position.x - Cible.position.x) < 2)
 			tryGoUnder();
-		else if (transform.position.y - Cible.position.y < -7 && Mathf.Abs(transform.position.x - Cible.position.x) < 2)
+		else if (transform.position.y - Cible.position.y < -4 && Mathf.Abs(transform.position.x - Cible.position.x) < 2)
 			tryjump();
 	}
 
@@ -110,7 +110,7 @@ public class Agro : Character {
 				float distance = Vector2.Distance(Cible.position, transform.position);
                 if (distance > MaxDistance)
                 {
-                    Cible = null;// peut etre active reactive qaund respawn pres
+                    Cible = null;// peut etre active reactive quand respawn pres
                     return ;
                 }
 				int sign = (distance > perfectdistancetocible) ? 1 : -1;
