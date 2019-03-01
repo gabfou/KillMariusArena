@@ -122,6 +122,7 @@ public class Boss4Special : MonoBehaviour
 
 			yield return new WaitForFixedUpdate();
 		}
+		rb.bodyType = RigidbodyType2D.Dynamic;
 		transform.rotation = rotateO;
 		gameObject.layer = agro.baseLayer;
 		rb.velocity = Vector2.zero;
@@ -138,7 +139,6 @@ public class Boss4Special : MonoBehaviour
 		throwThing.SetActive(false);
 		agro.cannotmove = false;
 		isInSpecial = false;
-		rb.bodyType = RigidbodyType2D.Dynamic;
 	}
 
 	IEnumerator BerzerkCoroutine(float time)
