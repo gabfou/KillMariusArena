@@ -35,7 +35,7 @@ public class AutoTapping : MonoBehaviour {
     }
     private void FixedUpdate()
     {   
-        if (SimulateIn > 0)
+        if (pc.Cible != null && SimulateIn > 0)
         {
             actualSpeed = ((Vector2)transform.parent.position - lastPos) / Time.fixedDeltaTime * -Mathf.Sign(transform.lossyScale.x);
             if (pc.Cible)
@@ -63,7 +63,7 @@ public class AutoTapping : MonoBehaviour {
         //     Flip();
         for (float i = 0; i < 0.25f; i += Time.deltaTime)
         {
-            if (pc.istapping == false)
+            if (pc.IsOuchstun == true)
                 StopTapping();
             yield return new WaitForEndOfFrame();
         }
@@ -71,7 +71,7 @@ public class AutoTapping : MonoBehaviour {
             pc.audiosource.PlayOneShot(pc.TappingClip, pc.tappingVolume);
         for (float i = 0; i < 0.25f; i += Time.deltaTime)
         {
-            if (pc.istapping == false)
+            if (pc.IsOuchstun == true)
                 StopTapping();
             yield return new WaitForEndOfFrame();
         }
@@ -85,6 +85,24 @@ public class AutoTapping : MonoBehaviour {
         pc.istapping = false;
     }
 
+    IEnumerator CounterAttackCoroutine()
+    {
+        StopTapping();
+        pc.UnStun();
+        bool oStunStopAttack = pc.stunStopAttack;
+        pc.stunStopAttack = false;
+        pc.FacePlayer();
+        yield return StartCoroutine(Tapping());
+        pc.stunStopAttack = oStunStopAttack;
+
+    }
+
+    public void CounterAttack(float probalityOfCounter = 1)
+    {
+        if (Random.Range(0f, 1f) < probalityOfCounter)
+            StartCoroutine(CounterAttackCoroutine());
+    }
+
 	
 	private void OnTriggerStay2D(Collider2D other)
 	{
@@ -93,9 +111,8 @@ public class AutoTapping : MonoBehaviour {
 			StartCoroutine(Tapping());
         }
 	}
-    /// <summary>
-    /// This function is called when the behaviour becomes disabled or inactive.
-    /// </summary>
+
+
     void OnDisable()
     {
         colCible = null;

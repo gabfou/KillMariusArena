@@ -227,7 +227,7 @@ GameObject:
   - component: {fileID: 60656548244332032}
   - component: {fileID: 8753771860485378999}
   m_Layer: 10
-  m_Name: AggroJump (2)
+  m_Name: Fourcheguy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -354,8 +354,9 @@ MonoBehaviour:
   maxLife: 0
   invulnTime: 0.05
   ouchtag: bam
-  timestunouch: 0.2
+  timeStunouchBrillance: 0.2
   stunStopMove: 1
+  stunStopAttack: 1
   dontDestroy: 0
   maxSpeed: 6
   minSlideVelocity: 3

@@ -31,7 +31,7 @@ public class Agro : Character {
 		return true;
 	}
 
-	protected void FacePlayer()
+	public void FacePlayer()
 	{
 		if (!IsFacingPlayer())
 			Flip();

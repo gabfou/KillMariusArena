@@ -18,9 +18,6 @@ public class Character : Stopmoving
     public int life = 5;
     [HideInInspector] public int maxLife;
     public float invulnTime = 1f;
-    public string ouchtag = "ouch";
-    public float timestunouch = 0.2f;
-    public bool stunStopMove = true;
     public bool dontDestroy = false;
 
     [Header("Mobility and groundaison")]
@@ -53,6 +50,10 @@ public class Character : Stopmoving
     public AudioClip dashClip;
     [Range(0, 1)] public float dashVolume = 0.5f;    
     [Header("Ouch")]
+    public string ouchtag = "ouch";
+    public float timeStunouchBrillance = 0.2f;
+    public bool stunStopMove = true;
+    public bool stunStopAttack = true;
     public float ouchJumpMultPushX = 2;
     public float ouchJumpMultPushY = 4;
 
@@ -341,7 +342,8 @@ public class Character : Stopmoving
         {
 
             StartCoroutine(ResetCanOuch());
-            StartCoroutine(stunouch(impact2));
+            // if (stun)
+            StartCoroutine(stunOuchAndFlashing(impact2));
             StartCoroutine(impactoEffect());
         }
     }
@@ -361,21 +363,33 @@ public class Character : Stopmoving
         coroutineisplayingcount--;
     }
 
-    IEnumerator stunouch(Vector2 impact)
+	public void BecomeStunned()
+	{
+		anim.SetBool("ouch", true);
+    	IsOuchstun = true;
+	}
+
+	public void UnStun()
+	{
+		IsOuchstun = false;
+        anim.SetBool("ouch", false);
+	}
+
+    IEnumerator stunOuchAndFlashing(Vector2 impact)
     {
 		coroutineisplayingcount++;
-        anim.SetBool("ouch", true);
-        IsOuchstun = true;
+		if (stunStopAttack)
+			BecomeStunned();
         if (stunStopMove)
             cannotmove = true;
         if (rigidbody2D)
             rigidbody2D.velocity = impact;
         spriteMaterial.SetFloat("_isflashing", 1);
-        yield return new WaitForSeconds(timestunouch);
+        yield return new WaitForSeconds(timeStunouchBrillance);
         spriteMaterial.SetFloat("_isflashing", 0);
         cannotmove = false;
-        IsOuchstun = false;
-        anim.SetBool("ouch", false);
+		if (stunStopAttack)
+			UnStun();
         coroutineisplayingcount--;
     }
 

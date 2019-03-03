@@ -42,7 +42,7 @@ public class Boss4Special : MonoBehaviour
 		rb = GetComponent<Rigidbody2D>();
 		time = timeBetweenTwoAction + Random.Range(0, addRandomTime);
 		lifeLast = agro.life;
-		baseStunOuch = agro.timestunouch;
+		baseStunOuch = agro.timeStunouchBrillance;
 	}
 
 	IEnumerator TourbilolToutDroit()
@@ -143,16 +143,33 @@ public class Boss4Special : MonoBehaviour
 
 	IEnumerator BerzerkCoroutine(float time)
 	{
-		transform.localScale *= 1.2f;
-		agro.timestunouch = 0.01f;
+		Berzerk();
 		yield return new WaitForSeconds(time);
-		agro.timestunouch = 0.01f;
-		transform.localScale /= 1.2f;
+		UnBerzerk();
 	}
 
 	public void Berzerk(float time)
 	{
 		StartCoroutine(BerzerkCoroutine(time));
+	}
+
+	public void Berzerk()
+	{
+		agro.UnStun();
+		agro.IsOuchstun = false;
+		agro.stunStopAttack = false;
+		// transform.localScale *= 1.2f;
+	}
+
+	public void UnBerzerk()
+	{
+		agro.stunStopAttack = true;
+		// transform.localScale /= 1.2f;
+	}
+
+	public void tryToCounter()
+	{
+
 	}
 
 
