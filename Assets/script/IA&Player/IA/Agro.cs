@@ -35,6 +35,8 @@ public class Agro : Character {
 	{
 		if (!IsFacingPlayer())
 			Flip();
+		else
+		Debug.Log("dsafsaf");
 	}
 
     void Start ()
