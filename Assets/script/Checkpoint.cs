@@ -21,6 +21,8 @@ public class Checkpoint : MonoBehaviour
 			{
 				asBeenActivated = true;
 				GameManager.instance.player.life = GameManager.instance.player.maxLife;
+				if (GameManager.instance?.life)
+            		GameManager.instance.life.text = GameManager.instance.player.life.ToString();
 			}
 			GameManager.instance.save.lastCheckpoint = transform.position;
 			GameManager.instance.save.replaceBy = replaceBy;

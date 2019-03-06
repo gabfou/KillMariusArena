@@ -35,8 +35,6 @@ public class Agro : Character {
 	{
 		if (!IsFacingPlayer())
 			Flip();
-		else
-		Debug.Log("dsafsaf");
 	}
 
     void Start ()
@@ -50,8 +48,10 @@ public class Agro : Character {
 
 	void pseudoPathfinding() // jump or not 
 	{
+		if (StayOnGround)
+			return ;
 		RaycastHit2D raycastHit2D;
-		if (move != 0 && !StayOnGround && (Cible.position.y + 3 > transform.position.y)
+		if (move != 0 && (Cible.position.y + 3 > transform.position.y)
 			&& (Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), 2, groundLayer)
 				|| !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 3, groundLayer))
 				|| ((raycastHit2D = Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 5, groundLayer)).collider && raycastHit2D.collider.tag == ouchtag)))

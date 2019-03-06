@@ -562,11 +562,8 @@ MonoBehaviour:
   cannotmove: 0
   facingLeft: 1
   life: 3
-  maxLife: 0
+  maxLife: 3
   invulnTime: 0.05
-  ouchtag: bam
-  timestunouch: 0.2
-  stunStopMove: 0
   dontDestroy: 0
   maxSpeed: 18
   minSlideVelocity: 3
@@ -592,6 +589,10 @@ MonoBehaviour:
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
+  ouchtag: bam
+  timeStunouchBrillance: 0.2
+  stunStopMove: 0
+  stunStopAttack: 1
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1

@@ -109,8 +109,6 @@ public class Character : Stopmoving
     {
         life = maxLife;
         isdashing = false;
-        // Flip();
-        // anim.SetBool("facingLeft", facingLeft);
         anim.SetBool("grounded", grounded);
 		candash = true;
         if (rigidbody2D)
@@ -317,15 +315,13 @@ public class Character : Stopmoving
         onDie.Invoke();
     }
 
-    public void ouch(Vector2 impact2)
+    public virtual void ouch(Vector2 impact2)
     {
         onTakeDamage.Invoke();
         if (stunStopMove && rigidbody2D && rigidbody2D.bodyType != RigidbodyType2D.Static)
             rigidbody2D.velocity = Vector2.zero;
         canOuch = false;
         life--;
-        if (isPlayer && GameManager.instance?.life)
-            GameManager.instance.life.text = life.ToString();
         StopTapping();
         if (impact2.x > 0 && !facingLeft)
             Flip();
@@ -414,7 +410,7 @@ public class Character : Stopmoving
 
     public void tryjump(float jumppower)
     {
-        if (grounded && canJump)
+        if (grounded && canJump && IsOnLadder == false)
         {
             if (jumpClip && audiosource)
                 audiosource.PlayOneShot(jumpClip, jumpingVolume);
@@ -434,6 +430,7 @@ public class Character : Stopmoving
         Collider2D col2 = actualGround;
 
         Physics2D.IgnoreCollision(col, col2, true);
+        rigidbody2D.AddForce(new Vector2(0, -10), ForceMode2D.Impulse);
         yield return new WaitForSeconds(1);
         Physics2D.IgnoreCollision(col, col2, false);
     }

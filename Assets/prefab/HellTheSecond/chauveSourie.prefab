@@ -578,11 +578,8 @@ MonoBehaviour:
   cannotmove: 0
   facingLeft: 1
   life: 2
-  maxLife: 0
+  maxLife: 2
   invulnTime: 0.05
-  ouchtag: ouch
-  timestunouch: 0.2
-  stunStopMove: 1
   dontDestroy: 0
   maxSpeed: 8.05
   minSlideVelocity: 3
@@ -608,6 +605,10 @@ MonoBehaviour:
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
+  ouchtag: ouch
+  timeStunouchBrillance: 0.2
+  stunStopMove: 1
+  stunStopAttack: 1
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -631,7 +632,6 @@ MonoBehaviour:
   IsOuchstun: 0
   baseGravityScale: 0
   isDead: 0
-  lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
   Cible: {fileID: 0}

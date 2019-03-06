@@ -76,12 +76,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannotmove: 0
   facingLeft: 0
-  life: 5
-  maxLife: 0
+  maxLife: 5
   invulnTime: 1
-  ouchtag: ouch
-  timestunouch: 0.2
-  stunStopMove: 1
   dontDestroy: 0
   maxSpeed: 10
   minSlideVelocity: 3
@@ -107,6 +103,10 @@ MonoBehaviour:
   DieVolume: 0.5
   dashClip: {fileID: 8300000, guid: f3abc65e1e59e3b468b89efdea68244a, type: 3}
   dashVolume: 0.272
+  ouchtag: ouch
+  timeStunouchBrillance: 0.2
+  stunStopMove: 1
+  stunStopAttack: 1
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1

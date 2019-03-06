@@ -73,6 +73,13 @@ public class PlayerController : Character
         istapping = false;
     }
 
+    override public void ouch(Vector2 impact2)
+    {
+        base.ouch(impact2);
+        if (GameManager.instance?.life)
+            GameManager.instance.life.text = life.ToString();
+    }
+
     IEnumerator Tapping()
     {
         if (istapping == false)
@@ -107,7 +114,7 @@ public class PlayerController : Character
        // move = (istapping) ? move / 2 : move;
 
 
-        if ((Input.GetKey(KeyCode.Space)
+        if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)
             #if UNITY_STANDALONE_OSX
             || Input.GetKey(KeyCode.Joystick1Button0)
             #else
@@ -120,7 +127,7 @@ public class PlayerController : Character
             tryGoUnder();
         }
 
-        else if (Input.GetKey(KeyCode.Space)
+        else if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)
             #if UNITY_STANDALONE_OSX
             || Input.GetKey(KeyCode.Joystick1Button0)
             #else
