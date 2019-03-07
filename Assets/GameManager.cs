@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+public enum Difficulty{Easy = 10, Normal = 7, Hard = 5, GoodLuck = 3};
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
 
 	public static GameManager instance;
 	public float DistanceOfSound = 50;
+
+	public Difficulty difficulty = Difficulty.Hard;
 	public Text life;
 	[HideInInspector] public bool replacedPlayer = false;
 	[HideInInspector] public bool playerSpawned = false;
@@ -36,4 +38,14 @@ public class GameManager : MonoBehaviour
 			GameObject.Destroy(gameObject);
 		}
 	}
+
+	public void setDifficulty(Difficulty diff)
+	{
+		difficulty = diff;
+	}
+
+	public void setDifficultyToEasy(){difficulty=Difficulty.Easy;}
+	public void setDifficultyToNormal(){difficulty=Difficulty.Normal;}
+	public void setDifficultyToHard(){difficulty=Difficulty.Hard;}
+	public void setDifficultyToGoodLuck(){difficulty=Difficulty.GoodLuck;}
 }

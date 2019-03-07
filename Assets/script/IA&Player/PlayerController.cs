@@ -25,28 +25,32 @@ public class PlayerController : Character
 
     private void PlayerSpecificReinit()
     {
+        if(!GameManager.instance)
+        {
+            Debug.LogError("No GameManager Instance In PlayerSpecificReinit");
+            return ;
+        }
 
-        if (GameManager.instance?.save.replaceBy != null && GameManager.instance.replacedPlayer == false)
+        if (GameManager.instance.save.replaceBy != null && GameManager.instance.replacedPlayer == false)
         {
             GameManager.instance.replacedPlayer = true;
             GameObject.Instantiate(GameManager.instance.save.replaceBy);
             GameObject.Destroy(gameObject);
             return ;
         }
-		if (GameManager.instance?.save.parent)
+		if (GameManager.instance.save.parent)
 			transform.parent = GameManager.instance.save.parent.transform;
-        if (GameManager.instance)
-            GameManager.instance.player = this;
-            
-
-        if (GameManager.instance?.life)
-            GameManager.instance.life.text = life.ToString();
-            
-        if (GameManager.instance?.save.lastCheckpoint != Vector2.zero && GameManager.instance?.playerSpawned == false)
+        GameManager.instance.player = this;
+     
+        if (GameManager.instance.save.lastCheckpoint != Vector2.zero && GameManager.instance?.playerSpawned == false)
             transform.position = GameManager.instance.save.lastCheckpoint;
-        if (GameManager.instance?.save.camToActive != null)
+        if (GameManager.instance.save.camToActive != null)
             GameManager.instance.save.camToActive.SetActive(true);
         GameManager.instance.playerSpawned = true;
+        maxLife = (int)GameManager.instance.difficulty;
+        if (GameManager.instance.life)
+            GameManager.instance.life.text = maxLife.ToString();
+
     }
 
     override protected void reinit()
@@ -111,8 +115,6 @@ public class PlayerController : Character
         move = Input.GetAxisRaw("Horizontal");
         movey = Input.GetAxisRaw("Vertical");
         bool iscrouching = false;
-       // move = (istapping) ? move / 2 : move;
-
 
         if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)
             #if UNITY_STANDALONE_OSX
