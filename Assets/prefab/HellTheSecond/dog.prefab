@@ -232,9 +232,6 @@ MonoBehaviour:
   life: 2
   maxLife: 0
   invulnTime: 0.05
-  ouchtag: bam
-  timestunouch: 0.2
-  stunStopMove: 1
   dontDestroy: 0
   maxSpeed: 14
   minSlideVelocity: 3
@@ -260,6 +257,10 @@ MonoBehaviour:
   DieVolume: 0.298
   dashClip: {fileID: 0}
   dashVolume: 0.5
+  ouchtag: bam
+  timeStunouchBrillance: 0.25
+  stunStopMove: 1
+  stunStopAttack: 1
   ouchJumpMultPushX: 6
   ouchJumpMultPushY: 12
   canJump: 1
@@ -277,15 +278,14 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  vcam: {fileID: 0}
   audiosource: {fileID: 0}
   TakingDamage: 0
   IsOuchstun: 0
   baseGravityScale: 0
   isDead: 0
-  lastCheckpoint: {x: -Infinity, y: -Infinity}
   baseLayer: 0
   rbparent: {fileID: 0}
-  canControle: 0
   Cible: {fileID: 0}
   StayOnGround: 1
   perfectdistancetocible: 2

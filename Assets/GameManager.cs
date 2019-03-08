@@ -31,7 +31,7 @@ public class GameManager : MonoBehaviour
 		}
 		else
 		{
-			if (instance.save.SceneName != SceneManager.GetActiveScene().name)
+			if (instance.save.SceneName != SceneManager.GetActiveScene().name && SceneManager.GetActiveScene().name.Contains("level")) // pas safe lwgmnsbdfjhfhkklwq
 				instance.save.levelChangeReinit();
 			instance.replacedPlayer = false;
 			instance.playerSpawned = false;
