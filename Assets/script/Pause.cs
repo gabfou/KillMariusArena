@@ -6,10 +6,10 @@ using UnityEngine.UI;
 public class Pause : MonoBehaviour
 {
     float oldTimeScale = 1;
-	Image	image;
+	GameObject	Child;
 
     void Start() {
-		image = GetComponent<Image>();
+		Child = transform.GetChild(0).gameObject;
     }
 
     void Update()
@@ -19,13 +19,13 @@ public class Pause : MonoBehaviour
             if (Time.timeScale == 0)
 			{
                 Time.timeScale = oldTimeScale;
-				image.enabled = false;
+				Child.SetActive(false);
 			}
             else
             {
                 oldTimeScale = Time.timeScale;
                 Time.timeScale = 0;
-				image.enabled = true;
+				Child.SetActive(true);
             }
         }
     }

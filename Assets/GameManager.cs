@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
 {
 	public GameSave save;
 	public PlayerController player;
+	public GamePref pref;
 
 	public static GameManager instance;
 	public float DistanceOfSound = 50;

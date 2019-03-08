@@ -9,6 +9,8 @@ public class PlayerController : Character
     [Header("Player setting")]
     public bool resetCamOnPlayer = true;
 
+    GamePref pref;
+
     override protected IEnumerator WaitForCam()
     {
         yield return StartCoroutine(base.WaitForCam());
@@ -50,6 +52,7 @@ public class PlayerController : Character
         maxLife = (int)GameManager.instance.difficulty;
         if (GameManager.instance.life)
             GameManager.instance.life.text = maxLife.ToString();
+        pref = GameManager.instance.pref;
 
     }
 
@@ -116,27 +119,13 @@ public class PlayerController : Character
         movey = Input.GetAxisRaw("Vertical");
         bool iscrouching = false;
 
-        if ((Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)
-            #if UNITY_STANDALONE_OSX
-            || Input.GetKey(KeyCode.Joystick1Button0)
-            #else
-            || Input.GetKey(KeyCode.Joystick1Button0)
-            #endif
-            )
+        if ((Input.GetKey(pref.jump1) || Input.GetKey(pref.jump2))
             && Mathf.Abs(move) < Mathf.Abs(movey) - 0.4f && movey < 0)
-        {
-            Debug.Log(movey);
             tryGoUnder();
-        }
 
-        else if (Input.GetKey(KeyCode.Space) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow)
-            #if UNITY_STANDALONE_OSX
-            || Input.GetKey(KeyCode.Joystick1Button0)
-            #else
-            || Input.GetKey(KeyCode.Joystick1Button0)
-            #endif
-            )
+        else if (Input.GetKey(pref.jump1) || Input.GetKey(pref.jump2))
             tryjump();
+
         else if(Mathf.Abs(move) < Mathf.Abs(movey) - 0.4f && movey < 0 && grounded)
         {
             move = 0;
@@ -144,22 +133,10 @@ public class PlayerController : Character
         }
         anim.SetBool("iscrouching", iscrouching);
 
-        if (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)
-            #if UNITY_STANDALONE_OSX
-            || Input.GetKey(KeyCode.Joystick1Button2)
-            #else
-            || Input.GetKey(KeyCode.Joystick1Button2)
-            #endif
-            )
+        if (Input.GetKey(pref.attack1) || Input.GetKey(pref.attack2))
             StartCoroutine(Tapping());
 
-		if (Input.GetKey(KeyCode.X) || Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.LeftCommand) || Input.GetKey(KeyCode.RightShift)
-            #if UNITY_STANDALONE_OSX
-            || Input.GetKey(KeyCode.Joystick1Button6) || Input.GetKey(KeyCode.Joystick1Button7)
-            #else
-            || Input.GetKey(KeyCode.Joystick1Button6) || Input.GetKey(KeyCode.Joystick1Button7)
-            #endif
-            )
+		if (Input.GetKey(pref.dash1) || Input.GetKey(pref.dash2))
             StartCoroutine(dash());
     }
 
