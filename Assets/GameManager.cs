@@ -21,9 +21,8 @@ public class GameManager : MonoBehaviour
 	[HideInInspector] public bool playerSpawned = false;
 	[HideInInspector] public AudioSource audioSource;
 
-	void Awake()
+	void OnEnable()
 	{
-		DontDestroyOnLoad(gameObject);
 		if (instance == null)
 		{
 			audioSource = GetComponent<AudioSource>();
@@ -31,14 +30,14 @@ public class GameManager : MonoBehaviour
 			instance = this;
 		}
 		else
-		{
-			if (instance.save.SceneName != SceneManager.GetActiveScene().name && SceneManager.GetActiveScene().name.Contains("level")) // pas safe lwgmnsbdfjhfhkklwq
-				instance.save.levelChangeReinit();
+		{		
 			instance.replacedPlayer = false;
 			instance.playerSpawned = false;
 			GameObject.Destroy(gameObject);
 		}
+		DontDestroyOnLoad(gameObject);
 	}
+
 
 	public void setDifficulty(Difficulty diff)
 	{

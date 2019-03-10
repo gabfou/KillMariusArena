@@ -478,9 +478,6 @@ MonoBehaviour:
   life: 2
   maxLife: 0
   invulnTime: 0.05
-  ouchtag: ouch
-  timestunouch: 0.2
-  stunStopMove: 1
   dontDestroy: 0
   maxSpeed: 0
   minSlideVelocity: 3
@@ -506,6 +503,10 @@ MonoBehaviour:
   DieVolume: 0.333
   dashClip: {fileID: 0}
   dashVolume: 0.5
+  ouchtag: ouch
+  timeStunouchBrillance: 0.2
+  stunStopMove: 1
+  stunStopAttack: 1
   ouchJumpMultPushX: 2
   ouchJumpMultPushY: 4
   canJump: 1
@@ -910,7 +911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52377b9d4c681074b8eb35b61009d8e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Projectile: {fileID: 50181539745497076, guid: 84b0bb8842039494fbe995db4254abe5,
+  Projectile: {fileID: 50181539745497076, guid: e73461f0026c845d4bb2936c022d7964,
     type: 3}
   angleprecision: 5
   nbofshotbyburst: 1

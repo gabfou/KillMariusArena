@@ -9,6 +9,7 @@ public class ButtonChangeControl : MonoBehaviour
     KeyCode key;
     Text text;
     public ButtonList listOfButtonToDeactivate;
+    public GameObject KeyPressPanel;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class ButtonChangeControl : MonoBehaviour
 
     IEnumerator changeKeyEnum()
     {
+        KeyPressPanel.SetActive(true);
         listOfButtonToDeactivate.list.ForEach(b => b.interactable = false);
         while (true)
         {
@@ -40,18 +42,17 @@ public class ButtonChangeControl : MonoBehaviour
         GameManager.instance.pref.GetType().GetField(paramName).SetValue(GameManager.instance.pref, key);
         text.text = key.ToString();
         listOfButtonToDeactivate.list.ForEach(b => b.interactable = true);
+        KeyPressPanel.SetActive(false);
     }
     public void changeKey()
     {
         StartCoroutine(changeKeyEnum());
     }
 
-    /// <summary>
-    /// This function is called when the behaviour becomes disabled or inactive.
-    /// </summary>
     void OnDisable()
     {
         StopAllCoroutines();
         listOfButtonToDeactivate.list.ForEach(b => b.interactable = true);
+        KeyPressPanel.SetActive(false);
     }
 }
