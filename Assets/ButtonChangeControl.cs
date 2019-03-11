@@ -14,7 +14,7 @@ public class ButtonChangeControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        key = (KeyCode)GameManager.instance.pref.GetType().GetField(paramName).GetValue(GameManager.instance.pref);
+        key = (KeyCode)GameManager.instance.pref.GetType().GetProperty(paramName).GetValue(GameManager.instance.pref);
         text = GetComponentInChildren<Text>();
         text.text = key.ToString();
     }
@@ -39,7 +39,7 @@ public class ButtonChangeControl : MonoBehaviour
             }
             yield return new WaitForEndOfFrame();
         }
-        GameManager.instance.pref.GetType().GetField(paramName).SetValue(GameManager.instance.pref, key);
+        GameManager.instance.pref.GetType().GetProperty(paramName).SetValue(GameManager.instance.pref, key);
         text.text = key.ToString();
         listOfButtonToDeactivate.list.ForEach(b => b.interactable = true);
         KeyPressPanel.SetActive(false);
