@@ -108,6 +108,17 @@ public class PlayerController : Character
     }
 
 
+    override protected void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.tag == "OSPlayer")
+        {
+            life = 0;
+            Die();
+            return;
+        }
+        base.OnTriggerStay2D(other);
+    }
+
     [HideInInspector] public bool canControle = false;
     void Update()
     {
@@ -136,7 +147,7 @@ public class PlayerController : Character
         if (Input.GetKey(pref.attack1) || Input.GetKey(pref.attack2))
             StartCoroutine(Tapping());
 
-		if (Input.GetKey(pref.dash1) || Input.GetKey(pref.dash2))
+		if (dashEnabled && (Input.GetKey(pref.dash1) || Input.GetKey(pref.dash2)))
             StartCoroutine(dash());
     }
 

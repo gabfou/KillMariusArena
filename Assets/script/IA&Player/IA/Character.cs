@@ -33,10 +33,11 @@ public class Character : Stopmoving
     public bool flying = false;
 
     [Header("Dash")]
-	public float timedashinsc = 0.1f;
-	public float distanceofdash = 10f;
-	public bool isinvuindash = true;
-	public float dashcd = 0.5f;
+    public bool dashEnabled = false;
+    [ConditionalHide("dashEnabled", true)] public float timedashinsc = 0.1f;
+	[ConditionalHide("dashEnabled", true)] public float distanceofdash = 10f;
+	[ConditionalHide("dashEnabled", true)] public bool isinvuindash = true;
+	[ConditionalHide("dashEnabled", true)] public float dashcd = 0.5f;
 
     [Header("Sound")]
     public AudioClip ouchClip;
@@ -290,7 +291,7 @@ public class Character : Stopmoving
             GameObject.Destroy(gameObject);
     }
 
-    void Die()
+    protected void Die()
     {
         if (audiosource && DieClip && DistToPlayer() < GameManager.instance.DistanceOfSound)
             audiosource.PlayOneShot(DieClip, DieVolume);
@@ -349,11 +350,11 @@ public class Character : Stopmoving
 		coroutineisplayingcount++;
         TakingDamage = true;
         vcamperlin = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-        vcamperlin.m_AmplitudeGain = 0.25f;
+        vcamperlin.m_AmplitudeGain = 0.35f;
         vcamperlin.m_FrequencyGain = 30;
         yield return new WaitForSeconds(0.1f);
         TakingDamage = false;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         vcamperlin.m_AmplitudeGain = 0;
         cannotmove = false;
         coroutineisplayingcount--;
@@ -470,7 +471,6 @@ public class Character : Stopmoving
             isdashing = true;
 			while (timer < timedashinsc)
 			{
-				// rigidbody2D.MovePosition(transform.position + new Vector3(sign * movebysecond * Time.deltaTime, 0, 0));
                 rigidbody2D.velocity = sign * movebysecond * Time.fixedDeltaTime;
 				timer += Time.fixedDeltaTime;
 				yield return new WaitForFixedUpdate();

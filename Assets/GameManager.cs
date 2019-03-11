@@ -4,7 +4,7 @@ using UnityEngine;
 using System.Linq;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-public enum Difficulty{Easy = 10, Normal = 7, Hard = 5, GoodLuck = 3};
+public enum Difficulty{Easy = 12, Normal = 8, Hard = 5, GoodLuck = 3};
 
 public class GameManager : MonoBehaviour
 {

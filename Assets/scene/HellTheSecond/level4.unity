@@ -5154,15 +5154,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133904384}
   m_LocalRotation: {x: -0, y: -0, z: -0.011650444, w: -0.99993217}
-  m_LocalPosition: {x: 1787.7, y: 147.01, z: 0}
-  m_LocalScale: {x: -0.4241562, y: 0.4241562, z: 0.4241562}
+  m_LocalPosition: {x: -20.970581, y: 4.450775, z: 0.5497796}
+  m_LocalScale: {x: -0.42415625, y: 0.42415625, z: 0.4241562}
   m_Children:
   - {fileID: 1139285901}
   - {fileID: 2092741676}
   - {fileID: 181349871}
   - {fileID: 1314457456}
-  m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_Father: {fileID: 1858331090}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -358.665}
 --- !u!95 &133904387
 Animator:
@@ -5234,7 +5234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cannotmove: 0
   facingLeft: 1
-  life: 40
+  life: 35
   maxLife: 0
   invulnTime: 0.2
   dontDestroy: 0
@@ -5248,6 +5248,7 @@ MonoBehaviour:
   maxYVelocity: 22
   minYVelocity: -15
   flying: 0
+  dashEnabled: 0
   timedashinsc: 0.3
   distanceofdash: 1
   isinvuindash: 1
@@ -5309,7 +5310,18 @@ MonoBehaviour:
   MaxDistance: Infinity
   eventOnAgro:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 617739680}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!58 &133904391
@@ -5480,7 +5492,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133904384}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb1ba23cef0a74f07880b658cbea1438, type: 3}
   m_Name: 
@@ -5489,16 +5501,27 @@ MonoBehaviour:
   eventToTrigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 133904392}
-        m_MethodName: Berzerk
-        m_Mode: 4
+      - m_Target: {fileID: 853878180}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 5
+          m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 283501452}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -5509,7 +5532,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133904384}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb1ba23cef0a74f07880b658cbea1438, type: 3}
   m_Name: 
@@ -5518,16 +5541,16 @@ MonoBehaviour:
   eventToTrigger:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 133904392}
-        m_MethodName: Berzerk
-        m_Mode: 4
+      - m_Target: {fileID: 1931987110}
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 5
+          m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -7714,7 +7737,7 @@ GameObject:
   - component: {fileID: 226418844}
   - component: {fileID: 226418845}
   m_Layer: 0
-  m_Name: Spawn (1)
+  m_Name: spawnfourcheguyBigAgro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9277,6 +9300,57 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1840572678}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &283501452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 283501453}
+  - component: {fileID: 283501454}
+  m_Layer: 0
+  m_Name: SpawnTrowGuyBigAgro (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &283501453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283501452}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.2, y: 38.1, z: 0.5497796}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1858331090}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &283501454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283501452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6e8c34fc04f4675bcc8035eab13b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 6669688601363439206, guid: 0119cb4f8ce9741e092778a0ae891005,
+    type: 3}
+  parent: {fileID: 0}
+  cd: 8
+  decalage: 0
+  randomFrom0: 5
+  onlyIfLastDie: 0
+  distToplayer: -1
 --- !u!1 &283765931
 GameObject:
   m_ObjectHideFlags: 0
@@ -12777,7 +12851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4385263569319242, guid: f70455d6e8b2949f486ca0d34e79926a, type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4385263569319242, guid: f70455d6e8b2949f486ca0d34e79926a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -14366,7 +14440,7 @@ GameObject:
   - component: {fileID: 445599964}
   - component: {fileID: 445599965}
   m_Layer: 0
-  m_Name: Spawn (8)
+  m_Name: ChevalierBigAgro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17800,6 +17874,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chevalier (7) Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2037680049104431191, guid: 0798106d7a22c4b7c9be2b07c2a26bae,
+        type: 3}
+      propertyPath: dashEnabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2037680049104431192, guid: 0798106d7a22c4b7c9be2b07c2a26bae,
         type: 3}
@@ -24629,6 +24708,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &853878180
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 853878181}
+  - component: {fileID: 853878182}
+  m_Layer: 0
+  m_Name: spawnfourcheguyBigAgro (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &853878181
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853878180}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.199951, y: 38.09999, z: 0.5497796}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1858331090}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &853878182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853878180}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6e8c34fc04f4675bcc8035eab13b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 2284716364641443464, guid: 0f825de0043444833be7e2fc132c5cc3,
+    type: 3}
+  parent: {fileID: 0}
+  cd: 4
+  decalage: 0
+  randomFrom0: 3
+  onlyIfLastDie: 0
+  distToplayer: -1
 --- !u!1 &854615094
 GameObject:
   m_ObjectHideFlags: 0
@@ -24920,7 +25050,7 @@ Transform:
   - {fileID: 91628487}
   - {fileID: 1448654396}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 95.674}
 --- !u!1 &870821548
 GameObject:
@@ -38968,12 +39098,12 @@ PrefabInstance:
     - target: {fileID: 1196725843252913327, guid: 1a72990872aa64d2c8487aa2bfc517ee,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1465.1
+      value: 0.60999966
       objectReference: {fileID: 0}
     - target: {fileID: 1196725843252913327, guid: 1a72990872aa64d2c8487aa2bfc517ee,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 77.1
+      value: -0.27000046
       objectReference: {fileID: 0}
     - target: {fileID: 1196725843252913327, guid: 1a72990872aa64d2c8487aa2bfc517ee,
         type: 3}
@@ -39567,7 +39697,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 24
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1240487654
 GameObject:
@@ -42009,7 +42139,7 @@ PrefabInstance:
     - target: {fileID: 4421520655021083844, guid: a275ed9c4629b4b5986bee2cef151263,
         type: 3}
       propertyPath: m_RootOrder
-      value: 26
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 4421520655021083844, guid: a275ed9c4629b4b5986bee2cef151263,
         type: 3}
@@ -42538,7 +42668,7 @@ Transform:
   m_LocalScale: {x: 2.5396, y: 2.5396, z: 2.5396}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1355434912
 MonoBehaviour:
@@ -50923,7 +51053,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4385263569319242, guid: f70455d6e8b2949f486ca0d34e79926a, type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 4385263569319242, guid: f70455d6e8b2949f486ca0d34e79926a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -57859,6 +57989,40 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1858331089
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1858331090}
+  m_Layer: 0
+  m_Name: bossFight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1858331090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858331089}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1808.6705, y: 142.55922, z: -0.5497796}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 133904386}
+  - {fileID: 1931987111}
+  - {fileID: 283501453}
+  - {fileID: 853878181}
+  m_Father: {fileID: 0}
+  m_RootOrder: 26
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1863511180
 GameObject:
   m_ObjectHideFlags: 0
@@ -60417,6 +60581,57 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1931987110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1931987111}
+  - component: {fileID: 1931987112}
+  m_Layer: 0
+  m_Name: spawnfourcheguyBigAgro (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1931987111
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931987110}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.2, y: 38.1, z: 0.5497796}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1858331090}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1931987112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1931987110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a6e8c34fc04f4675bcc8035eab13b41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameObject: {fileID: 2284716364641443464, guid: 0f825de0043444833be7e2fc132c5cc3,
+    type: 3}
+  parent: {fileID: 0}
+  cd: 4
+  decalage: 0
+  randomFrom0: 3
+  onlyIfLastDie: 0
+  distToplayer: -1
 --- !u!1 &1932581879
 GameObject:
   m_ObjectHideFlags: 0
@@ -65087,6 +65302,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: StayOnGround
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1181362295722612048, guid: 36207b7c64bab40dea85188fa1267225,
         type: 3}
       propertyPath: m_Color.a
@@ -65106,11 +65326,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: StayOnGround
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1181362296625310951, guid: 36207b7c64bab40dea85188fa1267225, type: 3}
@@ -65164,7 +65379,7 @@ GameObject:
   - component: {fileID: 2130759174}
   - component: {fileID: 2130759175}
   m_Layer: 0
-  m_Name: Spawn (7)
+  m_Name: SpawnTrowGuyBigAgro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

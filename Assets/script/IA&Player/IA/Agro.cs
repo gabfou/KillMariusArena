@@ -177,10 +177,6 @@ public class Agro : Character {
 	{
 		if (Cible)
 		{
-
-			// List<CinemachineTargetGroup.Target> targets =  Cible.GetComponent<CinemachineTargetGroup>().m_Targets.ToList();
-			// targets.Remove(t);
-			// Cible.GetComponent<CinemachineTargetGroup>().m_Targets = targets.ToArray();
 			Cible = null;
 		}
 	}
