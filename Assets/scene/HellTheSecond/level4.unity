@@ -41705,6 +41705,54 @@ SpriteShapeRenderer:
   m_LocalAABB:
     m_Center: {x: 2.7682328, y: 6.1849813, z: -0.002}
     m_Extent: {x: 10.109449, y: 1.9855032, z: 0.002}
+--- !u!1 &1307695522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1307695524}
+  - component: {fileID: 1307695523}
+  m_Layer: 0
+  m_Name: SceneSpecificThing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1307695523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307695522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98decc8d1ad69416ab26e97440d726b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  intro: {fileID: 8300000, guid: b51ab88b753f14e4f8b7a2a94d49e68c, type: 3}
+  volumeOfIntro: 0.1
+  music: {fileID: 8300000, guid: e80ae5ea013d946e4a4a5363701eddb8, type: 3}
+  volume: 0.1
+  timeToFadeInSec: 0.5
+--- !u!4 &1307695524
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307695522}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 104.03615, y: -192.22845, z: -0.46824232}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1308281097
 PrefabInstance:
   m_ObjectHideFlags: 0

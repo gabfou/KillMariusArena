@@ -27,9 +27,12 @@ public class Vaguator : MonoBehaviour
 
    void NextVague()
     {
-        if (listVague.Count < 1)
-            GameObject.Destroy(this);
         listVague.RemoveAt(0);
+        if (listVague.Count < 1)
+        {
+            GameObject.Destroy(this);
+            return ;
+        }
         listVague.First().SetActive(true);
         GetCurrentAgro();
     }
