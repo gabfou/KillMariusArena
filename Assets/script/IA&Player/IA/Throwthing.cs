@@ -39,6 +39,8 @@ public class Throwthing : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        if (agro.isDead)
+            return ;
         if (willShootStopMove)
             agro.cannotmove = (agro.cannotmove) ? willShoot : false;
         // if ((delay > 0 && willShoot) || delay > actualTimeToShoot)

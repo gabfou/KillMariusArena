@@ -824,12 +824,12 @@ MonoBehaviour:
     SceneName: 
   player: {fileID: 0}
   pref:
-    attack1: 305
-    attack2: 352
-    jump1: 32
-    jump2: 350
-    dash1: 303
-    dash2: 356
+    _attack1: 305
+    _attack2: 352
+    _jump1: 32
+    _jump2: 350
+    _dash1: 303
+    _dash2: 356
   DistanceOfSound: 50
   difficulty: 5
   life: {fileID: 0}
@@ -7137,7 +7137,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98decc8d1ad69416ab26e97440d726b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 8300000, guid: ea591b8c02c9f4244ba40d1903d2fa82, type: 3}
+  intro: {fileID: 8300000, guid: 3c6a3456f16154fc3845cf8c9ab66fd3, type: 3}
+  volumeOfIntro: 0.1
+  music: {fileID: 8300000, guid: 13d3715c0ad614482a5e01740971a1df, type: 3}
   volume: 0.1
   timeToFadeInSec: 0.5
 --- !u!95 &1233421264

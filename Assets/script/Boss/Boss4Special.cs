@@ -23,6 +23,8 @@ public class Boss4Special : MonoBehaviour
 	public float impulseOfFlee = 30;
 	public float timeOfFlee = 0.8f;
 	public GameObject colliderTourbilol;
+	public AudioClip soundOfCharge;
+	[Range(0,1)]public float volumeSoundOfCharge;
 
 	[Header("PIOUPIOUPIOU")]
 	public float timeOfBackJumpInSec = 0.5f;
@@ -31,6 +33,8 @@ public class Boss4Special : MonoBehaviour
 	public float TimeOfShoot = 2;
 	public GameObject throwThing;
 	public float baseStunOuch;
+	public AudioClip soundOfThrow;
+	[Range(0,1)]public float volumeSoundOfThrow;
 
 
 	
@@ -49,6 +53,9 @@ public class Boss4Special : MonoBehaviour
 	{
 		if (Vector2.Distance(agro.Cible.position, transform.position) > distMin)
 		{
+			if (soundOfCharge && agro.audiosource)
+				agro.audiosource.PlayOneShot(soundOfCharge, volumeSoundOfCharge);
+
 			isInSpecial = true;	
 			agro.cannotmove = true;
 			agro.istapping = true;
@@ -94,6 +101,8 @@ public class Boss4Special : MonoBehaviour
 		agro.istapping = true;
 		rb.AddForce(new Vector2(Mathf.Sign(transform.position.x - agro.Cible.position.x), 0.6f).normalized * impulseOfFlee, ForceMode2D.Impulse);
 		float time = timeOfFlee;
+		if (agro.jumpClip && agro.audiosource)
+			agro.audiosource.PlayOneShot(agro.jumpClip, agro.jumpingVolume);
 		while (time > 0)
 		{
 			time -= Time.deltaTime;
@@ -106,12 +115,14 @@ public class Boss4Special : MonoBehaviour
 
 	IEnumerator Pioupiou()
 	{
+		if (agro.jumpClip && agro.audiosource)
+			agro.audiosource.PlayOneShot(agro.jumpClip, agro.jumpingVolume);
 		isInSpecial = true;
 		agro.cannotmove = true;
 		gameObject.layer = 19;
 		rb.bodyType = RigidbodyType2D.Kinematic;
-		float	speed = Vector2.Distance(posofJump[0], (Vector2)transform.position) / timeOfBackJumpInSec;
 		int r = Random.Range(0, posofJump.Count);
+		float	speed = Vector2.Distance(posofJump[r], (Vector2)transform.position) / timeOfBackJumpInSec;
 
 		Quaternion rotateO = transform.rotation;
 		while (Vector2.Distance(transform.position, posofJump[r]) > speed * Time.fixedDeltaTime * 2)

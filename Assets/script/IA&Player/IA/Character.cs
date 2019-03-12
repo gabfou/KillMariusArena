@@ -25,7 +25,7 @@ public class Character : Stopmoving
     public float minSlideVelocity = 3f;
     public float slimeVelocityIgnore = .5f;
     public float jumpPower = 10f;
-    public float jumpIdle = .3f;
+    public float jumpIdle = .0f;
     public Vector3 groundPosition;
     public Vector2 groundSize;
     public float maxYVelocity = 8f;
@@ -356,7 +356,6 @@ public class Character : Stopmoving
         TakingDamage = false;
         yield return new WaitForSeconds(0.1f);
         vcamperlin.m_AmplitudeGain = 0;
-        cannotmove = false;
         coroutineisplayingcount--;
     }
 
@@ -384,7 +383,8 @@ public class Character : Stopmoving
         spriteMaterial.SetFloat("_isflashing", 1);
         yield return new WaitForSeconds(timeStunouchBrillance);
         spriteMaterial.SetFloat("_isflashing", 0);
-        cannotmove = false;
+        if (isDead == false)
+            cannotmove = false;
 		if (stunStopAttack)
 			UnStun();
         coroutineisplayingcount--;

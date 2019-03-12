@@ -1009,8 +1009,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98decc8d1ad69416ab26e97440d726b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: {fileID: 8300000, guid: 6d1cc304d8e09417086a070ede2fd30a, type: 3}
+  intro: {fileID: 8300000, guid: 7eedcfea490e44d8e8b5297bde84e4b8, type: 3}
+  volumeOfIntro: 0.1
+  music: {fileID: 8300000, guid: 9850f5b6d99b6412591c4eda5a21d1e1, type: 3}
   volume: 0.1
+  timeToFadeInSec: 0.5
 --- !u!114 &1386234023
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1023,8 +1026,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a09aaa8699e947dfbb28c7967dcde0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextSceneName: 
   WaitInSeconds: 7
-  nexTSceneName: level2
 --- !u!1 &1722540867
 GameObject:
   m_ObjectHideFlags: 0
