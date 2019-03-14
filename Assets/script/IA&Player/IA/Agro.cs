@@ -18,6 +18,7 @@ public class Agro : Character {
     public DistanceBehavior distanceBehavior = DistanceBehavior.Free;
     public float MaxDistance = Mathf.Infinity;
 	public UnityEvent eventOnAgro;
+	[HideInInspector] public float id = -1;
 
 
 	// public Sprite changeSpriteOnAgro;
@@ -35,6 +36,20 @@ public class Agro : Character {
 	{
 		if (!IsFacingPlayer())
 			Flip();
+	}
+
+	private void OnEnable()
+	{
+		// checking if already killed if yes kill it again;
+		if (gameObject.scene.isLoaded == false)
+		{
+			id = transform.position.sqrMagnitude;
+			if (GameManager.instance.save.listOfObjectAlreadyUse.Contains(id))
+			{
+				GameObject.Destroy(gameObject);
+				return ;
+			}
+		}
 	}
 
     void Start ()
@@ -171,6 +186,13 @@ public class Agro : Character {
 	override protected void GroundCheck()
 	{
 		base.GroundCheck();
+	}
+
+	override protected void Die()
+	{
+		if (id >= 0)
+			GameManager.instance.save.listOfObjectAlreadyUseButNotSave.Add(id);
+		base.Die();
 	}
 
 	private void OnDisable()

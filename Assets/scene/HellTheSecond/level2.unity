@@ -24261,14 +24261,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17b4ec4e2b0344979cbad9ad03552d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  save:
-    level: 0
-    lastlevel: 0
-    lastCheckpoint: {x: 0, y: 0}
-    replaceBy: {fileID: 0}
-    parent: {fileID: 0}
-    camToActive: {fileID: 0}
-    SceneName: 
+  save: {fileID: 11400000, guid: 63cbcfa31105448778836a4ac97c2960, type: 2}
   player: {fileID: 0}
   pref:
     _attack1: 305
@@ -32271,6 +32264,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  id: -1
 --- !u!50 &974108248
 Rigidbody2D:
   serializedVersion: 4

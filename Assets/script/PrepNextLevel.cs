@@ -14,7 +14,7 @@ public class PrepNextLevel : MonoBehaviour
     }
 
 
-    public void ActiveScene()
+    public void ActiveScene(bool levelChangeReinit = true)
     {
         if (ao != null)
         {
@@ -23,7 +23,10 @@ public class PrepNextLevel : MonoBehaviour
         }
         else
             SceneManager.LoadScene(nextSceneName);
-        GameManager.instance.save.levelChangeReinit();
+        if (levelChangeReinit)
+            GameManager.instance.save.levelChangeReinit(nextSceneName);
+        else
+            GameManager.instance.save.lastCheckpointReinit();
     }
 
     public void PreLoadScene()

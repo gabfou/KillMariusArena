@@ -291,7 +291,7 @@ public class Character : Stopmoving
             GameObject.Destroy(gameObject);
     }
 
-    protected void Die()
+    protected virtual void Die()
     {
         if (audiosource && DieClip && DistToPlayer() < GameManager.instance.DistanceOfSound)
             audiosource.PlayOneShot(DieClip, DieVolume);

@@ -70,6 +70,7 @@ public class PlayerController : Character
     override protected IEnumerator    waitbefordying()
     {
         yield return new WaitForSeconds(1);
+        GameManager.instance.save.lastCheckpointReinit();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 

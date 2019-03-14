@@ -5,21 +5,48 @@ using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class GameSave {
-	public int level = 0;
-	public int lastlevel = 0;
 	public Vector2 lastCheckpoint= Vector2.zero;
 	public GameObject replaceBy = null;
 	public GameObject parent = null;
 	public GameObject camToActive = null;
-	[HideInInspector]public string SceneName;
+	[HideInInspector]public string SceneName = "";
+	[HideInInspector] public List<float> listOfObjectAlreadyUse = new List<float>();
+	[HideInInspector] public List<float> listOfObjectAlreadyUseButNotSave = new List<float>();
 
 
-	public void levelChangeReinit()
+	public void levelChangeReinit(string sceneName = "")
 	{
+		listOfObjectAlreadyUse.Clear();
+		lastCheckpointReinit();
 		replaceBy = null;
 		parent = null;
 		camToActive = null;
 		lastCheckpoint= Vector2.zero;
-		SceneName = SceneManager.GetActiveScene().name;
+		SceneName = (sceneName == "") ? SceneManager.GetActiveScene().name : sceneName;
+	}
+
+	public void lastCheckpointReinit()
+	{
+		listOfObjectAlreadyUseButNotSave.Clear();
+	}
+
+	public void save()
+	{
+		listOfObjectAlreadyUse.AddRange(listOfObjectAlreadyUseButNotSave);
+		listOfObjectAlreadyUseButNotSave.Clear();
+		PlayerPrefs.SetString("save", JsonUtility.ToJson(this));
+	}
+
+	public void load()
+	{
+		Debug.Log(PlayerPrefs.GetString("save"));
+		string str;
+		if ((str = PlayerPrefs.GetString("save")) != null)
+			JsonUtility.FromJsonOverwrite(str, this);
+		else
+			return ;
+		lastCheckpointReinit();
+		Debug.Log(SceneName);
+		SceneManager.LoadScene(SceneName);
 	}
 }

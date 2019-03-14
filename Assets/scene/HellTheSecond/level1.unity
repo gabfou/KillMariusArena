@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37312013, g: 0.3807403, b: 0.35872707, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2028,14 +2028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17b4ec4e2b0344979cbad9ad03552d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  save:
-    level: 0
-    lastlevel: 0
-    lastCheckpoint: {x: 0, y: 0}
-    replaceBy: {fileID: 0}
-    parent: {fileID: 0}
-    camToActive: {fileID: 0}
-    SceneName: 
+  save: {fileID: 11400000, guid: 63cbcfa31105448778836a4ac97c2960, type: 2}
   player: {fileID: 0}
   pref:
     _attack1: 305
@@ -8602,7 +8595,7 @@ GameObject:
   - component: {fileID: 434249969}
   m_Layer: 0
   m_Name: TonneauxPickeQuiRoule_0
-  m_TagString: Untagged
+  m_TagString: ouchbam
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8678,13 +8671,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 434249964}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 152.12944, y: -65.29943, z: 0}
-  m_LocalScale: {x: 0.9615678, y: 0.85295683, z: 0.75343}
+  m_LocalRotation: {x: -0, y: -0, z: 0.6866728, w: -0.7269667}
+  m_LocalPosition: {x: 151.73483, y: -65.009056, z: 0}
+  m_LocalScale: {x: 0.9615678, y: 0.9615678, z: 0.75343}
   m_Children: []
   m_Father: {fileID: 1074115529}
   m_RootOrder: 62
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 273.265}
 --- !u!50 &434249968
 Rigidbody2D:
   serializedVersion: 4
@@ -8697,7 +8690,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10000
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 3.24
@@ -14811,6 +14804,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  id: -1
 --- !u!50 &502664730
 Rigidbody2D:
   serializedVersion: 4
@@ -26889,7 +26883,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050104330}
-  m_LocalRotation: {x: 0.09853758, y: -0.000008194234, z: 0.0000015262767, w: -0.99513334}
+  m_LocalRotation: {x: 0.09853758, y: -0.000008194269, z: 0.0000015259294, w: -0.99513334}
   m_LocalPosition: {x: 35.769913, y: -0.15701038, z: -5.068223}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -59655,11 +59649,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000008194234
+      value: -0.000008194269
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0000015262767
+      value: 0.0000015259294
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -65973,6 +65967,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421520655150023154, guid: a275ed9c4629b4b5986bee2cef151263,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 25.99997
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a275ed9c4629b4b5986bee2cef151263, type: 3}
