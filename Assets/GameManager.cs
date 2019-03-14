@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 
 	public static GameManager instance;
 	public float DistanceOfSound = 50;
+	public float medalManager;
 
 	public Difficulty difficulty = Difficulty.Hard;
 	public Text life;

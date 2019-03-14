@@ -38,19 +38,19 @@ public class Agro : Character {
 			Flip();
 	}
 
-	private void OnEnable()
-	{
-		// checking if already killed if yes kill it again;
-		if (gameObject.scene.isLoaded == false)
-		{
-			id = transform.position.sqrMagnitude;
-			if (GameManager.instance.save.listOfObjectAlreadyUse.Contains(id))
-			{
-				GameObject.Destroy(gameObject);
-				return ;
-			}
-		}
-	}
+	// private void OnEnable()
+	// {
+	// 	// checking if already killed if yes kill it again;
+	// 	if (gameObject.scene.isLoaded == false)
+	// 	{
+	// 		id = transform.position.sqrMagnitude;
+	// 		if (GameManager.instance.save.listOfObjectAlreadyUse.Contains(id))
+	// 		{
+	// 			GameObject.Destroy(gameObject);
+	// 			return ;
+	// 		}
+	// 	}
+	// }
 
     void Start ()
 	{
