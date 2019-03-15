@@ -49,7 +49,7 @@ public class PlayerController : Character
         if (GameManager.instance.save.camToActive != null)
             GameManager.instance.save.camToActive.SetActive(true);
         GameManager.instance.playerSpawned = true;
-        maxLife = (int)GameManager.instance.difficulty;
+        maxLife = (int)GameManager.instance.save.difficulty;
         if (GameManager.instance.life)
             GameManager.instance.life.text = maxLife.ToString();
         pref = GameManager.instance.pref;
@@ -118,6 +118,31 @@ public class PlayerController : Character
             return;
         }
         base.OnTriggerStay2D(other);
+    }
+
+    int nbKilled = 0;
+    Coroutine MedalBamCheckTimerCurrent = null;
+
+    IEnumerator MedalBamCheckTimer()
+    {
+        yield return new WaitForSeconds(0.2f);
+        nbKilled = 0;
+    }
+
+    public override void DoingDamage(Character character)
+    {
+        if (character.life < 1)
+        {
+            nbKilled++;
+            MedalBamCheckTimerCurrent = StartCoroutine(MedalBamCheckTimer());
+        }
+        if (nbKilled >= 3)
+            GameManager.instance.medalManager.TryToUnlockMedal("BAM");
+        if (nbKilled >= 5)
+            GameManager.instance.medalManager.TryToUnlockMedal("BOOM!!!");
+        if (nbKilled >= 10)
+            GameManager.instance.medalManager.TryToUnlockMedal("BLAM!!!!!!");
+            
     }
 
     [HideInInspector] public bool canControle = false;

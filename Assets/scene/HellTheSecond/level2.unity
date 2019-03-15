@@ -12935,6 +12935,105 @@ SpriteShapeRenderer:
   m_LocalAABB:
     m_Center: {x: 0.08618808, y: 4.4846, z: -0.002}
     m_Extent: {x: 4.570327, y: 1.3385488, z: 0.002}
+--- !u!1 &335510324
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 335510325}
+  - component: {fileID: 335510327}
+  - component: {fileID: 335510326}
+  m_Layer: 0
+  m_Name: TriggerMedalNinjaReinit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &335510325
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335510324}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 228.3, y: 259.4, z: -10}
+  m_LocalScale: {x: 1.3735937, y: 1.2184435, z: 1.076253}
+  m_Children: []
+  m_Father: {fileID: 1074115529}
+  m_RootOrder: 179
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &335510326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335510324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 065bbbd4e5b5f45988d0a1515691c85d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagAccept:
+  - Player
+  onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1038350201}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onTriggerStay:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  nbOfUsage: -1
+--- !u!61 &335510327
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 335510324}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.61643994, y: 3.1333337}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.73, y: 6.24}
+    newSize: {x: 2.73, y: 6.24}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.6203806, y: 10.549602}
+  m_EdgeRadius: 0
 --- !u!1 &338174291 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1356542757344544, guid: 6ce4dd8e9770c4be4ada3d7152eac08f,
@@ -24146,6 +24245,8 @@ GameObject:
   - component: {fileID: 665631306}
   - component: {fileID: 665631304}
   - component: {fileID: 665631305}
+  - component: {fileID: 665631307}
+  - component: {fileID: 665631308}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -24261,7 +24362,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17b4ec4e2b0344979cbad9ad03552d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  save: {fileID: 11400000, guid: 63cbcfa31105448778836a4ac97c2960, type: 2}
+  save:
+    lastCheckpoint: {x: 0, y: 0}
+    replaceBy: {fileID: 0}
+    parent: {fileID: 0}
+    camToActive: {fileID: 0}
+    SceneName: 
+    listOfObjectAlreadyUse: []
+    listOfObjectAlreadyUseButNotSave: []
+    difficulty: 5
   player: {fileID: 0}
   pref:
     _attack1: 305
@@ -24271,7 +24380,7 @@ MonoBehaviour:
     _dash1: 303
     _dash2: 356
   DistanceOfSound: 50
-  difficulty: 10
+  medalManager: {fileID: 0}
   life: {fileID: 0}
   replacedPlayer: 0
   playerSpawned: 0
@@ -24290,6 +24399,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &665631307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665631303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb3e8fd9535f4438a0d51d7661866f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  app_id: 48921:QcGJBhLk
+  session_id: 
+  aes_base64_key: hlKCS+UcDcmQeuf5ymvArQ==
+  output_network_data: 1
+--- !u!114 &665631308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665631303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feabd3aca2c384fe8bb9cd967bb1493b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &671658342
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25581,7 +25718,7 @@ PrefabInstance:
     - target: {fileID: 4421520655150023154, guid: a275ed9c4629b4b5986bee2cef151263,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 26
+      value: 25.99997
       objectReference: {fileID: 0}
     - target: {fileID: 6411716495633044201, guid: a275ed9c4629b4b5986bee2cef151263,
         type: 3}
@@ -29742,11 +29879,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114907904944573272, guid: 16da5a28e9687451f9c8db06cced34f3,
-        type: 3}
-      propertyPath: lifeText
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
 --- !u!4 &886465884 stripped
@@ -32015,6 +32147,7 @@ GameObject:
   - component: {fileID: 974108255}
   - component: {fileID: 974108256}
   - component: {fileID: 974108257}
+  - component: {fileID: 974108258}
   m_Layer: 20
   m_Name: BOSS
   m_TagString: Untagged
@@ -32209,6 +32342,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 974108258}
+        m_MethodName: ActivateMedal
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Boss2
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -32535,6 +32679,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4dccc0657f9d94024935f5ca830bc9db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &974108258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 974108242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef0d11d548fb44be78a9e093b85627e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayInSec: 0
 --- !u!1 &977748111
 GameObject:
   m_ObjectHideFlags: 0
@@ -34269,6 +34426,76 @@ CircleCollider2D:
   m_Offset: {x: 0.16089201, y: -0.3217659}
   serializedVersion: 2
   m_Radius: 60.35
+--- !u!1 &1038350201
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1038350202}
+  - component: {fileID: 1038350205}
+  - component: {fileID: 1038350204}
+  m_Layer: 0
+  m_Name: TriggerMedalNinja
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1038350202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038350201}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 368.33, y: 317.7, z: -10}
+  m_LocalScale: {x: 0.8085195, y: 0.7171956, z: 0.6335}
+  m_Children: []
+  m_Father: {fileID: 1074115529}
+  m_RootOrder: 178
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1038350204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038350201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dd8d4bfe06d64586ae320d2b285161a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1038350205
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038350201}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.61643994, y: 3.1333337}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.73, y: 6.24}
+    newSize: {x: 2.73, y: 6.24}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 3.6203806, y: 10.549602}
+  m_EdgeRadius: 0
 --- !u!1 &1038813616
 GameObject:
   m_ObjectHideFlags: 0
@@ -34892,6 +35119,8 @@ Transform:
   - {fileID: 1008240891}
   - {fileID: 1184648525}
   - {fileID: 2028369810}
+  - {fileID: 1038350202}
+  - {fileID: 335510325}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -768,6 +768,7 @@ GameObject:
   - component: {fileID: 211810056}
   - component: {fileID: 211810055}
   - component: {fileID: 211810054}
+  - component: {fileID: 211810060}
   m_Layer: 5
   m_Name: Button Continue
   m_TagString: Untagged
@@ -1013,6 +1014,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211810052}
   m_CullTransparentMesh: 0
+--- !u!114 &211810060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211810052}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85b7d837f45254f2ebefd9a95567483d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &221301256
 GameObject:
   m_ObjectHideFlags: 0
@@ -1025,6 +1038,7 @@ GameObject:
   - component: {fileID: 221301259}
   - component: {fileID: 221301258}
   - component: {fileID: 221301260}
+  - component: {fileID: 221301261}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1162,6 +1176,7 @@ MonoBehaviour:
     SceneName: 
     listOfObjectAlreadyUse: []
     listOfObjectAlreadyUseButNotSave: []
+    difficulty: 5
   player: {fileID: 0}
   pref:
     _attack1: 305
@@ -1171,8 +1186,7 @@ MonoBehaviour:
     _dash1: 303
     _dash2: 356
   DistanceOfSound: 50
-  medalManager: 0
-  difficulty: 5
+  medalManager: {fileID: 0}
   life: {fileID: 0}
   replacedPlayer: 0
   playerSpawned: 0
@@ -1193,6 +1207,18 @@ MonoBehaviour:
   session_id: 
   aes_base64_key: hlKCS+UcDcmQeuf5ymvArQ==
   output_network_data: 1
+--- !u!114 &221301261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221301256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feabd3aca2c384fe8bb9cd967bb1493b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &240752995
 GameObject:
   m_ObjectHideFlags: 0
@@ -8110,6 +8136,7 @@ GameObject:
   - component: {fileID: 1623146568}
   - component: {fileID: 1623146572}
   - component: {fileID: 1623146573}
+  - component: {fileID: 1623146574}
   m_Layer: 5
   m_Name: Button NewGame
   m_TagString: Untagged
@@ -8238,6 +8265,17 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1623146574}
+        m_MethodName: ActivateMedal
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Kidnaping!
           m_BoolArgument: 1
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -8389,6 +8427,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextSceneName: level1
   WaitInSeconds: 11
+--- !u!114 &1623146574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1623146566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef0d11d548fb44be78a9e093b85627e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayInSec: 3
 --- !u!1 &1681778744
 GameObject:
   m_ObjectHideFlags: 0

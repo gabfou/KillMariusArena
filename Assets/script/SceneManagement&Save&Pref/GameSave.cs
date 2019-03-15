@@ -12,6 +12,7 @@ public class GameSave {
 	[HideInInspector]public string SceneName = "";
 	[HideInInspector] public List<float> listOfObjectAlreadyUse = new List<float>();
 	[HideInInspector] public List<float> listOfObjectAlreadyUseButNotSave = new List<float>();
+	public Difficulty difficulty;
 
 
 	public void levelChangeReinit(string sceneName = "")

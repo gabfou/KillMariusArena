@@ -14,7 +14,7 @@ public class DifficultySelect : MonoBehaviour
     {
         foreach(var t in difficultyInInvOrder)
             t.color = Color.black;
-        difficultyInInvOrder[Array.IndexOf(Enum.GetValues(GameManager.instance.difficulty.GetType()), GameManager.instance.difficulty)].color = Color.red; // rend le text a l'index de la difficulte dans l'enum red
+        difficultyInInvOrder[Array.IndexOf(Enum.GetValues(GameManager.instance.save.difficulty.GetType()), GameManager.instance.save.difficulty)].color = Color.red; // rend le text a l'index de la difficulte dans l'enum red
     }
 
     void Update()

@@ -76,7 +76,7 @@ public class Character : Stopmoving
     protected bool isPlayer = false;
     bool canOuch = true;
     bool sliding = false;
-    new Rigidbody2D rigidbody2D;
+    new protected Rigidbody2D rigidbody2D;
     protected SpriteRenderer spriteRenderer;
     protected Animator anim;
     [HideInInspector] public AudioSource audiosource;
@@ -183,12 +183,9 @@ public class Character : Stopmoving
          SlideCheck();
     }
 
-    public void DoingDamage(Vector2 pos)
+    public virtual void DoingDamage(Character character)
     {
-        if (tag == "player")
-        {
-            rigidbody2D.velocity = new Vector2(Mathf.Sign(transform.position.x - pos.x) * 10, rigidbody2D.velocity.y);
-        }
+
     }
 
     virtual protected void    StopTapping()
@@ -546,10 +543,9 @@ public class Character : Stopmoving
         if (canOuch && (other.tag == ouchtag || other.tag == "ouchbam"))
         {
             Character oponnent = other.GetComponentInParent<Character>();
-            if (oponnent)
-                oponnent.DoingDamage(transform.position);
             ouch(new Vector2(Mathf.Sign(transform.position.x - other.transform.position.x) * ouchJumpMultPushX, ouchJumpMultPushY));
-        }
+            if (oponnent)
+                oponnent.DoingDamage(this);        }
     }
 
     void OnDrawGizmos()

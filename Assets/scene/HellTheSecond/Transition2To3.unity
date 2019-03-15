@@ -3344,6 +3344,8 @@ GameObject:
   - component: {fileID: 396638437}
   - component: {fileID: 396638436}
   - component: {fileID: 396638435}
+  - component: {fileID: 396638438}
+  - component: {fileID: 396638439}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -3363,7 +3365,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17b4ec4e2b0344979cbad9ad03552d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  save: {fileID: 11400000, guid: 63cbcfa31105448778836a4ac97c2960, type: 2}
+  save:
+    lastCheckpoint: {x: 0, y: 0}
+    replaceBy: {fileID: 0}
+    parent: {fileID: 0}
+    camToActive: {fileID: 0}
+    SceneName: 
+    listOfObjectAlreadyUse: []
+    listOfObjectAlreadyUseButNotSave: []
   player: {fileID: 0}
   pref:
     _attack1: 305
@@ -3373,6 +3382,7 @@ MonoBehaviour:
     _dash1: 303
     _dash2: 356
   DistanceOfSound: 50
+  medalManager: {fileID: 0}
   difficulty: 5
   life: {fileID: 0}
   replacedPlayer: 0
@@ -3488,6 +3498,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &396638438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396638434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aeb3e8fd9535f4438a0d51d7661866f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  app_id: 48921:QcGJBhLk
+  session_id: 
+  aes_base64_key: hlKCS+UcDcmQeuf5ymvArQ==
+  output_network_data: 1
+--- !u!114 &396638439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 396638434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feabd3aca2c384fe8bb9cd967bb1493b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &412482232
 GameObject:
   m_ObjectHideFlags: 0
@@ -13559,7 +13597,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d17b4ec4e2b0344979cbad9ad03552d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  save: {fileID: 0}
+  save:
+    lastCheckpoint: {x: 0, y: 0}
+    replaceBy: {fileID: 0}
+    parent: {fileID: 0}
+    camToActive: {fileID: 0}
+    SceneName: 
+    listOfObjectAlreadyUse: []
+    listOfObjectAlreadyUseButNotSave: []
   player: {fileID: 0}
   pref:
     _attack1: 305
@@ -13569,6 +13614,7 @@ MonoBehaviour:
     _dash1: 303
     _dash2: 356
   DistanceOfSound: 500
+  medalManager: {fileID: 0}
   difficulty: 5
   life: {fileID: 0}
   replacedPlayer: 0

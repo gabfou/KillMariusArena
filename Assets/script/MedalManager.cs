@@ -4,7 +4,20 @@ using UnityEngine;
 
 public class MedalManager : MonoBehaviour
 {
+// #if NEWGROUND 
     io.newgrounds.core ngio_core;
+
+    Dictionary<string, int> medalToId = new Dictionary<string, int>()
+    {
+        {"Kidnaping!", 56710},
+        {"BAM", 56711},
+        {"BOOM!!!", 56712},
+        {"BLAM!!!!!!", 56713},
+        {"First Boss", 56714},
+        {"Ninja", 56715},
+        {"Boss2", 56716},
+    };
+
 
     private void Start() {
         ngio_core = GetComponent<io.newgrounds.core>();
@@ -13,7 +26,7 @@ public class MedalManager : MonoBehaviour
         // this will get called whenever a medal gets unlocked via unlockMedal()
     void onMedalUnlocked(io.newgrounds.results.Medal.unlock result) {
         io.newgrounds.objects.medal medal = result.medal;
-        Debug.Log( "Medal Unlocked: " + medal.name + " (" + medal.value + " points)" );
+        Debug.Log( "Medal Unlocked?: " + result.success + " name: " + medal.name + " (" + medal.value + " points)" );
     }
 
     // call this method whenever you want to unlock a medal.
@@ -27,5 +40,10 @@ public class MedalManager : MonoBehaviour
         // call the component on the server, and tell it to fire onMedalUnlocked() when it's done.
         medal_unlock.callWith(ngio_core, onMedalUnlocked);
     }
-    // addMedal()
+// #endif
+
+    public void TryToUnlockMedal(string medal)
+    {
+        unlockMedal(medalToId[medal]);
+    }
 }

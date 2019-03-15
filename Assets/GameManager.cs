@@ -14,9 +14,7 @@ public class GameManager : MonoBehaviour
 
 	public static GameManager instance;
 	public float DistanceOfSound = 50;
-	public float medalManager;
-
-	public Difficulty difficulty = Difficulty.Hard;
+	[HideInInspector]public MedalManager medalManager;
 	public Text life;
 	[HideInInspector] public bool replacedPlayer = false;
 	[HideInInspector] public bool playerSpawned = false;
@@ -62,6 +60,7 @@ public class GameManager : MonoBehaviour
 		if (instance == null)
 		{
 			audioSource = GetComponent<AudioSource>();
+			medalManager = GetComponent<MedalManager>();
 			save.levelChangeReinit();
 			pref.init();
 			instance = this;
@@ -78,11 +77,11 @@ public class GameManager : MonoBehaviour
 
 	public void setDifficulty(Difficulty diff)
 	{
-		difficulty = diff;
+		save.difficulty = diff;
 	}
 
-	public void setDifficultyToEasy(){difficulty=Difficulty.Easy;}
-	public void setDifficultyToNormal(){difficulty=Difficulty.Normal;}
-	public void setDifficultyToHard(){difficulty=Difficulty.Hard;}
-	public void setDifficultyToGoodLuck(){difficulty=Difficulty.GoodLuck;}
+	public void setDifficultyToEasy(){save.difficulty=Difficulty.Easy;}
+	public void setDifficultyToNormal(){save.difficulty=Difficulty.Normal;}
+	public void setDifficultyToHard(){save.difficulty=Difficulty.Hard;}
+	public void setDifficultyToGoodLuck(){save.difficulty=Difficulty.GoodLuck;}
 }
