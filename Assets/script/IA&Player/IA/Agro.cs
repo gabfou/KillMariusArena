@@ -190,8 +190,8 @@ public class Agro : Character {
 
 	override protected void Die()
 	{
-		if (id >= 0)
-			GameManager.instance.save.listOfObjectAlreadyUseButNotSave.Add(id);
+		//if (id >= 0)
+		//	GameManager.instance.save.listOfObjectAlreadyUseButNotSave.Add(id);
 		base.Die();
 	}
 
