@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Cinemachine;
 
 public class PlayerController : Character
 {
@@ -22,6 +23,10 @@ public class PlayerController : Character
                 vcam.Follow = transform2;
             if ((transform2 = ((transform.parent) ?? transform)) != vcam.LookAt)
                 vcam.LookAt = transform2;
+            float blend = Camera.main.GetComponent<CinemachineBrain>().m_DefaultBlend.m_Time;
+            Camera.main.GetComponent<CinemachineBrain>().m_DefaultBlend.m_Time = 0f;
+            yield return null;
+            Camera.main.GetComponent<CinemachineBrain>().m_DefaultBlend.m_Time = blend;
         }
     }
 
@@ -134,6 +139,8 @@ public class PlayerController : Character
         if (character.life < 1)
         {
             nbKilled++;
+            if (MedalBamCheckTimerCurrent != null)
+                StopCoroutine(MedalBamCheckTimerCurrent);
             MedalBamCheckTimerCurrent = StartCoroutine(MedalBamCheckTimer());
         }
         if (nbKilled >= 3)
