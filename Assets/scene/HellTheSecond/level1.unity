@@ -2170,7 +2170,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 112588836}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aeb3e8fd9535f4438a0d51d7661866f9, type: 3}
   m_Name: 
@@ -2191,6 +2191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feabd3aca2c384fe8bb9cd967bb1493b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  medalGui: {fileID: 0}
+  medalList: {fileID: 11400000, guid: 86a409ee794354f33a8acc8194354884, type: 2}
 --- !u!1 &115385661
 GameObject:
   m_ObjectHideFlags: 0
@@ -64987,6 +64989,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 25.99997
+      objectReference: {fileID: 0}
+    - target: {fileID: 4421520655150023154, guid: a275ed9c4629b4b5986bee2cef151263,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3824426082556244185, guid: a275ed9c4629b4b5986bee2cef151263,
         type: 3}

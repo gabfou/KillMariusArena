@@ -176,7 +176,10 @@ public class Character : Stopmoving
     }
 
     protected void allCheck()
-    {   if (Time.frameCount % 4 == 0)
+    {
+        if (rigidbody2D.velocity == Vector2.zero)
+            return ;
+        if (Time.frameCount % 4 == 0)
             StopConglomération();
         if (rigidbody2D)
              GroundCheck();

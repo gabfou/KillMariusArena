@@ -2,6 +2,7 @@
 
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace io.newgrounds.components.Medal {
 
@@ -91,7 +92,10 @@ namespace io.newgrounds.components.Medal {
 		/// <param name="core">The core instance to call this component with.</param>
 		/// <param name="callback">An optional callback handler that will be called when the server responds.</param>
 		public void callWith(core core, Action<results.Medal.unlock> callback=null) {
-			core.callComponent(COMPONENT_NAME, this, wrapCallback(callback));
+			if (core != null)
+				core.callComponent(COMPONENT_NAME, this, wrapCallback(callback));
+			else
+				Debug.Log("no core.newground");
 		}
 		
 		/// <summary>

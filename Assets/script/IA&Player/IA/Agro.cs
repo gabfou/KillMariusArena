@@ -119,9 +119,9 @@ public class Agro : Character {
 	{
 		if (DistanceBehavior.justTakeDamage == distanceBehavior)
 			return ;
-		if (!base.cannotmove)
+		if (!base.cannotmove && Cible)
 		{
-            if (Cible && DistanceBehavior.DontMove != distanceBehavior)
+            if (DistanceBehavior.DontMove != distanceBehavior)
 			{
 				RaycastHit2D raycastHit2D;
 				float distance = Vector2.Distance(Cible.position, transform.position);
@@ -148,11 +148,11 @@ public class Agro : Character {
                     move = sign * Mathf.Sign((Cible.position - transform.position).x);
 
 				pseudoPathfinding();
+				if (move == 0)
+					FacePlayer();
             }
 			else
-				move = 0;
-			if (Cible && move == 0)
-				FacePlayer();
+				move = 0;	
 		}
 		base.FixedUpdate();
 	}

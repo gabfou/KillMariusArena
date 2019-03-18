@@ -119,8 +119,9 @@ namespace io.newgrounds
 		/// <summary>
 		/// Starts the monobehavior and fires the onReady callback (if available).
 		/// </summary>
-        void Start()
+        public void Init()
         {
+			Debug.Log("dfs");
             this.sessionLoader = new SessionLoader(this);
             if (!String.IsNullOrEmpty(app_id)) initialize(app_id, aes_base64_key, session_id);
 

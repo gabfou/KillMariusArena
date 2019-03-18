@@ -13,6 +13,7 @@ public class Spawn : MonoBehaviour {
 	public bool onlyIfLastDie = false;
 	GameObject last = null;
 	public float distToplayer = -1;
+	// public float distMax = 300;
 	Transform player;
 	void Start () {
 		actualcd = cd + Random.Range(0, randomFrom0);

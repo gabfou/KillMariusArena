@@ -12,20 +12,31 @@ public class MedalList : ScriptableObject
         public string name;
         public int id;
         public Sprite sprite;
+
+        public Medal(string name, int id, Sprite sprite = null)
+        {
+            this.name = name;
+            this.id = id;
+            this.sprite = sprite;
+        }
     } 
 
-    public List<Medal> list;
-    public int dafuq;
-
-    //     Dictionary<string, int> medalToId = new Dictionary<string, int>()
-    // {
-    //     {"Kidnaping!", 56710},
-    //     {"BAM", 56711},
-    //     {"BOOM!!!", 56712},
-    //     {"BLAM!!!!!!", 56713},
-    //     {"First Boss", 56714},
-    //     {"Ninja", 56715},
-    //     {"Boss2", 56716},
-    // };
-
+    public Medal[] list = 
+    {
+        new Medal("Kidnaping!", 56710),
+        new Medal("BAM", 56711),
+        new Medal("BOOM!!!", 56712),
+        new Medal("BLAM!!!!!!", 56713),
+        new Medal("First Boss", 56714),
+        new Medal("Ninja", 56715),
+        new Medal("Boss2", 56716),
+        new Medal("Too easy", 56750),
+        new Medal("Boss3", 56751),
+        new Medal("Boss4", 56752),
+        new Medal("Easy", 56754),
+        new Medal("Normal", 56755),
+        new Medal("Hard", 56756),
+        new Medal("GoodLuck", 56757),
+        new Medal("Victory", 56753),
+    };
 }
