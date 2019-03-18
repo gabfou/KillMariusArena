@@ -16,6 +16,14 @@ public class MedalManager : MonoBehaviour
         {"First Boss", 56714},
         {"Ninja", 56715},
         {"Boss2", 56716},
+        {"Too easy", 56750},
+        {"Boss3", 56751},
+        {"Boss4", 56752},
+        {"Easy", 56754},
+        {"Normal", 56755},
+        {"Hard", 56756},
+        {"GoodLuck", 56757},
+        {"Victory", 56753},
     };
 
 

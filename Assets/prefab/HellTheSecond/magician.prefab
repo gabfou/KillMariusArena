@@ -309,6 +309,7 @@ MonoBehaviour:
   maxYVelocity: 22
   minYVelocity: -15
   flying: 0
+  dashEnabled: 0
   timedashinsc: 0.3
   distanceofdash: 1
   isinvuindash: 1
@@ -373,6 +374,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  id: -1
 --- !u!58 &236499202465406188
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -445,7 +447,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.661
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -475,7 +477,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
