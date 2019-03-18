@@ -6,6 +6,7 @@ public class MedalManager : MonoBehaviour
 {
 // #if NEWGROUND 
     io.newgrounds.core ngio_core;
+    [HideInInspector] public MedalGui medalGui;
 
     Dictionary<string, int> medalToId = new Dictionary<string, int>()
     {
