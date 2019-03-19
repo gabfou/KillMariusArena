@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 [System.Serializable]
 public class GameSave {
 	public Vector2 lastCheckpoint= Vector2.zero;
-	public GameObject replaceBy = null;
+	public int replaceBy = -1;
 	public GameObject parent = null;
 	public GameObject camToActive = null;
 	[HideInInspector]public string SceneName = "";
@@ -19,11 +19,13 @@ public class GameSave {
 	{
 		listOfObjectAlreadyUse.Clear();
 		lastCheckpointReinit();
-		replaceBy = null;
+		replaceBy = -1;
 		parent = null;
 		camToActive = null;
-		lastCheckpoint= Vector2.zero;
+		lastCheckpoint = Vector2.zero;
 		SceneName = (sceneName == "") ? SceneManager.GetActiveScene().name : sceneName;
+		PlayerPrefs.SetString("save", JsonUtility.ToJson(this));
+		Debug.Log(PlayerPrefs.GetString("save"));
 	}
 
 	public void lastCheckpointReinit()

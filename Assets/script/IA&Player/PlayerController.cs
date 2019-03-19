@@ -38,10 +38,10 @@ public class PlayerController : Character
             return ;
         }
 
-        if (GameManager.instance.save.replaceBy != null && GameManager.instance.replacedPlayer == false)
+        if (GameManager.instance.save.replaceBy > -1 && GameManager.instance.replacedPlayer == false)
         {
             GameManager.instance.replacedPlayer = true;
-            GameObject.Instantiate(GameManager.instance.save.replaceBy);
+            GameObject.Instantiate(GameManager.instance.playerPrefabList.list[GameManager.instance.save.replaceBy]);
             GameObject.Destroy(gameObject);
             return ;
         }

@@ -28658,7 +28658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   save:
     lastCheckpoint: {x: 0, y: 0}
-    replaceBy: {fileID: 0}
+    replaceBy: -1
     parent: {fileID: 0}
     camToActive: {fileID: 0}
     SceneName: 
@@ -28674,6 +28674,7 @@ MonoBehaviour:
     _dash1: 303
     _dash2: 356
   DistanceOfSound: 50
+  playerPrefabList: {fileID: 11400000, guid: fe42f9a8ef40643cead0abe3f79cd13d, type: 2}
   medalManager: {fileID: 0}
   life: {fileID: 0}
   replacedPlayer: 0

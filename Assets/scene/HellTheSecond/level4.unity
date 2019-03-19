@@ -3778,7 +3778,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   save:
     lastCheckpoint: {x: 0, y: 0}
-    replaceBy: {fileID: 0}
+    replaceBy: -1
     parent: {fileID: 0}
     camToActive: {fileID: 0}
     SceneName: 
@@ -3794,6 +3794,7 @@ MonoBehaviour:
     _dash1: 303
     _dash2: 356
   DistanceOfSound: 50
+  playerPrefabList: {fileID: 11400000, guid: fe42f9a8ef40643cead0abe3f79cd13d, type: 2}
   medalManager: {fileID: 0}
   life: {fileID: 0}
   replacedPlayer: 0
@@ -21323,7 +21324,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 1024669050778126, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
+  replaceBy: 0
   parent: {fileID: 0}
   CamToActive: {fileID: 0}
 --- !u!61 &699880858
@@ -26282,7 +26283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 1024669050778126, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
+  replaceBy: 0
   parent: {fileID: 0}
   CamToActive: {fileID: 0}
 --- !u!61 &908585209
@@ -28366,7 +28367,7 @@ Transform:
 --- !u!199 &1029537424
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -33356,7 +33357,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050104330}
-  m_LocalRotation: {x: -0.040124126, y: -0.68961644, z: 0.0982001, w: 0.716363}
+  m_LocalRotation: {x: -0.04012411, y: -0.6896165, z: 0.09820011, w: 0.716363}
   m_LocalPosition: {x: 1818.1897, y: 138.80504, z: -48.18787}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -35117,7 +35118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 1024669050778126, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
+  replaceBy: 0
   parent: {fileID: 0}
   CamToActive: {fileID: 0}
 --- !u!61 &1094328521
@@ -35285,7 +35286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 1024669050778126, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
+  replaceBy: 0
   parent: {fileID: 0}
   CamToActive: {fileID: 0}
 --- !u!61 &1103078191
@@ -39176,11 +39177,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1230261231587798511, guid: 1a72990872aa64d2c8487aa2bfc517ee,
-        type: 3}
-      propertyPath: lifeText
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7602533892773745870, guid: 1a72990872aa64d2c8487aa2bfc517ee,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -39674,6 +39670,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.a
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1230261231587798511, guid: 1a72990872aa64d2c8487aa2bfc517ee,
+        type: 3}
+      propertyPath: lifeText
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a72990872aa64d2c8487aa2bfc517ee, type: 3}
@@ -42180,6 +42181,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4421520655021083865, guid: a275ed9c4629b4b5986bee2cef151263,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
     - target: {fileID: 4421520655021083844, guid: a275ed9c4629b4b5986bee2cef151263,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -42285,11 +42291,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4421520655021083865, guid: a275ed9c4629b4b5986bee2cef151263,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas
-      objectReference: {fileID: 0}
     - target: {fileID: 4421520655150023154, guid: a275ed9c4629b4b5986bee2cef151263,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -42308,12 +42309,12 @@ PrefabInstance:
     - target: {fileID: 6411716495633044201, guid: a275ed9c4629b4b5986bee2cef151263,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5053005752940641370, guid: a275ed9c4629b4b5986bee2cef151263,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a275ed9c4629b4b5986bee2cef151263, type: 3}
@@ -46580,7 +46581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 1024669050778126, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
+  replaceBy: 0
   parent: {fileID: 0}
   CamToActive: {fileID: 0}
 --- !u!61 &1498655124
@@ -58222,15 +58223,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.040124126
+      value: -0.04012411
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.68961644
+      value: -0.6896165
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0982001
+      value: 0.09820011
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -60042,7 +60043,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 1024669050778126, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
+  replaceBy: 0
   parent: {fileID: 0}
   CamToActive: {fileID: 0}
 --- !u!61 &1931731957

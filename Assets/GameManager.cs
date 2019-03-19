@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
 
 	public static GameManager instance;
 	public float DistanceOfSound = 50;
+	public PrefabList playerPrefabList;
 	[HideInInspector]public MedalManager medalManager;
 	public Text life;
 	[HideInInspector] public bool replacedPlayer = false;
@@ -62,7 +63,6 @@ public class GameManager : MonoBehaviour
 			audioSource = GetComponent<AudioSource>();
 			medalManager = GetComponent<MedalManager>();
 			GetComponent<io.newgrounds.core>().Init();
-			save.levelChangeReinit();
 			pref.init();
 			instance = this;
 		}

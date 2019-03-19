@@ -2032,7 +2032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   save:
     lastCheckpoint: {x: 0, y: 0}
-    replaceBy: {fileID: 0}
+    replaceBy: -1
     parent: {fileID: 0}
     camToActive: {fileID: 0}
     SceneName: 
@@ -2048,6 +2048,7 @@ MonoBehaviour:
     _dash1: 303
     _dash2: 356
   DistanceOfSound: 50
+  playerPrefabList: {fileID: 11400000, guid: fe42f9a8ef40643cead0abe3f79cd13d, type: 2}
   medalManager: {fileID: 0}
   life: {fileID: 283256743}
   replacedPlayer: 0
@@ -6048,7 +6049,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 0
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 0}
+  replaceBy: -1
   parent: {fileID: 0}
   CamToActive: {fileID: 0}
 --- !u!61 &290114937
@@ -30227,7 +30228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 0}
+  replaceBy: -1
   parent: {fileID: 0}
   CamToActive: {fileID: 0}
 --- !u!61 &1174312264
@@ -35617,7 +35618,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 0
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 0}
+  replaceBy: -1
   parent: {fileID: 0}
   CamToActive: {fileID: 0}
 --- !u!61 &1222380137
@@ -51549,7 +51550,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 0
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 0}
+  replaceBy: -1
   parent: {fileID: 0}
   CamToActive: {fileID: 0}
 --- !u!61 &1504832750

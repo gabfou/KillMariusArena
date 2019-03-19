@@ -4151,7 +4151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 0}
+  replaceBy: -1
   parent: {fileID: 0}
   CamToActive: {fileID: 0}
 --- !u!61 &97392011
@@ -19465,7 +19465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 0}
+  replaceBy: -1
   parent: {fileID: 0}
   CamToActive: {fileID: 0}
 --- !u!61 &581208894
@@ -23264,7 +23264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 0}
+  replaceBy: -1
   parent: {fileID: 0}
   CamToActive: {fileID: 0}
 --- !u!61 &651169544
@@ -24364,7 +24364,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   save:
     lastCheckpoint: {x: 0, y: 0}
-    replaceBy: {fileID: 0}
+    replaceBy: -1
     parent: {fileID: 0}
     camToActive: {fileID: 0}
     SceneName: 
@@ -24380,6 +24380,7 @@ MonoBehaviour:
     _dash1: 303
     _dash2: 356
   DistanceOfSound: 50
+  playerPrefabList: {fileID: 11400000, guid: fe42f9a8ef40643cead0abe3f79cd13d, type: 2}
   medalManager: {fileID: 0}
   life: {fileID: 0}
   replacedPlayer: 0
@@ -25607,6 +25608,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4421520655021083865, guid: a275ed9c4629b4b5986bee2cef151263,
+        type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
     - target: {fileID: 4421520655021083844, guid: a275ed9c4629b4b5986bee2cef151263,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25711,11 +25717,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4421520655021083865, guid: a275ed9c4629b4b5986bee2cef151263,
-        type: 3}
-      propertyPath: m_Name
-      value: Canvas
       objectReference: {fileID: 0}
     - target: {fileID: 4421520655150023154, guid: a275ed9c4629b4b5986bee2cef151263,
         type: 3}
@@ -27282,7 +27283,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 0}
+  replaceBy: -1
   parent: {fileID: 0}
   CamToActive: {fileID: 0}
 --- !u!61 &796529532
@@ -30266,7 +30267,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 0}
+  replaceBy: -1
   parent: {fileID: 0}
   CamToActive: {fileID: 0}
 --- !u!61 &908689667
@@ -68200,7 +68201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   num: 4
   sp: {fileID: 21300002, guid: 4812af3c964bc8d44bf31c19a556dff8, type: 3}
-  replaceBy: {fileID: 0}
+  replaceBy: -1
   parent: {fileID: 0}
   CamToActive: {fileID: 0}
 --- !u!61 &2028369812
