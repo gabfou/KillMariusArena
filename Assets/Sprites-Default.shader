@@ -42,102 +42,112 @@ Shader "Sprites/Recolor"
             #pragma multi_compile_instancing
             #pragma multi_compile _ PIXELSNAP_ON
             #pragma multi_compile _ ETC1_EXTERNAL_ALPHA
-#include "UnityCG.cginc"
-			float4 _FlashingColor;
-			float _isflashing;
+
+            #ifndef UNITY_SPRITES_INCLUDED
+            #define UNITY_SPRITES_INCLUDED
+
+            #include "UnityCG.cginc"
+
+            float4 _FlashingColor;
+            float _isflashing;
             float4 _HitColor;
 
-#ifdef UNITY_INSTANCING_ENABLED
+            #ifdef UNITY_INSTANCING_ENABLED
 
-    UNITY_INSTANCING_BUFFER_START(PerDrawSprite)
-        // SpriteRenderer.Color while Non-Batched/Instanced.
-        UNITY_DEFINE_INSTANCED_PROP(fixed4, unity_SpriteRendererColorArray)
-        // this could be smaller but that's how bit each entry is regardless of type
-        UNITY_DEFINE_INSTANCED_PROP(fixed2, unity_SpriteFlipArray)
-    UNITY_INSTANCING_BUFFER_END(PerDrawSprite)
+                UNITY_INSTANCING_BUFFER_START(PerDrawSprite)
+                    // SpriteRenderer.Color while Non-Batched/Instanced.
+                    UNITY_DEFINE_INSTANCED_PROP(fixed4, unity_SpriteRendererColorArray)
+                    // this could be smaller but that's how bit each entry is regardless of type
+                    UNITY_DEFINE_INSTANCED_PROP(fixed2, unity_SpriteFlipArray)
+                UNITY_INSTANCING_BUFFER_END(PerDrawSprite)
 
-    #define _RendererColor  UNITY_ACCESS_INSTANCED_PROP(PerDrawSprite, unity_SpriteRendererColorArray)
-    #define _Flip           UNITY_ACCESS_INSTANCED_PROP(PerDrawSprite, unity_SpriteFlipArray)
+                #define _RendererColor  UNITY_ACCESS_INSTANCED_PROP(PerDrawSprite, unity_SpriteRendererColorArray)
+                #define _Flip           UNITY_ACCESS_INSTANCED_PROP(PerDrawSprite, unity_SpriteFlipArray)
 
-#endif // instancing
+            #endif // instancing
 
-CBUFFER_START(UnityPerDrawSprite)
-#ifndef UNITY_INSTANCING_ENABLED
-    fixed4 _RendererColor;
-    fixed2 _Flip;
-#endif
-    float _EnableExternalAlpha;
-CBUFFER_END
+            CBUFFER_START(UnityPerDrawSprite)
+            #ifndef UNITY_INSTANCING_ENABLED
+                fixed4 _RendererColor;
+                fixed2 _Flip;
+            #endif
+                float _EnableExternalAlpha;
+            CBUFFER_END
 
-// Material Color.
-fixed4 _Color;
+            // Material Color.
+            fixed4 _Color;
 
-struct appdata_t
-{
-    float4 vertex   : POSITION;
-    float4 color    : COLOR;
-    float2 texcoord : TEXCOORD0;
-    UNITY_VERTEX_INPUT_INSTANCE_ID
-};
+            struct appdata_t
+            {
+                float4 vertex   : POSITION;
+                float4 color    : COLOR;
+                float2 texcoord : TEXCOORD0;
+                UNITY_VERTEX_INPUT_INSTANCE_ID
+            };
 
-struct v2f
-{
-    float4 vertex   : SV_POSITION;
-    fixed4 color    : COLOR;
-    float2 texcoord : TEXCOORD0;
-    UNITY_VERTEX_OUTPUT_STEREO
-};
+            struct v2f
+            {
+                float4 vertex   : SV_POSITION;
+                fixed4 color    : COLOR;
+                float2 texcoord : TEXCOORD0;
+                UNITY_VERTEX_OUTPUT_STEREO
+            };
 
-v2f SpriteVert(appdata_t IN)
-{
-    v2f OUT;
+            inline float4 UnityFlipSprite(in float3 pos, in fixed2 flip)
+            {
+                return float4(pos.xy * flip, pos.z, 1.0);
+            }
 
-    UNITY_SETUP_INSTANCE_ID (IN);
-    UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(OUT);
 
-#ifdef UNITY_INSTANCING_ENABLED
-    IN.vertex.xy *= _Flip;
-#endif
+            v2f SpriteVert(appdata_t IN)
+            {
+                v2f OUT;
 
-    OUT.vertex = UnityObjectToClipPos(IN.vertex);
-    OUT.texcoord = IN.texcoord;
-    OUT.color = IN.color * _Color * _RendererColor;
+                UNITY_SETUP_INSTANCE_ID (IN);
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(OUT);
 
-    #ifdef PIXELSNAP_ON
-    OUT.vertex = UnityPixelSnap (OUT.vertex);
-    #endif
+                OUT.vertex = UnityFlipSprite(IN.vertex, _Flip);
+                OUT.vertex = UnityObjectToClipPos(OUT.vertex);
+                OUT.texcoord = IN.texcoord;
+                OUT.color = IN.color * _Color * _RendererColor;
 
-    return OUT;
-}
+                #ifdef PIXELSNAP_ON
+                OUT.vertex = UnityPixelSnap (OUT.vertex);
+                #endif
 
-sampler2D _MainTex;
-sampler2D _AlphaTex;
+                return OUT;
+            }
 
-fixed4 SampleSpriteTexture (float2 uv)
-{
-    fixed4 color = tex2D (_MainTex, uv);
+            sampler2D _MainTex;
+            sampler2D _AlphaTex;
 
-#if ETC1_EXTERNAL_ALPHA
-    fixed4 alpha = tex2D (_AlphaTex, uv);
-    color.a = lerp (color.a, alpha.r, _EnableExternalAlpha);
-#endif
+            fixed4 SampleSpriteTexture (float2 uv)
+            {
+                fixed4 color = tex2D (_MainTex, uv);
 
-    return color;
-}
+            #if ETC1_EXTERNAL_ALPHA
+                fixed4 alpha = tex2D (_AlphaTex, uv);
+                color.a = lerp (color.a, alpha.r, _EnableExternalAlpha);
+            #endif
 
-float4 SpriteFrag(v2f IN) : SV_Target
-{
-    float4 c = SampleSpriteTexture (IN.texcoord) * IN.color;
+                return color;
+            }
 
-    if (_isflashing != 0)
-    {
-        c.rgb = float3(_HitColor.rgb); 
-        c.a = step(0, sin(_Time.y * 100)) * c.a;
-    }
+            float4 SpriteFrag(v2f IN) : SV_Target
+            {
+                float4 c = SampleSpriteTexture (IN.texcoord) * IN.color;
 
-    c.rgb *= c.a;
-    return c;
-}
+                if (_isflashing != 0)
+                {
+                    c.rgb = float3(_HitColor.rgb); 
+                    c.a = step(0, sin(_Time.y * 100)) * c.a;
+                }
+
+                c.rgb *= c.a;
+                return c;
+            }
+
+            #endif // UNITY_SPRITES_INCLUDED
         ENDCG
         }
     }

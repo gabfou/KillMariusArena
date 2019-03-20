@@ -255,6 +255,7 @@ MonoBehaviour:
   maxYVelocity: 20
   minYVelocity: -15
   flying: 0
+  dashEnabled: 0
   timedashinsc: 0.3
   distanceofdash: 1
   isinvuindash: 1
@@ -308,6 +309,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  id: -1
 --- !u!95 &95461223560661622
 Animator:
   serializedVersion: 3
