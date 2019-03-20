@@ -133,16 +133,15 @@ Shader "Sprites/Recolor"
                 return color;
             }
 
-            float4 SpriteFrag(v2f IN) : SV_Target
+            fixed4 SpriteFrag(v2f IN) : SV_Target
             {
-                float4 c = SampleSpriteTexture (IN.texcoord) * IN.color;
+                fixed4 c = SampleSpriteTexture (IN.texcoord) * IN.color;
 
                 if (_isflashing != 0)
                 {
                     c.rgb = float3(_HitColor.rgb); 
                     c.a = step(0, sin(_Time.y * 100)) * c.a;
                 }
-
                 c.rgb *= c.a;
                 return c;
             }
