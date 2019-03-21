@@ -38,7 +38,8 @@ public class Boss1Special : MonoBehaviour {
 
 	public void ActivateTrigger()
 	{
-		animator.SetTrigger("trigger");
+		if (agro.life > 0)
+			animator.SetTrigger("trigger");
 	}
 
 	void LateUpdate () {
