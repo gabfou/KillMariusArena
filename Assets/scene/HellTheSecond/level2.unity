@@ -25731,7 +25731,7 @@ PrefabInstance:
     - target: {fileID: 4421520655150023154, guid: a275ed9c4629b4b5986bee2cef151263,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -16.00003
+      value: -16.000061
       objectReference: {fileID: 0}
     - target: {fileID: 6411716495633044201, guid: a275ed9c4629b4b5986bee2cef151263,
         type: 3}
@@ -32426,6 +32426,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  alwaysFaceCible: 0
   id: -1
 --- !u!50 &974108248
 Rigidbody2D:
@@ -32685,6 +32686,7 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: 000295d1192a3405e9d80d0e64c74888, type: 3}
   volume: 0.1
   timeToFadeInSec: 0.5
+  onlyFirtstTime: 0
 --- !u!114 &974108257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46245,7 +46247,7 @@ ParticleSystem:
   lengthInSec: 5
   simulationSpeed: 1
   stopAction: 0
-  cullingMode: 3
+  cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
@@ -48490,7 +48492,7 @@ ParticleSystem:
     inWorldSpace: 0
     randomizePerFrame: 0
   ExternalForcesModule:
-    enabled: 1
+    enabled: 0
     multiplier: 0.9
     influenceFilter: 0
     influenceMask:
@@ -51892,6 +51894,7 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: 9850f5b6d99b6412591c4eda5a21d1e1, type: 3}
   volume: 0.1
   timeToFadeInSec: 0.5
+  onlyFirtstTime: 0
 --- !u!4 &1501072263
 Transform:
   m_ObjectHideFlags: 0
@@ -60539,8 +60542,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1357269143
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4acba867a7c7e427595694254ceb51a2, type: 3}
   m_Color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}

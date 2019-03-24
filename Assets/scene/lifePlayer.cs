@@ -9,6 +9,8 @@ public class lifePlayer : MonoBehaviour
     void Start()
     {
         GameManager.instance.life = GetComponent<Text>();
+        if (GameManager.instance.player)
+            GetComponent<Text>().text = GameManager.instance.player.life.ToString();
     }
 
     // Update is called once per frame

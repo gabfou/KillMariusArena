@@ -45,4 +45,8 @@ public class ProjectileAutoRotateAndDestroy : MonoBehaviour {
         GetComponent<Rigidbody2D>().AddTorque(15 * Mathf.Sign(GetComponent<Rigidbody2D>().rotation), ForceMode2D.Impulse);
         StartCoroutine(WaitTilDestroy());
     }
+
+    void OnTriggerEnter(Collider other) {
+        
+    }
 }

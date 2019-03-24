@@ -489,6 +489,7 @@ MonoBehaviour:
   maxYVelocity: 8
   minYVelocity: -6
   flying: 1
+  dashEnabled: 0
   timedashinsc: 0.1
   distanceofdash: 10
   isinvuindash: 1
@@ -542,6 +543,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  alwaysFaceCible: 1
+  id: -1
 --- !u!61 &61846194381062780
 BoxCollider2D:
   m_ObjectHideFlags: 0

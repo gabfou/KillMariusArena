@@ -114,7 +114,7 @@ public class PlayerController : Character
     }
 
 
-    override protected void OnTriggerStay2D(Collider2D other)
+    override protected void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "OSPlayer")
         {
@@ -122,7 +122,7 @@ public class PlayerController : Character
             Die();
             return;
         }
-        base.OnTriggerStay2D(other);
+        base.OnTriggerEnter2D(other);
     }
 
     int nbKilled = 0;

@@ -39,7 +39,7 @@ public class Throwthing : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (agro.isDead)
+        if (agro.isDead || cible == null)
             return ;
         if (willShootStopMove)
             agro.cannotmove = (agro.cannotmove) ? willShoot : false;

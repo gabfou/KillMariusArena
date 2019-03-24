@@ -5468,6 +5468,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  alwaysFaceCible: 0
   id: -1
 --- !u!58 &133904391
 CircleCollider2D:
@@ -5762,6 +5763,7 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: 9e10b64034d0349d0a6416c4e851b5c8, type: 3}
   volume: 0.1
   timeToFadeInSec: 0.5
+  onlyFirtstTime: 0
 --- !u!114 &133904400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28448,7 +28450,7 @@ ParticleSystem:
   lengthInSec: 5
   simulationSpeed: 1
   stopAction: 0
-  cullingMode: 3
+  cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 1
@@ -33368,7 +33370,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050104330}
-  m_LocalRotation: {x: -0.04012412, y: -0.68961656, z: 0.09820011, w: 0.71636295}
+  m_LocalRotation: {x: -0.04012411, y: -0.6896165, z: 0.09820011, w: 0.716363}
   m_LocalPosition: {x: 1818.1897, y: 138.80504, z: -48.18787}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -42193,6 +42195,7 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: e80ae5ea013d946e4a4a5363701eddb8, type: 3}
   volume: 0.1
   timeToFadeInSec: 0.5
+  onlyFirtstTime: 0
 --- !u!4 &1307695524
 Transform:
   m_ObjectHideFlags: 0
@@ -58256,11 +58259,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.04012412
+      value: -0.04012411
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.68961656
+      value: -0.6896165
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.z
@@ -58268,7 +58271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.71636295
+      value: 0.716363
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_RootOrder
@@ -58304,7 +58307,7 @@ PrefabInstance:
     - target: {fileID: 20635841621633658, guid: e74e62d0edf024f09969d37c8ad9c8e6,
         type: 3}
       propertyPath: orthographic size
-      value: 22.580069
+      value: 22.57971
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}

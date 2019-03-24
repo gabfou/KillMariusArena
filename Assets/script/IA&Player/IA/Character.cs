@@ -177,7 +177,7 @@ public class Character : Stopmoving
 
     protected void allCheck()
     {
-        if (rigidbody2D && rigidbody2D.velocity == Vector2.zero)
+        if (rigidbody2D && Mathf.Approximately(rigidbody2D.velocity.magnitude, 0))
             return ;
         if (Time.frameCount % 4 == 0)
             StopConglomération();
@@ -526,15 +526,10 @@ public class Character : Stopmoving
             if (rigidbody2D.velocity.y < slimeVelocityIgnore)
                 rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0);
         }
-        OnTriggerStay2D(other.collider);
+        OnTriggerEnter2D(other.collider);
     }
 
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        OnTriggerStay2D(collision.collider);
-    }
-
-    virtual protected void OnTriggerStay2D(Collider2D other)
+    virtual protected void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "OS")
         {
@@ -548,7 +543,8 @@ public class Character : Stopmoving
             Character oponnent = other.GetComponentInParent<Character>();
             ouch(new Vector2(Mathf.Sign(transform.position.x - other.transform.position.x) * ouchJumpMultPushX, ouchJumpMultPushY));
             if (oponnent)
-                oponnent.DoingDamage(this);        }
+                oponnent.DoingDamage(this);
+        }
     }
 
     void OnDrawGizmos()

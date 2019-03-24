@@ -18,6 +18,7 @@ public class Agro : Character {
     public DistanceBehavior distanceBehavior = DistanceBehavior.Free;
     public float MaxDistance = Mathf.Infinity;
 	public UnityEvent eventOnAgro;
+	public bool alwaysFaceCible = false;
 	[HideInInspector] public float id = -1;
 
 
@@ -121,10 +122,12 @@ public class Agro : Character {
 			return ;
 		if (!base.cannotmove && Cible)
 		{
+			if (alwaysFaceCible == true)
+				FacePlayer();
             if (DistanceBehavior.DontMove != distanceBehavior)
 			{
 				RaycastHit2D raycastHit2D;
-				float distance = Vector2.Distance(Cible.position, transform.position);
+				float distance = Mathf.Abs(Cible.position.x - transform.position.x);
                 if (distance > MaxDistance)
                 {
                     Cible = null;// peut etre active reactive quand respawn pres
@@ -164,7 +167,7 @@ public class Agro : Character {
 	CinemachineTargetGroup.Target t; 
 
 	bool changesprite = false;
-	override protected void OnTriggerStay2D(Collider2D other)
+	override protected void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.tag == "Player")
 		{
@@ -180,7 +183,7 @@ public class Agro : Character {
 		if (!realcol)
 			Debug.Log(name + " pas de realcol");
         else if (realcol.IsTouching(other))
-            base.OnTriggerStay2D(other);
+            base.OnTriggerEnter2D(other);
     }
 
 	override protected void GroundCheck()
