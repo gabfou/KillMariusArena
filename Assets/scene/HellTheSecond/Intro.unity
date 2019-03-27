@@ -1516,7 +1516,7 @@ Transform:
 --- !u!199 &499617586
 ParticleSystemRenderer:
   serializedVersion: 6
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -7671,6 +7671,7 @@ MonoBehaviour:
   music: {fileID: 8300000, guid: 13d3715c0ad614482a5e01740971a1df, type: 3}
   volume: 0.1
   timeToFadeInSec: 0.5
+  onlyFirtstTime: 0
 --- !u!95 &1233421264
 Animator:
   serializedVersion: 3

@@ -177,7 +177,7 @@ public class Character : Stopmoving
 
     protected void allCheck()
     {
-        if (rigidbody2D && Mathf.Approximately(rigidbody2D.velocity.magnitude, 0))
+        if (rigidbody2D && rigidbody2D.velocity.magnitude < 0.01f)
             return ;
         if (Time.frameCount % 4 == 0)
             StopConglomération();

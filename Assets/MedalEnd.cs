@@ -9,13 +9,13 @@ public class MedalEnd : MonoBehaviour
         GameManager.instance.medalManager.TryToUnlockMedal("Victory");
         GameManager.instance.medalManager.TryToUnlockMedal("Easy");
         
-        if (GameManager.instance.save.difficulty >= Difficulty.Normal)
+        if (GameManager.instance.save.difficulty <= Difficulty.Normal)
             GameManager.instance.medalManager.TryToUnlockMedal("Normal");
 
-        if (GameManager.instance.save.difficulty >= Difficulty.Hard)
+        if (GameManager.instance.save.difficulty <= Difficulty.Hard)
             GameManager.instance.medalManager.TryToUnlockMedal("Hard");
 
-        if (GameManager.instance.save.difficulty >= Difficulty.GoodLuck)
+        if (GameManager.instance.save.difficulty == Difficulty.GoodLuck)
             GameManager.instance.medalManager.TryToUnlockMedal("GoodLuck");
 
     }

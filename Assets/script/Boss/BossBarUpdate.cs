@@ -22,6 +22,11 @@ public class BossBarUpdate : MonoBehaviour
         {
             slider.gameObject.SetActive(true);
             slider.value = agro.life / MaxHp;
+            if (agro.life < 1)
+            {
+                slider.gameObject.SetActive(false);
+                this.enabled = false;
+            }
         }
 
     }

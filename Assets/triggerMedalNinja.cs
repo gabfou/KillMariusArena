@@ -4,12 +4,10 @@ using UnityEngine;
 
 public class triggerMedalNinja : MonoBehaviour
 {
-    float id = -1;
-    void Start()
+    int life = -1;
+    void OnEnable()
     {
-        id = transform.position.sqrMagnitude;
-        if (GameManager.instance.save.listOfObjectAlreadyUse.Contains(id))
-            gameObject.SetActive(false);
+        life = GameManager.instance.player.life;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -17,10 +15,8 @@ public class triggerMedalNinja : MonoBehaviour
         if (other.tag == "Player")
         {
             PlayerController pl = other.GetComponent<PlayerController>();
-            if (pl.life == pl.maxLife)
+            if (pl.life == life)
                 GameManager.instance.medalManager.TryToUnlockMedal("Ninja");
-            if (!GameManager.instance.save.listOfObjectAlreadyUse.Contains(id))
-                GameManager.instance.save.listOfObjectAlreadyUseButNotSave.Add(id);
             gameObject.SetActive(false);
         }
     }

@@ -13,6 +13,7 @@ public class CaBouge : MonoBehaviour {
 	Rigidbody2D rigidbody;
 	List<Transform> l = new List<Transform>();
 	public List<Rigidbody2D> AffectAlso = new List<Rigidbody2D>();
+	public float playerMinDist = -1;
 
 	public int e = 0; 
 	
@@ -43,7 +44,7 @@ public class CaBouge : MonoBehaviour {
 
 	void FixedUpdate ()
 	{
-		if (!isDeplacing)
+		if (!isDeplacing || (playerMinDist > 0 && playerMinDist < Vector2.Distance(transform.position, GameManager.instance.player.transform.position)))
 			return;
 
 		AproachNextPoint(e);

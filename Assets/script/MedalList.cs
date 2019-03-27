@@ -12,6 +12,7 @@ public class MedalList : ScriptableObject
         public string name;
         public int id;
         public Sprite sprite;
+        public bool unlocked = false;
 
         public Medal(string name, int id, Sprite sprite = null)
         {

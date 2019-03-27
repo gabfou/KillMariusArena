@@ -116,14 +116,42 @@ namespace io.newgrounds
 			}
 		}
 
+		public List<io.newgrounds.objects.medal> list_medal;
+
+		void onMedalGetList(io.newgrounds.results.Medal.getList result)
+		{
+			if (result.success)
+			{
+				for(int i=0; i<result.medals.Count; i++)
+				{
+					io.newgrounds.objects.medal medal = (io.newgrounds.objects.medal)result.medals[i];
+
+					// unlocked status
+					GameManager.instance.medalManager.medalList.list.Where(m => m.id == medal.id).ToList().ForEach(m => m.unlocked = medal.unlocked);
+
+				}
+			}
+		}
+
+		void GetListMedal()
+		{
+			io.newgrounds.components.Medal.getList medal_getList = new io.newgrounds.components.Medal.getList();
+
+			// medal_getList.id = medal_id;
+
+			// call the component on the server, and tell it to fire onMedalUnlocked() when it's done.
+			medal_getList.callWith(this, onMedalGetList);
+		}
+
 		/// <summary>
 		/// Starts the monobehavior and fires the onReady callback (if available).
 		/// </summary>
         public void Init()
         {
-			Debug.Log("dfs");
+			this.onReady(GetListMedal);
             this.sessionLoader = new SessionLoader(this);
             if (!String.IsNullOrEmpty(app_id)) initialize(app_id, aes_base64_key, session_id);
+
 
             _ready = true;
             if (_onready != null) _onready();

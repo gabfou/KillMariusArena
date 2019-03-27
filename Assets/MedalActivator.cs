@@ -15,6 +15,9 @@ public class MedalActivator : MonoBehaviour
 
     public void ActivateMedal(string medal)
     {
-        StartCoroutine(ActivateMedalCoroutine(medal));
+        if (delayInSec > 0)
+            StartCoroutine(ActivateMedalCoroutine(medal));
+        else
+            GameManager.instance.medalManager.TryToUnlockMedal(medal);
     }
 }
