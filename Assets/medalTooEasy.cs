@@ -9,7 +9,7 @@ public class medalTooEasy : MonoBehaviour
     {
         if (other.tag == "Player" && GameManager.instance.save.difficulty == Difficulty.GoodLuck)
         {
-            GameManager.instance.medalManager.TryToUnlockMedal("Too easy");
+            GameManager.instance.medalManager.TryToUnlockMedal("Too easy!");
         }
     }
 

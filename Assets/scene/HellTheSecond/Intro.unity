@@ -1039,6 +1039,7 @@ GameObject:
   - component: {fileID: 221301258}
   - component: {fileID: 221301260}
   - component: {fileID: 221301261}
+  - component: {fileID: 221301262}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1176,7 +1177,7 @@ MonoBehaviour:
     SceneName: 
     listOfObjectAlreadyUse: []
     listOfObjectAlreadyUseButNotSave: []
-    difficulty: 5
+    difficulty: 8
   player: {fileID: 0}
   pref:
     _attack1: 305
@@ -1199,7 +1200,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221301256}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aeb3e8fd9535f4438a0d51d7661866f9, type: 3}
   m_Name: 
@@ -1222,6 +1223,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   medalGui: {fileID: 0}
   medalList: {fileID: 11400000, guid: 86a409ee794354f33a8acc8194354884, type: 2}
+--- !u!114 &221301262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 221301256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48985de80269f471a8df2a47bb6d4df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &240752995
 GameObject:
   m_ObjectHideFlags: 0

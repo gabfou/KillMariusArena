@@ -6,7 +6,7 @@ public class MedalEnd : MonoBehaviour
 {
     void OnEnable()
     {
-        GameManager.instance.medalManager.TryToUnlockMedal("Victory");
+        GameManager.instance.medalManager.TryToUnlockMedal("Victory!!!");
         GameManager.instance.medalManager.TryToUnlockMedal("Easy");
         
         if (GameManager.instance.save.difficulty <= Difficulty.Normal)
@@ -16,7 +16,7 @@ public class MedalEnd : MonoBehaviour
             GameManager.instance.medalManager.TryToUnlockMedal("Hard");
 
         if (GameManager.instance.save.difficulty == Difficulty.GoodLuck)
-            GameManager.instance.medalManager.TryToUnlockMedal("GoodLuck");
+            GameManager.instance.medalManager.TryToUnlockMedal("Good luck");
 
     }
 }

@@ -5,11 +5,12 @@ using System.Linq;
 
 public class MedalManager : MonoBehaviour
 {
-// #if NEWGROUND 
-    io.newgrounds.core ngio_core;
     [HideInInspector] public MedalGui medalGui;
 
     public MedalList medalList;
+
+#if NEWGROUND 
+    io.newgrounds.core ngio_core;
 
 
     private void Start() {
@@ -40,7 +41,6 @@ public class MedalManager : MonoBehaviour
         GameManager.instance.medalManager.medalGui.ActivateMedal(medal.realName, medalList.list.FirstOrDefault(m => m.id == medal.id).sprite);
         medal_unlock.callWith(ngio_core);
     }
-// #endif
 
     public void TryToUnlockMedal(string medalName)
     {
@@ -51,10 +51,25 @@ public class MedalManager : MonoBehaviour
         else
             Debug.LogWarning("medal: " + medalName + " not found");
     }
+#endif
 
-    private void Update() {
-        if (ngio_core == null)
-            Debug.Log(name + "WTF3");
+// #if Kongregate
+
+    public void TryToUnlockMedal(string medalName)
+    {
+        MedalList.Medal medal = medalList.list.FirstOrDefault(m => m.name == medalName);
+
+        if (medal == null || medal.unlocked)
+            return ;
+
+        medal.unlocked = true;
+        GameManager.instance.medalManager.medalGui.ActivateMedal(medal.realName, medalList.list.FirstOrDefault(m => m.id == medal.id).sprite);
+
+        Application.ExternalCall("kongregate.stats.submit", medalName, 1);
     }
+
+
+// #endif
+
 
 }
