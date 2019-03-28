@@ -10,6 +10,7 @@ public class MedalList : ScriptableObject
     public class Medal
     {
         public string name;
+        public string realName;
         public int id;
         public Sprite sprite;
         public bool unlocked = false;
@@ -19,6 +20,7 @@ public class MedalList : ScriptableObject
             this.name = name;
             this.id = id;
             this.sprite = sprite;
+            this.realName = name;
         }
     } 
 

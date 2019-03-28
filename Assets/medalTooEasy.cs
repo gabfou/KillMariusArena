@@ -5,7 +5,7 @@ using UnityEngine;
 public class medalTooEasy : MonoBehaviour
 {
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player" && GameManager.instance.save.difficulty == Difficulty.GoodLuck)
         {

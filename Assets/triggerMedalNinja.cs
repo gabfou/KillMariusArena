@@ -5,7 +5,7 @@ using UnityEngine;
 public class triggerMedalNinja : MonoBehaviour
 {
     int life = -1;
-    void OnEnable()
+    public void Reinit()
     {
         life = GameManager.instance.player.life;
     }
@@ -15,9 +15,9 @@ public class triggerMedalNinja : MonoBehaviour
         if (other.tag == "Player")
         {
             PlayerController pl = other.GetComponent<PlayerController>();
-            if (pl.life == life)
+            if (GameManager.instance.player.life == life)
                 GameManager.instance.medalManager.TryToUnlockMedal("Ninja");
-            gameObject.SetActive(false);
+            life = -1;
         }
     }
 }

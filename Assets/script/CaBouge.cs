@@ -44,7 +44,7 @@ public class CaBouge : MonoBehaviour {
 
 	void FixedUpdate ()
 	{
-		if (!isDeplacing || (playerMinDist > 0 && playerMinDist < Vector2.Distance(transform.position, GameManager.instance.player.transform.position)))
+		if (!isDeplacing || (playerMinDist > 0 && GameManager.instance.player != null && playerMinDist < Vector2.Distance(transform.position, GameManager.instance.player.transform.position)))
 			return;
 
 		AproachNextPoint(e);

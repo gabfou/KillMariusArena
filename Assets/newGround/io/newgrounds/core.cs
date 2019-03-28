@@ -126,8 +126,8 @@ namespace io.newgrounds
 				{
 					io.newgrounds.objects.medal medal = (io.newgrounds.objects.medal)result.medals[i];
 
-					// unlocked status
-					GameManager.instance.medalManager.medalList.list.Where(m => m.id == medal.id).ToList().ForEach(m => m.unlocked = medal.unlocked);
+					// get unlocked status and realname
+					GameManager.instance.medalManager.medalList.list.Where(m => m.id == medal.id).ToList().ForEach(m => {m.unlocked = medal.unlocked; m.realName = medal.name;});
 
 				}
 			}

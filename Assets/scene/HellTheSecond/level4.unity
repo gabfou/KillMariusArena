@@ -1012,6 +1012,7 @@ MonoBehaviour:
   isDeplacing: 1
   speed: 120
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!50 &22009442
@@ -3110,6 +3111,7 @@ MonoBehaviour:
   isDeplacing: 1
   speed: 120
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!50 &90481810
@@ -4395,6 +4397,7 @@ MonoBehaviour:
   isDeplacing: 0
   speed: 415
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!212 &119832378
@@ -5343,8 +5346,8 @@ MonoBehaviour:
   slimeVelocityIgnore: 0.4
   jumpPower: 1000
   jumpIdle: 0.3
-  groundPosition: {x: -0.06, y: -1.92, z: 0}
-  groundSize: {x: 0.6, y: 0.6}
+  groundPosition: {x: -0.06, y: -1.96, z: 0}
+  groundSize: {x: 0.6, y: 0.74}
   maxYVelocity: 22
   minYVelocity: -15
   flying: 0
@@ -13259,6 +13262,7 @@ MonoBehaviour:
   isDeplacing: 1
   speed: 120
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!50 &420118699
@@ -17869,6 +17873,7 @@ MonoBehaviour:
   isDeplacing: 0
   speed: 415
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!212 &581334298
@@ -22319,6 +22324,7 @@ MonoBehaviour:
   isDeplacing: 1
   speed: 120
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!50 &743848360
@@ -25332,6 +25338,7 @@ MonoBehaviour:
   isDeplacing: 1
   speed: 120
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!50 &871204864
@@ -33370,7 +33377,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1050104330}
-  m_LocalRotation: {x: -0.04012411, y: -0.6896165, z: 0.09820011, w: 0.716363}
+  m_LocalRotation: {x: -0.040124126, y: -0.68961644, z: 0.0982001, w: 0.716363}
   m_LocalPosition: {x: 1818.1897, y: 138.80504, z: -48.18787}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -35476,6 +35483,7 @@ MonoBehaviour:
   isDeplacing: 1
   speed: 120
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!50 &1104426601
@@ -36422,6 +36430,7 @@ MonoBehaviour:
   isDeplacing: 1
   speed: 120
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!50 &1137393892
@@ -37494,6 +37503,7 @@ MonoBehaviour:
   isDeplacing: 0
   speed: 800
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0.3
 --- !u!212 &1165534396
@@ -40561,6 +40571,7 @@ MonoBehaviour:
   isDeplacing: 0
   speed: 415
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!212 &1254558745
@@ -40984,6 +40995,7 @@ MonoBehaviour:
   isDeplacing: 0
   speed: 415
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!212 &1270843585
@@ -41963,6 +41975,7 @@ MonoBehaviour:
   isDeplacing: 1
   speed: 120
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!50 &1302558317
@@ -42171,6 +42184,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1307695524}
   - component: {fileID: 1307695523}
+  - component: {fileID: 1307695526}
+  - component: {fileID: 1307695525}
   m_Layer: 0
   m_Name: SceneSpecificThing
   m_TagString: Untagged
@@ -42210,6 +42225,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1307695525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307695522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2411d5bd19a4e4bae949ac1f3e1b12d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1307695526}
+        m_MethodName: ActivateMedal
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Boss3
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  delay: 0.5
+--- !u!114 &1307695526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307695522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef0d11d548fb44be78a9e093b85627e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  delayInSec: 0
 --- !u!1001 &1308281097
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42340,7 +42397,7 @@ PrefabInstance:
     - target: {fileID: 4421520655150023154, guid: a275ed9c4629b4b5986bee2cef151263,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -15.999908
+      value: -15.999939
       objectReference: {fileID: 0}
     - target: {fileID: 6411716495633044201, guid: a275ed9c4629b4b5986bee2cef151263,
         type: 3}
@@ -42830,6 +42887,7 @@ MonoBehaviour:
   isDeplacing: 0
   speed: 1
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0.1
 --- !u!114 &1366240699 stripped
@@ -47873,6 +47931,7 @@ MonoBehaviour:
   isDeplacing: 0
   speed: 415
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!212 &1529368791
@@ -49947,6 +50006,7 @@ MonoBehaviour:
   isDeplacing: 0
   speed: 415
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!212 &1610397425
@@ -51720,6 +51780,7 @@ MonoBehaviour:
   isDeplacing: 1
   speed: 120
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!50 &1641277493
@@ -53947,6 +54008,7 @@ MonoBehaviour:
   isDeplacing: 0
   speed: 415
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!212 &1714548773
@@ -55355,6 +55417,7 @@ MonoBehaviour:
   isDeplacing: 0
   speed: 415
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!212 &1754210863
@@ -55680,6 +55743,7 @@ MonoBehaviour:
   isDeplacing: 1
   speed: 120
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!50 &1761554101
@@ -57051,6 +57115,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  delay: -1
 --- !u!4 &1822189480
 Transform:
   m_ObjectHideFlags: 0
@@ -58259,15 +58324,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.04012411
+      value: -0.040124126
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.6896165
+      value: -0.68961644
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.09820011
+      value: 0.0982001
       objectReference: {fileID: 0}
     - target: {fileID: 4139526669594536, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -58307,7 +58372,7 @@ PrefabInstance:
     - target: {fileID: 20635841621633658, guid: e74e62d0edf024f09969d37c8ad9c8e6,
         type: 3}
       propertyPath: orthographic size
-      value: 22.57971
+      value: 22.572397
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e74e62d0edf024f09969d37c8ad9c8e6, type: 3}
@@ -58438,6 +58503,7 @@ MonoBehaviour:
   isDeplacing: 0
   speed: 415
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!212 &1892219877
@@ -58566,6 +58632,7 @@ MonoBehaviour:
   isDeplacing: 1
   speed: 120
   AffectAlso: []
+  playerMinDist: -1
   e: 0
   marge: 0
 --- !u!50 &1893737583
@@ -64844,6 +64911,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
+        type: 3}
+      propertyPath: StayOnGround
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1181362295722612048, guid: 36207b7c64bab40dea85188fa1267225,
         type: 3}
       propertyPath: m_Color.a
@@ -64862,11 +64934,6 @@ PrefabInstance:
     - target: {fileID: 1181362295722612048, guid: 36207b7c64bab40dea85188fa1267225,
         type: 3}
       propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1181362296625310944, guid: 36207b7c64bab40dea85188fa1267225,
-        type: 3}
-      propertyPath: StayOnGround
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:

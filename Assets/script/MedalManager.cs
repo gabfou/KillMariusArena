@@ -22,7 +22,10 @@ public class MedalManager : MonoBehaviour
     // call this method whenever you want to unlock a medal.
     void unlockMedal(int medal_id) {
         if (ngio_core == null)
-            Debug.Log("WTF");
+        {
+            Debug.Log("WTF no core in unlockMedal");
+            return ;
+        }
         MedalList.Medal medal = medalList.list.FirstOrDefault(m => m.id == medal_id);
         if (medal == null || medal.unlocked)
             return ;
@@ -34,7 +37,7 @@ public class MedalManager : MonoBehaviour
 
         // call the component on the server, and tell it to fire onMedalUnlocked() when it's done.
         medal.unlocked = true;
-        GameManager.instance.medalManager.medalGui.ActivateMedal(medal.name, medalList.list.FirstOrDefault(m => m.id == medal.id).sprite);
+        GameManager.instance.medalManager.medalGui.ActivateMedal(medal.realName, medalList.list.FirstOrDefault(m => m.id == medal.id).sprite);
         medal_unlock.callWith(ngio_core);
     }
 // #endif
@@ -42,7 +45,7 @@ public class MedalManager : MonoBehaviour
     public void TryToUnlockMedal(string medalName)
     {
         MedalList.Medal medal = medalList.list.FirstOrDefault(m => m.name == medalName);
-        Debug.Log("trying to Unlock medal " + medal.name);
+        Debug.Log("trying to Unlock medal " + medalName);
         if (medal != null)
             unlockMedal(medal.id);
         else
