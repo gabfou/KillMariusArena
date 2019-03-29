@@ -53,7 +53,7 @@ public class MedalManager : MonoBehaviour
     }
 #endif
 
-// #if Kongregate
+#if Kongregate
 
     public void TryToUnlockMedal(string medalName)
     {
@@ -69,7 +69,7 @@ public class MedalManager : MonoBehaviour
     }
 
 
-// #endif
+#endif
 
 
 }

@@ -164,7 +164,8 @@ public class PlayerController : Character
         bool iscrouching = false;
 
         if ((Input.GetKey(pref.jump1) || Input.GetKey(pref.jump2))
-            && Mathf.Abs(move) < Mathf.Abs(movey) - 0.4f && movey < 0)
+            && ((Mathf.Abs(move) < Mathf.Abs(movey) - 0.4f && movey < 0)
+                ||  Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow)))
             tryGoUnder();
 
         else if (Input.GetKey(pref.jump1) || Input.GetKey(pref.jump2))
