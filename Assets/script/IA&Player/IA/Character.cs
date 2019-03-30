@@ -10,7 +10,7 @@ using UnityEngine.Events;
 // TO DO: change float move and float movey by Vector2 move
 // NEXT GAME TO DO laisser seulement ce qui concerne le player ici et le faire heriter
 
-public class Character : Stopmoving
+public class Character : MonoBehaviour
 {
 
     [Header("Basic setting")]
@@ -19,6 +19,7 @@ public class Character : Stopmoving
     [HideInInspector] public int maxLife;
     public float invulnTime = 1f;
     public bool dontDestroy = false;
+    public bool dontRespawn = false;
 
     [Header("Mobility and groundaison")]
     public float maxSpeed = 1f;
@@ -88,6 +89,7 @@ public class Character : Stopmoving
     [HideInInspector] public bool isDead;
     [HideInInspector] public int baseLayer;
     [HideInInspector] public Rigidbody2D rbparent = null;
+    [HideInInspector] public bool cannotmove = false;
 
     protected LayerMask groundLayer;
 
@@ -502,7 +504,7 @@ public class Character : Stopmoving
 
         allCheck();
 
-        if (base.cannotmove == true)
+        if (cannotmove == true)
             return;
 
         Move(move, movey);
