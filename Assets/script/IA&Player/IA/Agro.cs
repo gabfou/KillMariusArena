@@ -20,10 +20,8 @@ public class Agro : Character {
 	public UnityEvent eventOnAgro;
 	public bool alwaysFaceCible = false;
 	[HideInInspector] public float id = -1;
-
-
-	// public Sprite changeSpriteOnAgro;
-	// public List<string> listOfAnimtOverwrite = new List<string>();
+	int PathfindingProfileId = -1;
+	Pathfinder.Node nodeAttach = null;
 
 	public bool IsFacingPlayer()
 	{
@@ -56,6 +54,8 @@ public class Agro : Character {
     void Start ()
 	{
 		init();
+		if (nodeAttach == null)
+			nodeAttach = GameManager.instance.pathfinderGrid.FindClosestNode(transform.position);
 		base.ouchtag = "bam";
 		realcol = GetComponents<Collider2D>().Where(c => !c.isTrigger).FirstOrDefault();
 		if (!realcol)

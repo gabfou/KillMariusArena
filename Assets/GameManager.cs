@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
 	[HideInInspector] public bool replacedPlayer = false;
 	[HideInInspector] public bool playerSpawned = false;
 	[HideInInspector] public AudioSource audioSource;
+	[HideInInspector] public PathfinderGrid pathfinderGrid;
 
     IEnumerator ChangeMusicCoroutine(AudioClip intro, AudioClip music, float fadeTime, float volumeOfIntro, float volume)
     {
