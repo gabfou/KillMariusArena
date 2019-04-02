@@ -6,11 +6,13 @@ using System.Linq;
 
 namespace Pathfinder
 {
-    public class Node
+    public class Node : IComparer<float>
     {
         public List<bool> isvalid = new List<bool>();
         public Vector2 pos;
-        float h = 0;
+        float height = 0;
+        public float h = Mathf.Infinity;
+        public int gcost = int.MaxValue;
 
         // for refenrece ils sont mids dans le sens des aiguille d'une montre en partan de celui au dessu
         public Node[] connections;
@@ -19,13 +21,18 @@ namespace Pathfinder
         public Node(Vector2 pos)
         {
             this.pos = pos;
-            h = Physics2D.Raycast(pos, Vector2.down).distance;
+            height = Physics2D.Raycast(pos, Vector2.down).distance;
             connections = new Node[8];
         }
 
         public void heuristic()
         {
 
+        }
+
+        public int Compare(float x, float y)
+        {
+            return 0;
         }
 
 
@@ -132,6 +139,25 @@ namespace Pathfinder
             }
 
         return null;
+        }
+
+        public override string ToString()
+        {
+            return (pos.ToString());
+        }
+
+        public static bool operator ==(Node a, Node b)
+        {
+            if (object.ReferenceEquals(a, null) || object.ReferenceEquals(b, null))
+            {
+                return object.ReferenceEquals(a, b);
+            }
+            return (a.pos == b.pos);
+        }
+
+        public static bool operator !=(Node a, Node b)
+        {
+            return (!(a == b));
         }
     }
 }

@@ -71,7 +71,7 @@ public class Character : MonoBehaviour
     public UnityEvent   onDie;
 
     Vector2 impacto = Vector2.zero;
-    [HideInInspector] public CinemachineVirtualCamera vcam;
+    [HideInInspector] public CinemachineVirtualCamera vcam = null;
     CinemachineBasicMultiChannelPerlin vcamperlin;
     Material spriteMaterial;
     protected bool isPlayer = false;
@@ -94,6 +94,9 @@ public class Character : MonoBehaviour
     protected LayerMask groundLayer;
 
 
+    protected Pathfinder.Node nodeAttach = null;
+    protected int PathfindingProfileId = -1;
+
     /*****************************************************************************************************************
                                                         INITIALISATION
     *****************************************************************************************************************/
@@ -102,6 +105,8 @@ public class Character : MonoBehaviour
     {
         while (!vcam)
         {
+            if (Camera.main == null)
+                Debug.Log("dafuck ");
             vcam = Camera.main.GetComponent<CinemachineBrain>().ActiveVirtualCamera as CinemachineVirtualCamera;
             yield return new WaitForEndOfFrame();
         }
@@ -110,6 +115,9 @@ public class Character : MonoBehaviour
 
     protected virtual void  reinit()
     {
+        if (nodeAttach == null)
+			nodeAttach = GameManager.instance.pathfinderGrid.FindClosestNode(transform.position);
+		PathfindingProfileId = GameManager.instance.pathfinderGrid.CreateProfile(this);
         life = maxLife;
         isdashing = false;
         anim.SetBool("grounded", grounded);
@@ -120,7 +128,8 @@ public class Character : MonoBehaviour
         
         IsOuchstun = false;
         isDead = false;
- 
+
+        vcam = null;
         StartCoroutine(WaitForCam());
         CaBouge cbtmp = GetComponentInParent<CaBouge>();
         if (cbtmp)
