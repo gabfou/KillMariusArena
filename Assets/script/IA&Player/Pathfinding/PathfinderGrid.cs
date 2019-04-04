@@ -10,8 +10,7 @@ public class PathfinderGrid : MonoBehaviour
 	public float sizeY = 100;
 	public float distanceBetweenNode = 0.5f;
 	public List<Profile> profiles = new List<Profile>();
-	Node CenterNode;
-	[HideInInspector] public List<Node> allNodes = new List<Node>();
+	[HideInInspector] public Node[,] allNodes;
 	
 	public class Profile
 	{
@@ -44,51 +43,63 @@ public class PathfinderGrid : MonoBehaviour
 
 	void CreateBaseGrid()
 	{
-		CenterNode = new Node(transform.position);
+		int x = 0;
+		int y = 0;
+		Vector2 start = (Vector2)transform.position - new Vector2(sizeX / 2, sizeY / 2);
+		Vector2 end = (Vector2)transform.position + new Vector2(sizeX / 2, sizeY / 2);
+		Vector2 pos = start;
+		allNodes = new Node[(int)(sizeX / distanceBetweenNode) + 1, (int)(sizeY / distanceBetweenNode) + 1];
 
-		Stack<Node> toAddNeighbord = new Stack<Node>();
-		Stack<Node> justAdded = new Stack<Node>();
-		toAddNeighbord.Push(CenterNode);
-		allNodes.Clear();
-
-		while (toAddNeighbord.Count != 0)
+		while (pos.y <= end.y)
 		{
-			while (toAddNeighbord.Count != 0)
+			pos.x = start.x;
+			x = 0;
+			while (pos.x < end.x)
 			{
-				Node n = toAddNeighbord.Pop();
-				allNodes.Add(n);
-				// GameObject.CreatePrimitive(PrimitiveType.Sphere).transform.position = n.pos;
-				if (Mathf.Abs(n.pos.x - transform.position.x) < sizeX / 2 && Mathf.Abs(n.pos.y - transform.position.y) < sizeY / 2)
-					n.AddAllNeighbor(distanceBetweenNode, justAdded);
+				allNodes[x,y] = new Node(pos);
+				if (x > 0)
+					allNodes[x,y].LinkConnection(allNodes[x - 1, y], 6);
+				if (y > 0)
+					allNodes[x,y].LinkConnection(allNodes[x, y - 1], 0);
+				if (x > 0 && y > 0)
+					allNodes[x,y].LinkConnection(allNodes[x - 1, y - 1], 7);
+				if (y > 0 && x < allNodes.GetLength(0) - 1)
+					allNodes[x,y].LinkConnection(allNodes[x + 1, y - 1], 1);
+				pos.x += distanceBetweenNode;
+				x++;
 			}
-			while(justAdded.Count != 0)
-				toAddNeighbord.Push(justAdded.Pop());
-		}
-
-
+			pos.y += distanceBetweenNode;
+			y++;
+		}	
 	}
 
 
 	void DestroyOnWall()
 	{
 		RaycastHit2D[] results = new RaycastHit2D[10];
-		allNodes.RemoveAll(node => {
-			if ((Physics2D.CircleCastNonAlloc(node.pos, distanceBetweenNode, Vector2.down, results, 0, 1 << LayerMask.NameToLayer("Ground")) > 0))
+		for (int x = 0; x < allNodes.GetLength(0); x++)
+		{
+			for (int y = 0; y < allNodes.GetLength(1); y++)
 			{
-				node.DeleteAllConnections();
-				return true;
+				if (allNodes[x,y] != null)
+				{
+					if ((Physics2D.CircleCastNonAlloc(allNodes[x,y].pos, distanceBetweenNode, Vector2.down, results, 0, 1 << LayerMask.NameToLayer("Ground")) > 0))
+					{
+						allNodes[x,y].DeleteAllConnections();
+						allNodes[x,y] = null;
+					}
+				}
 			}
-			return false;
-			});
+		}
 	}
 
 
 	void InitProfile(Profile profile)
 	{
-		allNodes.ForEach( node =>
+		foreach (Node node in allNodes)
 		{
 			node.isvalid.Add(true);
-		});
+		}
 	}
 	
 	public void GenerateGrid()
@@ -123,92 +134,141 @@ public class PathfinderGrid : MonoBehaviour
 		{
 			return;
 		}
-		for (int i = 0; i < allNodes.Count; i++)
+		foreach (Node n in allNodes)
 		{
-			for (int j = 0; j < allNodes[i].connections.Length; j++)
+			if (n != null)
+			for (int j = 0; j < n.connections.Length; j++)
 			{
-				if(allNodes[i].connections[j] != null)
+				if(n.connections[j] != null)
 				{
-					Gizmos.color = (lastPath.Contains(allNodes[i]) && lastPath.Contains(allNodes[i].connections[j])) ? Color.blue : Color.green;
-					Gizmos.DrawLine(allNodes[i].pos, allNodes[i].connections[j].pos);
+					Gizmos.color = (lastPath.Contains(n) && lastPath.Contains(n.connections[j])) ? Color.blue : Color.green;
+					Gizmos.DrawLine(n.pos, n.connections[j].pos);
 				}
 			}
 		}
-		for (int i = 0; i < allNodes.Count; i++)
+		foreach (Node n in allNodes)
 		{
-			Gizmos.color = Color.blue;
-			Gizmos.DrawCube(allNodes[i].pos, Vector3.one * 0.2f);
+			if (n != null)
+			{
+				Gizmos.color = Color.blue;
+				Gizmos.DrawCube(n.pos, Vector3.one * 0.2f);
+			}
 		}
 	}
+	
 
-	public Node FindClosestNode(Vector2 pos)
+	public Node FindClosestNode(Vector2 pos, int distanceMax = 4)
 	{
-		Node r = CenterNode;
-		float dist;
-		float tmp;
-		dist = Vector2.Distance(CenterNode.pos, pos);
-		allNodes.ForEach(n => 
+		int x = (int)((pos.x - allNodes[0,0].pos.x) / distanceBetweenNode);
+		int y = (int)((pos.y - allNodes[0,0].pos.y) / distanceBetweenNode);
+		x = Mathf.Clamp(x, 0, allNodes.GetLength(0) - 1);
+		y = Mathf.Clamp(y, 0, allNodes.GetLength(1) - 1);
+
+		// if null check around
+
+		int distance = 1;
+		while (allNodes[x,y] == null && distance <= distanceMax) 
 		{
-			if ((tmp = Vector2.Distance(n.pos, pos)) < dist)
+			if (x + distance < allNodes.GetLength(0) - 1)
 			{
-				dist = tmp;
-				r = n;
+				if (allNodes[x + distance, y] != null)
+					return (allNodes[x + distance, y]);
+				if (y + distance < allNodes.GetLength(1) - 1 && allNodes[x + distance, y + distance] != null)
+					return (allNodes[x + distance, y + distance]);
+				if (y + distance < -1 && allNodes[x + distance, y - distance] != null)
+					return (allNodes[x + distance, y - distance]);
 			}
-		});
-		return r;
+			if (x - distance > -1)
+			{
+				if (allNodes[x - distance, y] != null)
+					return (allNodes[x + distance, y]);
+				if (y + distance < allNodes.GetLength(1) - 1 && allNodes[x - distance, y + distance] != null)
+					return (allNodes[x + distance, y + distance]);
+				if (y + distance < -1 && allNodes[x - distance, y - distance] != null)
+					return (allNodes[x + distance, y - distance]);
+			}
+			if (y + distance < allNodes.GetLength(1) - 1 && allNodes[x - distance, y + distance] != null)
+					return (allNodes[x, y + distance]);
+			if (y + distance < -1 && allNodes[x - distance, y - distance] != null)
+					return (allNodes[x, y - distance]);
+			distance++;
+		}
+		return (allNodes[x,y]);
 	}
+
+	
+	void ConstructGetAstarPath(Node Start, Node End, ref List<Node> path)
+	{
+
+		while(End != null && End != Start)
+		{
+			path.Insert(0, End);
+			End = End.parent;
+		}
+		lastPath = path;
+	}
+	
 
 	// Add
 
 	List<Node> Banish = new List<Node>();
 	List<Node> lastPath = new List<Node>();
-	public List<Node> GetAStar(Node Start, Node End, int profileIndex, int LimitDepht = 500)
+	List<Node> openList = new List<Node>();
+	public void GetAStar(Node Start, Node End, int profileIndex, ref List<Node> path, int LimitDepht = 500)
 	{
-		List<Node> openList = new List<Node>();
+		openList.ForEach(n => n.isInOpenList = false);
+		openList.Clear();
+		Banish.ForEach(n => n.isInBanish = false);
 		Banish.Clear();
-		allNodes.ForEach(n => {n.h = Start.heuristic(n, End);});
 		Start.gcost = 0;
-		// float heuristic;
-		int i = 5000;
-		// float bestCost = Mathf.Infinity;
+		Start.isInOpenList = true;
 		openList.Add(Start);
+		Start.parent =  null;
 
-		while (openList.Count > 0)
+		while (openList.Count > 0 && LimitDepht-- > 0)
 		{
 			Node current = openList[0];
 
 
 			openList.Remove(current);
+			current.isInOpenList = false;
+			current.isInBanish = true;
 			Banish.Add(current);
-			// heuristic = Mathf.Infinity;
 			foreach(Node n in current.connections)
 			{
 				if (n == End)
 				{
-					Debug.Log("Victory");
-					return null; // victory a completer
+					n.parent = current;
+					ConstructGetAstarPath(Start, n, ref path);
+					return ;
 				}
 				if (n != null)
 				{
 					int newcost = current.gcost + 1;
-					if (Banish.Contains(n))
+					if (n.isInBanish != false || n.isInOpenList != false)
 					{
 						if (n.gcost <= newcost)
 							continue ;
-						else
+						else if (n.isInBanish == false)// ca c'est pas ouf niveaux opti
+						{
 							Banish.Remove(n);
+							n.isInBanish = false;
+						}
+						else
+							openList.Remove(n);
 					}
-					int tmp = openList.FindIndex(n2 => n2.h < n.h);
+					else
+						n.h = Start.heuristic(n, End);
+					n.gcost = newcost;
+					n.parent = current;
+					int tmp = openList.FindIndex(n2 => n2.h > n.h);
 					if (tmp == -1)
 						tmp = openList.Count;
+					n.isInOpenList = true;
 					openList.Insert(tmp, n);
-					// openList.Add(n);
 				}
 			}
 		}
 		Debug.Log("GetAStar FAILLLLLL!!!! NBBanish = " + Banish.Count);
-		return null;
 	}
-
-
 }

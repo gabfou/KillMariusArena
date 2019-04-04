@@ -17,12 +17,12 @@ public class FlyingAgro : FlyingBaseAgro
 			{
 				float distance = Vector2.Distance(Cible.position, transform.position);
 				Vector2 realCible = (Vector2)Cible.position + ((new Vector2((Cible.position.x - transform.position.x < 0) ? 1 : -1, ydecal)).normalized * perfectdistancetocible);
-				List<Pathfinder.Node> path = GameManager.instance.pathfinderGrid.GetAStar(GameManager.instance.pathfinderGrid.FindClosestNode(transform.position), GameManager.instance.pathfinderGrid.FindClosestNode(realCible), PathfindingProfileId);
-				if (path != null)
+				UpdatePath(realCible);
+				if (path.Count > 1)
 				{
 					realCible = path[1].pos;
-					if (Time.frameCount % 100 == 0)
-						path.ForEach(p => Debug.Log(p));
+					// if (Time.frameCount % 100 == 0)
+					// 	path.ForEach(p => Debug.Log(p));
 				}
 				else
 					Debug.Log("fdsf2"/* + nodeAttach.pos + GameManager.instance.pathfinderGrid.FindClosestNode(realCible).pos*/);

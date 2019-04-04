@@ -21,14 +21,14 @@ public class PathfinderGridEditor : Editor
 		{
 			pg.GenerateGrid();
 		}
-		if (GUILayout.Button("Try Grid !"))
-		{
-			Pathfinder.Node start = pg.allNodes[Random.Range(0, pg.allNodes.Count)];
-			Pathfinder.Node end = pg.allNodes[Random.Range(0, pg.allNodes.Count)];
-			Debug.Log("start = " + start + " end = " + end);
-			List<Pathfinder.Node> path = pg.GetAStar(start, end, -1);
-			// path.ForEach(p => Debug.Log(p));
+		// if (GUILayout.Button("Try Grid !"))
+		// {
+		// 	Pathfinder.Node start = pg.allNodes[Random.Range(0, pg.allNodes.Count)];
+		// 	Pathfinder.Node end = pg.allNodes[Random.Range(0, pg.allNodes.Count)];
+		// 	Debug.Log("start = " + start + " end = " + end);
+		// 	List<Pathfinder.Node> path = pg.GetAStar(start, end, -1, );
+		// 	// path.ForEach(p => Debug.Log(p));
 
-		}
+		// }
 	}
 }
