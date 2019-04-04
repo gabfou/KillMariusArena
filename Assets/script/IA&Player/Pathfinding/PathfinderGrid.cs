@@ -216,6 +216,8 @@ public class PathfinderGrid : MonoBehaviour
 	List<Node> openList = new List<Node>();
 	public void GetAStar(Node Start, Node End, int profileIndex, ref List<Node> path, int LimitDepht = 500)
 	{
+		if (End == null || Start == null)
+			return ;
 		openList.ForEach(n => n.isInOpenList = false);
 		openList.Clear();
 		Banish.ForEach(n => n.isInBanish = false);
