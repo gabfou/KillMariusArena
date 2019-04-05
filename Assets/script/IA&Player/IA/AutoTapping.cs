@@ -106,7 +106,7 @@ public class AutoTapping : MonoBehaviour {
 	
 	private void OnTriggerStay2D(Collider2D other)
 	{
-		if (other.tag == "Player" && pc.istapping == false && pc.IsOuchstun == false)
+		if (!(other.isTrigger) && other.tag == pc.tagCible && pc.istapping == false && pc.IsOuchstun == false)
         {
 			StartCoroutine(Tapping());
         }

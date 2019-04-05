@@ -12,7 +12,9 @@ public class Agro : Character {
     [HideInInspector] public Transform Cible = null;
 
     [Header("Agro setting")]
-    public bool StayOnGround = true;
+	public string tagCible = "Player";
+    [ConditionalHide("flying", true)]
+	public bool StayOnGround = true;
 	Collider2D realcol;
     public float perfectdistancetocible = 0;
     public DistanceBehavior distanceBehavior = DistanceBehavior.Free;
@@ -52,7 +54,6 @@ public class Agro : Character {
     void Start ()
 	{
 		init();
-		base.ouchtag = "bam";
 		realcol = GetComponents<Collider2D>().Where(c => !c.isTrigger).FirstOrDefault();
 		if (!realcol)
 			realcol = GetComponents<Collider2D>().LastOrDefault();
@@ -165,7 +166,15 @@ public class Agro : Character {
 	bool changesprite = false;
 	override protected void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.tag == "Player")
+		if (!realcol)
+			Debug.Log(name + " pas de realcol");
+        else if (realcol.IsTouching(other))
+            base.OnTriggerEnter2D(other);
+    }
+
+	private void OnTriggerStay2D(Collider2D other)
+	{
+		if (!Cible && other.tag == tagCible)
 		{
 			changesprite = true;
 			if (anim)
@@ -176,11 +185,7 @@ public class Agro : Character {
 			Cible = other.transform;
 			eventOnAgro.Invoke();
 		}
-		if (!realcol)
-			Debug.Log(name + " pas de realcol");
-        else if (realcol.IsTouching(other))
-            base.OnTriggerEnter2D(other);
-    }
+	}
 
 	override protected void GroundCheck()
 	{

@@ -167,6 +167,8 @@ public class Character : MonoBehaviour
 
 	float DistToPlayer()
 	{
+		if (!GameManager.instance.player)
+			return 0;
 		return Vector2.Distance(GameManager.instance.player.transform.position, transform.position);
 	}
 
@@ -568,12 +570,16 @@ public class Character : MonoBehaviour
 	/*****************************************************************************************************************
 														PATHFINDING
 	*****************************************************************************************************************/
-
+	Pathfinder.Node End = null;
 
 	protected void UpdatePath(Vector2 Cible)
 	{
+		Pathfinder.Node newCible = GameManager.instance.pathfinderGrid.FindClosestNode(Cible);
+		if (End == newCible)
+			return ;
+		End = newCible;
 		path.Clear();
-		GameManager.instance.pathfinderGrid.GetAStar(GameManager.instance.pathfinderGrid.FindClosestNode(transform.position), GameManager.instance.pathfinderGrid.FindClosestNode(Cible), PathfindingProfileId, ref path);
+		GameManager.instance.pathfinderGrid.GetAStar(GameManager.instance.pathfinderGrid.FindClosestNode(transform.position), newCible, PathfindingProfileId, ref path);
 
 	}
 

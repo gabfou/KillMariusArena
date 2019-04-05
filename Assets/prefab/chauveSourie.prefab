@@ -418,13 +418,13 @@ GameObject:
   - component: {fileID: 212252601644731016}
   - component: {fileID: 50453095155532974}
   - component: {fileID: 95710335021183620}
-  - component: {fileID: 60479176297310040}
   - component: {fileID: 114209388165257004}
-  - component: {fileID: 60075780734733480}
   - component: {fileID: 6804648272794203398}
+  - component: {fileID: 6744065395325725324}
+  - component: {fileID: 3277036666711186192}
   m_Layer: 20
   m_Name: chauveSourie
-  m_TagString: Untagged
+  m_TagString: BadGuy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -436,7 +436,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1909758998339404}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 112.87, y: -38.8, z: -0.01770806}
   m_LocalScale: {x: -0.19999999, y: 0.19999999, z: 0.19999999}
   m_Children:
@@ -534,35 +534,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!60 &60479176297310040
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1909758998339404}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4894155, y: 0.5237997}
-    oldSize: {x: 15.2, y: 13.52}
-    newSize: {x: 3.1, y: 4}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 102.10957, y: -27.474806}
-      - {x: -70.19776, y: -32.955116}
-      - {x: -71.32588, y: 49.718994}
-      - {x: 96.31791, y: 57.0285}
 --- !u!114 &114209388165257004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,13 +546,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b8c24a91f5434364a54c05116232360, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cannotmove: 0
   facingLeft: 1
   life: 2
   maxLife: 2
   invulnTime: 0.05
   dontDestroy: 0
-  maxSpeed: 8.05
+  dontRespawn: 0
+  maxSpeed: 11
   minSlideVelocity: 3
   slimeVelocityIgnore: 0.5
   jumpPower: 10
@@ -591,6 +562,7 @@ MonoBehaviour:
   maxYVelocity: 8
   minYVelocity: -6
   flying: 0
+  dashEnabled: 0
   timedashinsc: 0.1
   distanceofdash: 10
   isinvuindash: 1
@@ -605,7 +577,7 @@ MonoBehaviour:
   DieVolume: 0.5
   dashClip: {fileID: 0}
   dashVolume: 0.5
-  ouchtag: ouch
+  ouchtag: bam
   timeStunouchBrillance: 0.25
   stunStopMove: 1
   stunStopAttack: 1
@@ -634,7 +606,9 @@ MonoBehaviour:
   isDead: 0
   baseLayer: 0
   rbparent: {fileID: 0}
+  cannotmove: 0
   Cible: {fileID: 0}
+  tagCible: Player
   StayOnGround: 1
   perfectdistancetocible: 1.13
   distanceBehavior: 0
@@ -644,51 +618,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+  alwaysFaceCible: 0
+  id: -1
   ydecal: 1
---- !u!60 &60075780734733480
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1909758998339404}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4894155, y: 0.5237997}
-    oldSize: {x: 15.2, y: 13.52}
-    newSize: {x: 3.1, y: 4}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -6.5039067, y: 1.6384698}
-      - {x: -4.7220426, y: -0.26363376}
-      - {x: -0.31175616, y: -1.0213662}
-      - {x: -0.36724094, y: -2.3502924}
-      - {x: -1.5036775, y: -5.6929784}
-      - {x: 1.5636064, y: -5.63963}
-      - {x: 0.16780855, y: -2.3002055}
-      - {x: 0.17660142, y: -0.89124686}
-      - {x: 1.8973353, y: -0.73657995}
-      - {x: 4.752541, y: -0.32228473}
-      - {x: 6.880646, y: 1.5350534}
-      - {x: 7.6947603, y: 3.7601857}
-      - {x: 3.7151911, y: 3.5876658}
-      - {x: 0.43220523, y: 1.9088366}
-      - {x: 0.66278464, y: 3.5794642}
-      - {x: -0.5544663, y: 3.4836009}
-      - {x: -0.23176195, y: 1.5964891}
-      - {x: -3.8027196, y: 3.6761668}
-      - {x: -7.82631, y: 3.8738446}
 --- !u!82 &6804648272794203398
 AudioSource:
   m_ObjectHideFlags: 0
@@ -785,6 +717,38 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!58 &6744065395325725324
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909758998339404}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.16089201, y: -0.3217659}
+  serializedVersion: 2
+  m_Radius: 200
+--- !u!58 &3277036666711186192
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909758998339404}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.16088438, y: -0.3217697}
+  serializedVersion: 2
+  m_Radius: 7.6
 --- !u!1 &1920497037803970
 GameObject:
   m_ObjectHideFlags: 0

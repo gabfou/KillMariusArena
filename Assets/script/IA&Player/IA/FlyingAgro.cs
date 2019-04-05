@@ -18,14 +18,12 @@ public class FlyingAgro : FlyingBaseAgro
 				float distance = Vector2.Distance(Cible.position, transform.position);
 				Vector2 realCible = (Vector2)Cible.position + ((new Vector2((Cible.position.x - transform.position.x < 0) ? 1 : -1, ydecal)).normalized * perfectdistancetocible);
 				UpdatePath(realCible);
-				if (path.Count > 1)
+				if (path.Count > 0)
 				{
-					realCible = path[1].pos;
-					// if (Time.frameCount % 100 == 0)
-					// 	path.ForEach(p => Debug.Log(p));
+					realCible = path[0].pos;
+					if (Vector2.Distance(path[0].pos, transform.position) < GameManager.instance.pathfinderGrid.distanceBetweenNode)
+						path.RemoveAt(0);
 				}
-				else
-					Debug.Log("fdsf2"/* + nodeAttach.pos + GameManager.instance.pathfinderGrid.FindClosestNode(realCible).pos*/);
                 if (distance > MaxDistance)
                 {
                     Cible = null; // peut etre active reactive qaund respawn pres
