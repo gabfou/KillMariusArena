@@ -11,6 +11,7 @@ public class PathfinderGrid : MonoBehaviour
 	public float distanceBetweenNode = 0.5f;
 	public List<Profile> profiles = new List<Profile>();
 	[HideInInspector] public Node[,] allNodes;
+	Vector2 UpLeft;
 	
 	public class Profile
 	{
@@ -45,14 +46,14 @@ public class PathfinderGrid : MonoBehaviour
 	{
 		int x = 0;
 		int y = 0;
-		Vector2 start = (Vector2)transform.position - new Vector2(sizeX / 2, sizeY / 2);
+		UpLeft = (Vector2)transform.position - new Vector2(sizeX / 2, sizeY / 2);
 		Vector2 end = (Vector2)transform.position + new Vector2(sizeX / 2, sizeY / 2);
-		Vector2 pos = start;
+		Vector2 pos = UpLeft;
 		allNodes = new Node[(int)(sizeX / distanceBetweenNode) + 1, (int)(sizeY / distanceBetweenNode) + 1];
 
 		while (pos.y <= end.y)
 		{
-			pos.x = start.x;
+			pos.x = UpLeft.x;
 			x = 0;
 			while (pos.x < end.x)
 			{
@@ -159,8 +160,8 @@ public class PathfinderGrid : MonoBehaviour
 
 	public Node FindClosestNode(Vector2 pos, int distanceMax = 4)
 	{
-		int x = (int)((pos.x - allNodes[0,0].pos.x) / distanceBetweenNode);
-		int y = (int)((pos.y - allNodes[0,0].pos.y) / distanceBetweenNode);
+		int x = (int)((pos.x - UpLeft.x) / distanceBetweenNode);
+		int y = (int)((pos.y - UpLeft.y) / distanceBetweenNode);
 		x = Mathf.Clamp(x, 0, allNodes.GetLength(0) - 1);
 		y = Mathf.Clamp(y, 0, allNodes.GetLength(1) - 1);
 
