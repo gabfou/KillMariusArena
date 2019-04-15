@@ -168,7 +168,7 @@ public class PathfinderGrid : MonoBehaviour
 		// if null check around
 
 		int distance = 1;
-		while (allNodes[x,y] == null && distance <= distanceMax) 
+		while (Utils.isInBound(allNodes, x, y) &&  allNodes[x,y] == null && distance <= distanceMax) 
 		{
 			if (x + distance < allNodes.GetLength(0) - 1)
 			{
@@ -182,11 +182,11 @@ public class PathfinderGrid : MonoBehaviour
 			if (x - distance > -1)
 			{
 				if (allNodes[x - distance, y] != null)
-					return (allNodes[x + distance, y]);
+					return (allNodes[x - distance, y]);
 				if (y + distance < allNodes.GetLength(1) - 1 && allNodes[x - distance, y + distance] != null)
-					return (allNodes[x + distance, y + distance]);
+					return (allNodes[x - distance, y + distance]);
 				if (y + distance < -1 && allNodes[x - distance, y - distance] != null)
-					return (allNodes[x + distance, y - distance]);
+					return (allNodes[x - distance, y - distance]);
 			}
 			if (y + distance < allNodes.GetLength(1) - 1 && allNodes[x - distance, y + distance] != null)
 					return (allNodes[x, y + distance]);
@@ -194,6 +194,8 @@ public class PathfinderGrid : MonoBehaviour
 					return (allNodes[x, y - distance]);
 			distance++;
 		}
+		if (!Utils.isInBound(allNodes, x, y))
+			return null;
 		return (allNodes[x,y]);
 	}
 

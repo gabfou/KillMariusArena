@@ -40,4 +40,12 @@ public static class Utils
         StaticCoroutine c = new StaticCoroutine();
         c.WaitThenEnableCo(seconds, mono);
     }
+
+
+    public static bool isInBound<T>(T [,]tab, int x, int y)
+    {
+        if (x > -1 && y > -1 && x < tab.GetLength(0) && y < tab.GetLength(1))
+            return true;
+        return false;
+    }
 }
