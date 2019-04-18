@@ -6,6 +6,7 @@ using System.Linq;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using System;
 
 // TO DO: change float move and float movey by Vector2 move
 // NEXT GAME TO DO laisser seulement ce qui concerne le player ici et le faire heriter
@@ -27,8 +28,6 @@ public class Character : MonoBehaviour
 	public float slimeVelocityIgnore = .5f;
 	public float jumpPower = 10f;
 	public float jumpIdle = .0f;
-	public Vector3 groundPosition;
-	public Vector2 groundSize;
 	public float maxYVelocity = 8f;
 	public float minYVelocity = -6f;
 	public bool flying = false;
@@ -241,33 +240,27 @@ public class Character : MonoBehaviour
 	}
 
 	Collider2D actualGround;
-	RaycastHit2D[] results = new RaycastHit2D[10];
-	protected virtual void GroundCheck()
+	ContactPoint2D[] colliderResult = new ContactPoint2D[10];
+	ContactFilter2D contactFilter2D = new ContactFilter2D();
+	protected virtual void GroundCheck() // toDo opti stop calling in allcheck and only call in oncolliderenter.exit 
 	{
-		if (flying)
-		{
-			IsOnLadder = true;
-			return ;
-		}
-		if (groundPosition == Vector3.zero && groundSize == Vector2.zero)
-		{
-			
-			grounded = true;
-			return ;
-		}
-
 		if (rigidbody2D.IsSleeping())
 			return ;
 		
-		int collisionNumber = Physics2D.BoxCastNonAlloc(transform.position + groundPosition, groundSize, 0, Vector2.down, results, .0f, groundLayer);
-		grounded = collisionNumber != 0;
-		if (collisionNumber != 0)
-			actualGround = results.First().collider;
-		collisionNumber = Physics2D.BoxCastNonAlloc(transform.position + groundPosition, groundSize, 0, Vector2.down, results, .0f, 1 << LayerMask.NameToLayer("Ladder"));
-		grounded = grounded || collisionNumber != 0;
-		if (IsOnLadder || move == 0 || movey != 0)
-			IsOnLadder = collisionNumber != 0;
+		contactFilter2D.useLayerMask = true;
+		Array.Clear(colliderResult, 0, colliderResult.Length);
+
+		contactFilter2D.layerMask = groundLayer | 1 << LayerMask.NameToLayer("Ladder");
+		int length = rigidbody2D.GetContacts(contactFilter2D, colliderResult);
+		grounded = false;
+		for (int i = 0; i < length; i++)
+			if (Vector2.Angle(colliderResult[i].normal, Vector2.up) < 15)
+				grounded = true;
+	
+		contactFilter2D.layerMask = 1 << LayerMask.NameToLayer("Ladder");
+		IsOnLadder = rigidbody2D.GetContacts(contactFilter2D, colliderResult) > 0;
 		rigidbody2D.gravityScale = (IsOnLadder) ? 0 : baseGravityScale;
+		grounded = (grounded) ? grounded : IsOnLadder;
 
 		anim.SetBool("grounded", grounded);
 	}
@@ -324,7 +317,7 @@ public class Character : MonoBehaviour
 	{
 		if (tag == "BadGuy")
 		{
-			if (Random.value < 1f)
+			if (UnityEngine.Random.value < 1f)
 				audiosource.PlayOneShot(Camera.main.GetComponent<BankSoundStupid>().PlayerMockingHAHAHAHA, 0.7f);
 		}
 		onDie.Invoke();
@@ -559,12 +552,6 @@ public class Character : MonoBehaviour
 			if (oponnent)
 				oponnent.DoingDamage(this);
 		}
-	}
-
-	void OnDrawGizmos()
-	{
-		Gizmos.color = Color.red;
-		Gizmos.DrawWireCube(transform.position + groundPosition, groundSize);
 	}
 
 	/*****************************************************************************************************************
