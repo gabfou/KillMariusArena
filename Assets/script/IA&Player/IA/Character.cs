@@ -317,7 +317,7 @@ public class Character : MonoBehaviour
 	{
 		if (tag == "BadGuy")
 		{
-			if (UnityEngine.Random.value < 1f)
+			if (audiosource && UnityEngine.Random.value < 1f)
 				audiosource.PlayOneShot(Camera.main.GetComponent<BankSoundStupid>().PlayerMockingHAHAHAHA, 0.7f);
 		}
 		onDie.Invoke();
