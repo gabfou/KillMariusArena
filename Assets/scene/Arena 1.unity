@@ -1460,7 +1460,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &457145154
 Transform:
   m_ObjectHideFlags: 0
@@ -2565,7 +2565,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4899300555096600, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.0299997
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4899300555096600, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2605,11 +2605,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4899300555096600, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.2
+      value: 0.5607365
       objectReference: {fileID: 0}
     - target: {fileID: 4899300555096600, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.2
+      value: 0.5607365
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899300555096600, guid: 16da5a28e9687451f9c8db06cced34f3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.8036823
       objectReference: {fileID: 0}
     - target: {fileID: 212212349386109120, guid: 16da5a28e9687451f9c8db06cced34f3,
         type: 3}
@@ -7550,7 +7554,7 @@ MonoBehaviour:
   invulnTime: 1
   dontDestroy: 0
   dontRespawn: 0
-  maxSpeed: 1
+  maxSpeed: 10
   minSlideVelocity: 3
   slimeVelocityIgnore: 0.5
   jumpPower: 10
@@ -7605,7 +7609,7 @@ MonoBehaviour:
   cannotmove: 0
   Cible: {fileID: 0}
   tagCible: Player
-  StayOnGround: 1
+  StayOnGround: 0
   perfectdistancetocible: 0
   distanceBehavior: 0
   MaxDistance: Infinity
