@@ -13,15 +13,16 @@ public class Agro : Character {
 
     [Header("Agro setting")]
 	public string tagCible = "Player";
-    [ConditionalHide("flying", true)]
-	public bool StayOnGround = true;
 	Collider2D realcol;
+   	public bool StayOnGround;
     public float perfectdistancetocible = 0;
     public DistanceBehavior distanceBehavior = DistanceBehavior.Free;
     public float MaxDistance = Mathf.Infinity;
 	public UnityEvent eventOnAgro;
 	public bool alwaysFaceCible = false;
 	[HideInInspector] public float id = -1;
+	float height;
+	float lenght;
 
 	public bool IsFacingPlayer()
 	{
@@ -57,6 +58,8 @@ public class Agro : Character {
 		realcol = GetComponents<Collider2D>().Where(c => !c.isTrigger).FirstOrDefault();
 		if (!realcol)
 			realcol = GetComponents<Collider2D>().LastOrDefault();
+		height = Mathf.Abs(realcol.bounds.max.y - realcol.bounds.min.y);
+		lenght = Mathf.Abs(realcol.bounds.max.x - realcol.bounds.min.x);
 	}
 
 	void pseudoPathfinding() // jump or not 
@@ -65,13 +68,13 @@ public class Agro : Character {
 			return ;
 		RaycastHit2D raycastHit2D;
 		if (move != 0 && (Cible.position.y + 3 > transform.position.y)
-			&& (Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), 2, groundLayer)
-				|| !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 3, groundLayer))
-				|| ((raycastHit2D = Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), 5, groundLayer)).collider && raycastHit2D.collider.tag == ouchtag)))
+			&& (Physics2D.Raycast(transform.position, new Vector3(move, 0, 0), lenght, groundLayer)
+				|| !(Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), height * 1.5f, groundLayer))
+				|| ((raycastHit2D = Physics2D.Raycast(transform.position, new Vector3(move, -1, 0), height * 2, groundLayer)).collider && raycastHit2D.collider.tag == ouchtag)))
 			tryjump();
-		else if (transform.position.y - Cible.position.y > 4 && Mathf.Abs(transform.position.x - Cible.position.x) < 2)
+		else if (transform.position.y - Cible.position.y > height * 1.5f && Mathf.Abs(transform.position.x - Cible.position.x) < lenght * 1.5f)
 			tryGoUnder();
-		else if (transform.position.y - Cible.position.y < -4 && Mathf.Abs(transform.position.x - Cible.position.x) < 2)
+		else if (transform.position.y - Cible.position.y < -height * 1.5f && Mathf.Abs(transform.position.x - Cible.position.x) < lenght * 1.5f)
 			tryjump();
 	}
 
@@ -105,7 +108,6 @@ public class Agro : Character {
 		}
 
 		pseudoPathfinding();
-
 
 		move = dir.x;
 		movey = dir.y;
@@ -146,7 +148,7 @@ public class Agro : Character {
                     move = 0;
                 else
                     move = sign * Mathf.Sign((Cible.position - transform.position).x);
-
+						Debug.Log(move);
 				pseudoPathfinding();
 				if (move == 0)
 					FacePlayer();
